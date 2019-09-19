@@ -48,17 +48,40 @@ namespace SE_Factory
 
         public static DataTable Fill_SQL_Schede()
         {
-            //MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM DB_Factory.GC_Schede", Connessione);
             MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM DB_Factory.GC_Schede", Connessione);
 
             ApriConnessione();
 
-            //DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
 
-            //adapter.Fill(ds, "GC_Schede");
+            ChiudiConnessione();
+
+            return dt;
+        }
+
+        public static DataTable Fill_SQL_Software()
+        {
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM DB_Factory.GC_Software", Connessione);
+
+            ApriConnessione();
 
             DataTable dt = new DataTable();
-                adapter.Fill(dt);
+            adapter.Fill(dt);
+
+            ChiudiConnessione();
+
+            return dt;
+        }
+
+        public static DataTable Fill_SQL_FamProd()
+        {
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM DB_Factory.GC_Fam_Prod", Connessione);
+
+            ApriConnessione();
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
 
             ChiudiConnessione();
 

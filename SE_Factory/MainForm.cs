@@ -13,6 +13,14 @@ namespace SE_Factory
 {
     public partial class MainForm : MetroForm
     {
+        DataSet ds_Factory = new DataSet();
+        DataTable dt_GC_FamProd = new DataTable("dt_GC_FamProd");
+        DataTable dt_GC_Schede = new DataTable("dt_GC_Schede");
+        DataTable dt_GC_Software = new DataTable("dt_GC_Software");
+        //DataSet ds_GC_FamProd = new DataSet("FamProd");
+        //DataSet ds_GC_Schede = new DataSet("Schede");
+        //DataSet ds_GC_Software = new DataSet("Software");
+
         public MainForm()
         {
             InitializeComponent();
@@ -41,7 +49,8 @@ namespace SE_Factory
             menu_btn_Clienti.Visible = false;
             menu_spacer_06.Visible = false;
 
-
+            ////////////////////////////////
+            LoadMySQLData();
         }
 
         private void menu_btn_ID_Click(object sender, EventArgs e)
@@ -214,20 +223,41 @@ namespace SE_Factory
             panel_Application.Visible = true;
         }
 
-        private void metroButton1_Click(object sender, EventArgs e)
+        private void LoadMySQLData()
         {
-            //using (DataTable GC)
-            //GC_Dataset.SchedeDataTable = new 
-            //MySQLMgmt.Fill_SQL_Schede();
+            ////////////////////////////////////////////////////////////////////////////////////
+            // Caricamento tabelle MySQL
+            ////////////////////////////////////////////////////////////////////////////////////
+            //DataTable dt_GC_FamProd = ds_Factory.Tables.Add("dt_GC_FamProd");
+            //DataTable dt_GC_Schede = ds_Factory.Tables.Add("dt_GC_Schede");
+            //DataTable dt_GC_Software = ds_Factory.Tables.Add("dt_GC_Software");
 
-            //DataTable dt = new DataTable();
-            DataTable dt = new DataTable("Schede");
+            //ds_Factory.Tables.Add("dt_GC_FamProd");
+            //ds_Factory.Tables.Add("dt_GC_Schede");
+            //ds_Factory.Tables.Add("dt_GC_Software");
 
             Application.UseWaitCursor = true;
-            dt = MySQLMgmt.Fill_SQL_Schede();
+            dt_GC_FamProd = MySQLMgmt.Fill_SQL_FamProd();
+            ds_Factory.Tables.Add(dt_GC_FamProd);
+            dt_GC_Schede = MySQLMgmt.Fill_SQL_Schede();
+            ds_Factory.Tables.Add(dt_GC_Schede);
+            dt_GC_Software = MySQLMgmt.Fill_SQL_Software();
+            ds_Factory.Tables.Add(dt_GC_Software);
             Application.UseWaitCursor = false;
 
-            //dt = dt.Copy();
+            //DataTable dt_GC_FamProd = new DataTable("FamProd");
+            //DataTable dt_GC_Schede = new DataTable("Schede");
+            //DataTable dt_GC_Software = new DataTable("Software");
+            //DataSet ds_GC_FamProd = new DataSet("FamProd");
+            //DataSet ds_GC_Schede = new DataSet("Schede");
+            //DataSet ds_GC_Software = new DataSet("Software");
+
+            // Setting Relations
+            //DataColumn parentColumn = dt_GC_Software["SW_Fam_Prod"];
+            //DataColumn childColumn = dt_GC_FamProd["Id"];
+            //DataRelation relation = new System.Data.DataRelation("SuppliersProducts", parentColumn, childColumn);
+            //dataSet.Relations.Add(relation);
+
         }
     }
 }
