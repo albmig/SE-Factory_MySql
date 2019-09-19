@@ -1,0 +1,41 @@
+            if ((grid_SchedeCompatibili.Rows.Count > 0) && (grid_SchedeCompatibili.CurrentCell.ColumnIndex == 2))
+            {
+                metroLabel23.Text = "";
+                string testo = "";
+                for (int i = 0; i < grid_SchedeCompatibili.Rows.Count; i++)
+                {
+                    DataGridViewRow selectedRow = grid_SchedeCompatibili.Rows[i];
+                    bool isChecked = Convert.ToBoolean(selectedRow.Cells["SchedaCompatibile"].Value);
+
+                    //if (i == e.RowIndex) //devo valutare differentemente la riga corrente
+                    //{
+                    //    if (!isChecked)
+                    //    {
+                    //        if (testo == "")
+                    //        {
+                    //            testo = selectedRow.Cells["prodSch"].Value.ToString();
+                    //        }
+                    //        else
+                    //        {
+                    //            testo = testo + "|";
+                    //            testo = testo + selectedRow.Cells["prodSch"].Value.ToString();
+                    //        }
+                    //    }
+                    //}
+                    //else
+                    if (isChecked)
+                    {
+                        if (testo == "")
+                        {
+                            testo = selectedRow.Cells["prodSch"].Value.ToString();
+                        }
+                        else
+                        {
+                            testo = testo + "|";
+                            testo = testo + selectedRow.Cells["prodSch"].Value.ToString();
+                        }
+                    }
+
+                }
+                metroLabel23.Text = testo;
+            }

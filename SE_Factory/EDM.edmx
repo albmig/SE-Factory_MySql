@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_FactoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Fam_Prod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fam_Name" Type="text" Nullable="false" />
+          <Property Name="Fam_Tipo" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="Fam_Hex_ID" Type="char" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Printers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Prn_Name" Type="text" Nullable="false" />
+          <Property Name="Prn_Address" Type="text" Nullable="false" />
+          <Property Name="Prn_Default" Type="bit" Nullable="false" />
+          <Property Name="Prn_Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schede">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Prod_Sch" Type="text" Nullable="false" />
+          <Property Name="Prod_Fam" Type="int" Nullable="false" />
+          <Property Name="Prod_Descrizione" Type="text" />
+          <Property Name="Prod_Image_Url" Type="text" />
+        </EntityType>
+        <EntityType Name="Software">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SW_Code" Type="nchar" MaxLength="16" Nullable="false" />
+          <Property Name="SW_Fam_Prod" Type="int" />
+          <Property Name="SW_Customer" Type="text" Nullable="false" />
+          <Property Name="SW_SchedeCompatibili" Type="text" />
+          <Property Name="SW_Microchip_Code" Type="text" Nullable="false" />
+          <Property Name="SW_P_Opt_RF" Type="text" Nullable="false" />
+          <Property Name="SW_P_Opt_Oled" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_Accel" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_SP" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_Buzzer" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_Vibracall" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_LedTorch" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_EmButt" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_Backlight" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_ShiftPage" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_Accel" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_SP" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_Buzzer" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_Vibracall" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_LedTorch" Type="bit" Nullable="false" />
+          <Property Name="SW_P_Opt_MaxPairDevices" Type="int" Nullable="false" />
+          <Property Name="SW_R_Opt_RF" Type="text" Nullable="false" />
+          <Property Name="SW_R_Opt_Plug_Exp" Type="bit" Nullable="false" />
+          <Property Name="SW_R_Opt_Plug_Ple" Type="bit" Nullable="false" />
+          <Property Name="SW_R_Opt_Em_Keyb" Type="bit" Nullable="false" />
+          <Property Name="SW_R_Opt_Status_Led" Type="bit" Nullable="false" />
+          <Property Name="SW_R_Opt_Ext_Ant" Type="bit" Nullable="false" />
+          <Property Name="SW_R_Opt_Can" Type="bit" Nullable="false" />
+          <Property Name="SW_R_Opt_Prop_Out" Type="bit" Nullable="false" />
+          <Property Name="SW_R_Opt_TimeOut" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="SW_R_Opt_Cont_Keys" Type="int" Nullable="false" />
+          <Property Name="SW_R_Opt_MaxPairDevices" Type="int" Nullable="false" />
+          <Property Name="SW_R_Opt_ShiftPage" Type="bit" Nullable="false" />
+          <Property Name="SW_R_Opt_Output_No" Type="int" Nullable="false" />
+          <Property Name="SW_R_Opt_Dig_Input_No" Type="int" Nullable="false" />
+          <Property Name="SW_R_Opt_Ana_Input_No" Type="int" Nullable="false" />
+          <Property Name="SW_Revisioni" Type="text" />
+          <Property Name="SW_Funzionamento" Type="text" />
+        </EntityType>
+        <EntityContainer Name="DB_FactoryModelStoreContainer">
+          <EntitySet Name="Fam_Prod" EntityType="Self.Fam_Prod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Printers" EntityType="Self.Printers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schede" EntityType="Self.Schede" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Software" EntityType="Self.Software" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_FactoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Fam_Prod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fam_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fam_Tipo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Fam_Hex_ID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Printers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prn_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prn_Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prn_Default" Type="Boolean" Nullable="false" />
+          <Property Name="Prn_Active" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schede">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prod_Sch" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Prod_Fam" Type="Int32" Nullable="false" />
+          <Property Name="Prod_Descrizione" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Prod_Image_Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Software">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SW_Code" Type="String" MaxLength="16" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SW_Fam_Prod" Type="Int32" />
+          <Property Name="SW_Customer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SW_SchedeCompatibili" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SW_Microchip_Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SW_P_Opt_RF" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SW_P_Opt_Oled" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_Accel" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_SP" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_Buzzer" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_Vibracall" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_LedTorch" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_EmButt" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_Backlight" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_ShiftPage" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_Accel" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_SP" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_Buzzer" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_Vibracall" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_Use_LedTorch" Type="Boolean" Nullable="false" />
+          <Property Name="SW_P_Opt_MaxPairDevices" Type="Int32" Nullable="false" />
+          <Property Name="SW_R_Opt_RF" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SW_R_Opt_Plug_Exp" Type="Boolean" Nullable="false" />
+          <Property Name="SW_R_Opt_Plug_Ple" Type="Boolean" Nullable="false" />
+          <Property Name="SW_R_Opt_Em_Keyb" Type="Boolean" Nullable="false" />
+          <Property Name="SW_R_Opt_Status_Led" Type="Boolean" Nullable="false" />
+          <Property Name="SW_R_Opt_Ext_Ant" Type="Boolean" Nullable="false" />
+          <Property Name="SW_R_Opt_Can" Type="Boolean" Nullable="false" />
+          <Property Name="SW_R_Opt_Prop_Out" Type="Boolean" Nullable="false" />
+          <Property Name="SW_R_Opt_TimeOut" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="SW_R_Opt_Cont_Keys" Type="Int32" Nullable="false" />
+          <Property Name="SW_R_Opt_MaxPairDevices" Type="Int32" Nullable="false" />
+          <Property Name="SW_R_Opt_ShiftPage" Type="Boolean" Nullable="false" />
+          <Property Name="SW_R_Opt_Output_No" Type="Int32" Nullable="false" />
+          <Property Name="SW_R_Opt_Dig_Input_No" Type="Int32" Nullable="false" />
+          <Property Name="SW_R_Opt_Ana_Input_No" Type="Int32" Nullable="false" />
+          <Property Name="SW_Revisioni" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SW_Funzionamento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DB_FactoryEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Fam_Prod" EntityType="Self.Fam_Prod" />
+          <EntitySet Name="Printers" EntityType="Self.Printers" />
+          <EntitySet Name="Schede" EntityType="Self.Schede" />
+          <EntitySet Name="Software" EntityType="Self.Software" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_FactoryModelStoreContainer" CdmEntityContainer="DB_FactoryEntities">
+          <EntitySetMapping Name="Fam_Prod">
+            <EntityTypeMapping TypeName="DB_FactoryModel.Fam_Prod">
+              <MappingFragment StoreEntitySet="Fam_Prod">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Fam_Name" ColumnName="Fam_Name" />
+                <ScalarProperty Name="Fam_Tipo" ColumnName="Fam_Tipo" />
+                <ScalarProperty Name="Fam_Hex_ID" ColumnName="Fam_Hex_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Printers">
+            <EntityTypeMapping TypeName="DB_FactoryModel.Printers">
+              <MappingFragment StoreEntitySet="Printers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Prn_Name" ColumnName="Prn_Name" />
+                <ScalarProperty Name="Prn_Address" ColumnName="Prn_Address" />
+                <ScalarProperty Name="Prn_Default" ColumnName="Prn_Default" />
+                <ScalarProperty Name="Prn_Active" ColumnName="Prn_Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schede">
+            <EntityTypeMapping TypeName="DB_FactoryModel.Schede">
+              <MappingFragment StoreEntitySet="Schede">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Prod_Sch" ColumnName="Prod_Sch" />
+                <ScalarProperty Name="Prod_Fam" ColumnName="Prod_Fam" />
+                <ScalarProperty Name="Prod_Descrizione" ColumnName="Prod_Descrizione" />
+                <ScalarProperty Name="Prod_Image_Url" ColumnName="Prod_Image_Url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Software">
+            <EntityTypeMapping TypeName="DB_FactoryModel.Software">
+              <MappingFragment StoreEntitySet="Software">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SW_Code" ColumnName="SW_Code" />
+                <ScalarProperty Name="SW_Fam_Prod" ColumnName="SW_Fam_Prod" />
+                <ScalarProperty Name="SW_Customer" ColumnName="SW_Customer" />
+                <ScalarProperty Name="SW_SchedeCompatibili" ColumnName="SW_SchedeCompatibili" />
+                <ScalarProperty Name="SW_Microchip_Code" ColumnName="SW_Microchip_Code" />
+                <ScalarProperty Name="SW_P_Opt_RF" ColumnName="SW_P_Opt_RF" />
+                <ScalarProperty Name="SW_P_Opt_Oled" ColumnName="SW_P_Opt_Oled" />
+                <ScalarProperty Name="SW_P_Opt_Accel" ColumnName="SW_P_Opt_Accel" />
+                <ScalarProperty Name="SW_P_Opt_SP" ColumnName="SW_P_Opt_SP" />
+                <ScalarProperty Name="SW_P_Opt_Buzzer" ColumnName="SW_P_Opt_Buzzer" />
+                <ScalarProperty Name="SW_P_Opt_Vibracall" ColumnName="SW_P_Opt_Vibracall" />
+                <ScalarProperty Name="SW_P_Opt_LedTorch" ColumnName="SW_P_Opt_LedTorch" />
+                <ScalarProperty Name="SW_P_Opt_EmButt" ColumnName="SW_P_Opt_EmButt" />
+                <ScalarProperty Name="SW_P_Opt_Use_Backlight" ColumnName="SW_P_Opt_Use_Backlight" />
+                <ScalarProperty Name="SW_P_Opt_ShiftPage" ColumnName="SW_P_Opt_ShiftPage" />
+                <ScalarProperty Name="SW_P_Opt_Use_Accel" ColumnName="SW_P_Opt_Use_Accel" />
+                <ScalarProperty Name="SW_P_Opt_Use_SP" ColumnName="SW_P_Opt_Use_SP" />
+                <ScalarProperty Name="SW_P_Opt_Use_Buzzer" ColumnName="SW_P_Opt_Use_Buzzer" />
+                <ScalarProperty Name="SW_P_Opt_Use_Vibracall" ColumnName="SW_P_Opt_Use_Vibracall" />
+                <ScalarProperty Name="SW_P_Opt_Use_LedTorch" ColumnName="SW_P_Opt_Use_LedTorch" />
+                <ScalarProperty Name="SW_P_Opt_MaxPairDevices" ColumnName="SW_P_Opt_MaxPairDevices" />
+                <ScalarProperty Name="SW_R_Opt_RF" ColumnName="SW_R_Opt_RF" />
+                <ScalarProperty Name="SW_R_Opt_Plug_Exp" ColumnName="SW_R_Opt_Plug_Exp" />
+                <ScalarProperty Name="SW_R_Opt_Plug_Ple" ColumnName="SW_R_Opt_Plug_Ple" />
+                <ScalarProperty Name="SW_R_Opt_Em_Keyb" ColumnName="SW_R_Opt_Em_Keyb" />
+                <ScalarProperty Name="SW_R_Opt_Status_Led" ColumnName="SW_R_Opt_Status_Led" />
+                <ScalarProperty Name="SW_R_Opt_Ext_Ant" ColumnName="SW_R_Opt_Ext_Ant" />
+                <ScalarProperty Name="SW_R_Opt_Can" ColumnName="SW_R_Opt_Can" />
+                <ScalarProperty Name="SW_R_Opt_Prop_Out" ColumnName="SW_R_Opt_Prop_Out" />
+                <ScalarProperty Name="SW_R_Opt_TimeOut" ColumnName="SW_R_Opt_TimeOut" />
+                <ScalarProperty Name="SW_R_Opt_Cont_Keys" ColumnName="SW_R_Opt_Cont_Keys" />
+                <ScalarProperty Name="SW_R_Opt_MaxPairDevices" ColumnName="SW_R_Opt_MaxPairDevices" />
+                <ScalarProperty Name="SW_R_Opt_ShiftPage" ColumnName="SW_R_Opt_ShiftPage" />
+                <ScalarProperty Name="SW_R_Opt_Output_No" ColumnName="SW_R_Opt_Output_No" />
+                <ScalarProperty Name="SW_R_Opt_Dig_Input_No" ColumnName="SW_R_Opt_Dig_Input_No" />
+                <ScalarProperty Name="SW_R_Opt_Ana_Input_No" ColumnName="SW_R_Opt_Ana_Input_No" />
+                <ScalarProperty Name="SW_Revisioni" ColumnName="SW_Revisioni" />
+                <ScalarProperty Name="SW_Funzionamento" ColumnName="SW_Funzionamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Nessuno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

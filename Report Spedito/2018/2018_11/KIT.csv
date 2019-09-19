@@ -1,0 +1,31 @@
+Articolo	Descrizione articolo	Commenti	Sequenza	Gruppo variante	Variante	Stato articolo	Tipo parte	Unità di misura alternativa	Coefficiente	Coefficiente impiego	Data inizio validità	Data scadenza	Descrizione supplementare	Assieme	Unità di misura base	Coefficiente impiego unità di misura base	Proprietà	Magazzino	Livello di pianificazione distinta base	Livello di pianificazione anagrafico articoli	Tipo legame	Riferimento pagina/sezione	Dati tecnici	Dati aggiuntivi legami	Regole su dimensioni	Regole su legami	Livello
+XKITCT042XAXX	KIT 868 TX TRENDRTX-8 SPEC. + RX CNTR8-6					Attivo	1 Prodotto finito	NR	0,0000	1,00000				XKITCT042XAXX	NR	1,000000000000000			0	0							0
+XANT000000070	ANT.AS433+SMA.M.RG58.433MHZ.L=1MT					Attivo	2 Semilavorato (gestito e documentato)	NR	0,0000	1,00000	03/08/2017			XKITCT042XAXX	NR	1,000000000000000			2	0							1
+XCBLSE181RBX	C529 - CABLAGGIO 868 RX CNTR - 6 + TELE					Attivo	2 Semilavorato (gestito e documentato)	NR	0,0000	1,00000	03/08/2017			XKITCT042XAXX	NR	1,000000000000000			0	0							1
+XETCXXX00045N	ETICHETTA ADESIVA BIANCA 35X13,5 IMB. RX					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	03/08/2017			XKITCT042XAXX	NR	1,000000000000000			0	0							1
+XETCXXX00052N	ETICHETTA ADESIVA BIANCA 35X13,5 IMB. CO					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	03/08/2017			XKITCT042XAXX	NR	1,000000000000000			0	0							1
+XETCXXX00065N	ETICHETTA ADESIVA BIANCA 35X13,5 IMB. TX					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	03/08/2017			XKITCT042XAXX	NR	1,000000000000000			0	0							1
+XMAN000000100	MANUALE DATA-SHEET					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	03/08/2017		STAMPA INTERNA	XKITCT042XAXX	NR	1,000000000000000			0	0							1
+XPCL000001401	PROCEDURA DI COLLAUDO 14 REV.1					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	03/08/2017			XKITCT042XAXX	NR	1,000000000000000			0	0							1
+XS201RACT011X	RICEVITORE 868/915 CONTROLLER 8 (8OUT, 1					Attivo	1 Prodotto finito	NR	0,0000	1,00000	03/08/2017			XKITCT042XAXX	NR	1,000000000000000			0	0							1
+XBOX000000110	GUARNIZIONE BOX CONTROLLER 8					Attivo	4 Materiale di acquisto (gestito e documentato)	NR	0,0000	1,00000	03/08/2017			XS201RACT011X	NR	1,000000000000000			0	0							2
+XBOX000000150	SCOCCA BOX CONTROLLER 8 CON FORO G. LUCE					Attivo	2 Semilavorato (gestito e documentato)	NR	0,0000	1,00000	03/08/2017			XS201RACT011X	NR	1,000000000000000			2	0							2
+XCAV000000110	UTILIZZARE XCAV000000120					Attivo	4 Materiale di acquisto (gestito e documentato)	PZ	0,0000	1,00000	03/08/2017			XS201RACT011X	PZ	1,000000000000000			0	0							2
+XCNT000002510	CONNET.SMA DA CST 90 ° TYCO 5-1814400-1					Attivo	4 Materiale di acquisto (gestito e documentato)	NR	0,0000	1,00000	03/08/2017			XS201RACT011X	NR	1,000000000000000			0	0							2
+XETCXXX00004X	ETICHETTA ADESIVA CONTROLLER 8 868MHZ (1					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	03/08/2017			XS201RACT011X	NR	1,000000000000000			0	0							2
+XMAN000001301	MAN.PER DOWNLOAD DoC DAL SITO WEB					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	03/08/2017			XS201RACT011X	NR	1,000000000000000			0	0							2
+XMEC000000280	DADO M4 H=4MM INOX A2 UNI 5587					Attivo	4 Materiale di acquisto (gestito e documentato)	NR	0,0000	2,00000	03/08/2017			XS201RACT011X	NR	2,000000000000000			0	0							2
+XMEC000001260	VITE METRICA IMPERDIBILE 4X22TESTA BOMBA					Attivo	4 Materiale di acquisto (gestito e documentato)	NR	0,0000	2,00000	03/08/2017			XS201RACT011X	NR	2,000000000000000			0	0							2
+XSCHSE203RAX	SCH.CNTR8.V1R3.868/915.8OUT.1IN					Attivo	2 Semilavorato (gestito e documentato)	NR	0,0000	1,00000	01/08/2018			XS201RACT011X	NR	1,000000000000000			0	0							2
+XSLV000010805	SCHEDA DI LAVORAZIONE 108 REV.5					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	16/01/2018			XS201RACT011X	NR	1,000000000000000			0	0							2
+XSWR006A8101X	SOFTWARE COD. SW006A8 REV 1.01					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	24/10/2017			XS201RACT011X	NR	1,000000000000000			0	0							2
+XX041PXCT011X	PALMARE TRENDRTX - 8 SPECIALE CORMART					Attivo	1 Prodotto finito	NR	0,0000	1,00000	03/08/2017			XKITCT042XAXX	NR	1,000000000000000			0	0							1
+XBAT020000010	BATT.ALKALINA.1,5V.AA STILO					Attivo	4 Materiale di acquisto (gestito e documentato)	NR	0,0000	2,00000	01/05/2017			XX041PXCT011X	NR	2,000000000000000			0	0							2
+XBOX000000350	BOX PALMARE TREND TX CON GOMMA BLU (RAL					Attivo	4 Materiale di acquisto (gestito e documentato)	NR	0,0000	1,00000	22/05/2015			XX041PXCT011X	NR	1,000000000000000			0	0							2
+XMAN000001301	MAN.PER DOWNLOAD DoC DAL SITO WEB					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	13/06/2017			XX041PXCT011X	NR	1,000000000000000			0	0							2
+XMEC000001010	VITE AUTOFIL TC+ 2,2 X 9,5 ZINCATA BIANC					Attivo	4 Materiale di acquisto (gestito e documentato)	NR	0,0000	5,00000	22/05/2015			XX041PXCT011X	NR	5,000000000000000			0	0							2
+XMEC000001040	VITE METRICA TS+ 2.5X8 INOX UNI 7688					Attivo	4 Materiale di acquisto (gestito e documentato)	NR	0,0000	2,00000	22/05/2015			XX041PXCT011X	NR	2,000000000000000			0	0							2
+XSCHSE145PBX	SCH.TRENDRTX.V1R5.868/915.RF.RI					Attivo	2 Semilavorato (gestito e documentato)	NR	0,0000	1,00000	01/08/2018			XX041PXCT011X	NR	1,000000000000000			0	0							2
+XSERB08SS0051	S290 - SERIGRAFIA TRENDTX 8 TAST					Attivo	4 Materiale di acquisto (gestito e documentato)	NR	0,0000	1,00000	22/05/2015			XX041PXCT011X	NR	1,000000000000000			0	0							2
+XSWR006C3300Y	SOFTWARE COD. SW006C3 REV 3.00 - PREPOLI					Attivo	5 Materiale di acquisto (non gestito e non documentato)	NR	0,0000	1,00000	26/08/2018			XX041PXCT011X	NR	1,000000000000000			0	0							2
+XTSTB14SS0041	TASTIERA TRENDTX 14 TASTI + START E STOP					Attivo	4 Materiale di acquisto (gestito e documentato)	NR	0,0000	1,00000	22/05/2015			XX041PXCT011X	NR	1,000000000000000			0	0							2

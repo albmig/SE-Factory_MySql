@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GC_Dataset" targetNamespace="http://tempuri.org/GC_Dataset.xsd" xmlns:mstns="http://tempuri.org/GC_Dataset.xsd" xmlns="http://tempuri.org/GC_Dataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_FactoryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_FactoryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.DB_FactoryConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_FactoryConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_FactoryConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.DB_FactoryConnectionString1" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="GC_Dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="GC_Dataset" msprop:Generator_UserDSName="GC_Dataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Schede" msprop:Generator_TableClassName="SchedeDataTable" msprop:Generator_TableVarName="tableSchede" msprop:Generator_RowChangedName="SchedeRowChanged" msprop:Generator_TablePropName="Schede" msprop:Generator_RowDeletingName="SchedeRowDeleting" msprop:Generator_RowChangingName="SchedeRowChanging" msprop:Generator_RowEvHandlerName="SchedeRowChangeEventHandler" msprop:Generator_RowDeletedName="SchedeRowDeleted" msprop:Generator_RowClassName="SchedeRow" msprop:Generator_UserTableName="Schede" msprop:Generator_RowEvArgName="SchedeRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
+              <xs:element name="Prod_Sch" msprop:Generator_ColumnVarNameInTable="columnProd_Sch" msprop:Generator_ColumnPropNameInRow="Prod_Sch" msprop:Generator_ColumnPropNameInTable="Prod_SchColumn" msprop:Generator_UserColumnName="Prod_Sch" type="xs:string" minOccurs="0" />
+              <xs:element name="Prod_Fam" msprop:Generator_ColumnVarNameInTable="columnProd_Fam" msprop:Generator_ColumnPropNameInRow="Prod_Fam" msprop:Generator_ColumnPropNameInTable="Prod_FamColumn" msprop:Generator_UserColumnName="Prod_Fam" type="xs:int" minOccurs="0" />
+              <xs:element name="Prod_Descrizione" msprop:Generator_ColumnVarNameInTable="columnProd_Descrizione" msprop:Generator_ColumnPropNameInRow="Prod_Descrizione" msprop:Generator_ColumnPropNameInTable="Prod_DescrizioneColumn" msprop:Generator_UserColumnName="Prod_Descrizione" type="xs:string" minOccurs="0" />
+              <xs:element name="Prod_Image_Url" msprop:Generator_ColumnVarNameInTable="columnProd_Image_Url" msprop:Generator_ColumnPropNameInRow="Prod_Image_Url" msprop:Generator_ColumnPropNameInTable="Prod_Image_UrlColumn" msprop:Generator_UserColumnName="Prod_Image_Url" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
