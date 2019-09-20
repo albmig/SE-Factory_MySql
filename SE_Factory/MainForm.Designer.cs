@@ -60,7 +60,6 @@
             this.lab_sep_strip_01 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tool_Strip_label_Commander = new System.Windows.Forms.ToolStripStatusLabel();
             this.tool_Strip_path_Commander = new System.Windows.Forms.ToolStripStatusLabel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panel_Menu.SuspendLayout();
             this.panel_default_printer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).BeginInit();
@@ -558,21 +557,11 @@
             this.tool_Strip_path_Commander.Size = new System.Drawing.Size(127, 17);
             this.tool_Strip_path_Commander.Text = "toolStripStatusLabel1";
             // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(330, 54);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 23);
-            this.metroButton1.TabIndex = 5;
-            this.metroButton1.Text = "metroButton1";
-            this.metroButton1.UseSelectable = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 701);
-            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.panel_Application);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.statusStrip1);
@@ -628,7 +617,6 @@
         private MetroFramework.Controls.MetroTile menu_btn_Ordini;
         private MetroFramework.Controls.MetroPanel menu_spacer_09;
         private MetroFramework.Controls.MetroTile menu_btn_Spedizioni;
-        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
 

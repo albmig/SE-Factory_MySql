@@ -17,9 +17,9 @@ namespace SE_Factory
         DataTable dt_GC_FamProd = new DataTable("dt_GC_FamProd");
         DataTable dt_GC_Schede = new DataTable("dt_GC_Schede");
         DataTable dt_GC_Software = new DataTable("dt_GC_Software");
-        //DataSet ds_GC_FamProd = new DataSet("FamProd");
-        //DataSet ds_GC_Schede = new DataSet("Schede");
-        //DataSet ds_GC_Software = new DataSet("Software");
+        BindingSource bs_Fam_Prod = new BindingSource();
+        BindingSource bs_Schede = new BindingSource();
+        BindingSource bs_Software = new BindingSource();
 
         public MainForm()
         {
@@ -49,8 +49,13 @@ namespace SE_Factory
             menu_btn_Clienti.Visible = false;
             menu_spacer_06.Visible = false;
 
-            ////////////////////////////////
-            LoadMySQLData();
+            ////////////////////////////////////////////////////////////////
+
+            // LoadMySQLData();
+            // Tenuto x esempio. Sulla form Main è inutile
+            ///////////////////////////////////////////////////////////////
+
+
         }
 
         private void menu_btn_ID_Click(object sender, EventArgs e)
@@ -228,13 +233,6 @@ namespace SE_Factory
             ////////////////////////////////////////////////////////////////////////////////////
             // Caricamento tabelle MySQL
             ////////////////////////////////////////////////////////////////////////////////////
-            //DataTable dt_GC_FamProd = ds_Factory.Tables.Add("dt_GC_FamProd");
-            //DataTable dt_GC_Schede = ds_Factory.Tables.Add("dt_GC_Schede");
-            //DataTable dt_GC_Software = ds_Factory.Tables.Add("dt_GC_Software");
-
-            //ds_Factory.Tables.Add("dt_GC_FamProd");
-            //ds_Factory.Tables.Add("dt_GC_Schede");
-            //ds_Factory.Tables.Add("dt_GC_Software");
 
             Application.UseWaitCursor = true;
             dt_GC_FamProd = MySQLMgmt.Fill_SQL_FamProd();
@@ -262,29 +260,15 @@ namespace SE_Factory
             ds_Factory.Tables["dt_GC_Software"].ParentRelations.Add(dtRelSoftware_Fam);
 
             // Create a BindingSource  
-            BindingSource bs_Fam_Prod = new BindingSource();
+            //BindingSource bs_Fam_Prod = new BindingSource();
             bs_Fam_Prod.DataSource = ds_Factory.Tables["dt_GC_FamProd"];
-            BindingSource bs_Schede = new BindingSource();
+            //BindingSource bs_Schede = new BindingSource();
             bs_Schede.DataSource = ds_Factory.Tables["dt_GC_Schede"];
-            BindingSource bs_Software = new BindingSource();
+            //BindingSource bs_Software = new BindingSource();
             bs_Software.DataSource = ds_Factory.Tables["dt_GC_Software"];
 
 
             Application.UseWaitCursor = false;
-
-            //DataTable dt_GC_FamProd = new DataTable("FamProd");
-            //DataTable dt_GC_Schede = new DataTable("Schede");
-            //DataTable dt_GC_Software = new DataTable("Software");
-            //DataSet ds_GC_FamProd = new DataSet("FamProd");
-            //DataSet ds_GC_Schede = new DataSet("Schede");
-            //DataSet ds_GC_Software = new DataSet("Software");
-
-            // Setting Relations
-            //DataColumn parentColumn = dt_GC_Software["SW_Fam_Prod"];
-            //DataColumn childColumn = dt_GC_FamProd["Id"];
-            //DataRelation relation = new System.Data.DataRelation("SuppliersProducts", parentColumn, childColumn);
-            //dataSet.Relations.Add(relation);
-
         }
     }
 }
