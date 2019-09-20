@@ -116,6 +116,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bs_Fam_Prod_CurrentChanged.cs" />
     <Compile Include="DB_FactoryDataSet.cs">
       <DependentUpon>DB_FactoryDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

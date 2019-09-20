@@ -32,6 +32,19 @@ namespace SE_Factory
             InitializeComponent();
         }
 
+        private void famProdBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            if (famProdBindingSource.Current != null)
+            {
+                DataRow currentRow = ((DataRowView)famProdBindingSource.Current).Row;
+
+                GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
+                GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
+                GVar.glob_result_id[0] = Convert.ToChar(currentRow["Fam_Hex_ID"]);
+                Setting_Form();
+            }
+        }
+
         private void ID_timer_Tick(object sender, EventArgs e)
         {
             Calcola_ID_Palmare();
@@ -182,9 +195,9 @@ namespace SE_Factory
             if ((GVar.glob_form_status == "E") || (GVar.glob_form_status == "V"))
             {
                 //Visualizzo i dati in base ai valori del record
-                if (bs_Software.Current != null)
+                if (famProdSoftwareBindingSource.Current != null)
                 {
-                    DataRow SW_view = ((DataRowView)bs_Software.Current).Row;
+                    DataRow SW_view = ((DataRowView)famProdSoftwareBindingSource.Current).Row;
 
                     FromRecordToForm(SW_view);
                 }
@@ -248,7 +261,6 @@ namespace SE_Factory
         {
             LoadMySQLData();
             ID_combo_Famiglia.DataSource = bs_Fam_Prod;
-            ID_combo_Famiglia.DisplayMember = "Fam_Name";
             grid_SW_codificati.DataSource = bs_Software;
 
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
@@ -275,9 +287,9 @@ namespace SE_Factory
                 PdfStamper pdfStamper = new PdfStamper(pdfReader, outFile);
                 AcroFields fields = pdfStamper.AcroFields;
 
-                if ((bs_Software.Current != null) && (GVar.glob_tipo_item == "P"))
+                if ((famProdSoftwareBindingSource.Current != null) && (GVar.glob_tipo_item == "P"))
                 {
-                    DataRow SW_view = ((DataRowView)bs_Software.Current).Row;
+                    DataRow SW_view = ((DataRowView)famProdSoftwareBindingSource.Current).Row;
 
                     fields.SetField("Customer", SW_view["SW_Customer"].ToString());
                     fields.SetField("SW_Code", SW_view["SW_Code"].ToString());
@@ -329,7 +341,7 @@ namespace SE_Factory
 
         private void modificaCodiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataRow currentRow = ((DataRowView)bs_Software.Current).Row;
+            DataRow currentRow = ((DataRowView)famProdSoftwareBindingSource.Current).Row;
 
             //// Get the selected row from the ListBox
             //int index = dB_FactoryDataSet.Software;
@@ -372,6 +384,21 @@ namespace SE_Factory
             this.Parent.Controls.Remove(this);
         }
 
+        private void famProdSoftwareBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            Setting_Form();
+
+            if (famProdSoftwareBindingSource.Count != 0)
+            {
+                DataRow SW_view = ((DataRowView)famProdSoftwareBindingSource.Current).Row;
+                FromRecordToForm(SW_view);
+            }
+            else
+            {
+                AzzeraVarForm();
+            }
+        }
+
         private void creaPdfToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreaPDF();
@@ -408,7 +435,7 @@ namespace SE_Factory
         private void creaRevisioneToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataRow SW_new_record = dB_FactoryDataSet.Software.NewRow();
-            SW_new_record.ItemArray = ((DataRowView)bs_Software.Current).Row.ItemArray;
+            SW_new_record.ItemArray = ((DataRowView)famProdSoftwareBindingSource.Current).Row.ItemArray;
             string addline = "\n----------------------------------------\n";
 
             //memorizzo l'id del record su cui sono posizionato, nel caso venga annullato l'inserimento
@@ -425,7 +452,7 @@ namespace SE_Factory
 
             //dB_FactoryDataSet.Software.FindById(lastnumber);
 
-            bs_Software.Position = bs_Software.Find("Id", lastnumber);
+            famProdSoftwareBindingSource.Position = famProdSoftwareBindingSource.Find("Id", lastnumber);
 
             GVar.glob_form_status = "E";
             Setting_Form();
@@ -435,9 +462,9 @@ namespace SE_Factory
         {
             dB_FactoryDataSet.Software.RejectChanges();
 
-            bs_Software.CancelEdit();
+            famProdSoftwareBindingSource.CancelEdit();
 
-            bs_Software.Position = bs_Software.Find("Id", GVar.Last_SW_ID_Record);
+            famProdSoftwareBindingSource.Position = famProdSoftwareBindingSource.Find("Id", GVar.Last_SW_ID_Record);
 
             GVar.glob_form_status = "V";
             Setting_Form();
@@ -467,13 +494,13 @@ namespace SE_Factory
 
             if (GVar.glob_form_status == "E")
             {
-                DataRow currentRow = ((DataRowView)bs_Software.Current).Row;
+                DataRow currentRow = ((DataRowView)famProdSoftwareBindingSource.Current).Row;
                 FromRowToRecord(currentRow);
 
                 try
                 {
                     //this.Validate;
-                    this.bs_Fam_Prod.EndEdit();
+                    this.famProdBindingSource.EndEdit();
                     this.softwareTableAdapter.Update(this.dB_FactoryDataSet.Software);
                 }
                 catch (System.Exception ex)
@@ -488,11 +515,15 @@ namespace SE_Factory
 
         private void FromRowToRecord(DataRow SW_new_record)
         {
+            //DataRow SW_new_record = dB_FactoryDataSet.Software.NewRow();
+            //SW_new_record.ItemArray = ((DataRowView)famProdSoftwareBindingSource.Current).Row.ItemArray;
+
+
             //Ricostruisco il codice del software
             string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
             SW_new_record["SW_Code"] = nome_sw;
 
-            DataRowView famiglie = (DataRowView)bs_Fam_Prod.Current;
+            DataRowView famiglie = (DataRowView)famProdBindingSource.Current;
 
             //SW_new_record["SW_Fam_Prod"] = ID_combo_Famiglia.ValueMember;
             SW_new_record["SW_Fam_Prod"] = famiglie["Id"];
@@ -772,6 +803,39 @@ namespace SE_Factory
             //}
         }
 
+        //private void PopulateTreeView(DataTable dtParent)
+        //{
+        //    treeView1.Nodes.Clear();
+
+        //    treeView1.BeginUpdate();
+
+        //    // Iterate throght the DataRow Collection
+        //    foreach (DataRow dr in dtParent.Rows)
+        //    {
+        //        string nparent = dr["SW_Versione"].ToString().PadLeft(5, '0');
+        //        string nchild = dr["SW_Revisione"].ToString().PadLeft(3, '0');
+
+        //        TreeNode Node = treeView1.Nodes.Add("Node for " + nparent);
+
+        //        if (Node != null)
+        //        {
+        //            int iCol = 0;
+
+        //            foreach (var item in dr.ItemArray)
+        //            {
+        //                string itemString = item as string;
+        //                if (itemString != null && itemString.Length > 0)
+        //                {
+        //                    Node.Nodes.Add(dtParent.Columns[iCol].ColumnName + " - " + itemString);
+        //                }
+
+        //                iCol++;
+        //            }
+        //        }
+        //    }
+        //    treeView1.EndUpdate();
+        //}
+
         private void SettingGridGrouping()
         {
             // Row selection
@@ -838,27 +902,11 @@ namespace SE_Factory
 
         void Fam_Prod_CurrentChanged(object sender, EventArgs e)
         {
-            if (bs_Fam_Prod.Current != null)
-            {
-                DataRow currentRow = ((DataRowView)bs_Fam_Prod.Current).Row;
-
-                GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
-                GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
-                GVar.glob_result_id[0] = Convert.ToChar(currentRow["Fam_Hex_ID"]);
-                Setting_Form();
-            }
-        }
-        void Schede_CurrentChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("Schede_CurrentChanged");
-        }
-        void Software_CurrentChanged(object sender, EventArgs e)
-        {
             Setting_Form();
 
-            if (bs_Software.Count != 0)
+            if (famProdSoftwareBindingSource.Count != 0)
             {
-                DataRow SW_view = ((DataRowView)bs_Software.Current).Row;
+                DataRow SW_view = ((DataRowView)famProdSoftwareBindingSource.Current).Row;
                 FromRecordToForm(SW_view);
             }
             else
@@ -866,5 +914,15 @@ namespace SE_Factory
                 AzzeraVarForm();
             }
         }
-    } 
+
+        void Schede_CurrentChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Schede_CurrentChanged");
+        }
+        void Software_CurrentChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Software_CurrentChanged");
+        }
+
+    }
 }
