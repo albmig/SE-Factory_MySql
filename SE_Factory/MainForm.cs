@@ -238,11 +238,38 @@ namespace SE_Factory
 
             Application.UseWaitCursor = true;
             dt_GC_FamProd = MySQLMgmt.Fill_SQL_FamProd();
+            dt_GC_FamProd.TableName = "dt_GC_FamProd";
             ds_Factory.Tables.Add(dt_GC_FamProd);
+
             dt_GC_Schede = MySQLMgmt.Fill_SQL_Schede();
+            dt_GC_Schede.TableName = "dt_GC_Schede";
             ds_Factory.Tables.Add(dt_GC_Schede);
+
             dt_GC_Software = MySQLMgmt.Fill_SQL_Software();
+            dt_GC_Software.TableName = "dt_GC_Software";
             ds_Factory.Tables.Add(dt_GC_Software);
+
+            DataRelation dtRelSchede_Fam;
+            DataColumn FamSchCol = ds_Factory.Tables["dt_GC_FamProd"].Columns["Id"];
+            DataColumn SchedeCol = ds_Factory.Tables["dt_GC_Schede"].Columns["Prod_Fam"];
+            dtRelSchede_Fam = new DataRelation("Schede_Fam_relation ", FamSchCol, SchedeCol);
+            ds_Factory.Tables["dt_GC_Schede"].ParentRelations.Add(dtRelSchede_Fam);
+
+            DataRelation dtRelSoftware_Fam;
+            DataColumn FamSwCol = ds_Factory.Tables["dt_GC_FamProd"].Columns["Id"];
+            DataColumn SoftwareCol = ds_Factory.Tables["dt_GC_Software"].Columns["SW_Fam_Prod"];
+            dtRelSoftware_Fam = new DataRelation("Software_Fam_relation ", FamSwCol, SoftwareCol);
+            ds_Factory.Tables["dt_GC_Software"].ParentRelations.Add(dtRelSoftware_Fam);
+
+            // Create a BindingSource  
+            BindingSource bs_Fam_Prod = new BindingSource();
+            bs_Fam_Prod.DataSource = ds_Factory.Tables["dt_GC_FamProd"];
+            BindingSource bs_Schede = new BindingSource();
+            bs_Schede.DataSource = ds_Factory.Tables["dt_GC_Schede"];
+            BindingSource bs_Software = new BindingSource();
+            bs_Software.DataSource = ds_Factory.Tables["dt_GC_Software"];
+
+
             Application.UseWaitCursor = false;
 
             //DataTable dt_GC_FamProd = new DataTable("FamProd");
