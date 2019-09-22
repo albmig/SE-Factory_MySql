@@ -104,6 +104,7 @@
             this.SW_lab_Famiglia = new MetroFramework.Controls.MetroLabel();
             this.ID_combo_Famiglia = new System.Windows.Forms.ComboBox();
             this.pan_SW_Titolo = new MetroFramework.Controls.MetroPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.titolo_ID = new MetroFramework.Controls.MetroLabel();
             this.fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.Fam_ProdTableAdapter();
             this.schedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.SchedeTableAdapter();
@@ -215,6 +216,7 @@
             this.pan_P_top_top.SuspendLayout();
             this.pan_SW_Codifica.SuspendLayout();
             this.pan_SW_Titolo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SW_Layout.SuspendLayout();
             this.pan_Menu_comandi.SuspendLayout();
             this.pan_Menu_salva.SuspendLayout();
@@ -251,7 +253,7 @@
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarBarColor = true;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarSize = 10;
-            this.pan_P_Dx_Funzionamento.Location = new System.Drawing.Point(783, 423);
+            this.pan_P_Dx_Funzionamento.Location = new System.Drawing.Point(783, 695);
             this.pan_P_Dx_Funzionamento.Name = "pan_P_Dx_Funzionamento";
             this.pan_P_Dx_Funzionamento.Size = new System.Drawing.Size(514, 300);
             this.pan_P_Dx_Funzionamento.TabIndex = 12;
@@ -326,7 +328,7 @@
             this.pan_P_Dx_revisioni.HorizontalScrollbarBarColor = true;
             this.pan_P_Dx_revisioni.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_P_Dx_revisioni.HorizontalScrollbarSize = 10;
-            this.pan_P_Dx_revisioni.Location = new System.Drawing.Point(783, 267);
+            this.pan_P_Dx_revisioni.Location = new System.Drawing.Point(783, 539);
             this.pan_P_Dx_revisioni.Name = "pan_P_Dx_revisioni";
             this.pan_P_Dx_revisioni.Size = new System.Drawing.Size(514, 150);
             this.pan_P_Dx_revisioni.TabIndex = 11;
@@ -399,7 +401,7 @@
             this.pan_SW_P.HorizontalScrollbarBarColor = true;
             this.pan_SW_P.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_SW_P.HorizontalScrollbarSize = 10;
-            this.pan_SW_P.Location = new System.Drawing.Point(3, 267);
+            this.pan_SW_P.Location = new System.Drawing.Point(3, 539);
             this.pan_SW_P.Name = "pan_SW_P";
             this.SW_Layout.SetRowSpan(this.pan_SW_P, 2);
             this.pan_SW_P.Size = new System.Drawing.Size(774, 456);
@@ -1025,7 +1027,7 @@
             this.pan_SW_Codifica.HorizontalScrollbarBarColor = true;
             this.pan_SW_Codifica.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_SW_Codifica.HorizontalScrollbarSize = 10;
-            this.pan_SW_Codifica.Location = new System.Drawing.Point(3, 242);
+            this.pan_SW_Codifica.Location = new System.Drawing.Point(3, 514);
             this.pan_SW_Codifica.Name = "pan_SW_Codifica";
             this.pan_SW_Codifica.Size = new System.Drawing.Size(1294, 19);
             this.pan_SW_Codifica.TabIndex = 17;
@@ -1108,7 +1110,7 @@
             // 
             this.SW_lab_Famiglia.AutoSize = true;
             this.SW_lab_Famiglia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SW_lab_Famiglia.Location = new System.Drawing.Point(3, 53);
+            this.SW_lab_Famiglia.Location = new System.Drawing.Point(3, 325);
             this.SW_lab_Famiglia.Name = "SW_lab_Famiglia";
             this.SW_lab_Famiglia.Size = new System.Drawing.Size(124, 19);
             this.SW_lab_Famiglia.TabIndex = 3;
@@ -1124,7 +1126,7 @@
             this.ID_combo_Famiglia.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID_combo_Famiglia.FormattingEnabled = true;
             this.ID_combo_Famiglia.ItemHeight = 15;
-            this.ID_combo_Famiglia.Location = new System.Drawing.Point(133, 56);
+            this.ID_combo_Famiglia.Location = new System.Drawing.Point(133, 328);
             this.ID_combo_Famiglia.Name = "ID_combo_Famiglia";
             this.ID_combo_Famiglia.Size = new System.Drawing.Size(254, 23);
             this.ID_combo_Famiglia.TabIndex = 6;
@@ -1132,6 +1134,7 @@
             // pan_SW_Titolo
             // 
             this.SW_Layout.SetColumnSpan(this.pan_SW_Titolo, 10);
+            this.pan_SW_Titolo.Controls.Add(this.dataGridView1);
             this.pan_SW_Titolo.Controls.Add(this.titolo_ID);
             this.pan_SW_Titolo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_SW_Titolo.HorizontalScrollbarBarColor = true;
@@ -1139,12 +1142,20 @@
             this.pan_SW_Titolo.HorizontalScrollbarSize = 10;
             this.pan_SW_Titolo.Location = new System.Drawing.Point(3, 3);
             this.pan_SW_Titolo.Name = "pan_SW_Titolo";
-            this.pan_SW_Titolo.Size = new System.Drawing.Size(1294, 22);
+            this.pan_SW_Titolo.Size = new System.Drawing.Size(1294, 294);
             this.pan_SW_Titolo.TabIndex = 18;
             this.pan_SW_Titolo.UseCustomBackColor = true;
             this.pan_SW_Titolo.VerticalScrollbarBarColor = true;
             this.pan_SW_Titolo.VerticalScrollbarHighlightOnWheel = false;
             this.pan_SW_Titolo.VerticalScrollbarSize = 10;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(300, 9);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 3;
             // 
             // titolo_ID
             // 
@@ -1209,12 +1220,10 @@
             this.SW_Layout.Location = new System.Drawing.Point(0, 0);
             this.SW_Layout.Name = "SW_Layout";
             this.SW_Layout.RowCount = 8;
-            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1239,7 +1248,7 @@
             this.menu_sw_creapdf,
             this.menu_sw_div05,
             this.visualizzaTuttoToolStripMenuItem});
-            this.pan_Menu_comandi.Location = new System.Drawing.Point(0, 28);
+            this.pan_Menu_comandi.Location = new System.Drawing.Point(0, 300);
             this.pan_Menu_comandi.Name = "pan_Menu_comandi";
             this.pan_Menu_comandi.Size = new System.Drawing.Size(780, 24);
             this.pan_Menu_comandi.TabIndex = 12;
@@ -1335,7 +1344,7 @@
             this.menu_sw_salva,
             this.menu_sw_div12,
             this.menu_sw_annulla});
-            this.pan_Menu_salva.Location = new System.Drawing.Point(780, 28);
+            this.pan_Menu_salva.Location = new System.Drawing.Point(780, 300);
             this.pan_Menu_salva.Name = "pan_Menu_salva";
             this.pan_Menu_salva.Size = new System.Drawing.Size(390, 24);
             this.pan_Menu_salva.TabIndex = 55;
@@ -1379,7 +1388,7 @@
             this.pan_Menu_exit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem5,
             this.menu_sw_exit});
-            this.pan_Menu_exit.Location = new System.Drawing.Point(1170, 28);
+            this.pan_Menu_exit.Location = new System.Drawing.Point(1170, 300);
             this.pan_Menu_exit.Name = "pan_Menu_exit";
             this.pan_Menu_exit.Size = new System.Drawing.Size(130, 24);
             this.pan_Menu_exit.TabIndex = 19;
@@ -1410,10 +1419,10 @@
             this.pan_SW_C.HorizontalScrollbarBarColor = true;
             this.pan_SW_C.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_SW_C.HorizontalScrollbarSize = 10;
-            this.pan_SW_C.Location = new System.Drawing.Point(3, 729);
+            this.pan_SW_C.Location = new System.Drawing.Point(3, 1001);
             this.pan_SW_C.Name = "pan_SW_C";
             this.SW_Layout.SetRowSpan(this.pan_SW_C, 3);
-            this.pan_SW_C.Size = new System.Drawing.Size(774, 1519);
+            this.pan_SW_C.Size = new System.Drawing.Size(774, 1647);
             this.pan_SW_C.TabIndex = 56;
             this.pan_SW_C.VerticalScrollbarBarColor = true;
             this.pan_SW_C.VerticalScrollbarHighlightOnWheel = false;
@@ -1469,7 +1478,7 @@
             this.pan_C_middle.HorizontalScrollbarSize = 10;
             this.pan_C_middle.Location = new System.Drawing.Point(0, 160);
             this.pan_C_middle.Name = "pan_C_middle";
-            this.pan_C_middle.Size = new System.Drawing.Size(774, 1359);
+            this.pan_C_middle.Size = new System.Drawing.Size(774, 1487);
             this.pan_C_middle.TabIndex = 42;
             this.pan_C_middle.VerticalScrollbarBarColor = true;
             this.pan_C_middle.VerticalScrollbarHighlightOnWheel = false;
@@ -2140,7 +2149,7 @@
             this.pan_C_Dx_revisioni.HorizontalScrollbarBarColor = true;
             this.pan_C_Dx_revisioni.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_C_Dx_revisioni.HorizontalScrollbarSize = 10;
-            this.pan_C_Dx_revisioni.Location = new System.Drawing.Point(783, 729);
+            this.pan_C_Dx_revisioni.Location = new System.Drawing.Point(783, 1001);
             this.pan_C_Dx_revisioni.Name = "pan_C_Dx_revisioni";
             this.pan_C_Dx_revisioni.Size = new System.Drawing.Size(514, 150);
             this.pan_C_Dx_revisioni.TabIndex = 11;
@@ -2213,7 +2222,7 @@
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarBarColor = true;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarSize = 10;
-            this.pan_C_Dx_Funzionamento.Location = new System.Drawing.Point(783, 885);
+            this.pan_C_Dx_Funzionamento.Location = new System.Drawing.Point(783, 1157);
             this.pan_C_Dx_Funzionamento.Name = "pan_C_Dx_Funzionamento";
             this.pan_C_Dx_Funzionamento.Size = new System.Drawing.Size(514, 300);
             this.pan_C_Dx_Funzionamento.TabIndex = 12;
@@ -2289,7 +2298,7 @@
             this.grid_SW_codificati.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grid_SW_codificati.GridOfficeScrollBars = Syncfusion.Windows.Forms.OfficeScrollBars.Metro;
             this.grid_SW_codificati.GridVisualStyles = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
-            this.grid_SW_codificati.Location = new System.Drawing.Point(393, 56);
+            this.grid_SW_codificati.Location = new System.Drawing.Point(393, 328);
             this.grid_SW_codificati.Name = "grid_SW_codificati";
             this.grid_SW_codificati.ShowCurrentCellBorderBehavior = Syncfusion.Windows.Forms.Grid.GridShowCurrentCellBorder.GrayWhenLostFocus;
             this.grid_SW_codificati.ShowRowHeaders = false;
@@ -2355,6 +2364,7 @@
             this.pan_SW_Codifica.PerformLayout();
             this.pan_SW_Titolo.ResumeLayout(false);
             this.pan_SW_Titolo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.SW_Layout.ResumeLayout(false);
             this.SW_Layout.PerformLayout();
             this.pan_Menu_comandi.ResumeLayout(false);
@@ -2552,5 +2562,6 @@
         private System.Windows.Forms.ToolStripMenuItem menu_sw_div05;
         private System.Windows.Forms.ToolStripMenuItem visualizzaTuttoToolStripMenuItem;
         private Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl grid_SW_codificati;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

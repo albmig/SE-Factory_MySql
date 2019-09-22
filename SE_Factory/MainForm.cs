@@ -60,6 +60,8 @@ namespace SE_Factory
 
         private void menu_btn_ID_Click(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
+
             UC_form_ID frm_child = new UC_form_ID();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -71,6 +73,8 @@ namespace SE_Factory
             panel_Menu.Visible = false;
             panel_Application.Dock = DockStyle.Fill;
             panel_Application.Visible = true;
+
+            Application.UseWaitCursor = false;
         }
 
         private void panel_Application_ControlRemoved(object sender, ControlEventArgs e)
@@ -81,6 +85,8 @@ namespace SE_Factory
 
         private void menu_btn_printer_Click(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
+
             UC_form_Printers frm_child = new UC_form_Printers();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -93,6 +99,8 @@ namespace SE_Factory
             panel_Menu.Visible = false;
             panel_Application.Dock = DockStyle.Fill;
             panel_Application.Visible = true;
+
+            Application.UseWaitCursor = false;
         }
 
         private void bt_Home_Click(object sender, EventArgs e)
@@ -120,6 +128,8 @@ namespace SE_Factory
 
         private void menu_btn_prodotti_Click(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
+
             UC_form_Prodotti frm_child = new UC_form_Prodotti();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -132,10 +142,14 @@ namespace SE_Factory
             panel_Menu.Visible = false;
             panel_Application.Dock = DockStyle.Fill;
             panel_Application.Visible = true;
+
+            Application.UseWaitCursor = false;
         }
 
         private void menu_btn_Sw_Click(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
+
             UC_form_Sw frm_child = new UC_form_Sw();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -148,10 +162,14 @@ namespace SE_Factory
             panel_Menu.Visible = false;
             panel_Application.Dock = DockStyle.Fill;
             panel_Application.Visible = true;
+
+            Application.UseWaitCursor = false;
         }
 
         private void menu_btn_Clienti_Click(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
+
             UC_form_Clienti frm_child = new UC_form_Clienti();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -165,10 +183,13 @@ namespace SE_Factory
             panel_Application.Dock = DockStyle.Fill;
             panel_Application.Visible = true;
 
+            Application.UseWaitCursor = false;
         }
 
         private void menu_btn_paths_Click(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
+
             UC_form_Paths frm_child = new UC_form_Paths();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -180,10 +201,14 @@ namespace SE_Factory
             panel_Menu.Visible = false;
             panel_Application.Dock = DockStyle.Fill;
             panel_Application.Visible = true;
+
+            Application.UseWaitCursor = false;
         }
 
         private void menu_btn_Gecko_Click(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
+
             UC_form_Gecko frm_child = new UC_form_Gecko();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -195,10 +220,14 @@ namespace SE_Factory
             panel_Menu.Visible = false;
             panel_Application.Dock = DockStyle.Fill;
             panel_Application.Visible = true;
+
+            Application.UseWaitCursor = false;
         }
 
         private void menu_btn_Ordini_Click(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
+
             UC_form_Ordini frm_child = new UC_form_Ordini();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -211,10 +240,13 @@ namespace SE_Factory
             panel_Application.Dock = DockStyle.Fill;
             panel_Application.Visible = true;
 
+            Application.UseWaitCursor = false;
         }
 
         private void menu_btn_Spedizioni_Click(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
+
             UC_form_Spedizioni frm_child = new UC_form_Spedizioni();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -226,6 +258,8 @@ namespace SE_Factory
             panel_Menu.Visible = false;
             panel_Application.Dock = DockStyle.Fill;
             panel_Application.Visible = true;
+
+            Application.UseWaitCursor = false;
         }
 
         private void LoadMySQLData()

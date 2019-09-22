@@ -17,12 +17,13 @@ namespace SE_Factory
     public partial class UC_form_Sw : UserControl
     {
         DataSet ds_Factory = new DataSet();
-        DataTable dt_GC_FamProd = new DataTable("dt_GC_FamProd");
-        DataTable dt_GC_Schede = new DataTable("dt_GC_Schede");
-        DataTable dt_GC_Software = new DataTable("dt_GC_Software");
+        static DataTable dt_GC_FamProd = new DataTable("dt_GC_FamProd");
+        static DataTable dt_GC_Schede = new DataTable("dt_GC_Schede");
+        static DataTable dt_GC_Software = new DataTable("dt_GC_Software");
         BindingSource bs_Fam_Prod = new BindingSource();
         BindingSource bs_Schede = new BindingSource();
         BindingSource bs_Software = new BindingSource();
+        DataView dvSoftware = new DataView();
 
         public string SchedeCompatibili_SW = "";
         public string TemplateFolder = @"D:\VS2017 - Projects\SE_Factory\Prova Moduli SW\Template_PDF_Software.pdf";
@@ -246,10 +247,15 @@ namespace SE_Factory
 
         private void UC_form_Sw_Load(object sender, EventArgs e)
         {
+            Application.UseWaitCursor = true;
+
             LoadMySQLData();
             ID_combo_Famiglia.DataSource = bs_Fam_Prod;
             ID_combo_Famiglia.DisplayMember = "Fam_Name";
             grid_SW_codificati.DataSource = bs_Software;
+
+            dataGridView1.DataSource = bs_Software;
+            dataGridView1.Refresh();
 
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
             //this.softwareTableAdapter.Fill(this.dB_FactoryDataSet.Software);
@@ -259,6 +265,8 @@ namespace SE_Factory
             //this.schedeTableAdapter.Fill(this.dB_FactoryDataSet.Schede);
 
             //Setting_Form();
+
+            Application.UseWaitCursor = false;
         }
 
         private void CreaPDF()
@@ -801,36 +809,42 @@ namespace SE_Factory
 
             dt_GC_FamProd = MySQLMgmt.Fill_SQL_FamProd();
             dt_GC_FamProd.TableName = "dt_GC_FamProd";
+            dt_GC_FamProd.PrimaryKey = new DataColumn[] {dt_GC_FamProd.Columns["Id"]};
             ds_Factory.Tables.Add(dt_GC_FamProd);
 
             dt_GC_Schede = MySQLMgmt.Fill_SQL_Schede();
             dt_GC_Schede.TableName = "dt_GC_Schede";
+            dt_GC_Schede.PrimaryKey = new DataColumn[] { dt_GC_Schede.Columns["Id"] };
             ds_Factory.Tables.Add(dt_GC_Schede);
 
             dt_GC_Software = MySQLMgmt.Fill_SQL_Software();
             dt_GC_Software.TableName = "dt_GC_Software";
+            dt_GC_Software.PrimaryKey = new DataColumn[] { dt_GC_Software.Columns["Id"] };
             ds_Factory.Tables.Add(dt_GC_Software);
 
-            DataRelation dtRelSchede_Fam;
-            DataColumn FamSchCol = ds_Factory.Tables["dt_GC_FamProd"].Columns["Id"];
-            DataColumn SchedeCol = ds_Factory.Tables["dt_GC_Schede"].Columns["Prod_Fam"];
-            dtRelSchede_Fam = new DataRelation("Schede_Fam_relation ", FamSchCol, SchedeCol);
-            ds_Factory.Tables["dt_GC_Schede"].ParentRelations.Add(dtRelSchede_Fam);
+            //ds_Factory.Relations.Add("rel_PFamProd_FSoftware", dt_GC_Software.Columns["SW_Fam_Prod"], dt_GC_FamProd.Columns["ID"]);
 
-            DataRelation dtRelSoftware_Fam;
-            DataColumn FamSwCol = ds_Factory.Tables["dt_GC_FamProd"].Columns["Id"];
-            DataColumn SoftwareCol = ds_Factory.Tables["dt_GC_Software"].Columns["SW_Fam_Prod"];
-            dtRelSoftware_Fam = new DataRelation("Software_Fam_relation ", FamSwCol, SoftwareCol);
-            ds_Factory.Tables["dt_GC_Software"].ParentRelations.Add(dtRelSoftware_Fam);
+            //           DataRelation rel_PFamProd_FSchede;
+            //           DataColumn FamProdColId1 = ds_Factory.Tables["dt_GC_FamProd"].Columns["Id"];
+            //           DataColumn SchedeCol = ds_Factory.Tables["dt_GC_Schede"].Columns["Prod_Fam"];
+            //           rel_PFamProd_FSchede = new DataRelation("rel_PFamProd_FSchede", FamProdColId1, SchedeCol);
+            //           ds_Factory.Tables["dt_GC_Schede"].ParentRelations.Add(rel_PFamProd_FSchede);
 
-            // Create a BindingSource  
-            //BindingSource bs_Fam_Prod = new BindingSource();
+            //           DataRelation rel_PFamProd_FSoftware;
+            //           DataColumn FamProdColId2 = ds_Factory.Tables["dt_GC_FamProd"].Columns["Id"];
+            //           DataColumn SoftwareCol = ds_Factory.Tables["dt_GC_Software"].Columns["SW_Fam_Prod"];
+            //           rel_PFamProd_FSoftware = new DataRelation("rel_PFamProd_FSoftware", FamProdColId2, SoftwareCol);
+            //           ds_Factory.Tables["dt_GC_Software"].ParentRelations.Add(rel_PFamProd_FSoftware);
+
+            //           ForeignKeyConstraint
+            //relConstraint_PFamProd_FSoftware = new ForeignKeyConstraint("relConstraint_PFamProd_FSoftware", FamProdColId2, SoftwareCol);
+            //           //Setting Rule of constraint  
+            //           relConstraint_PFamProd_FSoftware.DeleteRule = Rule.SetNull;
+            //           relConstraint_PFamProd_FSoftware.UpdateRule = Rule.Cascade;
+
+            // Create BindingSource  
             bs_Fam_Prod.DataSource = ds_Factory.Tables["dt_GC_FamProd"];
-
-            //BindingSource bs_Schede = new BindingSource();
             bs_Schede.DataSource = ds_Factory.Tables["dt_GC_Schede"];
-
-            //BindingSource bs_Software = new BindingSource();
             bs_Software.DataSource = ds_Factory.Tables["dt_GC_Software"];
 
             Application.UseWaitCursor = false;
@@ -838,6 +852,16 @@ namespace SE_Factory
 
         void Fam_Prod_CurrentChanged(object sender, EventArgs e)
         {
+            DataRow FamProdCurrRow = ((DataRowView)bs_Fam_Prod.Current).Row;
+            string filtro = "SW_Fam_Prod = " + FamProdCurrRow[0].ToString();
+
+            dvSoftware.Table = ds_Factory.Tables["dt_GC_Software"];
+            dvSoftware.RowFilter = filtro;
+
+            dataGridView1.DataSource = dvSoftware;
+            dataGridView1.Refresh();
+
+
             if (bs_Fam_Prod.Current != null)
             {
                 DataRow currentRow = ((DataRowView)bs_Fam_Prod.Current).Row;
