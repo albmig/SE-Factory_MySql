@@ -126,6 +126,14 @@
       <DependentUpon>DB_FactoryDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="ds_myFactory.cs">
+      <DependentUpon>ds_myFactory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ds_myFactory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_myFactory.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MySQLMgmt.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UC_form_Clienti.cs">
@@ -243,6 +251,17 @@
     <None Include="DB_FactoryDataSet.xss">
       <DependentUpon>DB_FactoryDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ds_myFactory.xsc">
+      <DependentUpon>ds_myFactory.xsd</DependentUpon>
+    </None>
+    <None Include="ds_myFactory.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_myFactory.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ds_myFactory.xss">
+      <DependentUpon>ds_myFactory.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

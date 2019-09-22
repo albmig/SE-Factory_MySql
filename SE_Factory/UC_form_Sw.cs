@@ -16,13 +16,13 @@ namespace SE_Factory
 {
     public partial class UC_form_Sw : UserControl
     {
-        DataSet ds_Factory = new DataSet();
-        static DataTable dt_GC_FamProd = new DataTable("dt_GC_FamProd");
-        static DataTable dt_GC_Schede = new DataTable("dt_GC_Schede");
-        static DataTable dt_GC_Software = new DataTable("dt_GC_Software");
-        BindingSource bs_Fam_Prod = new BindingSource();
-        BindingSource bs_Schede = new BindingSource();
-        BindingSource bs_Software = new BindingSource();
+        DataSet ds_Factory = new DataSet(ds_myFactory);
+        //static DataTable dt_GC_FamProd = new DataTable("dt_GC_FamProd");
+        //static DataTable dt_GC_Schede = new DataTable("dt_GC_Schede");
+        //static DataTable dt_GC_Software = new DataTable("dt_GC_Software");
+        //BindingSource bs_Fam_Prod = new BindingSource();
+        //BindingSource bs_Schede = new BindingSource();
+        //BindingSource bs_Software = new BindingSource();
         DataView dvSoftware = new DataView();
 
         public string SchedeCompatibili_SW = "";
@@ -822,7 +822,9 @@ namespace SE_Factory
             dt_GC_Software.PrimaryKey = new DataColumn[] { dt_GC_Software.Columns["Id"] };
             ds_Factory.Tables.Add(dt_GC_Software);
 
-            //ds_Factory.Relations.Add("rel_PFamProd_FSoftware", dt_GC_Software.Columns["SW_Fam_Prod"], dt_GC_FamProd.Columns["ID"]);
+            // Aggiunta di relazioni
+            ds_Factory.Relations.Add("rel_PFamProd_FSoftware", dt_GC_FamProd.Columns[0], dt_GC_Software.Columns[2]);
+            //ds_Factory.Relations.Add("rel_PFamProd_FSoftware", dt_GC_FamProd.Columns["ID"], dt_GC_Software.Columns["SW_Fam_Prod"]);
 
             //           DataRelation rel_PFamProd_FSchede;
             //           DataColumn FamProdColId1 = ds_Factory.Tables["dt_GC_FamProd"].Columns["Id"];
@@ -858,7 +860,10 @@ namespace SE_Factory
             dvSoftware.Table = ds_Factory.Tables["dt_GC_Software"];
             dvSoftware.RowFilter = filtro;
 
+            dt_GC_Software.Select(filtro);
+
             dataGridView1.DataSource = dvSoftware;
+            dataGridView1.DataSource = dt_GC_Software;
             dataGridView1.Refresh();
 
 
