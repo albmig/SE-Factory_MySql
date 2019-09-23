@@ -120,7 +120,7 @@ namespace SE_Factory.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;databas" +
+        [global::System.Configuration.DefaultSettingValueAttribute("server=34.65.242.38;user id=sa;Password=aavesp19;persistsecurityinfo=True;databas" +
             "e=DB_Factory")]
         public string DB_FactoryConnectionString1 {
             get {

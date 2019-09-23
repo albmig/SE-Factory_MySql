@@ -18,12 +18,9 @@
     }
 }
 
-namespace SE_Factory.DB_FactoryDataSetTableAdapters
-{
-    partial class Fam_ProdTableAdapter
-    {
-    }
-
+namespace SE_Factory.DB_FactoryDataSetTableAdapters {
+    
+    
     public partial class SoftwareTableAdapter {
     }
 }

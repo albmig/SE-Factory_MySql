@@ -72,10 +72,7 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Installer for Windows\MySql.Data.dll</HintPath>
-    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="Syncfusion.Core.WinForms, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -96,8 +93,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
@@ -126,15 +125,6 @@
       <DependentUpon>DB_FactoryDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ds_myFactory.cs">
-      <DependentUpon>ds_myFactory.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ds_myFactory.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ds_myFactory.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MySQLMgmt.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UC_form_Clienti.cs">
       <SubType>UserControl</SubType>
@@ -251,17 +241,6 @@
     <None Include="DB_FactoryDataSet.xss">
       <DependentUpon>DB_FactoryDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ds_myFactory.xsc">
-      <DependentUpon>ds_myFactory.xsd</DependentUpon>
-    </None>
-    <None Include="ds_myFactory.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ds_myFactory.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="ds_myFactory.xss">
-      <DependentUpon>ds_myFactory.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

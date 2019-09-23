@@ -16,21 +16,25 @@ namespace SE_Factory
 {
     public partial class UC_form_Sw : UserControl
     {
-        DataSet ds_Factory = new DataSet(ds_myFactory);
-        //static DataTable dt_GC_FamProd = new DataTable("dt_GC_FamProd");
-        //static DataTable dt_GC_Schede = new DataTable("dt_GC_Schede");
-        //static DataTable dt_GC_Software = new DataTable("dt_GC_Software");
-        //BindingSource bs_Fam_Prod = new BindingSource();
-        //BindingSource bs_Schede = new BindingSource();
-        //BindingSource bs_Software = new BindingSource();
-        DataView dvSoftware = new DataView();
-
         public string SchedeCompatibili_SW = "";
         public string TemplateFolder = @"D:\VS2017 - Projects\SE_Factory\Prova Moduli SW\Template_PDF_Software.pdf";
 
         public UC_form_Sw()
         {
             InitializeComponent();
+        }
+
+        private void famProdBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            if (gCSoftwareBindingSource.Current != null)
+            {
+                DataRow currentRow = ((DataRowView)gCSoftwareBindingSource.Current).Row;
+
+                GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
+                GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
+                GVar.glob_result_id[0] = Convert.ToChar(currentRow["Fam_Hex_ID"]);
+                Setting_Form();
+            }
         }
 
         private void ID_timer_Tick(object sender, EventArgs e)
@@ -183,9 +187,9 @@ namespace SE_Factory
             if ((GVar.glob_form_status == "E") || (GVar.glob_form_status == "V"))
             {
                 //Visualizzo i dati in base ai valori del record
-                if (bs_Software.Current != null)
+                if (gCSoftwareBindingSource.Current != null)
                 {
-                    DataRow SW_view = ((DataRowView)bs_Software.Current).Row;
+                    DataRow SW_view = ((DataRowView)gCSoftwareBindingSource.Current).Row;
 
                     FromRecordToForm(SW_view);
                 }
@@ -247,15 +251,14 @@ namespace SE_Factory
 
         private void UC_form_Sw_Load(object sender, EventArgs e)
         {
-            Application.UseWaitCursor = true;
+            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
+            this.gC_SoftwareTableAdapter.Fill(this.dB_FactoryDataSet.GC_Software);
+            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Fam_Prod'. È possibile spostarla o rimuoverla se necessario.
+            this.gC_Fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.GC_Fam_Prod);
+            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
+            this.gC_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.GC_Schede);
 
-            LoadMySQLData();
-            ID_combo_Famiglia.DataSource = bs_Fam_Prod;
-            ID_combo_Famiglia.DisplayMember = "Fam_Name";
-            grid_SW_codificati.DataSource = bs_Software;
 
-            dataGridView1.DataSource = bs_Software;
-            dataGridView1.Refresh();
 
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
             //this.softwareTableAdapter.Fill(this.dB_FactoryDataSet.Software);
@@ -265,8 +268,6 @@ namespace SE_Factory
             //this.schedeTableAdapter.Fill(this.dB_FactoryDataSet.Schede);
 
             //Setting_Form();
-
-            Application.UseWaitCursor = false;
         }
 
         private void CreaPDF()
@@ -283,9 +284,9 @@ namespace SE_Factory
                 PdfStamper pdfStamper = new PdfStamper(pdfReader, outFile);
                 AcroFields fields = pdfStamper.AcroFields;
 
-                if ((bs_Software.Current != null) && (GVar.glob_tipo_item == "P"))
+                if ((gCSoftwareBindingSource.Current != null) && (GVar.glob_tipo_item == "P"))
                 {
-                    DataRow SW_view = ((DataRowView)bs_Software.Current).Row;
+                    DataRow SW_view = ((DataRowView)gCSoftwareBindingSource.Current).Row;
 
                     fields.SetField("Customer", SW_view["SW_Customer"].ToString());
                     fields.SetField("SW_Code", SW_view["SW_Code"].ToString());
@@ -337,7 +338,7 @@ namespace SE_Factory
 
         private void modificaCodiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataRow currentRow = ((DataRowView)bs_Software.Current).Row;
+            DataRow currentRow = ((DataRowView)gCSoftwareBindingSource.Current).Row;
 
             //// Get the selected row from the ListBox
             //int index = dB_FactoryDataSet.Software;
@@ -380,6 +381,21 @@ namespace SE_Factory
             this.Parent.Controls.Remove(this);
         }
 
+        private void famProdSoftwareBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            Setting_Form();
+
+            if (gCSoftwareBindingSource.Count != 0)
+            {
+                DataRow SW_view = ((DataRowView)gCSoftwareBindingSource.Current).Row;
+                FromRecordToForm(SW_view);
+            }
+            else
+            {
+                AzzeraVarForm();
+            }
+        }
+
         private void creaPdfToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreaPDF();
@@ -416,7 +432,7 @@ namespace SE_Factory
         private void creaRevisioneToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataRow SW_new_record = dB_FactoryDataSet.Software.NewRow();
-            SW_new_record.ItemArray = ((DataRowView)bs_Software.Current).Row.ItemArray;
+            SW_new_record.ItemArray = ((DataRowView)gCSoftwareBindingSource.Current).Row.ItemArray;
             string addline = "\n----------------------------------------\n";
 
             //memorizzo l'id del record su cui sono posizionato, nel caso venga annullato l'inserimento
@@ -426,14 +442,15 @@ namespace SE_Factory
             SW_new_record["SW_Revisioni"] = addline + SW_new_record["SW_Revisioni"].ToString();
             SW_new_record["SW_Funzionamento"] = addline + SW_new_record["SW_Funzionamento"].ToString();
 
-            int lastnumber = (int)this.softwareTableAdapter.LastID() + 1;
-            SW_new_record["Id"] = lastnumber;
+            // DA VERIFICARE
+            //int lastnumber = (int)this.gC_SoftwareTableAdapter.LastID() + 1;
+            //SW_new_record["Id"] = lastnumber;
 
             dB_FactoryDataSet.Software.Rows.Add(SW_new_record);
 
             //dB_FactoryDataSet.Software.FindById(lastnumber);
 
-            bs_Software.Position = bs_Software.Find("Id", lastnumber);
+            //gCSoftwareBindingSource.Position = gCSoftwareBindingSource.Find("Id", lastnumber);
 
             GVar.glob_form_status = "E";
             Setting_Form();
@@ -443,9 +460,9 @@ namespace SE_Factory
         {
             dB_FactoryDataSet.Software.RejectChanges();
 
-            bs_Software.CancelEdit();
+            gCSoftwareBindingSource.CancelEdit();
 
-            bs_Software.Position = bs_Software.Find("Id", GVar.Last_SW_ID_Record);
+            gCSoftwareBindingSource.Position = gCSoftwareBindingSource.Find("Id", GVar.Last_SW_ID_Record);
 
             GVar.glob_form_status = "V";
             Setting_Form();
@@ -465,7 +482,7 @@ namespace SE_Factory
 
                 try
                 {
-                    this.softwareTableAdapter.Update(this.dB_FactoryDataSet.Software);
+                    this.gC_SoftwareTableAdapter.Update(this.dB_FactoryDataSet.GC_Software);
                 }
                 catch (System.Exception ex)
                 {
@@ -475,14 +492,14 @@ namespace SE_Factory
 
             if (GVar.glob_form_status == "E")
             {
-                DataRow currentRow = ((DataRowView)bs_Software.Current).Row;
+                DataRow currentRow = ((DataRowView)gCSoftwareBindingSource.Current).Row;
                 FromRowToRecord(currentRow);
 
                 try
                 {
                     //this.Validate;
-                    this.bs_Fam_Prod.EndEdit();
-                    this.softwareTableAdapter.Update(this.dB_FactoryDataSet.Software);
+                    this.gCSoftwareBindingSource.EndEdit();
+                    //this.gCSoftwareBindingSource.Update(this.dB_FactoryDataSet.GC_Software);
                 }
                 catch (System.Exception ex)
                 {
@@ -496,11 +513,15 @@ namespace SE_Factory
 
         private void FromRowToRecord(DataRow SW_new_record)
         {
+            //DataRow SW_new_record = dB_FactoryDataSet.Software.NewRow();
+            //SW_new_record.ItemArray = ((DataRowView)famProdSoftwareBindingSource.Current).Row.ItemArray;
+
+
             //Ricostruisco il codice del software
             string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
             SW_new_record["SW_Code"] = nome_sw;
 
-            DataRowView famiglie = (DataRowView)bs_Fam_Prod.Current;
+            DataRowView famiglie = (DataRowView)gCSoftwareBindingSource.Current;
 
             //SW_new_record["SW_Fam_Prod"] = ID_combo_Famiglia.ValueMember;
             SW_new_record["SW_Fam_Prod"] = famiglie["Id"];
@@ -780,6 +801,39 @@ namespace SE_Factory
             //}
         }
 
+        //private void PopulateTreeView(DataTable dtParent)
+        //{
+        //    treeView1.Nodes.Clear();
+
+        //    treeView1.BeginUpdate();
+
+        //    // Iterate throght the DataRow Collection
+        //    foreach (DataRow dr in dtParent.Rows)
+        //    {
+        //        string nparent = dr["SW_Versione"].ToString().PadLeft(5, '0');
+        //        string nchild = dr["SW_Revisione"].ToString().PadLeft(3, '0');
+
+        //        TreeNode Node = treeView1.Nodes.Add("Node for " + nparent);
+
+        //        if (Node != null)
+        //        {
+        //            int iCol = 0;
+
+        //            foreach (var item in dr.ItemArray)
+        //            {
+        //                string itemString = item as string;
+        //                if (itemString != null && itemString.Length > 0)
+        //                {
+        //                    Node.Nodes.Add(dtParent.Columns[iCol].ColumnName + " - " + itemString);
+        //                }
+
+        //                iCol++;
+        //            }
+        //        }
+        //    }
+        //    treeView1.EndUpdate();
+        //}
+
         private void SettingGridGrouping()
         {
             // Row selection
@@ -795,81 +849,11 @@ namespace SE_Factory
             //this.grid_SW_codificati.Table.ExpandAllGroups();
         }
 
-        private void LoadMySQLData()
+        private void gCFamProdBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            ////////////////////////////////////////////////////////////////////////////////////
-            // Caricamento tabelle MySQL
-            ////////////////////////////////////////////////////////////////////////////////////
-
-            Application.UseWaitCursor = true;
-
-            bs_Fam_Prod.CurrentChanged += new EventHandler(Fam_Prod_CurrentChanged);
-            bs_Schede.CurrentChanged += new EventHandler(Schede_CurrentChanged);
-            bs_Software.CurrentChanged += new EventHandler(Software_CurrentChanged);
-
-            dt_GC_FamProd = MySQLMgmt.Fill_SQL_FamProd();
-            dt_GC_FamProd.TableName = "dt_GC_FamProd";
-            dt_GC_FamProd.PrimaryKey = new DataColumn[] {dt_GC_FamProd.Columns["Id"]};
-            ds_Factory.Tables.Add(dt_GC_FamProd);
-
-            dt_GC_Schede = MySQLMgmt.Fill_SQL_Schede();
-            dt_GC_Schede.TableName = "dt_GC_Schede";
-            dt_GC_Schede.PrimaryKey = new DataColumn[] { dt_GC_Schede.Columns["Id"] };
-            ds_Factory.Tables.Add(dt_GC_Schede);
-
-            dt_GC_Software = MySQLMgmt.Fill_SQL_Software();
-            dt_GC_Software.TableName = "dt_GC_Software";
-            dt_GC_Software.PrimaryKey = new DataColumn[] { dt_GC_Software.Columns["Id"] };
-            ds_Factory.Tables.Add(dt_GC_Software);
-
-            // Aggiunta di relazioni
-            ds_Factory.Relations.Add("rel_PFamProd_FSoftware", dt_GC_FamProd.Columns[0], dt_GC_Software.Columns[2]);
-            //ds_Factory.Relations.Add("rel_PFamProd_FSoftware", dt_GC_FamProd.Columns["ID"], dt_GC_Software.Columns["SW_Fam_Prod"]);
-
-            //           DataRelation rel_PFamProd_FSchede;
-            //           DataColumn FamProdColId1 = ds_Factory.Tables["dt_GC_FamProd"].Columns["Id"];
-            //           DataColumn SchedeCol = ds_Factory.Tables["dt_GC_Schede"].Columns["Prod_Fam"];
-            //           rel_PFamProd_FSchede = new DataRelation("rel_PFamProd_FSchede", FamProdColId1, SchedeCol);
-            //           ds_Factory.Tables["dt_GC_Schede"].ParentRelations.Add(rel_PFamProd_FSchede);
-
-            //           DataRelation rel_PFamProd_FSoftware;
-            //           DataColumn FamProdColId2 = ds_Factory.Tables["dt_GC_FamProd"].Columns["Id"];
-            //           DataColumn SoftwareCol = ds_Factory.Tables["dt_GC_Software"].Columns["SW_Fam_Prod"];
-            //           rel_PFamProd_FSoftware = new DataRelation("rel_PFamProd_FSoftware", FamProdColId2, SoftwareCol);
-            //           ds_Factory.Tables["dt_GC_Software"].ParentRelations.Add(rel_PFamProd_FSoftware);
-
-            //           ForeignKeyConstraint
-            //relConstraint_PFamProd_FSoftware = new ForeignKeyConstraint("relConstraint_PFamProd_FSoftware", FamProdColId2, SoftwareCol);
-            //           //Setting Rule of constraint  
-            //           relConstraint_PFamProd_FSoftware.DeleteRule = Rule.SetNull;
-            //           relConstraint_PFamProd_FSoftware.UpdateRule = Rule.Cascade;
-
-            // Create BindingSource  
-            bs_Fam_Prod.DataSource = ds_Factory.Tables["dt_GC_FamProd"];
-            bs_Schede.DataSource = ds_Factory.Tables["dt_GC_Schede"];
-            bs_Software.DataSource = ds_Factory.Tables["dt_GC_Software"];
-
-            Application.UseWaitCursor = false;
-        }
-
-        void Fam_Prod_CurrentChanged(object sender, EventArgs e)
-        {
-            DataRow FamProdCurrRow = ((DataRowView)bs_Fam_Prod.Current).Row;
-            string filtro = "SW_Fam_Prod = " + FamProdCurrRow[0].ToString();
-
-            dvSoftware.Table = ds_Factory.Tables["dt_GC_Software"];
-            dvSoftware.RowFilter = filtro;
-
-            dt_GC_Software.Select(filtro);
-
-            dataGridView1.DataSource = dvSoftware;
-            dataGridView1.DataSource = dt_GC_Software;
-            dataGridView1.Refresh();
-
-
-            if (bs_Fam_Prod.Current != null)
+            if (gCFamProdBindingSource.Current != null)
             {
-                DataRow currentRow = ((DataRowView)bs_Fam_Prod.Current).Row;
+                DataRow currentRow = ((DataRowView)gCFamProdBindingSource.Current).Row;
 
                 GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
                 GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
@@ -877,17 +861,14 @@ namespace SE_Factory
                 Setting_Form();
             }
         }
-        void Schede_CurrentChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("Schede_CurrentChanged");
-        }
-        void Software_CurrentChanged(object sender, EventArgs e)
+
+        private void famProdGCSoftwareBindingSource_CurrentChanged(object sender, EventArgs e)
         {
             Setting_Form();
 
-            if (bs_Software.Count != 0)
+            if (famProdGCSoftwareBindingSource.Count != 0)
             {
-                DataRow SW_view = ((DataRowView)bs_Software.Current).Row;
+                DataRow SW_view = ((DataRowView)famProdGCSoftwareBindingSource.Current).Row;
                 FromRecordToForm(SW_view);
             }
             else
@@ -895,5 +876,5 @@ namespace SE_Factory
                 AzzeraVarForm();
             }
         }
-    } 
+    }
 }
