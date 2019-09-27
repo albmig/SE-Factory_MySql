@@ -11,6 +11,7 @@ using System.IO;
 using System.Net;
 using MetroFramework.Forms;
 using iTextSharp.text.pdf;
+using Syncfusion.Windows.Forms.Tools;
 
 namespace SE_Factory
 {
@@ -22,19 +23,6 @@ namespace SE_Factory
         public UC_form_Sw()
         {
             InitializeComponent();
-        }
-
-        private void famProdBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-            if (gCSoftwareBindingSource.Current != null)
-            {
-                DataRow currentRow = ((DataRowView)gCSoftwareBindingSource.Current).Row;
-
-                GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
-                GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
-                GVar.glob_result_id[0] = Convert.ToChar(currentRow["Fam_Hex_ID"]);
-                Setting_Form();
-            }
         }
 
         private void ID_timer_Tick(object sender, EventArgs e)
@@ -258,7 +246,7 @@ namespace SE_Factory
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
             this.gC_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.GC_Schede);
 
-
+            CaricaTreeView();
 
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
             //this.softwareTableAdapter.Fill(this.dB_FactoryDataSet.Software);
@@ -284,51 +272,57 @@ namespace SE_Factory
                 PdfStamper pdfStamper = new PdfStamper(pdfReader, outFile);
                 AcroFields fields = pdfStamper.AcroFields;
 
-                if ((gCSoftwareBindingSource.Current != null) && (GVar.glob_tipo_item == "P"))
+                // Definizione campi modulo su pdf
+                if (gCSoftwareBindingSource.Current != null)
                 {
                     DataRow SW_view = ((DataRowView)gCSoftwareBindingSource.Current).Row;
-
-                    fields.SetField("Customer", SW_view["SW_Customer"].ToString());
                     fields.SetField("SW_Code", SW_view["SW_Code"].ToString());
-                    fields.SetField("Chip_Code", SW_view["SW_Microchip_Code"].ToString());
                     fields.SetField("Schede", SW_view["SW_SchedeCompatibili"].ToString());
-
-                    fields.SetField("P_Radio_Freq", SW_view["SW_P_Opt_RF"].ToString());
-                    if ((bool)SW_view["SW_P_Opt_Oled"]) { fields.SetField("P_Oled_si", "1"); } else { fields.SetField("P_Oled_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_Accel"]) { fields.SetField("P_Accel_si", "1"); } else { fields.SetField("P_Accel_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_SP"]) { fields.SetField("P_SP_si", "1"); } else { fields.SetField("P_SP_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_Buzzer"]) { fields.SetField("P_Buz_si", "1"); } else { fields.SetField("P_Buz_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_Vibracall"]) { fields.SetField("P_Vibra_si", "1"); } else { fields.SetField("P_Vibra_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_LedTorch"]) { fields.SetField("P_Torcia_si", "1"); } else { fields.SetField("P_Torcia_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_EmButt"]) { fields.SetField("P_Emer_si", "1"); } else { fields.SetField("P_Emer_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_Use_Backlight"]) { fields.SetField("P_use_back_si", "1"); } else { fields.SetField("P_use_back_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_ShiftPage"]) { fields.SetField("P_shiftpage_si", "1"); } else { fields.SetField("P_shiftpage_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_Use_Accel"]) { fields.SetField("P_use_accel_si", "1"); } else { fields.SetField("P_use_accel_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_Use_SP"]) { fields.SetField("P_use_SP_si", "1"); } else { fields.SetField("P_use_SP_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_Use_Buzzer"]) { fields.SetField("P_use_buzz_si", "1"); } else { fields.SetField("P_use_buzz_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_Use_Vibracall"]) { fields.SetField("P_use_vibra_si", "1"); } else { fields.SetField("P_use_vibra_no", "1"); }
-                    if ((bool)SW_view["SW_P_Opt_Use_LedTorch"]) { fields.SetField("P_use_torch_si", "1"); } else { fields.SetField("P_use_torch_no", "1"); }
-                    fields.SetField("P_max_pair", SW_view["SW_P_Opt_MaxPairDevices"].ToString());
-
-                    fields.SetField("C_Radio_Freq", SW_view["SW_R_Opt_RF"].ToString());
-                    if ((bool)SW_view["SW_R_Opt_Plug_Exp"]) { fields.SetField("C_PlugExp_si", "1"); } else { fields.SetField("C_PlugExp_no", "1"); }
-                    if ((bool)SW_view["SW_R_Opt_Plug_Ple"]) { fields.SetField("C_PlugPle_si", "1"); } else { fields.SetField("C_PlugPle_no", "1"); }
-                    if ((bool)SW_view["SW_R_Opt_Em_Keyb"]) { fields.SetField("C_EmerKey_si", "1"); } else { fields.SetField("C_EmerKey_no", "1"); }
-                    if ((bool)SW_view["SW_R_Opt_Status_Led"]) { fields.SetField("C_StatusLed_si", "1"); } else { fields.SetField("C_StatusLed_no", "1"); }
-                    if ((bool)SW_view["SW_R_Opt_Ext_Ant"]) { fields.SetField("C_ExtAnt_si", "1"); } else { fields.SetField("C_ExtAnt_no", "1"); }
-                    if ((bool)SW_view["SW_R_Opt_Can"]) { fields.SetField("C_Can_si", "1"); } else { fields.SetField("C_Can_no", "1"); }
-                    if ((bool)SW_view["SW_R_Opt_Prop_Out"]) { fields.SetField("C_Prop_si", "1"); } else { fields.SetField("C_Prop_no", "1"); }
-                    fields.SetField("C_Timeout", SW_view["SW_R_Opt_TimeOut"].ToString());
-                    fields.SetField("C_ContKey", SW_view["SW_R_Opt_Cont_Keys"].ToString());
-                    fields.SetField("C_MaxPair", SW_view["SW_R_Opt_MaxPairDevices"].ToString());
-                    if ((bool)SW_view["SW_R_Opt_ShiftPage"]) { fields.SetField("C_ShiftPage_si", "1"); } else { fields.SetField("C_ShiftPage_no", "1"); }
-                    fields.SetField("C_OutNum", SW_view["SW_R_Opt_Output_No"].ToString());
-                    fields.SetField("C_InpDig", SW_view["SW_R_Opt_Dig_Input_No"].ToString());
-                    fields.SetField("C_InpAna", SW_view["SW_R_Opt_Ana_Input_No"].ToString());
-
                     fields.SetField("Revision", SW_view["SW_Revisioni"].ToString());
                     fields.SetField("Operation", SW_view["SW_Funzionamento"].ToString());
+
+                    // Setta campi Palmare
+                    if (GVar.glob_tipo_item == "P")
+                    {
+                        fields.SetField("P_Radio_Freq", SW_view["SW_P_Opt_RF"].ToString());
+                        if ((bool)SW_view["SW_P_Opt_Oled"]) { fields.SetField("P_Oled_si", "1"); } else { fields.SetField("P_Oled_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_Accel"]) { fields.SetField("P_Accel_si", "1"); } else { fields.SetField("P_Accel_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_SP"]) { fields.SetField("P_SP_si", "1"); } else { fields.SetField("P_SP_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_Buzzer"]) { fields.SetField("P_Buz_si", "1"); } else { fields.SetField("P_Buz_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_Vibracall"]) { fields.SetField("P_Vibra_si", "1"); } else { fields.SetField("P_Vibra_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_LedTorch"]) { fields.SetField("P_Torcia_si", "1"); } else { fields.SetField("P_Torcia_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_EmButt"]) { fields.SetField("P_Emer_si", "1"); } else { fields.SetField("P_Emer_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_Use_Backlight"]) { fields.SetField("P_use_back_si", "1"); } else { fields.SetField("P_use_back_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_ShiftPage"]) { fields.SetField("P_shiftpage_si", "1"); } else { fields.SetField("P_shiftpage_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_Use_Accel"]) { fields.SetField("P_use_accel_si", "1"); } else { fields.SetField("P_use_accel_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_Use_SP"]) { fields.SetField("P_use_SP_si", "1"); } else { fields.SetField("P_use_SP_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_Use_Buzzer"]) { fields.SetField("P_use_buzz_si", "1"); } else { fields.SetField("P_use_buzz_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_Use_Vibracall"]) { fields.SetField("P_use_vibra_si", "1"); } else { fields.SetField("P_use_vibra_no", "1"); }
+                        if ((bool)SW_view["SW_P_Opt_Use_LedTorch"]) { fields.SetField("P_use_torch_si", "1"); } else { fields.SetField("P_use_torch_no", "1"); }
+                        fields.SetField("P_max_pair", SW_view["SW_P_Opt_MaxPairDevices"].ToString());
+                    }
+
+                    // Setta campi Controller
+                    if (GVar.glob_tipo_item == "C")
+                    {
+                        fields.SetField("C_Radio_Freq", SW_view["SW_R_Opt_RF"].ToString());
+                        if ((bool)SW_view["SW_R_Opt_Plug_Exp"]) { fields.SetField("C_PlugExp_si", "1"); } else { fields.SetField("C_PlugExp_no", "1"); }
+                        if ((bool)SW_view["SW_R_Opt_Plug_Ple"]) { fields.SetField("C_PlugPle_si", "1"); } else { fields.SetField("C_PlugPle_no", "1"); }
+                        if ((bool)SW_view["SW_R_Opt_Em_Keyb"]) { fields.SetField("C_EmerKey_si", "1"); } else { fields.SetField("C_EmerKey_no", "1"); }
+                        if ((bool)SW_view["SW_R_Opt_Status_Led"]) { fields.SetField("C_StatusLed_si", "1"); } else { fields.SetField("C_StatusLed_no", "1"); }
+                        if ((bool)SW_view["SW_R_Opt_Ext_Ant"]) { fields.SetField("C_ExtAnt_si", "1"); } else { fields.SetField("C_ExtAnt_no", "1"); }
+                        if ((bool)SW_view["SW_R_Opt_Can"]) { fields.SetField("C_Can_si", "1"); } else { fields.SetField("C_Can_no", "1"); }
+                        if ((bool)SW_view["SW_R_Opt_Prop_Out"]) { fields.SetField("C_Prop_si", "1"); } else { fields.SetField("C_Prop_no", "1"); }
+                        fields.SetField("C_Timeout", SW_view["SW_R_Opt_TimeOut"].ToString());
+                        fields.SetField("C_ContKey", SW_view["SW_R_Opt_Cont_Keys"].ToString());
+                        fields.SetField("C_MaxPair", SW_view["SW_R_Opt_MaxPairDevices"].ToString());
+                        if ((bool)SW_view["SW_R_Opt_ShiftPage"]) { fields.SetField("C_ShiftPage_si", "1"); } else { fields.SetField("C_ShiftPage_no", "1"); }
+                        fields.SetField("C_OutNum", SW_view["SW_R_Opt_Output_No"].ToString());
+                        fields.SetField("C_InpDig", SW_view["SW_R_Opt_Dig_Input_No"].ToString());
+                        fields.SetField("C_InpAna", SW_view["SW_R_Opt_Ana_Input_No"].ToString());
+                    }
                 }
+
                 pdfStamper.Close();
                 pdfReader.Close();
                 MessageBox.Show("PDF generato correttamente!");
@@ -379,21 +373,6 @@ namespace SE_Factory
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
         {
             this.Parent.Controls.Remove(this);
-        }
-
-        private void famProdSoftwareBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-            Setting_Form();
-
-            if (gCSoftwareBindingSource.Count != 0)
-            {
-                DataRow SW_view = ((DataRowView)gCSoftwareBindingSource.Current).Row;
-                FromRecordToForm(SW_view);
-            }
-            else
-            {
-                AzzeraVarForm();
-            }
         }
 
         private void creaPdfToolStripMenuItem_Click(object sender, EventArgs e)
@@ -513,15 +492,11 @@ namespace SE_Factory
 
         private void FromRowToRecord(DataRow SW_new_record)
         {
-            //DataRow SW_new_record = dB_FactoryDataSet.Software.NewRow();
-            //SW_new_record.ItemArray = ((DataRowView)famProdSoftwareBindingSource.Current).Row.ItemArray;
-
-
             //Ricostruisco il codice del software
             string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
             SW_new_record["SW_Code"] = nome_sw;
 
-            DataRowView famiglie = (DataRowView)gCSoftwareBindingSource.Current;
+            DataRowView famiglie = (DataRowView)gCFamProdBindingSource.Current;
 
             //SW_new_record["SW_Fam_Prod"] = ID_combo_Famiglia.ValueMember;
             SW_new_record["SW_Fam_Prod"] = famiglie["Id"];
@@ -862,18 +837,36 @@ namespace SE_Factory
             }
         }
 
-        private void famProdGCSoftwareBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-            Setting_Form();
+        //private void famProdGCSoftwareBindingSource_CurrentChanged(object sender, EventArgs e)
+        //{
+        //    Setting_Form();
 
-            if (famProdGCSoftwareBindingSource.Count != 0)
+        //    if (famProdGCSoftwareBindingSource.Count != 0)
+        //    {
+        //        DataRow SW_view = ((DataRowView)famProdGCSoftwareBindingSource.Current).Row;
+        //        FromRecordToForm(SW_view);
+        //    }
+        //    else
+        //    {
+        //        AzzeraVarForm();
+        //    }
+        //}
+
+        private void CaricaTreeView()
+        {
+            foreach (DataRow swRow in dB_FactoryDataSet.GC_Software.Rows)
             {
-                DataRow SW_view = ((DataRowView)famProdGCSoftwareBindingSource.Current).Row;
-                FromRecordToForm(SW_view);
-            }
-            else
-            {
-                AzzeraVarForm();
+                tv_Software.Nodes.Add(swRow["SW_Versione"].ToString());
+
+                string parent = swRow["SW_Versione"].ToString();
+                TreeNodeAdv p_node = new TreeNodeAdv(parent);
+                if (!treeViewAdv1.Nodes.Contains(p_node))
+                {
+                    this.treeViewAdv1.Nodes.Add(p_node);
+                }
+                string child = swRow["SW_Revisione"].ToString();
+                p_node.Nodes.Add(new TreeNodeAdv(child));
+
             }
         }
     }

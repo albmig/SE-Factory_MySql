@@ -228,6 +228,7 @@
     <EmbeddedResource Include="UC_form_Prodotti.resx">
       <DependentUpon>UC_form_Prodotti.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="client-cert.pfx" />
     <None Include="DB_FactoryDataSet.xsc">
       <DependentUpon>DB_FactoryDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

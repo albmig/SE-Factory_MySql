@@ -39,10 +39,10 @@
     <Setting Name="DB_FactoryConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=34.65.242.38;user id=sa;Password=aavesp19;persistsecurityinfo=True;database=DB_Factory&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;database=DB_Factory;certificatefile=C:\Users\albmi\Desktop\CoDiNg\SE-Factory_MySql\Certificates\client-cert.pfx&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=34.65.242.38;user id=sa;Password=aavesp19;persistsecurityinfo=True;database=DB_Factory</Value>
+      <Value Profile="(Default)">server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;database=DB_Factory;certificatefile=C:\Users\albmi\Desktop\CoDiNg\SE-Factory_MySql\Certificates\client-cert.pfx</Value>
     </Setting>
   </Settings>
 </SettingsFile>
