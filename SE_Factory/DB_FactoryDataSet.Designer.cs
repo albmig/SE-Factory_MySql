@@ -52,9 +52,9 @@ namespace SE_Factory {
         
         private global::System.Data.DataRelation relationFam_Prod_Software;
         
-        private global::System.Data.DataRelation relationFam_Prod_GC_Software;
-        
         private global::System.Data.DataRelation relationFam_Prod_GC_Schede;
+        
+        private global::System.Data.DataRelation relationGC_Software_GC_Fam_Prod;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -447,8 +447,8 @@ namespace SE_Factory {
             this.relationFam_Prod_Schede = this.Relations["Fam_Prod_Schede"];
             this.relationJLabel_JLabel_Clienti = this.Relations["JLabel_JLabel_Clienti"];
             this.relationFam_Prod_Software = this.Relations["Fam_Prod_Software"];
-            this.relationFam_Prod_GC_Software = this.Relations["Fam_Prod_GC_Software"];
             this.relationFam_Prod_GC_Schede = this.Relations["Fam_Prod_GC_Schede"];
+            this.relationGC_Software_GC_Fam_Prod = this.Relations["GC_Software_GC_Fam_Prod"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -495,14 +495,14 @@ namespace SE_Factory {
                         this.tableFam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableSoftware.SW_Fam_ProdColumn}, false);
             this.Relations.Add(this.relationFam_Prod_Software);
-            this.relationFam_Prod_GC_Software = new global::System.Data.DataRelation("Fam_Prod_GC_Software", new global::System.Data.DataColumn[] {
-                        this.tableGC_Fam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableGC_Software.SW_Fam_ProdColumn}, false);
-            this.Relations.Add(this.relationFam_Prod_GC_Software);
             this.relationFam_Prod_GC_Schede = new global::System.Data.DataRelation("Fam_Prod_GC_Schede", new global::System.Data.DataColumn[] {
                         this.tableGC_Fam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableGC_Schede.Prod_FamColumn}, false);
             this.Relations.Add(this.relationFam_Prod_GC_Schede);
+            this.relationGC_Software_GC_Fam_Prod = new global::System.Data.DataRelation("GC_Software_GC_Fam_Prod", new global::System.Data.DataColumn[] {
+                        this.tableGC_Software.SW_Fam_ProdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGC_Fam_Prod.IdColumn}, false);
+            this.Relations.Add(this.relationGC_Software_GC_Fam_Prod);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5910,7 +5910,7 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public GC_SoftwareRow AddGC_SoftwareRow(
                         string SW_Code, 
-                        GC_Fam_ProdRow parentGC_Fam_ProdRowByFam_Prod_GC_Software, 
+                        int SW_Fam_Prod, 
                         string SW_Descrizione, 
                         string SW_Versione, 
                         string SW_Revisione, 
@@ -5953,7 +5953,7 @@ namespace SE_Factory {
                 object[] columnValuesArray = new object[] {
                         null,
                         SW_Code,
-                        null,
+                        SW_Fam_Prod,
                         SW_Descrizione,
                         SW_Versione,
                         SW_Revisione,
@@ -5992,9 +5992,6 @@ namespace SE_Factory {
                         SW_R_Opt_Ana_Input_No,
                         SW_Revisioni,
                         SW_Funzionamento};
-                if ((parentGC_Fam_ProdRowByFam_Prod_GC_Software != null)) {
-                    columnValuesArray[2] = parentGC_Fam_ProdRowByFam_Prod_GC_Software[0];
-                }
                 rowGC_SoftwareRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGC_SoftwareRow);
                 return rowGC_SoftwareRow;
@@ -11083,6 +11080,17 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public GC_SoftwareRow GC_SoftwareRow {
+                get {
+                    return ((GC_SoftwareRow)(this.GetParentRow(this.Table.ParentRelations["GC_Software_GC_Fam_Prod"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["GC_Software_GC_Fam_Prod"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsFam_Hex_IDNull() {
                 return this.IsNull(this.tableGC_Fam_Prod.Fam_Hex_IDColumn);
             }
@@ -11091,17 +11099,6 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetFam_Hex_IDNull() {
                 this[this.tableGC_Fam_Prod.Fam_Hex_IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GC_SoftwareRow[] GetGC_SoftwareRows() {
-                if ((this.Table.ChildRelations["Fam_Prod_GC_Software"] == null)) {
-                    return new GC_SoftwareRow[0];
-                }
-                else {
-                    return ((GC_SoftwareRow[])(base.GetChildRows(this.Table.ChildRelations["Fam_Prod_GC_Software"])));
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11913,17 +11910,6 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GC_Fam_ProdRow GC_Fam_ProdRow {
-                get {
-                    return ((GC_Fam_ProdRow)(this.GetParentRow(this.Table.ParentRelations["Fam_Prod_GC_Software"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Fam_Prod_GC_Software"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSW_Fam_ProdNull() {
                 return this.IsNull(this.tableGC_Software.SW_Fam_ProdColumn);
             }
@@ -12388,6 +12374,17 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSW_FunzionamentoNull() {
                 this[this.tableGC_Software.SW_FunzionamentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public GC_Fam_ProdRow[] GetGC_Fam_ProdRows() {
+                if ((this.Table.ChildRelations["GC_Software_GC_Fam_Prod"] == null)) {
+                    return new GC_Fam_ProdRow[0];
+                }
+                else {
+                    return ((GC_Fam_ProdRow[])(base.GetChildRows(this.Table.ChildRelations["GC_Software_GC_Fam_Prod"])));
+                }
             }
         }
         
@@ -20025,6 +20022,15 @@ FROM            Software";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(DB_FactoryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._gC_SoftwareTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.GC_Software.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._gC_SoftwareTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._fam_ProdTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Fam_Prod.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -20070,15 +20076,6 @@ FROM            Software";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._gC_SoftwareTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.GC_Software.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._gC_SoftwareTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -20089,6 +20086,14 @@ FROM            Software";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(DB_FactoryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._gC_SoftwareTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.GC_Software.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._gC_SoftwareTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._fam_ProdTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Fam_Prod.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -20129,14 +20134,6 @@ FROM            Software";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._gC_SoftwareTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.GC_Software.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._gC_SoftwareTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -20147,14 +20144,6 @@ FROM            Software";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(DB_FactoryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._gC_SoftwareTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.GC_Software.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._gC_SoftwareTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._gC_SchedeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.GC_Schede.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -20192,6 +20181,14 @@ FROM            Software";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._fam_ProdTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._gC_SoftwareTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.GC_Software.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._gC_SoftwareTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

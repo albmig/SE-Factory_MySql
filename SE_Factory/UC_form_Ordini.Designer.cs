@@ -69,8 +69,6 @@
             this.dB_FactoryDataSet = new SE_Factory.DB_FactoryDataSet();
             this.dg_Clienti_Layout = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.jLabelTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabelTableAdapter();
-            this.jLabel_ClientiTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabel_ClientiTableAdapter();
             this.numOrdineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoOrdineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codAnagraficoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,6 +126,8 @@
             this.eMailPECCommDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pwdAllegatiEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jLabelJLabelClientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.jLabelTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabelTableAdapter();
+            this.jLabel_ClientiTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabel_ClientiTableAdapter();
             this.Ordini_Layout.SuspendLayout();
             this.pan_SW_Titolo.SuspendLayout();
             this.pan_Menu_comandi.SuspendLayout();
@@ -600,14 +600,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1188, 294);
             this.dataGridView1.TabIndex = 59;
             // 
-            // jLabelTableAdapter
-            // 
-            this.jLabelTableAdapter.ClearBeforeFill = true;
-            // 
-            // jLabel_ClientiTableAdapter
-            // 
-            this.jLabel_ClientiTableAdapter.ClearBeforeFill = true;
-            // 
             // numOrdineDataGridViewTextBoxColumn
             // 
             this.numOrdineDataGridViewTextBoxColumn.DataPropertyName = "NumOrdine";
@@ -1060,6 +1052,14 @@
             // 
             this.jLabelJLabelClientiBindingSource.DataMember = "JLabel_JLabel_Clienti";
             this.jLabelJLabelClientiBindingSource.DataSource = this.jLabelBindingSource;
+            // 
+            // jLabelTableAdapter
+            // 
+            this.jLabelTableAdapter.ClearBeforeFill = true;
+            // 
+            // jLabel_ClientiTableAdapter
+            // 
+            this.jLabel_ClientiTableAdapter.ClearBeforeFill = true;
             // 
             // UC_form_Ordini
             // 

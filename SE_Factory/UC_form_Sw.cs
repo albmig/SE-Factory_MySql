@@ -12,6 +12,8 @@ using System.Net;
 using MetroFramework.Forms;
 using iTextSharp.text.pdf;
 using Syncfusion.Windows.Forms.Tools;
+using Syncfusion.Windows.Forms.Grid;
+using DataRelation = System.Data.DataRelation;
 
 namespace SE_Factory
 {
@@ -132,7 +134,7 @@ namespace SE_Factory
                     //pan_SW_P.Visible = false;
                     //pan_SW_C.Visible = false;
 
-                    ID_combo_Famiglia.Enabled = true;//aaaaaaaaaaaaaaaaaaaaaaaa
+                    ID_combo_Famiglia.Enabled = true;
                     grid_SW_codificati.Enabled = true;
 
                     if (GVar.glob_tipo_item == "P")
@@ -194,9 +196,41 @@ namespace SE_Factory
                 AzzeraVarForm();
             }
 
-            SettingGridGrouping();
 
-            PopulateTreeView(dB_FactoryDataSet.Software);
+            if (pan_SW_P.Visible)
+            {
+                //int posizione = this.SW_Layout.GetRow(SW_Layout.Controls["pan_SW_P"]);
+                SW_Layout.Controls["pan_SW_P"].Height = 300;
+                SW_Layout.Controls["pan_P_Dx_Funzionamento"].Height = 150;
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_SW_P"], 4);
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_P_Dx_revisioni"], 4);
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_P_Dx_Funzionamento"], 5);
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_SW_C"], 6);
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_C_Dx_revisioni"], 6);
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_C_Dx_Funzionamento"], 7);
+            }
+            if (pan_SW_C.Visible)
+            {
+                //int posizione = this.SW_Layout.GetRow(SW_Layout.Controls["pan_SW_C"]);
+                SW_Layout.Controls["pan_SW_C"].Height = 300;
+                SW_Layout.Controls["pan_C_Dx_Funzionamento"].Height = 150;
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_SW_C"], 4);
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_C_Dx_revisioni"], 4);
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_C_Dx_Funzionamento"], 5);
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_SW_P"], 6);
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_P_Dx_revisioni"], 6);
+                this.SW_Layout.SetRow(SW_Layout.Controls["pan_P_Dx_Funzionamento"], 7);
+            }
+
+            //pan_SW_P.Visible = false;
+            //pan_P_Dx_revisioni.Visible = false;
+            //pan_P_Dx_Funzionamento.Visible = false;
+
+            //pan_SW_C.Visible = false;
+            //pan_C_Dx_revisioni.Visible = false;
+            //pan_C_Dx_Funzionamento.Visible = false;
+
+            SettingGridGrouping();
         }
 
         private void tbox_Sw_name_Validating(object sender, CancelEventArgs e)
@@ -240,22 +274,13 @@ namespace SE_Factory
         private void UC_form_Sw_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
-            this.gC_SoftwareTableAdapter.Fill(this.dB_FactoryDataSet.GC_Software);
+             this.gC_SoftwareTableAdapter.Fill(this.dB_FactoryDataSet.GC_Software);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Fam_Prod'. È possibile spostarla o rimuoverla se necessario.
             this.gC_Fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.GC_Fam_Prod);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
-            this.gC_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.GC_Schede);
+            //this.gC_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.GC_Schede);
 
-            CaricaTreeView();
-
-            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
-            //this.softwareTableAdapter.Fill(this.dB_FactoryDataSet.Software);
-            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Fam_Prod'. È possibile spostarla o rimuoverla se necessario.
-            //this.fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.Fam_Prod);
-            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
-            //this.schedeTableAdapter.Fill(this.dB_FactoryDataSet.Schede);
-
-            //Setting_Form();
+            Setting_Form();
         }
 
         private void CreaPDF()
@@ -496,7 +521,7 @@ namespace SE_Factory
             string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
             SW_new_record["SW_Code"] = nome_sw;
 
-            DataRowView famiglie = (DataRowView)gCFamProdBindingSource.Current;
+            DataRowView famiglie = (DataRowView)gCSoftwareGCFamProdBindingSource.Current;
 
             //SW_new_record["SW_Fam_Prod"] = ID_combo_Famiglia.ValueMember;
             SW_new_record["SW_Fam_Prod"] = famiglie["Id"];
@@ -747,68 +772,6 @@ namespace SE_Factory
             richtb_Funzionamento_C.Text = "";
         }
 
-        private void PopulateTreeView(DataTable dtParent) // versione funzionante
-        {
-            //xxxtreeView1.Nodes.Clear();
-            //foreach (DataRow dr in dtParent.Rows)
-            //{
-            //    string nparent = dr["SW_Versione"].ToString().PadLeft(5, '0');
-            //    string nchild = dr["SW_Revisione"].ToString().PadLeft(3, '0');
-
-            //    if (xxxtreeView1.Nodes.ContainsKey(nparent) == true)
-            //    {
-            //        TreeNode child = new TreeNode();
-            //        child.Text = nchild;
-            //        child.Name = nchild;
-            //        xxxtreeView1.Nodes[nparent].Nodes.Add(child);
-            //    }
-            //    else
-            //    {
-            //        TreeNode parent = new TreeNode();
-            //        parent.Text = nparent;
-            //        parent.Name = nparent;
-            //        xxxtreeView1.Nodes.Add(parent);
-            //        TreeNode child = new TreeNode();
-            //        child.Text = nchild;
-            //        child.Name = nchild;
-            //        parent.Nodes.Add(child);
-            //    }
-            //}
-        }
-
-        //private void PopulateTreeView(DataTable dtParent)
-        //{
-        //    treeView1.Nodes.Clear();
-
-        //    treeView1.BeginUpdate();
-
-        //    // Iterate throght the DataRow Collection
-        //    foreach (DataRow dr in dtParent.Rows)
-        //    {
-        //        string nparent = dr["SW_Versione"].ToString().PadLeft(5, '0');
-        //        string nchild = dr["SW_Revisione"].ToString().PadLeft(3, '0');
-
-        //        TreeNode Node = treeView1.Nodes.Add("Node for " + nparent);
-
-        //        if (Node != null)
-        //        {
-        //            int iCol = 0;
-
-        //            foreach (var item in dr.ItemArray)
-        //            {
-        //                string itemString = item as string;
-        //                if (itemString != null && itemString.Length > 0)
-        //                {
-        //                    Node.Nodes.Add(dtParent.Columns[iCol].ColumnName + " - " + itemString);
-        //                }
-
-        //                iCol++;
-        //            }
-        //        }
-        //    }
-        //    treeView1.EndUpdate();
-        //}
-
         private void SettingGridGrouping()
         {
             // Row selection
@@ -824,11 +787,26 @@ namespace SE_Factory
             //this.grid_SW_codificati.Table.ExpandAllGroups();
         }
 
-        private void gCFamProdBindingSource_CurrentChanged(object sender, EventArgs e)
+        private void gCSoftwareBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            if (gCFamProdBindingSource.Current != null)
+            Setting_Form();
+
+            if (gCSoftwareBindingSource.Count != 0)
             {
-                DataRow currentRow = ((DataRowView)gCFamProdBindingSource.Current).Row;
+                DataRow SW_view = ((DataRowView)gCSoftwareBindingSource.Current).Row;
+                FromRecordToForm(SW_view);
+            }
+            else
+            {
+                AzzeraVarForm();
+            }
+        }
+
+        private void gCSoftwareGCFamProdBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            if (gCSoftwareGCFamProdBindingSource.Current != null)
+            {
+                DataRow currentRow = ((DataRowView)gCSoftwareGCFamProdBindingSource.Current).Row;
 
                 GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
                 GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
@@ -837,37 +815,9 @@ namespace SE_Factory
             }
         }
 
-        //private void famProdGCSoftwareBindingSource_CurrentChanged(object sender, EventArgs e)
-        //{
-        //    Setting_Form();
-
-        //    if (famProdGCSoftwareBindingSource.Count != 0)
-        //    {
-        //        DataRow SW_view = ((DataRowView)famProdGCSoftwareBindingSource.Current).Row;
-        //        FromRecordToForm(SW_view);
-        //    }
-        //    else
-        //    {
-        //        AzzeraVarForm();
-        //    }
-        //}
-
-        private void CaricaTreeView()
+        private void SW_Layout_Paint(object sender, PaintEventArgs e)
         {
-            foreach (DataRow swRow in dB_FactoryDataSet.GC_Software.Rows)
-            {
-                tv_Software.Nodes.Add(swRow["SW_Versione"].ToString());
 
-                string parent = swRow["SW_Versione"].ToString();
-                TreeNodeAdv p_node = new TreeNodeAdv(parent);
-                if (!treeViewAdv1.Nodes.Contains(p_node))
-                {
-                    this.treeViewAdv1.Nodes.Add(p_node);
-                }
-                string child = swRow["SW_Revisione"].ToString();
-                p_node.Nodes.Add(new TreeNodeAdv(child));
-
-            }
         }
     }
 }

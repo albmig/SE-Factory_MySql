@@ -33,10 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_form_Sw));
+            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor1 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
+            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor2 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            Syncfusion.Windows.Forms.Tools.TreeNodeAdvStyleInfo treeNodeAdvStyleInfo1 = new Syncfusion.Windows.Forms.Tools.TreeNodeAdvStyleInfo();
             this.dB_FactoryDataSet = new SE_Factory.DB_FactoryDataSet();
             this.pan_P_Dx_Funzionamento = new MetroFramework.Controls.MetroPanel();
             this.funz_fill = new MetroFramework.Controls.MetroPanel();
@@ -95,7 +96,6 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.pan_P_top_top = new MetroFramework.Controls.MetroPanel();
             this.ID_lab_Palmare = new MetroFramework.Controls.MetroLabel();
-            this.gCFamProdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pan_SW_Codifica = new MetroFramework.Controls.MetroPanel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.SW_lab_codice_SW = new MetroFramework.Controls.MetroLabel();
@@ -105,6 +105,8 @@
             this.tbox_Sw_frequency = new System.Windows.Forms.MaskedTextBox();
             this.SW_lab_Famiglia = new MetroFramework.Controls.MetroLabel();
             this.ID_combo_Famiglia = new System.Windows.Forms.ComboBox();
+            this.gCSoftwareGCFamProdBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gCSoftwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pan_SW_Titolo = new MetroFramework.Controls.MetroPanel();
             this.titolo_ID = new MetroFramework.Controls.MetroLabel();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
@@ -129,6 +131,7 @@
             this.pan_Menu_exit = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_sw_exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.grid_SW_codificati = new Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl();
             this.pan_SW_C = new MetroFramework.Controls.MetroPanel();
             this.pan_C_middle = new MetroFramework.Controls.MetroPanel();
             this.tb_input_Ana_C = new System.Windows.Forms.TextBox();
@@ -196,16 +199,8 @@
             this.richtb_Funzionamento_C = new System.Windows.Forms.RichTextBox();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel50 = new MetroFramework.Controls.MetroLabel();
-            this.grid_SW_codificati = new Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl();
-            this.gC_Fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
-            this.tv_Software = new System.Windows.Forms.TreeView();
-            this.treeViewAdv1 = new Syncfusion.Windows.Forms.Tools.TreeViewAdv();
-            this.gCSoftwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gC_SoftwareTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_SoftwareTableAdapter();
-            this.famProdGCSchedeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gC_SchedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_SchedeTableAdapter();
+            this.gC_Fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).BeginInit();
             this.pan_P_Dx_Funzionamento.SuspendLayout();
             this.funz_fill.SuspendLayout();
@@ -221,13 +216,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.grid_P_SchedeCompatibili)).BeginInit();
             this.pan_P_top_left.SuspendLayout();
             this.pan_P_top_top.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gCFamProdBindingSource)).BeginInit();
             this.pan_SW_Codifica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareGCFamProdBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).BeginInit();
             this.pan_SW_Titolo.SuspendLayout();
             this.SW_Layout.SuspendLayout();
             this.pan_Menu_comandi.SuspendLayout();
             this.pan_Menu_salva.SuspendLayout();
             this.pan_Menu_exit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_SW_codificati)).BeginInit();
             this.pan_SW_C.SuspendLayout();
             this.pan_C_middle.SuspendLayout();
             this.metroPanel5.SuspendLayout();
@@ -242,11 +239,6 @@
             this.pan_C_Dx_Funzionamento.SuspendLayout();
             this.metroPanel6.SuspendLayout();
             this.metroPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_SW_codificati)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeViewAdv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.famProdGCSchedeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dB_FactoryDataSet
@@ -257,16 +249,16 @@
             // pan_P_Dx_Funzionamento
             // 
             this.pan_P_Dx_Funzionamento.BackColor = System.Drawing.Color.Transparent;
-            this.SW_Layout.SetColumnSpan(this.pan_P_Dx_Funzionamento, 4);
+            this.SW_Layout.SetColumnSpan(this.pan_P_Dx_Funzionamento, 6);
             this.pan_P_Dx_Funzionamento.Controls.Add(this.funz_fill);
             this.pan_P_Dx_Funzionamento.Controls.Add(this.funz_top);
             this.pan_P_Dx_Funzionamento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarBarColor = true;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarSize = 10;
-            this.pan_P_Dx_Funzionamento.Location = new System.Drawing.Point(783, 323);
+            this.pan_P_Dx_Funzionamento.Location = new System.Drawing.Point(955, 254);
             this.pan_P_Dx_Funzionamento.Name = "pan_P_Dx_Funzionamento";
-            this.pan_P_Dx_Funzionamento.Size = new System.Drawing.Size(514, 300);
+            this.pan_P_Dx_Funzionamento.Size = new System.Drawing.Size(408, 300);
             this.pan_P_Dx_Funzionamento.TabIndex = 12;
             this.pan_P_Dx_Funzionamento.UseCustomBackColor = true;
             this.pan_P_Dx_Funzionamento.VerticalScrollbarBarColor = true;
@@ -283,7 +275,7 @@
             this.funz_fill.HorizontalScrollbarSize = 10;
             this.funz_fill.Location = new System.Drawing.Point(0, 15);
             this.funz_fill.Name = "funz_fill";
-            this.funz_fill.Size = new System.Drawing.Size(514, 285);
+            this.funz_fill.Size = new System.Drawing.Size(408, 285);
             this.funz_fill.TabIndex = 13;
             this.funz_fill.UseCustomBackColor = true;
             this.funz_fill.VerticalScrollbarBarColor = true;
@@ -298,7 +290,7 @@
             this.richtb_Funzionamento_P.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb_Funzionamento_P.Location = new System.Drawing.Point(0, 0);
             this.richtb_Funzionamento_P.Name = "richtb_Funzionamento_P";
-            this.richtb_Funzionamento_P.Size = new System.Drawing.Size(514, 285);
+            this.richtb_Funzionamento_P.Size = new System.Drawing.Size(408, 285);
             this.richtb_Funzionamento_P.TabIndex = 11;
             this.richtb_Funzionamento_P.Text = "";
             // 
@@ -312,7 +304,7 @@
             this.funz_top.HorizontalScrollbarSize = 10;
             this.funz_top.Location = new System.Drawing.Point(0, 0);
             this.funz_top.Name = "funz_top";
-            this.funz_top.Size = new System.Drawing.Size(514, 15);
+            this.funz_top.Size = new System.Drawing.Size(408, 15);
             this.funz_top.TabIndex = 12;
             this.funz_top.UseCustomBackColor = true;
             this.funz_top.VerticalScrollbarBarColor = true;
@@ -332,16 +324,16 @@
             // pan_P_Dx_revisioni
             // 
             this.pan_P_Dx_revisioni.BackColor = System.Drawing.Color.Transparent;
-            this.SW_Layout.SetColumnSpan(this.pan_P_Dx_revisioni, 4);
+            this.SW_Layout.SetColumnSpan(this.pan_P_Dx_revisioni, 6);
             this.pan_P_Dx_revisioni.Controls.Add(this.rev_fill);
             this.pan_P_Dx_revisioni.Controls.Add(this.rev_top);
             this.pan_P_Dx_revisioni.Dock = System.Windows.Forms.DockStyle.Top;
             this.pan_P_Dx_revisioni.HorizontalScrollbarBarColor = true;
             this.pan_P_Dx_revisioni.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_P_Dx_revisioni.HorizontalScrollbarSize = 10;
-            this.pan_P_Dx_revisioni.Location = new System.Drawing.Point(783, 167);
+            this.pan_P_Dx_revisioni.Location = new System.Drawing.Point(955, 98);
             this.pan_P_Dx_revisioni.Name = "pan_P_Dx_revisioni";
-            this.pan_P_Dx_revisioni.Size = new System.Drawing.Size(514, 150);
+            this.pan_P_Dx_revisioni.Size = new System.Drawing.Size(408, 150);
             this.pan_P_Dx_revisioni.TabIndex = 11;
             this.pan_P_Dx_revisioni.UseCustomBackColor = true;
             this.pan_P_Dx_revisioni.VerticalScrollbarBarColor = true;
@@ -357,7 +349,7 @@
             this.rev_fill.HorizontalScrollbarSize = 10;
             this.rev_fill.Location = new System.Drawing.Point(0, 20);
             this.rev_fill.Name = "rev_fill";
-            this.rev_fill.Size = new System.Drawing.Size(514, 130);
+            this.rev_fill.Size = new System.Drawing.Size(408, 130);
             this.rev_fill.TabIndex = 13;
             this.rev_fill.VerticalScrollbarBarColor = true;
             this.rev_fill.VerticalScrollbarHighlightOnWheel = false;
@@ -371,7 +363,7 @@
             this.richtb__Revisioni_P.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb__Revisioni_P.Location = new System.Drawing.Point(0, 0);
             this.richtb__Revisioni_P.Name = "richtb__Revisioni_P";
-            this.richtb__Revisioni_P.Size = new System.Drawing.Size(514, 130);
+            this.richtb__Revisioni_P.Size = new System.Drawing.Size(408, 130);
             this.richtb__Revisioni_P.TabIndex = 11;
             this.richtb__Revisioni_P.Text = "";
             // 
@@ -385,7 +377,7 @@
             this.rev_top.HorizontalScrollbarSize = 10;
             this.rev_top.Location = new System.Drawing.Point(0, 0);
             this.rev_top.Name = "rev_top";
-            this.rev_top.Size = new System.Drawing.Size(514, 20);
+            this.rev_top.Size = new System.Drawing.Size(408, 20);
             this.rev_top.TabIndex = 12;
             this.rev_top.UseCustomBackColor = true;
             this.rev_top.VerticalScrollbarBarColor = true;
@@ -405,17 +397,17 @@
             // pan_SW_P
             // 
             this.pan_SW_P.BackColor = System.Drawing.SystemColors.Control;
-            this.SW_Layout.SetColumnSpan(this.pan_SW_P, 6);
+            this.SW_Layout.SetColumnSpan(this.pan_SW_P, 10);
             this.pan_SW_P.Controls.Add(this.pan_P_middle);
             this.pan_SW_P.Controls.Add(this.pan_P_top);
             this.pan_SW_P.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_SW_P.HorizontalScrollbarBarColor = true;
             this.pan_SW_P.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_SW_P.HorizontalScrollbarSize = 10;
-            this.pan_SW_P.Location = new System.Drawing.Point(3, 167);
+            this.pan_SW_P.Location = new System.Drawing.Point(275, 98);
             this.pan_SW_P.Name = "pan_SW_P";
             this.SW_Layout.SetRowSpan(this.pan_SW_P, 2);
-            this.pan_SW_P.Size = new System.Drawing.Size(774, 456);
+            this.pan_SW_P.Size = new System.Drawing.Size(674, 456);
             this.pan_SW_P.TabIndex = 53;
             this.pan_SW_P.VerticalScrollbarBarColor = true;
             this.pan_SW_P.VerticalScrollbarHighlightOnWheel = false;
@@ -460,9 +452,9 @@
             this.pan_P_middle.HorizontalScrollbarBarColor = true;
             this.pan_P_middle.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_P_middle.HorizontalScrollbarSize = 10;
-            this.pan_P_middle.Location = new System.Drawing.Point(0, 160);
+            this.pan_P_middle.Location = new System.Drawing.Point(0, 130);
             this.pan_P_middle.Name = "pan_P_middle";
-            this.pan_P_middle.Size = new System.Drawing.Size(774, 296);
+            this.pan_P_middle.Size = new System.Drawing.Size(674, 326);
             this.pan_P_middle.TabIndex = 42;
             this.pan_P_middle.VerticalScrollbarBarColor = true;
             this.pan_P_middle.VerticalScrollbarHighlightOnWheel = false;
@@ -887,7 +879,7 @@
             this.pan_P_top.HorizontalScrollbarSize = 10;
             this.pan_P_top.Location = new System.Drawing.Point(0, 0);
             this.pan_P_top.Name = "pan_P_top";
-            this.pan_P_top.Size = new System.Drawing.Size(774, 160);
+            this.pan_P_top.Size = new System.Drawing.Size(674, 130);
             this.pan_P_top.TabIndex = 41;
             this.pan_P_top.VerticalScrollbarBarColor = true;
             this.pan_P_top.VerticalScrollbarHighlightOnWheel = false;
@@ -902,7 +894,7 @@
             this.pan_P_top_grid.HorizontalScrollbarSize = 10;
             this.pan_P_top_grid.Location = new System.Drawing.Point(120, 30);
             this.pan_P_top_grid.Name = "pan_P_top_grid";
-            this.pan_P_top_grid.Size = new System.Drawing.Size(654, 130);
+            this.pan_P_top_grid.Size = new System.Drawing.Size(554, 100);
             this.pan_P_top_grid.TabIndex = 43;
             this.pan_P_top_grid.VerticalScrollbarBarColor = true;
             this.pan_P_top_grid.VerticalScrollbarHighlightOnWheel = false;
@@ -956,7 +948,7 @@
             this.grid_P_SchedeCompatibili.RowHeadersVisible = false;
             this.grid_P_SchedeCompatibili.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_P_SchedeCompatibili.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_P_SchedeCompatibili.Size = new System.Drawing.Size(654, 130);
+            this.grid_P_SchedeCompatibili.Size = new System.Drawing.Size(554, 100);
             this.grid_P_SchedeCompatibili.Style = MetroFramework.MetroColorStyle.Red;
             this.grid_P_SchedeCompatibili.TabIndex = 40;
             this.grid_P_SchedeCompatibili.UseStyleColors = true;
@@ -977,7 +969,7 @@
             this.pan_P_top_left.HorizontalScrollbarSize = 10;
             this.pan_P_top_left.Location = new System.Drawing.Point(0, 30);
             this.pan_P_top_left.Name = "pan_P_top_left";
-            this.pan_P_top_left.Size = new System.Drawing.Size(120, 130);
+            this.pan_P_top_left.Size = new System.Drawing.Size(120, 100);
             this.pan_P_top_left.TabIndex = 42;
             this.pan_P_top_left.VerticalScrollbarBarColor = true;
             this.pan_P_top_left.VerticalScrollbarHighlightOnWheel = false;
@@ -1003,7 +995,7 @@
             this.pan_P_top_top.HorizontalScrollbarSize = 10;
             this.pan_P_top_top.Location = new System.Drawing.Point(0, 0);
             this.pan_P_top_top.Name = "pan_P_top_top";
-            this.pan_P_top_top.Size = new System.Drawing.Size(774, 30);
+            this.pan_P_top_top.Size = new System.Drawing.Size(674, 30);
             this.pan_P_top_top.TabIndex = 41;
             this.pan_P_top_top.VerticalScrollbarBarColor = true;
             this.pan_P_top_top.VerticalScrollbarHighlightOnWheel = false;
@@ -1024,16 +1016,10 @@
             this.ID_lab_Palmare.UseCustomBackColor = true;
             this.ID_lab_Palmare.UseStyleColors = true;
             // 
-            // gCFamProdBindingSource
-            // 
-            this.gCFamProdBindingSource.DataMember = "GC_Fam_Prod";
-            this.gCFamProdBindingSource.DataSource = this.dB_FactoryDataSet;
-            this.gCFamProdBindingSource.CurrentChanged += new System.EventHandler(this.gCFamProdBindingSource_CurrentChanged);
-            // 
             // pan_SW_Codifica
             // 
             this.pan_SW_Codifica.BackColor = System.Drawing.Color.Bisque;
-            this.SW_Layout.SetColumnSpan(this.pan_SW_Codifica, 10);
+            this.SW_Layout.SetColumnSpan(this.pan_SW_Codifica, 16);
             this.pan_SW_Codifica.Controls.Add(this.metroLabel10);
             this.pan_SW_Codifica.Controls.Add(this.SW_lab_codice_SW);
             this.pan_SW_Codifica.Controls.Add(this.metroLabel21);
@@ -1044,9 +1030,9 @@
             this.pan_SW_Codifica.HorizontalScrollbarBarColor = true;
             this.pan_SW_Codifica.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_SW_Codifica.HorizontalScrollbarSize = 10;
-            this.pan_SW_Codifica.Location = new System.Drawing.Point(3, 142);
+            this.pan_SW_Codifica.Location = new System.Drawing.Point(275, 48);
             this.pan_SW_Codifica.Name = "pan_SW_Codifica";
-            this.pan_SW_Codifica.Size = new System.Drawing.Size(1294, 19);
+            this.pan_SW_Codifica.Size = new System.Drawing.Size(1088, 19);
             this.pan_SW_Codifica.TabIndex = 17;
             this.pan_SW_Codifica.UseCustomBackColor = true;
             this.pan_SW_Codifica.VerticalScrollbarBarColor = true;
@@ -1125,34 +1111,48 @@
             // 
             // SW_lab_Famiglia
             // 
+            this.SW_lab_Famiglia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.SW_lab_Famiglia.AutoSize = true;
-            this.SW_lab_Famiglia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SW_lab_Famiglia.Location = new System.Drawing.Point(3, 53);
+            this.SW_Layout.SetColumnSpan(this.SW_lab_Famiglia, 3);
+            this.SW_lab_Famiglia.Location = new System.Drawing.Point(275, 73);
             this.SW_lab_Famiglia.Name = "SW_lab_Famiglia";
-            this.SW_lab_Famiglia.Size = new System.Drawing.Size(124, 19);
+            this.SW_lab_Famiglia.Size = new System.Drawing.Size(133, 19);
             this.SW_lab_Famiglia.TabIndex = 3;
             this.SW_lab_Famiglia.Text = "Famiglia di prodotto:";
             this.SW_lab_Famiglia.UseCustomBackColor = true;
             // 
             // ID_combo_Famiglia
             // 
+            this.ID_combo_Famiglia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ID_combo_Famiglia.BackColor = System.Drawing.SystemColors.Window;
-            this.SW_Layout.SetColumnSpan(this.ID_combo_Famiglia, 2);
-            this.ID_combo_Famiglia.DataSource = this.gCFamProdBindingSource;
+            this.SW_Layout.SetColumnSpan(this.ID_combo_Famiglia, 4);
+            this.ID_combo_Famiglia.DataSource = this.gCSoftwareGCFamProdBindingSource;
             this.ID_combo_Famiglia.DisplayMember = "Fam_Name";
-            this.ID_combo_Famiglia.Dock = System.Windows.Forms.DockStyle.Top;
             this.ID_combo_Famiglia.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ID_combo_Famiglia.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID_combo_Famiglia.FormattingEnabled = true;
             this.ID_combo_Famiglia.ItemHeight = 15;
-            this.ID_combo_Famiglia.Location = new System.Drawing.Point(133, 56);
+            this.ID_combo_Famiglia.Location = new System.Drawing.Point(479, 73);
             this.ID_combo_Famiglia.Name = "ID_combo_Famiglia";
-            this.ID_combo_Famiglia.Size = new System.Drawing.Size(254, 23);
+            this.ID_combo_Famiglia.Size = new System.Drawing.Size(266, 23);
             this.ID_combo_Famiglia.TabIndex = 6;
+            this.ID_combo_Famiglia.ValueMember = "Id";
+            // 
+            // gCSoftwareGCFamProdBindingSource
+            // 
+            this.gCSoftwareGCFamProdBindingSource.DataMember = "GC_Software_GC_Fam_Prod";
+            this.gCSoftwareGCFamProdBindingSource.DataSource = this.gCSoftwareBindingSource;
+            this.gCSoftwareGCFamProdBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareGCFamProdBindingSource_CurrentChanged);
+            // 
+            // gCSoftwareBindingSource
+            // 
+            this.gCSoftwareBindingSource.DataMember = "GC_Software";
+            this.gCSoftwareBindingSource.DataSource = this.dB_FactoryDataSet;
+            this.gCSoftwareBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareBindingSource_CurrentChanged);
             // 
             // pan_SW_Titolo
             // 
-            this.SW_Layout.SetColumnSpan(this.pan_SW_Titolo, 10);
+            this.SW_Layout.SetColumnSpan(this.pan_SW_Titolo, 20);
             this.pan_SW_Titolo.Controls.Add(this.titolo_ID);
             this.pan_SW_Titolo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_SW_Titolo.HorizontalScrollbarBarColor = true;
@@ -1160,7 +1160,7 @@
             this.pan_SW_Titolo.HorizontalScrollbarSize = 10;
             this.pan_SW_Titolo.Location = new System.Drawing.Point(3, 3);
             this.pan_SW_Titolo.Name = "pan_SW_Titolo";
-            this.pan_SW_Titolo.Size = new System.Drawing.Size(1294, 22);
+            this.pan_SW_Titolo.Size = new System.Drawing.Size(1360, 19);
             this.pan_SW_Titolo.TabIndex = 18;
             this.pan_SW_Titolo.UseCustomBackColor = true;
             this.pan_SW_Titolo.VerticalScrollbarBarColor = true;
@@ -1189,53 +1189,80 @@
             // SW_Layout
             // 
             this.SW_Layout.AutoScroll = true;
-            this.SW_Layout.ColumnCount = 10;
-            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.SW_Layout.ColumnCount = 20;
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.SW_Layout.Controls.Add(this.pan_SW_Titolo, 0, 0);
             this.SW_Layout.Controls.Add(this.pan_Menu_comandi, 0, 1);
-            this.SW_Layout.Controls.Add(this.pan_Menu_salva, 6, 1);
-            this.SW_Layout.Controls.Add(this.pan_Menu_exit, 9, 1);
-            this.SW_Layout.Controls.Add(this.SW_lab_Famiglia, 0, 2);
-            this.SW_Layout.Controls.Add(this.ID_combo_Famiglia, 1, 2);
-            this.SW_Layout.Controls.Add(this.pan_SW_Codifica, 0, 3);
-            this.SW_Layout.Controls.Add(this.pan_SW_P, 0, 4);
-            this.SW_Layout.Controls.Add(this.pan_P_Dx_revisioni, 6, 4);
-            this.SW_Layout.Controls.Add(this.pan_P_Dx_Funzionamento, 6, 5);
-            this.SW_Layout.Controls.Add(this.pan_SW_C, 0, 6);
-            this.SW_Layout.Controls.Add(this.pan_C_Dx_revisioni, 6, 6);
-            this.SW_Layout.Controls.Add(this.pan_C_Dx_Funzionamento, 6, 7);
-            this.SW_Layout.Controls.Add(this.grid_SW_codificati, 3, 2);
+            this.SW_Layout.Controls.Add(this.pan_Menu_salva, 12, 1);
+            this.SW_Layout.Controls.Add(this.pan_Menu_exit, 18, 1);
+            this.SW_Layout.Controls.Add(this.pan_SW_Codifica, 3, 2);
+            this.SW_Layout.Controls.Add(this.grid_SW_codificati, 0, 2);
+            this.SW_Layout.Controls.Add(this.SW_lab_Famiglia, 3, 3);
+            this.SW_Layout.Controls.Add(this.ID_combo_Famiglia, 7, 3);
+            this.SW_Layout.Controls.Add(this.pan_SW_P, 4, 4);
+            this.SW_Layout.Controls.Add(this.pan_P_Dx_revisioni, 14, 4);
+            this.SW_Layout.Controls.Add(this.pan_P_Dx_Funzionamento, 14, 5);
+            this.SW_Layout.Controls.Add(this.pan_SW_C, 4, 6);
+            this.SW_Layout.Controls.Add(this.pan_C_Dx_revisioni, 14, 6);
+            this.SW_Layout.Controls.Add(this.pan_C_Dx_Funzionamento, 14, 7);
             this.SW_Layout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SW_Layout.Location = new System.Drawing.Point(0, 0);
             this.SW_Layout.Name = "SW_Layout";
             this.SW_Layout.RowCount = 8;
-            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.SW_Layout.Size = new System.Drawing.Size(1300, 1200);
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout.Size = new System.Drawing.Size(1366, 768);
             this.SW_Layout.TabIndex = 16;
+            this.SW_Layout.Paint += new System.Windows.Forms.PaintEventHandler(this.SW_Layout_Paint);
             // 
             // pan_Menu_comandi
             // 
             this.pan_Menu_comandi.BackColor = System.Drawing.Color.Gainsboro;
-            this.SW_Layout.SetColumnSpan(this.pan_Menu_comandi, 6);
+            this.SW_Layout.SetColumnSpan(this.pan_Menu_comandi, 12);
             this.pan_Menu_comandi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_sw_new,
             this.menu_sw_div01,
@@ -1248,9 +1275,9 @@
             this.menu_sw_creapdf,
             this.menu_sw_div05,
             this.visualizzaTuttoToolStripMenuItem});
-            this.pan_Menu_comandi.Location = new System.Drawing.Point(0, 28);
+            this.pan_Menu_comandi.Location = new System.Drawing.Point(0, 25);
             this.pan_Menu_comandi.Name = "pan_Menu_comandi";
-            this.pan_Menu_comandi.Size = new System.Drawing.Size(780, 24);
+            this.pan_Menu_comandi.Size = new System.Drawing.Size(816, 20);
             this.pan_Menu_comandi.TabIndex = 12;
             this.pan_Menu_comandi.Text = "menuStrip1";
             // 
@@ -1258,7 +1285,7 @@
             // 
             this.menu_sw_new.Image = ((System.Drawing.Image)(resources.GetObject("menu_sw_new.Image")));
             this.menu_sw_new.Name = "menu_sw_new";
-            this.menu_sw_new.Size = new System.Drawing.Size(111, 20);
+            this.menu_sw_new.Size = new System.Drawing.Size(111, 16);
             this.menu_sw_new.Text = "Nuovo Codice";
             this.menu_sw_new.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -1266,14 +1293,14 @@
             // 
             this.menu_sw_div01.Enabled = false;
             this.menu_sw_div01.Name = "menu_sw_div01";
-            this.menu_sw_div01.Size = new System.Drawing.Size(22, 20);
+            this.menu_sw_div01.Size = new System.Drawing.Size(22, 16);
             this.menu_sw_div01.Text = "|";
             // 
             // menu_sw_edit
             // 
             this.menu_sw_edit.Image = ((System.Drawing.Image)(resources.GetObject("menu_sw_edit.Image")));
             this.menu_sw_edit.Name = "menu_sw_edit";
-            this.menu_sw_edit.Size = new System.Drawing.Size(102, 20);
+            this.menu_sw_edit.Size = new System.Drawing.Size(102, 16);
             this.menu_sw_edit.Text = "Modifica SW";
             this.menu_sw_edit.Click += new System.EventHandler(this.modificaCodiceToolStripMenuItem_Click);
             // 
@@ -1281,28 +1308,28 @@
             // 
             this.menu_sw_div02.Enabled = false;
             this.menu_sw_div02.Name = "menu_sw_div02";
-            this.menu_sw_div02.Size = new System.Drawing.Size(22, 20);
+            this.menu_sw_div02.Size = new System.Drawing.Size(22, 16);
             this.menu_sw_div02.Text = "|";
             // 
             // menu_sw_clona
             // 
             this.menu_sw_clona.Image = ((System.Drawing.Image)(resources.GetObject("menu_sw_clona.Image")));
             this.menu_sw_clona.Name = "menu_sw_clona";
-            this.menu_sw_clona.Size = new System.Drawing.Size(106, 20);
+            this.menu_sw_clona.Size = new System.Drawing.Size(106, 16);
             this.menu_sw_clona.Text = "Clona Codice";
             // 
             // menu_sw_div03
             // 
             this.menu_sw_div03.Enabled = false;
             this.menu_sw_div03.Name = "menu_sw_div03";
-            this.menu_sw_div03.Size = new System.Drawing.Size(22, 20);
+            this.menu_sw_div03.Size = new System.Drawing.Size(22, 16);
             this.menu_sw_div03.Text = "|";
             // 
             // creaRevisioneToolStripMenuItem
             // 
             this.creaRevisioneToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("creaRevisioneToolStripMenuItem.Image")));
             this.creaRevisioneToolStripMenuItem.Name = "creaRevisioneToolStripMenuItem";
-            this.creaRevisioneToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
+            this.creaRevisioneToolStripMenuItem.Size = new System.Drawing.Size(112, 16);
             this.creaRevisioneToolStripMenuItem.Text = "Crea Revisione";
             this.creaRevisioneToolStripMenuItem.Click += new System.EventHandler(this.creaRevisioneToolStripMenuItem_Click);
             // 
@@ -1310,14 +1337,14 @@
             // 
             this.menu_sw_div04.Enabled = false;
             this.menu_sw_div04.Name = "menu_sw_div04";
-            this.menu_sw_div04.Size = new System.Drawing.Size(22, 20);
+            this.menu_sw_div04.Size = new System.Drawing.Size(22, 16);
             this.menu_sw_div04.Text = "|";
             // 
             // menu_sw_creapdf
             // 
             this.menu_sw_creapdf.Image = ((System.Drawing.Image)(resources.GetObject("menu_sw_creapdf.Image")));
             this.menu_sw_creapdf.Name = "menu_sw_creapdf";
-            this.menu_sw_creapdf.Size = new System.Drawing.Size(80, 20);
+            this.menu_sw_creapdf.Size = new System.Drawing.Size(80, 16);
             this.menu_sw_creapdf.Text = "Crea pdf";
             this.menu_sw_creapdf.Click += new System.EventHandler(this.creaPdfToolStripMenuItem_Click);
             // 
@@ -1325,28 +1352,28 @@
             // 
             this.menu_sw_div05.Enabled = false;
             this.menu_sw_div05.Name = "menu_sw_div05";
-            this.menu_sw_div05.Size = new System.Drawing.Size(22, 20);
+            this.menu_sw_div05.Size = new System.Drawing.Size(22, 16);
             this.menu_sw_div05.Text = "|";
             // 
             // visualizzaTuttoToolStripMenuItem
             // 
             this.visualizzaTuttoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("visualizzaTuttoToolStripMenuItem.Image")));
             this.visualizzaTuttoToolStripMenuItem.Name = "visualizzaTuttoToolStripMenuItem";
-            this.visualizzaTuttoToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
+            this.visualizzaTuttoToolStripMenuItem.Size = new System.Drawing.Size(114, 16);
             this.visualizzaTuttoToolStripMenuItem.Text = "Visualizza tutto";
             // 
             // pan_Menu_salva
             // 
             this.pan_Menu_salva.BackColor = System.Drawing.Color.Gainsboro;
-            this.SW_Layout.SetColumnSpan(this.pan_Menu_salva, 3);
+            this.SW_Layout.SetColumnSpan(this.pan_Menu_salva, 6);
             this.pan_Menu_salva.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_sw_div11,
             this.menu_sw_salva,
             this.menu_sw_div12,
             this.menu_sw_annulla});
-            this.pan_Menu_salva.Location = new System.Drawing.Point(780, 28);
+            this.pan_Menu_salva.Location = new System.Drawing.Point(816, 25);
             this.pan_Menu_salva.Name = "pan_Menu_salva";
-            this.pan_Menu_salva.Size = new System.Drawing.Size(390, 24);
+            this.pan_Menu_salva.Size = new System.Drawing.Size(408, 20);
             this.pan_Menu_salva.TabIndex = 55;
             this.pan_Menu_salva.Text = "menuStrip1";
             // 
@@ -1355,14 +1382,14 @@
             this.menu_sw_div11.Enabled = false;
             this.menu_sw_div11.Name = "menu_sw_div11";
             this.menu_sw_div11.ShowShortcutKeys = false;
-            this.menu_sw_div11.Size = new System.Drawing.Size(22, 20);
+            this.menu_sw_div11.Size = new System.Drawing.Size(22, 16);
             this.menu_sw_div11.Text = "|";
             // 
             // menu_sw_salva
             // 
             this.menu_sw_salva.Image = ((System.Drawing.Image)(resources.GetObject("menu_sw_salva.Image")));
             this.menu_sw_salva.Name = "menu_sw_salva";
-            this.menu_sw_salva.Size = new System.Drawing.Size(62, 20);
+            this.menu_sw_salva.Size = new System.Drawing.Size(62, 16);
             this.menu_sw_salva.Text = "Salva";
             this.menu_sw_salva.Click += new System.EventHandler(this.menu_sw_salva_Click);
             // 
@@ -1371,26 +1398,27 @@
             this.menu_sw_div12.Enabled = false;
             this.menu_sw_div12.Name = "menu_sw_div12";
             this.menu_sw_div12.ShowShortcutKeys = false;
-            this.menu_sw_div12.Size = new System.Drawing.Size(22, 20);
+            this.menu_sw_div12.Size = new System.Drawing.Size(22, 16);
             this.menu_sw_div12.Text = "|";
             // 
             // menu_sw_annulla
             // 
             this.menu_sw_annulla.Image = ((System.Drawing.Image)(resources.GetObject("menu_sw_annulla.Image")));
             this.menu_sw_annulla.Name = "menu_sw_annulla";
-            this.menu_sw_annulla.Size = new System.Drawing.Size(76, 20);
+            this.menu_sw_annulla.Size = new System.Drawing.Size(76, 16);
             this.menu_sw_annulla.Text = "Annulla";
             this.menu_sw_annulla.Click += new System.EventHandler(this.menu_sw_annulla_Click);
             // 
             // pan_Menu_exit
             // 
             this.pan_Menu_exit.BackColor = System.Drawing.Color.Gainsboro;
+            this.SW_Layout.SetColumnSpan(this.pan_Menu_exit, 2);
             this.pan_Menu_exit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem5,
             this.menu_sw_exit});
-            this.pan_Menu_exit.Location = new System.Drawing.Point(1170, 28);
+            this.pan_Menu_exit.Location = new System.Drawing.Point(1224, 25);
             this.pan_Menu_exit.Name = "pan_Menu_exit";
-            this.pan_Menu_exit.Size = new System.Drawing.Size(130, 24);
+            this.pan_Menu_exit.Size = new System.Drawing.Size(142, 20);
             this.pan_Menu_exit.TabIndex = 19;
             this.pan_Menu_exit.Text = "menuStrip1";
             // 
@@ -1399,30 +1427,71 @@
             this.toolStripMenuItem5.Enabled = false;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.ShowShortcutKeys = false;
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(22, 20);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(22, 16);
             this.toolStripMenuItem5.Text = "|";
             // 
             // menu_sw_exit
             // 
             this.menu_sw_exit.Image = ((System.Drawing.Image)(resources.GetObject("menu_sw_exit.Image")));
             this.menu_sw_exit.Name = "menu_sw_exit";
-            this.menu_sw_exit.Size = new System.Drawing.Size(67, 20);
+            this.menu_sw_exit.Size = new System.Drawing.Size(67, 16);
             this.menu_sw_exit.Text = "Uscita";
             this.menu_sw_exit.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
+            // grid_SW_codificati
+            // 
+            this.grid_SW_codificati.AlphaBlendSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))), ((int)(((byte)(222)))));
+            this.grid_SW_codificati.AutoPopulateRelations = false;
+            this.grid_SW_codificati.BackColor = System.Drawing.SystemColors.Window;
+            this.grid_SW_codificati.ChildGroupOptions.CaptionText = "{Category} - {RecordCount} Items";
+            this.SW_Layout.SetColumnSpan(this.grid_SW_codificati, 4);
+            this.grid_SW_codificati.DataSource = this.gCSoftwareBindingSource;
+            this.grid_SW_codificati.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid_SW_codificati.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grid_SW_codificati.GridOfficeScrollBars = Syncfusion.Windows.Forms.OfficeScrollBars.Metro;
+            this.grid_SW_codificati.GridVisualStyles = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
+            this.grid_SW_codificati.Location = new System.Drawing.Point(3, 48);
+            this.grid_SW_codificati.Name = "grid_SW_codificati";
+            this.SW_Layout.SetRowSpan(this.grid_SW_codificati, 3);
+            this.grid_SW_codificati.ShowCurrentCellBorderBehavior = Syncfusion.Windows.Forms.Grid.GridShowCurrentCellBorder.GrayWhenLostFocus;
+            this.grid_SW_codificati.Size = new System.Drawing.Size(266, 200);
+            this.grid_SW_codificati.TabIndex = 57;
+            this.grid_SW_codificati.TableDescriptor.AllowNew = false;
+            this.grid_SW_codificati.TableDescriptor.ChildGroupOptions.CaptionText = "{Category} - {RecordCount} Revisioni";
+            gridColumnDescriptor1.MappingName = "SW_Versione";
+            gridColumnDescriptor1.Width = 70;
+            gridColumnDescriptor2.MappingName = "SW_Revisione";
+            gridColumnDescriptor2.Width = 80;
+            this.grid_SW_codificati.TableDescriptor.Columns.AddRange(new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor[] {
+            gridColumnDescriptor1,
+            gridColumnDescriptor2});
+            this.grid_SW_codificati.TableDescriptor.GroupedColumns.AddRange(new Syncfusion.Grouping.SortColumnDescriptor[] {
+            new Syncfusion.Grouping.SortColumnDescriptor("SW_Versione", System.ComponentModel.ListSortDirection.Ascending)});
+            this.grid_SW_codificati.TableDescriptor.TableOptions.ColumnHeaderRowHeight = 25;
+            this.grid_SW_codificati.TableDescriptor.TableOptions.RecordRowHeight = 25;
+            this.grid_SW_codificati.TableDescriptor.TopLevelGroupOptions.IsExpandedInitialValue = false;
+            this.grid_SW_codificati.TableDescriptor.TopLevelGroupOptions.ShowCaption = false;
+            this.grid_SW_codificati.TableOptions.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.grid_SW_codificati.TableOptions.SelectionTextColor = System.Drawing.SystemColors.HighlightText;
+            this.grid_SW_codificati.TableOptions.ShowRowHeader = false;
+            this.grid_SW_codificati.Text = "gridGroupingControl1";
+            this.grid_SW_codificati.TopLevelGroupOptions.ShowSummaries = false;
+            this.grid_SW_codificati.UseRightToLeftCompatibleTextBox = true;
+            this.grid_SW_codificati.VersionInfo = "17.2460.0.34";
+            // 
             // pan_SW_C
             // 
-            this.SW_Layout.SetColumnSpan(this.pan_SW_C, 6);
+            this.SW_Layout.SetColumnSpan(this.pan_SW_C, 10);
             this.pan_SW_C.Controls.Add(this.pan_C_middle);
             this.pan_SW_C.Controls.Add(this.pan_C_top);
             this.pan_SW_C.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_SW_C.HorizontalScrollbarBarColor = true;
             this.pan_SW_C.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_SW_C.HorizontalScrollbarSize = 10;
-            this.pan_SW_C.Location = new System.Drawing.Point(3, 629);
+            this.pan_SW_C.Location = new System.Drawing.Point(275, 560);
             this.pan_SW_C.Name = "pan_SW_C";
-            this.SW_Layout.SetRowSpan(this.pan_SW_C, 3);
-            this.pan_SW_C.Size = new System.Drawing.Size(774, 1619);
+            this.SW_Layout.SetRowSpan(this.pan_SW_C, 2);
+            this.pan_SW_C.Size = new System.Drawing.Size(674, 2614);
             this.pan_SW_C.TabIndex = 56;
             this.pan_SW_C.VerticalScrollbarBarColor = true;
             this.pan_SW_C.VerticalScrollbarHighlightOnWheel = false;
@@ -1478,7 +1547,7 @@
             this.pan_C_middle.HorizontalScrollbarSize = 10;
             this.pan_C_middle.Location = new System.Drawing.Point(0, 160);
             this.pan_C_middle.Name = "pan_C_middle";
-            this.pan_C_middle.Size = new System.Drawing.Size(774, 1459);
+            this.pan_C_middle.Size = new System.Drawing.Size(674, 2454);
             this.pan_C_middle.TabIndex = 42;
             this.pan_C_middle.VerticalScrollbarBarColor = true;
             this.pan_C_middle.VerticalScrollbarHighlightOnWheel = false;
@@ -2003,7 +2072,7 @@
             this.pan_C_top.HorizontalScrollbarSize = 10;
             this.pan_C_top.Location = new System.Drawing.Point(0, 0);
             this.pan_C_top.Name = "pan_C_top";
-            this.pan_C_top.Size = new System.Drawing.Size(774, 160);
+            this.pan_C_top.Size = new System.Drawing.Size(674, 160);
             this.pan_C_top.TabIndex = 41;
             this.pan_C_top.VerticalScrollbarBarColor = true;
             this.pan_C_top.VerticalScrollbarHighlightOnWheel = false;
@@ -2018,7 +2087,7 @@
             this.pan_C_top_grid.HorizontalScrollbarSize = 10;
             this.pan_C_top_grid.Location = new System.Drawing.Point(120, 30);
             this.pan_C_top_grid.Name = "pan_C_top_grid";
-            this.pan_C_top_grid.Size = new System.Drawing.Size(654, 130);
+            this.pan_C_top_grid.Size = new System.Drawing.Size(554, 130);
             this.pan_C_top_grid.TabIndex = 43;
             this.pan_C_top_grid.VerticalScrollbarBarColor = true;
             this.pan_C_top_grid.VerticalScrollbarHighlightOnWheel = false;
@@ -2072,7 +2141,7 @@
             this.grid_C_SchedeCompatibili.RowHeadersVisible = false;
             this.grid_C_SchedeCompatibili.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_C_SchedeCompatibili.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_C_SchedeCompatibili.Size = new System.Drawing.Size(654, 130);
+            this.grid_C_SchedeCompatibili.Size = new System.Drawing.Size(554, 130);
             this.grid_C_SchedeCompatibili.Style = MetroFramework.MetroColorStyle.Red;
             this.grid_C_SchedeCompatibili.TabIndex = 40;
             this.grid_C_SchedeCompatibili.UseStyleColors = true;
@@ -2118,7 +2187,7 @@
             this.pan_C_top_top.HorizontalScrollbarSize = 10;
             this.pan_C_top_top.Location = new System.Drawing.Point(0, 0);
             this.pan_C_top_top.Name = "pan_C_top_top";
-            this.pan_C_top_top.Size = new System.Drawing.Size(774, 30);
+            this.pan_C_top_top.Size = new System.Drawing.Size(674, 30);
             this.pan_C_top_top.TabIndex = 41;
             this.pan_C_top_top.VerticalScrollbarBarColor = true;
             this.pan_C_top_top.VerticalScrollbarHighlightOnWheel = false;
@@ -2142,16 +2211,16 @@
             // pan_C_Dx_revisioni
             // 
             this.pan_C_Dx_revisioni.BackColor = System.Drawing.Color.Transparent;
-            this.SW_Layout.SetColumnSpan(this.pan_C_Dx_revisioni, 4);
+            this.SW_Layout.SetColumnSpan(this.pan_C_Dx_revisioni, 6);
             this.pan_C_Dx_revisioni.Controls.Add(this.metroPanel9);
             this.pan_C_Dx_revisioni.Controls.Add(this.metroPanel10);
             this.pan_C_Dx_revisioni.Dock = System.Windows.Forms.DockStyle.Top;
             this.pan_C_Dx_revisioni.HorizontalScrollbarBarColor = true;
             this.pan_C_Dx_revisioni.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_C_Dx_revisioni.HorizontalScrollbarSize = 10;
-            this.pan_C_Dx_revisioni.Location = new System.Drawing.Point(783, 629);
+            this.pan_C_Dx_revisioni.Location = new System.Drawing.Point(955, 560);
             this.pan_C_Dx_revisioni.Name = "pan_C_Dx_revisioni";
-            this.pan_C_Dx_revisioni.Size = new System.Drawing.Size(514, 150);
+            this.pan_C_Dx_revisioni.Size = new System.Drawing.Size(408, 150);
             this.pan_C_Dx_revisioni.TabIndex = 11;
             this.pan_C_Dx_revisioni.UseCustomBackColor = true;
             this.pan_C_Dx_revisioni.VerticalScrollbarBarColor = true;
@@ -2167,7 +2236,7 @@
             this.metroPanel9.HorizontalScrollbarSize = 10;
             this.metroPanel9.Location = new System.Drawing.Point(0, 20);
             this.metroPanel9.Name = "metroPanel9";
-            this.metroPanel9.Size = new System.Drawing.Size(514, 130);
+            this.metroPanel9.Size = new System.Drawing.Size(408, 130);
             this.metroPanel9.TabIndex = 13;
             this.metroPanel9.VerticalScrollbarBarColor = true;
             this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
@@ -2181,7 +2250,7 @@
             this.richtb__Revisioni_C.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb__Revisioni_C.Location = new System.Drawing.Point(0, 0);
             this.richtb__Revisioni_C.Name = "richtb__Revisioni_C";
-            this.richtb__Revisioni_C.Size = new System.Drawing.Size(514, 130);
+            this.richtb__Revisioni_C.Size = new System.Drawing.Size(408, 130);
             this.richtb__Revisioni_C.TabIndex = 11;
             this.richtb__Revisioni_C.Text = "";
             // 
@@ -2195,7 +2264,7 @@
             this.metroPanel10.HorizontalScrollbarSize = 10;
             this.metroPanel10.Location = new System.Drawing.Point(0, 0);
             this.metroPanel10.Name = "metroPanel10";
-            this.metroPanel10.Size = new System.Drawing.Size(514, 20);
+            this.metroPanel10.Size = new System.Drawing.Size(408, 20);
             this.metroPanel10.TabIndex = 12;
             this.metroPanel10.UseCustomBackColor = true;
             this.metroPanel10.VerticalScrollbarBarColor = true;
@@ -2215,16 +2284,16 @@
             // pan_C_Dx_Funzionamento
             // 
             this.pan_C_Dx_Funzionamento.BackColor = System.Drawing.Color.Transparent;
-            this.SW_Layout.SetColumnSpan(this.pan_C_Dx_Funzionamento, 4);
+            this.SW_Layout.SetColumnSpan(this.pan_C_Dx_Funzionamento, 6);
             this.pan_C_Dx_Funzionamento.Controls.Add(this.metroPanel6);
             this.pan_C_Dx_Funzionamento.Controls.Add(this.metroPanel7);
             this.pan_C_Dx_Funzionamento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarBarColor = true;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarSize = 10;
-            this.pan_C_Dx_Funzionamento.Location = new System.Drawing.Point(783, 785);
+            this.pan_C_Dx_Funzionamento.Location = new System.Drawing.Point(955, 716);
             this.pan_C_Dx_Funzionamento.Name = "pan_C_Dx_Funzionamento";
-            this.pan_C_Dx_Funzionamento.Size = new System.Drawing.Size(514, 300);
+            this.pan_C_Dx_Funzionamento.Size = new System.Drawing.Size(408, 2458);
             this.pan_C_Dx_Funzionamento.TabIndex = 12;
             this.pan_C_Dx_Funzionamento.UseCustomBackColor = true;
             this.pan_C_Dx_Funzionamento.VerticalScrollbarBarColor = true;
@@ -2241,7 +2310,7 @@
             this.metroPanel6.HorizontalScrollbarSize = 10;
             this.metroPanel6.Location = new System.Drawing.Point(0, 15);
             this.metroPanel6.Name = "metroPanel6";
-            this.metroPanel6.Size = new System.Drawing.Size(514, 285);
+            this.metroPanel6.Size = new System.Drawing.Size(408, 2443);
             this.metroPanel6.TabIndex = 13;
             this.metroPanel6.UseCustomBackColor = true;
             this.metroPanel6.VerticalScrollbarBarColor = true;
@@ -2256,7 +2325,7 @@
             this.richtb_Funzionamento_C.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb_Funzionamento_C.Location = new System.Drawing.Point(0, 0);
             this.richtb_Funzionamento_C.Name = "richtb_Funzionamento_C";
-            this.richtb_Funzionamento_C.Size = new System.Drawing.Size(514, 285);
+            this.richtb_Funzionamento_C.Size = new System.Drawing.Size(408, 2443);
             this.richtb_Funzionamento_C.TabIndex = 11;
             this.richtb_Funzionamento_C.Text = "";
             // 
@@ -2270,7 +2339,7 @@
             this.metroPanel7.HorizontalScrollbarSize = 10;
             this.metroPanel7.Location = new System.Drawing.Point(0, 0);
             this.metroPanel7.Name = "metroPanel7";
-            this.metroPanel7.Size = new System.Drawing.Size(514, 15);
+            this.metroPanel7.Size = new System.Drawing.Size(408, 15);
             this.metroPanel7.TabIndex = 12;
             this.metroPanel7.UseCustomBackColor = true;
             this.metroPanel7.VerticalScrollbarBarColor = true;
@@ -2287,146 +2356,13 @@
             this.metroLabel50.Text = "Funzionamento:";
             this.metroLabel50.UseCustomBackColor = true;
             // 
-            // grid_SW_codificati
-            // 
-            this.grid_SW_codificati.AlphaBlendSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))), ((int)(((byte)(222)))));
-            this.grid_SW_codificati.BackColor = System.Drawing.SystemColors.Window;
-            this.grid_SW_codificati.ChildGroupOptions.CaptionText = "{Category} - {RecordCount} revisioni";
-            this.grid_SW_codificati.ChildGroupOptions.IsExpandedInitialValue = true;
-            this.SW_Layout.SetColumnSpan(this.grid_SW_codificati, 7);
-            this.grid_SW_codificati.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid_SW_codificati.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grid_SW_codificati.GridOfficeScrollBars = Syncfusion.Windows.Forms.OfficeScrollBars.Metro;
-            this.grid_SW_codificati.GridVisualStyles = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
-            this.grid_SW_codificati.Location = new System.Drawing.Point(393, 56);
-            this.grid_SW_codificati.Name = "grid_SW_codificati";
-            this.grid_SW_codificati.ShowCurrentCellBorderBehavior = Syncfusion.Windows.Forms.Grid.GridShowCurrentCellBorder.GrayWhenLostFocus;
-            this.grid_SW_codificati.ShowRowHeaders = false;
-            this.grid_SW_codificati.Size = new System.Drawing.Size(904, 80);
-            this.grid_SW_codificati.TabIndex = 59;
-            this.grid_SW_codificati.TableDescriptor.AllowNew = false;
-            this.grid_SW_codificati.TableDescriptor.Appearance.AnyCell.VerticalAlignment = Syncfusion.Windows.Forms.Grid.GridVerticalAlignment.Middle;
-            this.grid_SW_codificati.TableDescriptor.ChildGroupOptions.IsExpandedInitialValue = true;
-            this.grid_SW_codificati.TableDescriptor.Columns.AddRange(new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor[] {
-            new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor("SW_Versione"),
-            new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor("SW_Revisione"),
-            new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor("SW_Code"),
-            new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor("SW_Descrizione")});
-            this.grid_SW_codificati.TableDescriptor.GroupedColumns.AddRange(new Syncfusion.Grouping.SortColumnDescriptor[] {
-            new Syncfusion.Grouping.SortColumnDescriptor("SW_Versione", System.ComponentModel.ListSortDirection.Ascending)});
-            this.grid_SW_codificati.TableDescriptor.SortedColumns.AddRange(new Syncfusion.Grouping.SortColumnDescriptor[] {
-            new Syncfusion.Grouping.SortColumnDescriptor("SW_Code", System.ComponentModel.ListSortDirection.Ascending)});
-            this.grid_SW_codificati.TableDescriptor.TableOptions.ColumnHeaderRowHeight = 25;
-            this.grid_SW_codificati.TableDescriptor.TableOptions.RecordRowHeight = 25;
-            this.grid_SW_codificati.TableDescriptor.TopLevelGroupOptions.ShowSummaries = true;
-            this.grid_SW_codificati.TableOptions.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.grid_SW_codificati.TableOptions.SelectionTextColor = System.Drawing.SystemColors.HighlightText;
-            this.grid_SW_codificati.Text = "gridGroupingControl1";
-            this.grid_SW_codificati.TopLevelGroupOptions.CaptionText = "{RecordCount} Items";
-            this.grid_SW_codificati.TopLevelGroupOptions.ShowCaption = false;
-            this.grid_SW_codificati.TopLevelGroupOptions.ShowColumnHeaders = true;
-            this.grid_SW_codificati.TopLevelGroupOptions.ShowSummaries = true;
-            this.grid_SW_codificati.UseRightToLeftCompatibleTextBox = true;
-            this.grid_SW_codificati.VersionInfo = "17.2460.0.34";
-            // 
-            // gC_Fam_ProdTableAdapter
-            // 
-            this.gC_Fam_ProdTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.metroLabel16, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tv_Software, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.treeViewAdv1, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 1200);
-            this.tableLayoutPanel1.TabIndex = 60;
-            // 
-            // metroLabel16
-            // 
-            this.metroLabel16.AutoSize = true;
-            this.metroLabel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroLabel16.Location = new System.Drawing.Point(3, 0);
-            this.metroLabel16.Name = "metroLabel16";
-            this.metroLabel16.Size = new System.Drawing.Size(194, 20);
-            this.metroLabel16.TabIndex = 0;
-            this.metroLabel16.Text = "Tutte le versioni:";
-            // 
-            // tv_Software
-            // 
-            this.tv_Software.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tv_Software.Location = new System.Drawing.Point(3, 397);
-            this.tv_Software.Name = "tv_Software";
-            this.tv_Software.Size = new System.Drawing.Size(194, 1174);
-            this.tv_Software.TabIndex = 1;
-            // 
-            // treeViewAdv1
-            // 
-            treeNodeAdvStyleInfo1.CheckBoxTickThickness = 1;
-            treeNodeAdvStyleInfo1.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            treeNodeAdvStyleInfo1.EnsureDefaultOptionedChild = true;
-            treeNodeAdvStyleInfo1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            treeNodeAdvStyleInfo1.IntermediateCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            treeNodeAdvStyleInfo1.OptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            treeNodeAdvStyleInfo1.SelectedOptionButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.treeViewAdv1.BaseStylePairs.AddRange(new Syncfusion.Windows.Forms.Tools.StyleNamePair[] {
-            new Syncfusion.Windows.Forms.Tools.StyleNamePair("Standard", treeNodeAdvStyleInfo1)});
-            this.treeViewAdv1.BeforeTouchSize = new System.Drawing.Size(194, 368);
-            this.treeViewAdv1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // 
-            // 
-            this.treeViewAdv1.HelpTextControl.BaseThemeName = null;
-            this.treeViewAdv1.HelpTextControl.Location = new System.Drawing.Point(0, 0);
-            this.treeViewAdv1.HelpTextControl.Name = "";
-            this.treeViewAdv1.HelpTextControl.Size = new System.Drawing.Size(392, 112);
-            this.treeViewAdv1.HelpTextControl.TabIndex = 0;
-            this.treeViewAdv1.HelpTextControl.Visible = true;
-            this.treeViewAdv1.InactiveSelectedNodeForeColor = System.Drawing.SystemColors.ControlText;
-            this.treeViewAdv1.Location = new System.Drawing.Point(3, 23);
-            this.treeViewAdv1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.treeViewAdv1.Name = "treeViewAdv1";
-            this.treeViewAdv1.SelectedNodeForeColor = System.Drawing.SystemColors.HighlightText;
-            this.treeViewAdv1.Size = new System.Drawing.Size(194, 368);
-            this.treeViewAdv1.TabIndex = 2;
-            this.treeViewAdv1.Text = "treeViewAdv1";
-            this.treeViewAdv1.ThemeStyle.TreeNodeAdvStyle.CheckBoxTickThickness = 0;
-            this.treeViewAdv1.ThemeStyle.TreeNodeAdvStyle.EnsureDefaultOptionedChild = true;
-            // 
-            // 
-            // 
-            this.treeViewAdv1.ToolTipControl.BaseThemeName = null;
-            this.treeViewAdv1.ToolTipControl.Location = new System.Drawing.Point(0, 0);
-            this.treeViewAdv1.ToolTipControl.Name = "";
-            this.treeViewAdv1.ToolTipControl.Size = new System.Drawing.Size(392, 112);
-            this.treeViewAdv1.ToolTipControl.TabIndex = 0;
-            this.treeViewAdv1.ToolTipControl.Visible = true;
-            // 
-            // gCSoftwareBindingSource
-            // 
-            this.gCSoftwareBindingSource.DataMember = "GC_Software";
-            this.gCSoftwareBindingSource.DataSource = this.dB_FactoryDataSet;
-            // 
             // gC_SoftwareTableAdapter
             // 
             this.gC_SoftwareTableAdapter.ClearBeforeFill = true;
             // 
-            // famProdGCSchedeBindingSource
+            // gC_Fam_ProdTableAdapter
             // 
-            this.famProdGCSchedeBindingSource.DataMember = "Fam_Prod_GC_Schede";
-            this.famProdGCSchedeBindingSource.DataSource = this.gCFamProdBindingSource;
-            // 
-            // gC_SchedeTableAdapter
-            // 
-            this.gC_SchedeTableAdapter.ClearBeforeFill = true;
+            this.gC_Fam_ProdTableAdapter.ClearBeforeFill = true;
             // 
             // UC_form_Sw
             // 
@@ -2434,10 +2370,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.SW_Layout);
             this.Name = "UC_form_Sw";
-            this.Size = new System.Drawing.Size(1300, 1200);
+            this.Size = new System.Drawing.Size(1366, 768);
             this.Load += new System.EventHandler(this.UC_form_Sw_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).EndInit();
             this.pan_P_Dx_Funzionamento.ResumeLayout(false);
@@ -2460,9 +2395,10 @@
             this.pan_P_top_left.PerformLayout();
             this.pan_P_top_top.ResumeLayout(false);
             this.pan_P_top_top.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gCFamProdBindingSource)).EndInit();
             this.pan_SW_Codifica.ResumeLayout(false);
             this.pan_SW_Codifica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareGCFamProdBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).EndInit();
             this.pan_SW_Titolo.ResumeLayout(false);
             this.pan_SW_Titolo.PerformLayout();
             this.SW_Layout.ResumeLayout(false);
@@ -2473,6 +2409,7 @@
             this.pan_Menu_salva.PerformLayout();
             this.pan_Menu_exit.ResumeLayout(false);
             this.pan_Menu_exit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_SW_codificati)).EndInit();
             this.pan_SW_C.ResumeLayout(false);
             this.pan_C_middle.ResumeLayout(false);
             this.pan_C_middle.PerformLayout();
@@ -2493,12 +2430,6 @@
             this.metroPanel6.ResumeLayout(false);
             this.metroPanel7.ResumeLayout(false);
             this.metroPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_SW_codificati)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeViewAdv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.famProdGCSchedeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2656,9 +2587,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private System.Windows.Forms.ToolStripMenuItem menu_sw_div05;
         private System.Windows.Forms.ToolStripMenuItem visualizzaTuttoToolStripMenuItem;
-        private Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl grid_SW_codificati;
-        private System.Windows.Forms.BindingSource gCFamProdBindingSource;
-        private DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter gC_Fam_ProdTableAdapter;
         private System.Windows.Forms.DataGridViewCheckBoxColumn P_SchedaCompatibile;
         private System.Windows.Forms.DataGridViewCheckBoxColumn C_SchedaCompatibile;
         private MetroFramework.Controls.MetroPanel pan_C_Dx_Funzionamento;
@@ -2666,13 +2594,10 @@
         private System.Windows.Forms.RichTextBox richtb_Funzionamento_C;
         private MetroFramework.Controls.MetroPanel metroPanel7;
         private MetroFramework.Controls.MetroLabel metroLabel50;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private MetroFramework.Controls.MetroLabel metroLabel16;
-        private System.Windows.Forms.TreeView tv_Software;
         private System.Windows.Forms.BindingSource gCSoftwareBindingSource;
         private DB_FactoryDataSetTableAdapters.GC_SoftwareTableAdapter gC_SoftwareTableAdapter;
-        private System.Windows.Forms.BindingSource famProdGCSchedeBindingSource;
-        private DB_FactoryDataSetTableAdapters.GC_SchedeTableAdapter gC_SchedeTableAdapter;
-        private Syncfusion.Windows.Forms.Tools.TreeViewAdv treeViewAdv1;
+        private Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl grid_SW_codificati;
+        private System.Windows.Forms.BindingSource gCSoftwareGCFamProdBindingSource;
+        private DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter gC_Fam_ProdTableAdapter;
     }
 }
