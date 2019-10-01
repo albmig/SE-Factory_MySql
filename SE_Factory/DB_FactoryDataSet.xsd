@@ -965,7 +965,7 @@ LIMIT 1</CommandText>
   <xs:element name="DB_FactoryDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DB_FactoryDataSet" msprop:Generator_UserDSName="DB_FactoryDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Fam_Prod" msprop:Generator_TableClassName="Fam_ProdDataTable" msprop:Generator_TableVarName="tableFam_Prod" msprop:Generator_RowChangedName="Fam_ProdRowChanged" msprop:Generator_TablePropName="Fam_Prod" msprop:Generator_RowDeletingName="Fam_ProdRowDeleting" msprop:Generator_RowChangingName="Fam_ProdRowChanging" msprop:Generator_RowEvHandlerName="Fam_ProdRowChangeEventHandler" msprop:Generator_RowDeletedName="Fam_ProdRowDeleted" msprop:Generator_RowClassName="Fam_ProdRow" msprop:Generator_UserTableName="Fam_Prod" msprop:Generator_RowEvArgName="Fam_ProdRowChangeEvent">
+        <xs:element name="Fam_Prod" msprop:Generator_TableClassName="Fam_ProdDataTable" msprop:Generator_TableVarName="tableFam_Prod" msprop:Generator_TablePropName="Fam_Prod" msprop:Generator_RowDeletingName="Fam_ProdRowDeleting" msprop:Generator_RowChangingName="Fam_ProdRowChanging" msprop:Generator_RowEvHandlerName="Fam_ProdRowChangeEventHandler" msprop:Generator_RowDeletedName="Fam_ProdRowDeleted" msprop:Generator_UserTableName="Fam_Prod" msprop:Generator_RowChangedName="Fam_ProdRowChanged" msprop:Generator_RowEvArgName="Fam_ProdRowChangeEvent" msprop:Generator_RowClassName="Fam_ProdRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -993,7 +993,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Schede" msprop:Generator_TableClassName="SchedeDataTable" msprop:Generator_TableVarName="tableSchede" msprop:Generator_TablePropName="Schede" msprop:Generator_RowDeletingName="SchedeRowDeleting" msprop:Generator_RowChangingName="SchedeRowChanging" msprop:Generator_RowEvHandlerName="SchedeRowChangeEventHandler" msprop:Generator_RowDeletedName="SchedeRowDeleted" msprop:Generator_UserTableName="Schede" msprop:Generator_RowChangedName="SchedeRowChanged" msprop:Generator_RowEvArgName="SchedeRowChangeEvent" msprop:Generator_RowClassName="SchedeRow">
+        <xs:element name="Schede" msprop:Generator_TableClassName="SchedeDataTable" msprop:Generator_TableVarName="tableSchede" msprop:Generator_RowChangedName="SchedeRowChanged" msprop:Generator_TablePropName="Schede" msprop:Generator_RowDeletingName="SchedeRowDeleting" msprop:Generator_RowChangingName="SchedeRowChanging" msprop:Generator_RowEvHandlerName="SchedeRowChangeEventHandler" msprop:Generator_RowDeletedName="SchedeRowDeleted" msprop:Generator_RowClassName="SchedeRow" msprop:Generator_UserTableName="Schede" msprop:Generator_RowEvArgName="SchedeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1022,7 +1022,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_TableClassName="SM_V_ANAGRAFICA_CLIENTIDataTable" msprop:Generator_TableVarName="tableSM_V_ANAGRAFICA_CLIENTI" msprop:Generator_RowChangedName="SM_V_ANAGRAFICA_CLIENTIRowChanged" msprop:Generator_TablePropName="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_RowDeletingName="SM_V_ANAGRAFICA_CLIENTIRowDeleting" msprop:Generator_RowChangingName="SM_V_ANAGRAFICA_CLIENTIRowChanging" msprop:Generator_RowEvHandlerName="SM_V_ANAGRAFICA_CLIENTIRowChangeEventHandler" msprop:Generator_RowDeletedName="SM_V_ANAGRAFICA_CLIENTIRowDeleted" msprop:Generator_RowClassName="SM_V_ANAGRAFICA_CLIENTIRow" msprop:Generator_UserTableName="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_RowEvArgName="SM_V_ANAGRAFICA_CLIENTIRowChangeEvent">
+        <xs:element name="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_TableClassName="SM_V_ANAGRAFICA_CLIENTIDataTable" msprop:Generator_TableVarName="tableSM_V_ANAGRAFICA_CLIENTI" msprop:Generator_TablePropName="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_RowDeletingName="SM_V_ANAGRAFICA_CLIENTIRowDeleting" msprop:Generator_RowChangingName="SM_V_ANAGRAFICA_CLIENTIRowChanging" msprop:Generator_RowEvHandlerName="SM_V_ANAGRAFICA_CLIENTIRowChangeEventHandler" msprop:Generator_RowDeletedName="SM_V_ANAGRAFICA_CLIENTIRowDeleted" msprop:Generator_UserTableName="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_RowChangedName="SM_V_ANAGRAFICA_CLIENTIRowChanged" msprop:Generator_RowEvArgName="SM_V_ANAGRAFICA_CLIENTIRowChangeEvent" msprop:Generator_RowClassName="SM_V_ANAGRAFICA_CLIENTIRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Mastro" msprop:Generator_ColumnVarNameInTable="columnMastro" msprop:Generator_ColumnPropNameInRow="Mastro" msprop:Generator_ColumnPropNameInTable="MastroColumn" msprop:Generator_UserColumnName="Mastro" type="xs:short" />
@@ -1254,7 +1254,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="JLabel" msprop:Generator_TableClassName="JLabelDataTable" msprop:Generator_TableVarName="tableJLabel" msprop:Generator_TablePropName="JLabel" msprop:Generator_RowDeletingName="JLabelRowDeleting" msprop:Generator_RowChangingName="JLabelRowChanging" msprop:Generator_RowEvHandlerName="JLabelRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabelRowDeleted" msprop:Generator_UserTableName="JLabel" msprop:Generator_RowChangedName="JLabelRowChanged" msprop:Generator_RowEvArgName="JLabelRowChangeEvent" msprop:Generator_RowClassName="JLabelRow">
+        <xs:element name="JLabel" msprop:Generator_TableClassName="JLabelDataTable" msprop:Generator_TableVarName="tableJLabel" msprop:Generator_RowChangedName="JLabelRowChanged" msprop:Generator_TablePropName="JLabel" msprop:Generator_RowDeletingName="JLabelRowDeleting" msprop:Generator_RowChangingName="JLabelRowChanging" msprop:Generator_RowEvHandlerName="JLabelRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabelRowDeleted" msprop:Generator_RowClassName="JLabelRow" msprop:Generator_UserTableName="JLabel" msprop:Generator_RowEvArgName="JLabelRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TIPO_ORDINE_CLIENTE" msprop:Generator_ColumnVarNameInTable="columnTIPO_ORDINE_CLIENTE" msprop:Generator_ColumnPropNameInRow="TIPO_ORDINE_CLIENTE" msprop:Generator_ColumnPropNameInTable="TIPO_ORDINE_CLIENTEColumn" msprop:Generator_UserColumnName="TIPO_ORDINE_CLIENTE">
@@ -1337,7 +1337,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="JLabel_Clienti" msprop:Generator_TableClassName="JLabel_ClientiDataTable" msprop:Generator_TableVarName="tableJLabel_Clienti" msprop:Generator_RowChangedName="JLabel_ClientiRowChanged" msprop:Generator_TablePropName="JLabel_Clienti" msprop:Generator_RowDeletingName="JLabel_ClientiRowDeleting" msprop:Generator_RowChangingName="JLabel_ClientiRowChanging" msprop:Generator_RowEvHandlerName="JLabel_ClientiRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabel_ClientiRowDeleted" msprop:Generator_RowClassName="JLabel_ClientiRow" msprop:Generator_UserTableName="JLabel_Clienti" msprop:Generator_RowEvArgName="JLabel_ClientiRowChangeEvent">
+        <xs:element name="JLabel_Clienti" msprop:Generator_TableClassName="JLabel_ClientiDataTable" msprop:Generator_TableVarName="tableJLabel_Clienti" msprop:Generator_TablePropName="JLabel_Clienti" msprop:Generator_RowDeletingName="JLabel_ClientiRowDeleting" msprop:Generator_RowChangingName="JLabel_ClientiRowChanging" msprop:Generator_RowEvHandlerName="JLabel_ClientiRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabel_ClientiRowDeleted" msprop:Generator_UserTableName="JLabel_Clienti" msprop:Generator_RowChangedName="JLabel_ClientiRowChanged" msprop:Generator_RowEvArgName="JLabel_ClientiRowChangeEvent" msprop:Generator_RowClassName="JLabel_ClientiRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NumOrdine" msprop:Generator_ColumnVarNameInTable="columnNumOrdine" msprop:Generator_ColumnPropNameInRow="NumOrdine" msprop:Generator_ColumnPropNameInTable="NumOrdineColumn" msprop:Generator_UserColumnName="NumOrdine" type="xs:int" />
@@ -1639,7 +1639,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SpedNeohm" msprop:Generator_TableClassName="SpedNeohmDataTable" msprop:Generator_TableVarName="tableSpedNeohm" msprop:Generator_RowChangedName="SpedNeohmRowChanged" msprop:Generator_TablePropName="SpedNeohm" msprop:Generator_RowDeletingName="SpedNeohmRowDeleting" msprop:Generator_RowChangingName="SpedNeohmRowChanging" msprop:Generator_RowEvHandlerName="SpedNeohmRowChangeEventHandler" msprop:Generator_RowDeletedName="SpedNeohmRowDeleted" msprop:Generator_RowClassName="SpedNeohmRow" msprop:Generator_UserTableName="SpedNeohm" msprop:Generator_RowEvArgName="SpedNeohmRowChangeEvent">
+        <xs:element name="SpedNeohm" msprop:Generator_TableClassName="SpedNeohmDataTable" msprop:Generator_TableVarName="tableSpedNeohm" msprop:Generator_TablePropName="SpedNeohm" msprop:Generator_RowDeletingName="SpedNeohmRowDeleting" msprop:Generator_RowChangingName="SpedNeohmRowChanging" msprop:Generator_RowEvHandlerName="SpedNeohmRowChangeEventHandler" msprop:Generator_RowDeletedName="SpedNeohmRowDeleted" msprop:Generator_UserTableName="SpedNeohm" msprop:Generator_RowChangedName="SpedNeohmRowChanged" msprop:Generator_RowEvArgName="SpedNeohmRowChangeEvent" msprop:Generator_RowClassName="SpedNeohmRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="File_Sped" msprop:Generator_ColumnVarNameInTable="columnFile_Sped" msprop:Generator_ColumnPropNameInRow="File_Sped" msprop:Generator_ColumnPropNameInTable="File_SpedColumn" msprop:Generator_UserColumnName="File_Sped" type="xs:string" />
@@ -1647,7 +1647,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="xls_Serials" msprop:Generator_TableClassName="xls_SerialsDataTable" msprop:Generator_TableVarName="tablexls_Serials" msprop:Generator_TablePropName="xls_Serials" msprop:Generator_RowDeletingName="xls_SerialsRowDeleting" msprop:Generator_RowChangingName="xls_SerialsRowChanging" msprop:Generator_RowEvHandlerName="xls_SerialsRowChangeEventHandler" msprop:Generator_RowDeletedName="xls_SerialsRowDeleted" msprop:Generator_UserTableName="xls_Serials" msprop:Generator_RowChangedName="xls_SerialsRowChanged" msprop:Generator_RowEvArgName="xls_SerialsRowChangeEvent" msprop:Generator_RowClassName="xls_SerialsRow">
+        <xs:element name="xls_Serials" msprop:Generator_TableClassName="xls_SerialsDataTable" msprop:Generator_TableVarName="tablexls_Serials" msprop:Generator_RowChangedName="xls_SerialsRowChanged" msprop:Generator_TablePropName="xls_Serials" msprop:Generator_RowDeletingName="xls_SerialsRowDeleting" msprop:Generator_RowChangingName="xls_SerialsRowChanging" msprop:Generator_RowEvHandlerName="xls_SerialsRowChangeEventHandler" msprop:Generator_RowDeletedName="xls_SerialsRowDeleted" msprop:Generator_RowClassName="xls_SerialsRow" msprop:Generator_UserTableName="xls_Serials" msprop:Generator_RowEvArgName="xls_SerialsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Serial_Id" msprop:Generator_ColumnVarNameInTable="columnSerial_Id" msprop:Generator_ColumnPropNameInRow="Serial_Id" msprop:Generator_ColumnPropNameInTable="Serial_IdColumn" msprop:Generator_UserColumnName="Serial_Id" type="xs:int" minOccurs="0" />
@@ -1662,7 +1662,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Software" msprop:Generator_TableClassName="SoftwareDataTable" msprop:Generator_TableVarName="tableSoftware" msprop:Generator_RowChangedName="SoftwareRowChanged" msprop:Generator_TablePropName="Software" msprop:Generator_RowDeletingName="SoftwareRowDeleting" msprop:Generator_RowChangingName="SoftwareRowChanging" msprop:Generator_RowEvHandlerName="SoftwareRowChangeEventHandler" msprop:Generator_RowDeletedName="SoftwareRowDeleted" msprop:Generator_RowClassName="SoftwareRow" msprop:Generator_UserTableName="Software" msprop:Generator_RowEvArgName="SoftwareRowChangeEvent">
+        <xs:element name="Software" msprop:Generator_TableClassName="SoftwareDataTable" msprop:Generator_TableVarName="tableSoftware" msprop:Generator_TablePropName="Software" msprop:Generator_RowDeletingName="SoftwareRowDeleting" msprop:Generator_RowChangingName="SoftwareRowChanging" msprop:Generator_RowEvHandlerName="SoftwareRowChangeEventHandler" msprop:Generator_RowDeletedName="SoftwareRowDeleted" msprop:Generator_UserTableName="Software" msprop:Generator_RowChangedName="SoftwareRowChanged" msprop:Generator_RowEvArgName="SoftwareRowChangeEvent" msprop:Generator_RowClassName="SoftwareRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1763,7 +1763,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GC_Fam_Prod" msprop:Generator_TableClassName="GC_Fam_ProdDataTable" msprop:Generator_TableVarName="tableGC_Fam_Prod" msprop:Generator_TablePropName="GC_Fam_Prod" msprop:Generator_RowDeletingName="GC_Fam_ProdRowDeleting" msprop:Generator_RowChangingName="GC_Fam_ProdRowChanging" msprop:Generator_RowEvHandlerName="GC_Fam_ProdRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_Fam_ProdRowDeleted" msprop:Generator_UserTableName="GC_Fam_Prod" msprop:Generator_RowChangedName="GC_Fam_ProdRowChanged" msprop:Generator_RowEvArgName="GC_Fam_ProdRowChangeEvent" msprop:Generator_RowClassName="GC_Fam_ProdRow">
+        <xs:element name="GC_Fam_Prod" msprop:Generator_TableClassName="GC_Fam_ProdDataTable" msprop:Generator_TableVarName="tableGC_Fam_Prod" msprop:Generator_RowChangedName="GC_Fam_ProdRowChanged" msprop:Generator_TablePropName="GC_Fam_Prod" msprop:Generator_RowDeletingName="GC_Fam_ProdRowDeleting" msprop:Generator_RowChangingName="GC_Fam_ProdRowChanging" msprop:Generator_RowEvHandlerName="GC_Fam_ProdRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_Fam_ProdRowDeleted" msprop:Generator_RowClassName="GC_Fam_ProdRow" msprop:Generator_UserTableName="GC_Fam_Prod" msprop:Generator_RowEvArgName="GC_Fam_ProdRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1788,39 +1788,44 @@ LIMIT 1</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="GC_Schede" msprop:Generator_TableClassName="GC_SchedeDataTable" msprop:Generator_TableVarName="tableGC_Schede" msprop:Generator_RowChangedName="GC_SchedeRowChanged" msprop:Generator_TablePropName="GC_Schede" msprop:Generator_RowDeletingName="GC_SchedeRowDeleting" msprop:Generator_RowChangingName="GC_SchedeRowChanging" msprop:Generator_RowEvHandlerName="GC_SchedeRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_SchedeRowDeleted" msprop:Generator_RowClassName="GC_SchedeRow" msprop:Generator_UserTableName="GC_Schede" msprop:Generator_RowEvArgName="GC_SchedeRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <msdata:Relationship name="Fam_Prod_GC_Schede" msdata:parent="GC_Fam_Prod" msdata:child="GC_Schede" msdata:parentkey="Id" msdata:childkey="Prod_Fam" msprop:Generator_UserChildTable="GC_Schede" msprop:Generator_ChildPropName="GetGC_SchedeRows" msprop:Generator_UserRelationName="Fam_Prod_GC_Schede" msprop:Generator_ParentPropName="GC_Fam_ProdRow" msprop:Generator_RelationVarName="relationFam_Prod_GC_Schede" msprop:Generator_UserParentTable="GC_Fam_Prod" />
+                  </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+                    <xs:element name="Prod_Sch" msprop:Generator_ColumnVarNameInTable="columnProd_Sch" msprop:Generator_ColumnPropNameInRow="Prod_Sch" msprop:Generator_ColumnPropNameInTable="Prod_SchColumn" msprop:Generator_UserColumnName="Prod_Sch">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="21845" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Prod_Fam" msprop:Generator_ColumnVarNameInTable="columnProd_Fam" msprop:Generator_ColumnPropNameInRow="Prod_Fam" msprop:Generator_ColumnPropNameInTable="Prod_FamColumn" msprop:Generator_UserColumnName="Prod_Fam" type="xs:int" />
+                    <xs:element name="Prod_Descrizione" msprop:Generator_ColumnVarNameInTable="columnProd_Descrizione" msprop:Generator_ColumnPropNameInRow="Prod_Descrizione" msprop:Generator_ColumnPropNameInTable="Prod_DescrizioneColumn" msprop:Generator_UserColumnName="Prod_Descrizione" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="21845" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Prod_Image_Url" msprop:Generator_ColumnVarNameInTable="columnProd_Image_Url" msprop:Generator_ColumnPropNameInRow="Prod_Image_Url" msprop:Generator_ColumnPropNameInTable="Prod_Image_UrlColumn" msprop:Generator_UserColumnName="Prod_Image_Url" minOccurs="0">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="21845" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GC_Schede" msprop:Generator_TableClassName="GC_SchedeDataTable" msprop:Generator_TableVarName="tableGC_Schede" msprop:Generator_TablePropName="GC_Schede" msprop:Generator_RowDeletingName="GC_SchedeRowDeleting" msprop:Generator_RowChangingName="GC_SchedeRowChanging" msprop:Generator_RowEvHandlerName="GC_SchedeRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_SchedeRowDeleted" msprop:Generator_UserTableName="GC_Schede" msprop:Generator_RowChangedName="GC_SchedeRowChanged" msprop:Generator_RowEvArgName="GC_SchedeRowChangeEvent" msprop:Generator_RowClassName="GC_SchedeRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
-              <xs:element name="Prod_Sch" msprop:Generator_ColumnVarNameInTable="columnProd_Sch" msprop:Generator_ColumnPropNameInRow="Prod_Sch" msprop:Generator_ColumnPropNameInTable="Prod_SchColumn" msprop:Generator_UserColumnName="Prod_Sch">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="21845" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Prod_Fam" msprop:Generator_ColumnVarNameInTable="columnProd_Fam" msprop:Generator_ColumnPropNameInRow="Prod_Fam" msprop:Generator_ColumnPropNameInTable="Prod_FamColumn" msprop:Generator_UserColumnName="Prod_Fam" type="xs:int" />
-              <xs:element name="Prod_Descrizione" msprop:Generator_ColumnVarNameInTable="columnProd_Descrizione" msprop:Generator_ColumnPropNameInRow="Prod_Descrizione" msprop:Generator_ColumnPropNameInTable="Prod_DescrizioneColumn" msprop:Generator_UserColumnName="Prod_Descrizione" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="21845" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Prod_Image_Url" msprop:Generator_ColumnVarNameInTable="columnProd_Image_Url" msprop:Generator_ColumnPropNameInRow="Prod_Image_Url" msprop:Generator_ColumnPropNameInTable="Prod_Image_UrlColumn" msprop:Generator_UserColumnName="Prod_Image_Url" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="21845" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="GC_Software" msprop:Generator_TableClassName="GC_SoftwareDataTable" msprop:Generator_TableVarName="tableGC_Software" msprop:Generator_TablePropName="GC_Software" msprop:Generator_RowDeletingName="GC_SoftwareRowDeleting" msprop:Generator_RowChangingName="GC_SoftwareRowChanging" msprop:Generator_RowEvHandlerName="GC_SoftwareRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_SoftwareRowDeleted" msprop:Generator_UserTableName="GC_Software" msprop:Generator_RowChangedName="GC_SoftwareRowChanged" msprop:Generator_RowEvArgName="GC_SoftwareRowChangeEvent" msprop:Generator_RowClassName="GC_SoftwareRow">
+        <xs:element name="GC_Software" msprop:Generator_TableClassName="GC_SoftwareDataTable" msprop:Generator_TableVarName="tableGC_Software" msprop:Generator_RowChangedName="GC_SoftwareRowChanged" msprop:Generator_TablePropName="GC_Software" msprop:Generator_RowDeletingName="GC_SoftwareRowDeleting" msprop:Generator_RowChangingName="GC_SoftwareRowChanging" msprop:Generator_RowEvHandlerName="GC_SoftwareRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_SoftwareRowDeleted" msprop:Generator_RowClassName="GC_SoftwareRow" msprop:Generator_UserTableName="GC_Software" msprop:Generator_RowEvArgName="GC_SoftwareRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1941,12 +1946,12 @@ LIMIT 1</CommandText>
       <xs:selector xpath=".//mstns:Software" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
-    <xs:unique name="GC_Fam_Prod_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:GC_Fam_Prod" />
-      <xs:field xpath="mstns:Id" />
-    </xs:unique>
     <xs:unique name="GC_Schede_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:GC_Schede" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="GC_Fam_Prod_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GC_Fam_Prod" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
     <xs:unique name="GC_Software_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
@@ -1956,11 +1961,10 @@ LIMIT 1</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Fam_Prod_Schede" msdata:parent="Fam_Prod" msdata:child="Schede" msdata:parentkey="Id" msdata:childkey="Prod_Fam" msprop:Generator_UserChildTable="Schede" msprop:Generator_ChildPropName="GetSchedeRows" msprop:Generator_UserRelationName="Fam_Prod_Schede" msprop:Generator_ParentPropName="Fam_ProdRow" msprop:Generator_RelationVarName="relationFam_Prod_Schede" msprop:Generator_UserParentTable="Fam_Prod" />
-      <msdata:Relationship name="JLabel_JLabel_Clienti" msdata:parent="JLabel" msdata:child="JLabel_Clienti" msdata:parentkey="TIPO_ORDINE_CLIENTE NUMERO_ORDINE" msdata:childkey="TipoOrdine NumOrdine" msprop:Generator_UserChildTable="JLabel_Clienti" msprop:Generator_ChildPropName="GetJLabel_ClientiRows" msprop:Generator_UserRelationName="JLabel_JLabel_Clienti" msprop:Generator_RelationVarName="relationJLabel_JLabel_Clienti" msprop:Generator_UserParentTable="JLabel" msprop:Generator_ParentPropName="JLabelRowParent" />
-      <msdata:Relationship name="Fam_Prod_Software" msdata:parent="Fam_Prod" msdata:child="Software" msdata:parentkey="Id" msdata:childkey="SW_Fam_Prod" msprop:Generator_UserChildTable="Software" msprop:Generator_ChildPropName="GetSoftwareRows" msprop:Generator_UserRelationName="Fam_Prod_Software" msprop:Generator_RelationVarName="relationFam_Prod_Software" msprop:Generator_UserParentTable="Fam_Prod" msprop:Generator_ParentPropName="Fam_ProdRow" />
-      <msdata:Relationship name="Fam_Prod_GC_Schede" msdata:parent="GC_Fam_Prod" msdata:child="GC_Schede" msdata:parentkey="Id" msdata:childkey="Prod_Fam" msprop:Generator_UserChildTable="GC_Schede" msprop:Generator_ChildPropName="GetGC_SchedeRows" msprop:Generator_UserRelationName="Fam_Prod_GC_Schede" msprop:Generator_ParentPropName="GC_Fam_ProdRow" msprop:Generator_RelationVarName="relationFam_Prod_GC_Schede" msprop:Generator_UserParentTable="GC_Fam_Prod" />
-      <msdata:Relationship name="GC_Software_GC_Fam_Prod" msdata:parent="GC_Software" msdata:child="GC_Fam_Prod" msdata:parentkey="SW_Fam_Prod" msdata:childkey="Id" msprop:Generator_UserChildTable="GC_Fam_Prod" msprop:Generator_ChildPropName="GetGC_Fam_ProdRows" msprop:Generator_UserRelationName="GC_Software_GC_Fam_Prod" msprop:Generator_RelationVarName="relationGC_Software_GC_Fam_Prod" msprop:Generator_UserParentTable="GC_Software" msprop:Generator_ParentPropName="GC_SoftwareRow" />
+      <msdata:Relationship name="Fam_Prod_Schede" msdata:parent="Fam_Prod" msdata:child="Schede" msdata:parentkey="Id" msdata:childkey="Prod_Fam" msprop:Generator_UserChildTable="Schede" msprop:Generator_ChildPropName="GetSchedeRows" msprop:Generator_UserRelationName="Fam_Prod_Schede" msprop:Generator_RelationVarName="relationFam_Prod_Schede" msprop:Generator_UserParentTable="Fam_Prod" msprop:Generator_ParentPropName="Fam_ProdRow" />
+      <msdata:Relationship name="JLabel_JLabel_Clienti" msdata:parent="JLabel" msdata:child="JLabel_Clienti" msdata:parentkey="TIPO_ORDINE_CLIENTE NUMERO_ORDINE" msdata:childkey="TipoOrdine NumOrdine" msprop:Generator_UserChildTable="JLabel_Clienti" msprop:Generator_ChildPropName="GetJLabel_ClientiRows" msprop:Generator_UserRelationName="JLabel_JLabel_Clienti" msprop:Generator_ParentPropName="JLabelRowParent" msprop:Generator_RelationVarName="relationJLabel_JLabel_Clienti" msprop:Generator_UserParentTable="JLabel" />
+      <msdata:Relationship name="Fam_Prod_Software" msdata:parent="Fam_Prod" msdata:child="Software" msdata:parentkey="Id" msdata:childkey="SW_Fam_Prod" msprop:Generator_UserChildTable="Software" msprop:Generator_ChildPropName="GetSoftwareRows" msprop:Generator_UserRelationName="Fam_Prod_Software" msprop:Generator_ParentPropName="Fam_ProdRow" msprop:Generator_RelationVarName="relationFam_Prod_Software" msprop:Generator_UserParentTable="Fam_Prod" />
+      <msdata:Relationship name="GC_Software_GC_Fam_Prod" msdata:parent="GC_Software" msdata:child="GC_Fam_Prod" msdata:parentkey="SW_Fam_Prod" msdata:childkey="Id" msprop:Generator_UserChildTable="GC_Fam_Prod" msprop:Generator_ChildPropName="GetGC_Fam_ProdRows" msprop:Generator_UserRelationName="GC_Software_GC_Fam_Prod" msprop:Generator_ParentPropName="GC_SoftwareRow" msprop:Generator_RelationVarName="relationGC_Software_GC_Fam_Prod" msprop:Generator_UserParentTable="GC_Software" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

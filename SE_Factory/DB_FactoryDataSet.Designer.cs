@@ -46,13 +46,13 @@ namespace SE_Factory {
         
         private xls_SerialsDataTable tablexls_Serials;
         
+        private global::System.Data.DataRelation relationFam_Prod_GC_Schede;
+        
         private global::System.Data.DataRelation relationFam_Prod_Schede;
         
         private global::System.Data.DataRelation relationJLabel_JLabel_Clienti;
         
         private global::System.Data.DataRelation relationFam_Prod_Software;
-        
-        private global::System.Data.DataRelation relationFam_Prod_GC_Schede;
         
         private global::System.Data.DataRelation relationGC_Software_GC_Fam_Prod;
         
@@ -444,10 +444,10 @@ namespace SE_Factory {
                     this.tablexls_Serials.InitVars();
                 }
             }
+            this.relationFam_Prod_GC_Schede = this.Relations["Fam_Prod_GC_Schede"];
             this.relationFam_Prod_Schede = this.Relations["Fam_Prod_Schede"];
             this.relationJLabel_JLabel_Clienti = this.Relations["JLabel_JLabel_Clienti"];
             this.relationFam_Prod_Software = this.Relations["Fam_Prod_Software"];
-            this.relationFam_Prod_GC_Schede = this.Relations["Fam_Prod_GC_Schede"];
             this.relationGC_Software_GC_Fam_Prod = this.Relations["GC_Software_GC_Fam_Prod"];
         }
         
@@ -481,6 +481,11 @@ namespace SE_Factory {
             base.Tables.Add(this.tableSpedNeohm);
             this.tablexls_Serials = new xls_SerialsDataTable();
             base.Tables.Add(this.tablexls_Serials);
+            this.relationFam_Prod_GC_Schede = new global::System.Data.DataRelation("Fam_Prod_GC_Schede", new global::System.Data.DataColumn[] {
+                        this.tableGC_Fam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGC_Schede.Prod_FamColumn}, false);
+            this.relationFam_Prod_GC_Schede.Nested = true;
+            this.Relations.Add(this.relationFam_Prod_GC_Schede);
             this.relationFam_Prod_Schede = new global::System.Data.DataRelation("Fam_Prod_Schede", new global::System.Data.DataColumn[] {
                         this.tableFam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableSchede.Prod_FamColumn}, false);
@@ -495,10 +500,6 @@ namespace SE_Factory {
                         this.tableFam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableSoftware.SW_Fam_ProdColumn}, false);
             this.Relations.Add(this.relationFam_Prod_Software);
-            this.relationFam_Prod_GC_Schede = new global::System.Data.DataRelation("Fam_Prod_GC_Schede", new global::System.Data.DataColumn[] {
-                        this.tableGC_Fam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableGC_Schede.Prod_FamColumn}, false);
-            this.Relations.Add(this.relationFam_Prod_GC_Schede);
             this.relationGC_Software_GC_Fam_Prod = new global::System.Data.DataRelation("GC_Software_GC_Fam_Prod", new global::System.Data.DataColumn[] {
                         this.tableGC_Software.SW_Fam_ProdColumn}, new global::System.Data.DataColumn[] {
                         this.tableGC_Fam_Prod.IdColumn}, false);

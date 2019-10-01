@@ -201,7 +201,7 @@ namespace SE_Factory
             {
                 //int posizione = this.SW_Layout.GetRow(SW_Layout.Controls["pan_SW_P"]);
                 SW_Layout.Controls["pan_SW_P"].Height = 300;
-                SW_Layout.Controls["pan_P_Dx_Funzionamento"].Height = 150;
+                SW_Layout.Controls["pan_P_Dx_Funzionamento"].Height = 170;
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_SW_P"], 4);
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_P_Dx_revisioni"], 4);
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_P_Dx_Funzionamento"], 5);
@@ -213,7 +213,7 @@ namespace SE_Factory
             {
                 //int posizione = this.SW_Layout.GetRow(SW_Layout.Controls["pan_SW_C"]);
                 SW_Layout.Controls["pan_SW_C"].Height = 300;
-                SW_Layout.Controls["pan_C_Dx_Funzionamento"].Height = 150;
+                SW_Layout.Controls["pan_C_Dx_Funzionamento"].Height = 170;
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_SW_C"], 4);
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_C_Dx_revisioni"], 4);
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_C_Dx_Funzionamento"], 5);
@@ -278,7 +278,7 @@ namespace SE_Factory
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Fam_Prod'. È possibile spostarla o rimuoverla se necessario.
             this.gC_Fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.GC_Fam_Prod);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
-            //this.gC_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.GC_Schede);
+            this.gC_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.GC_Schede);
 
             Setting_Form();
         }
@@ -594,14 +594,30 @@ namespace SE_Factory
             {
                 GVar.glob_schede_compatibili.Add(substringa);
 
-                //verifica la presenza nel datagrid
-                foreach (DataGridViewRow riga in grid_P_SchedeCompatibili.Rows)
+                if (GVar.glob_tipo_item == "P")
                 {
-                    if (riga.Cells["P_prodSch"].Value.ToString() == substringa)
+                    //verifica la presenza nel datagrid
+                    foreach (DataGridViewRow riga in grid_P_SchedeCompatibili.Rows)
                     {
-                        riga.Cells["P_SchedaCompatibile"].Value = true;
+                        if (riga.Cells["P_prodSch"].Value.ToString() == substringa)
+                        {
+                            riga.Cells["P_SchedaCompatibile"].Value = true;
+                        }
                     }
                 }
+                if (GVar.glob_tipo_item == "C")
+                {
+                    //verifica la presenza nel datagrid
+                    foreach (DataGridViewRow riga in grid_C_SchedeCompatibili.Rows)
+                    {
+                        if (riga.Cells["C_prodSch"].Value.ToString() == substringa)
+                        {
+                            riga.Cells["C_SchedaCompatibile"].Value = true;
+                        }
+                    }
+
+                }
+
             }
 
             switch (SW_view["SW_P_Opt_RF"])
@@ -714,7 +730,6 @@ namespace SE_Factory
 
             richtb__Revisioni_P.Text = SW_view["SW_Revisioni"].ToString();
             richtb_Funzionamento_P.Text = SW_view["SW_Funzionamento"].ToString();
-
         }
 
         private void AzzeraVarForm()
@@ -808,16 +823,14 @@ namespace SE_Factory
             {
                 DataRow currentRow = ((DataRowView)gCSoftwareGCFamProdBindingSource.Current).Row;
 
+                //Filtra Schede
+                gCSchedeBindingSource.Filter = "Prod_Fam = " + currentRow["Id"].ToString();
+
                 GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
                 GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
                 GVar.glob_result_id[0] = Convert.ToChar(currentRow["Fam_Hex_ID"]);
                 Setting_Form();
             }
-        }
-
-        private void SW_Layout_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

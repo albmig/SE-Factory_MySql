@@ -50,6 +50,7 @@
             this.rev_top = new MetroFramework.Controls.MetroPanel();
             this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
             this.pan_SW_P = new MetroFramework.Controls.MetroPanel();
+            this.pan_P_top = new MetroFramework.Controls.MetroPanel();
             this.pan_P_middle = new MetroFramework.Controls.MetroPanel();
             this.tb_Max_Pairable_P = new System.Windows.Forms.TextBox();
             this.metroLabel30 = new MetroFramework.Controls.MetroLabel();
@@ -88,14 +89,14 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.pan_P_top = new MetroFramework.Controls.MetroPanel();
-            this.pan_P_top_grid = new MetroFramework.Controls.MetroPanel();
-            this.grid_P_SchedeCompatibili = new MetroFramework.Controls.MetroGrid();
-            this.P_SchedaCompatibile = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pan_P_top_left = new MetroFramework.Controls.MetroPanel();
+            this.grid_P_SchedeCompatibili = new MetroFramework.Controls.MetroGrid();
+            this.gCSoftwareGCFamProdBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gCSoftwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.pan_P_top_top = new MetroFramework.Controls.MetroPanel();
             this.ID_lab_Palmare = new MetroFramework.Controls.MetroLabel();
+            this.gCSchedeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pan_SW_Codifica = new MetroFramework.Controls.MetroPanel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.SW_lab_codice_SW = new MetroFramework.Controls.MetroLabel();
@@ -105,8 +106,6 @@
             this.tbox_Sw_frequency = new System.Windows.Forms.MaskedTextBox();
             this.SW_lab_Famiglia = new MetroFramework.Controls.MetroLabel();
             this.ID_combo_Famiglia = new System.Windows.Forms.ComboBox();
-            this.gCSoftwareGCFamProdBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gCSoftwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pan_SW_Titolo = new MetroFramework.Controls.MetroPanel();
             this.titolo_ID = new MetroFramework.Controls.MetroLabel();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
@@ -184,7 +183,6 @@
             this.pan_C_top = new MetroFramework.Controls.MetroPanel();
             this.pan_C_top_grid = new MetroFramework.Controls.MetroPanel();
             this.grid_C_SchedeCompatibili = new MetroFramework.Controls.MetroGrid();
-            this.C_SchedaCompatibile = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pan_C_top_left = new MetroFramework.Controls.MetroPanel();
             this.metroLabel49 = new MetroFramework.Controls.MetroLabel();
             this.pan_C_top_top = new MetroFramework.Controls.MetroPanel();
@@ -201,6 +199,19 @@
             this.metroLabel50 = new MetroFramework.Controls.MetroLabel();
             this.gC_SoftwareTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_SoftwareTableAdapter();
             this.gC_Fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter();
+            this.gC_SchedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_SchedeTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_prodSch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodFamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodDescrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodImageUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_SchedaCompatibile = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C_prodSch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodFamDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodDescrizioneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodImageUrlDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C_SchedaCompatibile = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).BeginInit();
             this.pan_P_Dx_Funzionamento.SuspendLayout();
             this.funz_fill.SuspendLayout();
@@ -209,16 +220,16 @@
             this.rev_fill.SuspendLayout();
             this.rev_top.SuspendLayout();
             this.pan_SW_P.SuspendLayout();
+            this.pan_P_top.SuspendLayout();
             this.pan_P_middle.SuspendLayout();
             this.metroPanel1.SuspendLayout();
-            this.pan_P_top.SuspendLayout();
-            this.pan_P_top_grid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_P_SchedeCompatibili)).BeginInit();
             this.pan_P_top_left.SuspendLayout();
-            this.pan_P_top_top.SuspendLayout();
-            this.pan_SW_Codifica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_P_SchedeCompatibili)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareGCFamProdBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).BeginInit();
+            this.pan_P_top_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gCSchedeBindingSource)).BeginInit();
+            this.pan_SW_Codifica.SuspendLayout();
             this.pan_SW_Titolo.SuspendLayout();
             this.SW_Layout.SuspendLayout();
             this.pan_Menu_comandi.SuspendLayout();
@@ -249,16 +260,16 @@
             // pan_P_Dx_Funzionamento
             // 
             this.pan_P_Dx_Funzionamento.BackColor = System.Drawing.Color.Transparent;
-            this.SW_Layout.SetColumnSpan(this.pan_P_Dx_Funzionamento, 6);
+            this.SW_Layout.SetColumnSpan(this.pan_P_Dx_Funzionamento, 4);
             this.pan_P_Dx_Funzionamento.Controls.Add(this.funz_fill);
             this.pan_P_Dx_Funzionamento.Controls.Add(this.funz_top);
             this.pan_P_Dx_Funzionamento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarBarColor = true;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarSize = 10;
-            this.pan_P_Dx_Funzionamento.Location = new System.Drawing.Point(955, 254);
+            this.pan_P_Dx_Funzionamento.Location = new System.Drawing.Point(1091, 254);
             this.pan_P_Dx_Funzionamento.Name = "pan_P_Dx_Funzionamento";
-            this.pan_P_Dx_Funzionamento.Size = new System.Drawing.Size(408, 300);
+            this.pan_P_Dx_Funzionamento.Size = new System.Drawing.Size(272, 300);
             this.pan_P_Dx_Funzionamento.TabIndex = 12;
             this.pan_P_Dx_Funzionamento.UseCustomBackColor = true;
             this.pan_P_Dx_Funzionamento.VerticalScrollbarBarColor = true;
@@ -275,7 +286,7 @@
             this.funz_fill.HorizontalScrollbarSize = 10;
             this.funz_fill.Location = new System.Drawing.Point(0, 15);
             this.funz_fill.Name = "funz_fill";
-            this.funz_fill.Size = new System.Drawing.Size(408, 285);
+            this.funz_fill.Size = new System.Drawing.Size(272, 285);
             this.funz_fill.TabIndex = 13;
             this.funz_fill.UseCustomBackColor = true;
             this.funz_fill.VerticalScrollbarBarColor = true;
@@ -290,7 +301,7 @@
             this.richtb_Funzionamento_P.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb_Funzionamento_P.Location = new System.Drawing.Point(0, 0);
             this.richtb_Funzionamento_P.Name = "richtb_Funzionamento_P";
-            this.richtb_Funzionamento_P.Size = new System.Drawing.Size(408, 285);
+            this.richtb_Funzionamento_P.Size = new System.Drawing.Size(272, 285);
             this.richtb_Funzionamento_P.TabIndex = 11;
             this.richtb_Funzionamento_P.Text = "";
             // 
@@ -304,7 +315,7 @@
             this.funz_top.HorizontalScrollbarSize = 10;
             this.funz_top.Location = new System.Drawing.Point(0, 0);
             this.funz_top.Name = "funz_top";
-            this.funz_top.Size = new System.Drawing.Size(408, 15);
+            this.funz_top.Size = new System.Drawing.Size(272, 15);
             this.funz_top.TabIndex = 12;
             this.funz_top.UseCustomBackColor = true;
             this.funz_top.VerticalScrollbarBarColor = true;
@@ -324,16 +335,16 @@
             // pan_P_Dx_revisioni
             // 
             this.pan_P_Dx_revisioni.BackColor = System.Drawing.Color.Transparent;
-            this.SW_Layout.SetColumnSpan(this.pan_P_Dx_revisioni, 6);
+            this.SW_Layout.SetColumnSpan(this.pan_P_Dx_revisioni, 4);
             this.pan_P_Dx_revisioni.Controls.Add(this.rev_fill);
             this.pan_P_Dx_revisioni.Controls.Add(this.rev_top);
             this.pan_P_Dx_revisioni.Dock = System.Windows.Forms.DockStyle.Top;
             this.pan_P_Dx_revisioni.HorizontalScrollbarBarColor = true;
             this.pan_P_Dx_revisioni.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_P_Dx_revisioni.HorizontalScrollbarSize = 10;
-            this.pan_P_Dx_revisioni.Location = new System.Drawing.Point(955, 98);
+            this.pan_P_Dx_revisioni.Location = new System.Drawing.Point(1091, 98);
             this.pan_P_Dx_revisioni.Name = "pan_P_Dx_revisioni";
-            this.pan_P_Dx_revisioni.Size = new System.Drawing.Size(408, 150);
+            this.pan_P_Dx_revisioni.Size = new System.Drawing.Size(272, 150);
             this.pan_P_Dx_revisioni.TabIndex = 11;
             this.pan_P_Dx_revisioni.UseCustomBackColor = true;
             this.pan_P_Dx_revisioni.VerticalScrollbarBarColor = true;
@@ -349,7 +360,7 @@
             this.rev_fill.HorizontalScrollbarSize = 10;
             this.rev_fill.Location = new System.Drawing.Point(0, 20);
             this.rev_fill.Name = "rev_fill";
-            this.rev_fill.Size = new System.Drawing.Size(408, 130);
+            this.rev_fill.Size = new System.Drawing.Size(272, 130);
             this.rev_fill.TabIndex = 13;
             this.rev_fill.VerticalScrollbarBarColor = true;
             this.rev_fill.VerticalScrollbarHighlightOnWheel = false;
@@ -363,7 +374,7 @@
             this.richtb__Revisioni_P.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb__Revisioni_P.Location = new System.Drawing.Point(0, 0);
             this.richtb__Revisioni_P.Name = "richtb__Revisioni_P";
-            this.richtb__Revisioni_P.Size = new System.Drawing.Size(408, 130);
+            this.richtb__Revisioni_P.Size = new System.Drawing.Size(272, 130);
             this.richtb__Revisioni_P.TabIndex = 11;
             this.richtb__Revisioni_P.Text = "";
             // 
@@ -377,7 +388,7 @@
             this.rev_top.HorizontalScrollbarSize = 10;
             this.rev_top.Location = new System.Drawing.Point(0, 0);
             this.rev_top.Name = "rev_top";
-            this.rev_top.Size = new System.Drawing.Size(408, 20);
+            this.rev_top.Size = new System.Drawing.Size(272, 20);
             this.rev_top.TabIndex = 12;
             this.rev_top.UseCustomBackColor = true;
             this.rev_top.VerticalScrollbarBarColor = true;
@@ -397,8 +408,7 @@
             // pan_SW_P
             // 
             this.pan_SW_P.BackColor = System.Drawing.SystemColors.Control;
-            this.SW_Layout.SetColumnSpan(this.pan_SW_P, 10);
-            this.pan_SW_P.Controls.Add(this.pan_P_middle);
+            this.SW_Layout.SetColumnSpan(this.pan_SW_P, 12);
             this.pan_SW_P.Controls.Add(this.pan_P_top);
             this.pan_SW_P.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_SW_P.HorizontalScrollbarBarColor = true;
@@ -407,11 +417,29 @@
             this.pan_SW_P.Location = new System.Drawing.Point(275, 98);
             this.pan_SW_P.Name = "pan_SW_P";
             this.SW_Layout.SetRowSpan(this.pan_SW_P, 2);
-            this.pan_SW_P.Size = new System.Drawing.Size(674, 456);
+            this.pan_SW_P.Size = new System.Drawing.Size(810, 456);
             this.pan_SW_P.TabIndex = 53;
             this.pan_SW_P.VerticalScrollbarBarColor = true;
             this.pan_SW_P.VerticalScrollbarHighlightOnWheel = false;
             this.pan_SW_P.VerticalScrollbarSize = 10;
+            // 
+            // pan_P_top
+            // 
+            this.pan_P_top.BackColor = System.Drawing.SystemColors.Control;
+            this.pan_P_top.Controls.Add(this.pan_P_middle);
+            this.pan_P_top.Controls.Add(this.pan_P_top_left);
+            this.pan_P_top.Controls.Add(this.pan_P_top_top);
+            this.pan_P_top.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pan_P_top.HorizontalScrollbarBarColor = true;
+            this.pan_P_top.HorizontalScrollbarHighlightOnWheel = false;
+            this.pan_P_top.HorizontalScrollbarSize = 10;
+            this.pan_P_top.Location = new System.Drawing.Point(0, 0);
+            this.pan_P_top.Name = "pan_P_top";
+            this.pan_P_top.Size = new System.Drawing.Size(674, 456);
+            this.pan_P_top.TabIndex = 41;
+            this.pan_P_top.VerticalScrollbarBarColor = true;
+            this.pan_P_top.VerticalScrollbarHighlightOnWheel = false;
+            this.pan_P_top.VerticalScrollbarSize = 10;
             // 
             // pan_P_middle
             // 
@@ -452,9 +480,9 @@
             this.pan_P_middle.HorizontalScrollbarBarColor = true;
             this.pan_P_middle.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_P_middle.HorizontalScrollbarSize = 10;
-            this.pan_P_middle.Location = new System.Drawing.Point(0, 130);
+            this.pan_P_middle.Location = new System.Drawing.Point(200, 30);
             this.pan_P_middle.Name = "pan_P_middle";
-            this.pan_P_middle.Size = new System.Drawing.Size(674, 326);
+            this.pan_P_middle.Size = new System.Drawing.Size(474, 426);
             this.pan_P_middle.TabIndex = 42;
             this.pan_P_middle.VerticalScrollbarBarColor = true;
             this.pan_P_middle.VerticalScrollbarHighlightOnWheel = false;
@@ -867,44 +895,28 @@
             this.metroLabel2.Text = "Frequenza Radio:";
             this.metroLabel2.UseCustomBackColor = true;
             // 
-            // pan_P_top
+            // pan_P_top_left
             // 
-            this.pan_P_top.BackColor = System.Drawing.SystemColors.Control;
-            this.pan_P_top.Controls.Add(this.pan_P_top_grid);
-            this.pan_P_top.Controls.Add(this.pan_P_top_left);
-            this.pan_P_top.Controls.Add(this.pan_P_top_top);
-            this.pan_P_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pan_P_top.HorizontalScrollbarBarColor = true;
-            this.pan_P_top.HorizontalScrollbarHighlightOnWheel = false;
-            this.pan_P_top.HorizontalScrollbarSize = 10;
-            this.pan_P_top.Location = new System.Drawing.Point(0, 0);
-            this.pan_P_top.Name = "pan_P_top";
-            this.pan_P_top.Size = new System.Drawing.Size(674, 130);
-            this.pan_P_top.TabIndex = 41;
-            this.pan_P_top.VerticalScrollbarBarColor = true;
-            this.pan_P_top.VerticalScrollbarHighlightOnWheel = false;
-            this.pan_P_top.VerticalScrollbarSize = 10;
-            // 
-            // pan_P_top_grid
-            // 
-            this.pan_P_top_grid.Controls.Add(this.grid_P_SchedeCompatibili);
-            this.pan_P_top_grid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pan_P_top_grid.HorizontalScrollbarBarColor = true;
-            this.pan_P_top_grid.HorizontalScrollbarHighlightOnWheel = false;
-            this.pan_P_top_grid.HorizontalScrollbarSize = 10;
-            this.pan_P_top_grid.Location = new System.Drawing.Point(120, 30);
-            this.pan_P_top_grid.Name = "pan_P_top_grid";
-            this.pan_P_top_grid.Size = new System.Drawing.Size(554, 100);
-            this.pan_P_top_grid.TabIndex = 43;
-            this.pan_P_top_grid.VerticalScrollbarBarColor = true;
-            this.pan_P_top_grid.VerticalScrollbarHighlightOnWheel = false;
-            this.pan_P_top_grid.VerticalScrollbarSize = 10;
+            this.pan_P_top_left.Controls.Add(this.grid_P_SchedeCompatibili);
+            this.pan_P_top_left.Controls.Add(this.metroLabel1);
+            this.pan_P_top_left.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pan_P_top_left.HorizontalScrollbarBarColor = true;
+            this.pan_P_top_left.HorizontalScrollbarHighlightOnWheel = false;
+            this.pan_P_top_left.HorizontalScrollbarSize = 10;
+            this.pan_P_top_left.Location = new System.Drawing.Point(0, 30);
+            this.pan_P_top_left.Name = "pan_P_top_left";
+            this.pan_P_top_left.Size = new System.Drawing.Size(200, 426);
+            this.pan_P_top_left.TabIndex = 42;
+            this.pan_P_top_left.VerticalScrollbarBarColor = true;
+            this.pan_P_top_left.VerticalScrollbarHighlightOnWheel = false;
+            this.pan_P_top_left.VerticalScrollbarSize = 10;
             // 
             // grid_P_SchedeCompatibili
             // 
             this.grid_P_SchedeCompatibili.AllowUserToAddRows = false;
             this.grid_P_SchedeCompatibili.AllowUserToDeleteRows = false;
             this.grid_P_SchedeCompatibili.AllowUserToResizeRows = false;
+            this.grid_P_SchedeCompatibili.AutoGenerateColumns = false;
             this.grid_P_SchedeCompatibili.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grid_P_SchedeCompatibili.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.grid_P_SchedeCompatibili.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -920,7 +932,13 @@
             this.grid_P_SchedeCompatibili.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grid_P_SchedeCompatibili.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_P_SchedeCompatibili.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.P_prodSch,
+            this.prodFamDataGridViewTextBoxColumn,
+            this.prodDescrizioneDataGridViewTextBoxColumn,
+            this.prodImageUrlDataGridViewTextBoxColumn,
             this.P_SchedaCompatibile});
+            this.grid_P_SchedeCompatibili.DataSource = this.gCSchedeBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -934,7 +952,7 @@
             this.grid_P_SchedeCompatibili.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.grid_P_SchedeCompatibili.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.grid_P_SchedeCompatibili.HighLightPercentage = 1.5F;
-            this.grid_P_SchedeCompatibili.Location = new System.Drawing.Point(0, 0);
+            this.grid_P_SchedeCompatibili.Location = new System.Drawing.Point(0, 19);
             this.grid_P_SchedeCompatibili.Name = "grid_P_SchedeCompatibili";
             this.grid_P_SchedeCompatibili.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -948,42 +966,33 @@
             this.grid_P_SchedeCompatibili.RowHeadersVisible = false;
             this.grid_P_SchedeCompatibili.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_P_SchedeCompatibili.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_P_SchedeCompatibili.Size = new System.Drawing.Size(554, 100);
+            this.grid_P_SchedeCompatibili.Size = new System.Drawing.Size(200, 407);
             this.grid_P_SchedeCompatibili.Style = MetroFramework.MetroColorStyle.Red;
             this.grid_P_SchedeCompatibili.TabIndex = 40;
             this.grid_P_SchedeCompatibili.UseStyleColors = true;
             this.grid_P_SchedeCompatibili.Validated += new System.EventHandler(this.grid_P_SchedeCompatibili_Validated);
             // 
-            // P_SchedaCompatibile
+            // gCSoftwareGCFamProdBindingSource
             // 
-            this.P_SchedaCompatibile.FillWeight = 20F;
-            this.P_SchedaCompatibile.HeaderText = "Scheda compatibile (Si/No)";
-            this.P_SchedaCompatibile.Name = "P_SchedaCompatibile";
+            this.gCSoftwareGCFamProdBindingSource.DataMember = "GC_Software_GC_Fam_Prod";
+            this.gCSoftwareGCFamProdBindingSource.DataSource = this.gCSoftwareBindingSource;
+            this.gCSoftwareGCFamProdBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareGCFamProdBindingSource_CurrentChanged);
             // 
-            // pan_P_top_left
+            // gCSoftwareBindingSource
             // 
-            this.pan_P_top_left.Controls.Add(this.metroLabel1);
-            this.pan_P_top_left.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pan_P_top_left.HorizontalScrollbarBarColor = true;
-            this.pan_P_top_left.HorizontalScrollbarHighlightOnWheel = false;
-            this.pan_P_top_left.HorizontalScrollbarSize = 10;
-            this.pan_P_top_left.Location = new System.Drawing.Point(0, 30);
-            this.pan_P_top_left.Name = "pan_P_top_left";
-            this.pan_P_top_left.Size = new System.Drawing.Size(120, 100);
-            this.pan_P_top_left.TabIndex = 42;
-            this.pan_P_top_left.VerticalScrollbarBarColor = true;
-            this.pan_P_top_left.VerticalScrollbarHighlightOnWheel = false;
-            this.pan_P_top_left.VerticalScrollbarSize = 10;
+            this.gCSoftwareBindingSource.DataMember = "GC_Software";
+            this.gCSoftwareBindingSource.DataSource = this.dB_FactoryDataSet;
+            this.gCSoftwareBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareBindingSource_CurrentChanged);
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(5, 0);
+            this.metroLabel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.metroLabel1.Location = new System.Drawing.Point(0, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(108, 19);
             this.metroLabel1.TabIndex = 9;
             this.metroLabel1.Text = "Scheda utilizzata:";
-            this.metroLabel1.UseCustomBackColor = true;
             // 
             // pan_P_top_top
             // 
@@ -1015,6 +1024,11 @@
             this.ID_lab_Palmare.Text = "Palmare";
             this.ID_lab_Palmare.UseCustomBackColor = true;
             this.ID_lab_Palmare.UseStyleColors = true;
+            // 
+            // gCSchedeBindingSource
+            // 
+            this.gCSchedeBindingSource.DataMember = "GC_Schede";
+            this.gCSchedeBindingSource.DataSource = this.dB_FactoryDataSet;
             // 
             // pan_SW_Codifica
             // 
@@ -1138,18 +1152,6 @@
             this.ID_combo_Famiglia.TabIndex = 6;
             this.ID_combo_Famiglia.ValueMember = "Id";
             // 
-            // gCSoftwareGCFamProdBindingSource
-            // 
-            this.gCSoftwareGCFamProdBindingSource.DataMember = "GC_Software_GC_Fam_Prod";
-            this.gCSoftwareGCFamProdBindingSource.DataSource = this.gCSoftwareBindingSource;
-            this.gCSoftwareGCFamProdBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareGCFamProdBindingSource_CurrentChanged);
-            // 
-            // gCSoftwareBindingSource
-            // 
-            this.gCSoftwareBindingSource.DataMember = "GC_Software";
-            this.gCSoftwareBindingSource.DataSource = this.dB_FactoryDataSet;
-            this.gCSoftwareBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareBindingSource_CurrentChanged);
-            // 
             // pan_SW_Titolo
             // 
             this.SW_Layout.SetColumnSpan(this.pan_SW_Titolo, 20);
@@ -1219,11 +1221,11 @@
             this.SW_Layout.Controls.Add(this.SW_lab_Famiglia, 3, 3);
             this.SW_Layout.Controls.Add(this.ID_combo_Famiglia, 7, 3);
             this.SW_Layout.Controls.Add(this.pan_SW_P, 4, 4);
-            this.SW_Layout.Controls.Add(this.pan_P_Dx_revisioni, 14, 4);
-            this.SW_Layout.Controls.Add(this.pan_P_Dx_Funzionamento, 14, 5);
+            this.SW_Layout.Controls.Add(this.pan_P_Dx_revisioni, 16, 4);
+            this.SW_Layout.Controls.Add(this.pan_P_Dx_Funzionamento, 16, 5);
             this.SW_Layout.Controls.Add(this.pan_SW_C, 4, 6);
-            this.SW_Layout.Controls.Add(this.pan_C_Dx_revisioni, 14, 6);
-            this.SW_Layout.Controls.Add(this.pan_C_Dx_Funzionamento, 14, 7);
+            this.SW_Layout.Controls.Add(this.pan_C_Dx_revisioni, 16, 6);
+            this.SW_Layout.Controls.Add(this.pan_C_Dx_Funzionamento, 16, 7);
             this.SW_Layout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SW_Layout.Location = new System.Drawing.Point(0, 0);
             this.SW_Layout.Name = "SW_Layout";
@@ -1257,7 +1259,6 @@
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.SW_Layout.Size = new System.Drawing.Size(1366, 768);
             this.SW_Layout.TabIndex = 16;
-            this.SW_Layout.Paint += new System.Windows.Forms.PaintEventHandler(this.SW_Layout_Paint);
             // 
             // pan_Menu_comandi
             // 
@@ -1481,7 +1482,7 @@
             // 
             // pan_SW_C
             // 
-            this.SW_Layout.SetColumnSpan(this.pan_SW_C, 10);
+            this.SW_Layout.SetColumnSpan(this.pan_SW_C, 12);
             this.pan_SW_C.Controls.Add(this.pan_C_middle);
             this.pan_SW_C.Controls.Add(this.pan_C_top);
             this.pan_SW_C.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1491,7 +1492,7 @@
             this.pan_SW_C.Location = new System.Drawing.Point(275, 560);
             this.pan_SW_C.Name = "pan_SW_C";
             this.SW_Layout.SetRowSpan(this.pan_SW_C, 2);
-            this.pan_SW_C.Size = new System.Drawing.Size(674, 2614);
+            this.pan_SW_C.Size = new System.Drawing.Size(810, 5078);
             this.pan_SW_C.TabIndex = 56;
             this.pan_SW_C.VerticalScrollbarBarColor = true;
             this.pan_SW_C.VerticalScrollbarHighlightOnWheel = false;
@@ -1545,9 +1546,9 @@
             this.pan_C_middle.HorizontalScrollbarBarColor = true;
             this.pan_C_middle.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_C_middle.HorizontalScrollbarSize = 10;
-            this.pan_C_middle.Location = new System.Drawing.Point(0, 160);
+            this.pan_C_middle.Location = new System.Drawing.Point(0, 100);
             this.pan_C_middle.Name = "pan_C_middle";
-            this.pan_C_middle.Size = new System.Drawing.Size(674, 2454);
+            this.pan_C_middle.Size = new System.Drawing.Size(810, 4978);
             this.pan_C_middle.TabIndex = 42;
             this.pan_C_middle.VerticalScrollbarBarColor = true;
             this.pan_C_middle.VerticalScrollbarHighlightOnWheel = false;
@@ -2072,7 +2073,7 @@
             this.pan_C_top.HorizontalScrollbarSize = 10;
             this.pan_C_top.Location = new System.Drawing.Point(0, 0);
             this.pan_C_top.Name = "pan_C_top";
-            this.pan_C_top.Size = new System.Drawing.Size(674, 160);
+            this.pan_C_top.Size = new System.Drawing.Size(810, 100);
             this.pan_C_top.TabIndex = 41;
             this.pan_C_top.VerticalScrollbarBarColor = true;
             this.pan_C_top.VerticalScrollbarHighlightOnWheel = false;
@@ -2087,7 +2088,7 @@
             this.pan_C_top_grid.HorizontalScrollbarSize = 10;
             this.pan_C_top_grid.Location = new System.Drawing.Point(120, 30);
             this.pan_C_top_grid.Name = "pan_C_top_grid";
-            this.pan_C_top_grid.Size = new System.Drawing.Size(554, 130);
+            this.pan_C_top_grid.Size = new System.Drawing.Size(690, 70);
             this.pan_C_top_grid.TabIndex = 43;
             this.pan_C_top_grid.VerticalScrollbarBarColor = true;
             this.pan_C_top_grid.VerticalScrollbarHighlightOnWheel = false;
@@ -2098,6 +2099,7 @@
             this.grid_C_SchedeCompatibili.AllowUserToAddRows = false;
             this.grid_C_SchedeCompatibili.AllowUserToDeleteRows = false;
             this.grid_C_SchedeCompatibili.AllowUserToResizeRows = false;
+            this.grid_C_SchedeCompatibili.AutoGenerateColumns = false;
             this.grid_C_SchedeCompatibili.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grid_C_SchedeCompatibili.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.grid_C_SchedeCompatibili.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -2113,7 +2115,13 @@
             this.grid_C_SchedeCompatibili.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grid_C_SchedeCompatibili.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_C_SchedeCompatibili.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.C_prodSch,
+            this.prodFamDataGridViewTextBoxColumn1,
+            this.prodDescrizioneDataGridViewTextBoxColumn1,
+            this.prodImageUrlDataGridViewTextBoxColumn1,
             this.C_SchedaCompatibile});
+            this.grid_C_SchedeCompatibili.DataSource = this.gCSchedeBindingSource;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -2141,16 +2149,10 @@
             this.grid_C_SchedeCompatibili.RowHeadersVisible = false;
             this.grid_C_SchedeCompatibili.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_C_SchedeCompatibili.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_C_SchedeCompatibili.Size = new System.Drawing.Size(554, 130);
+            this.grid_C_SchedeCompatibili.Size = new System.Drawing.Size(690, 70);
             this.grid_C_SchedeCompatibili.Style = MetroFramework.MetroColorStyle.Red;
             this.grid_C_SchedeCompatibili.TabIndex = 40;
             this.grid_C_SchedeCompatibili.UseStyleColors = true;
-            // 
-            // C_SchedaCompatibile
-            // 
-            this.C_SchedaCompatibile.FillWeight = 20F;
-            this.C_SchedaCompatibile.HeaderText = "Scheda compatibile (Si/No)";
-            this.C_SchedaCompatibile.Name = "C_SchedaCompatibile";
             // 
             // pan_C_top_left
             // 
@@ -2161,7 +2163,7 @@
             this.pan_C_top_left.HorizontalScrollbarSize = 10;
             this.pan_C_top_left.Location = new System.Drawing.Point(0, 30);
             this.pan_C_top_left.Name = "pan_C_top_left";
-            this.pan_C_top_left.Size = new System.Drawing.Size(120, 130);
+            this.pan_C_top_left.Size = new System.Drawing.Size(120, 70);
             this.pan_C_top_left.TabIndex = 42;
             this.pan_C_top_left.VerticalScrollbarBarColor = true;
             this.pan_C_top_left.VerticalScrollbarHighlightOnWheel = false;
@@ -2187,7 +2189,7 @@
             this.pan_C_top_top.HorizontalScrollbarSize = 10;
             this.pan_C_top_top.Location = new System.Drawing.Point(0, 0);
             this.pan_C_top_top.Name = "pan_C_top_top";
-            this.pan_C_top_top.Size = new System.Drawing.Size(674, 30);
+            this.pan_C_top_top.Size = new System.Drawing.Size(810, 30);
             this.pan_C_top_top.TabIndex = 41;
             this.pan_C_top_top.VerticalScrollbarBarColor = true;
             this.pan_C_top_top.VerticalScrollbarHighlightOnWheel = false;
@@ -2211,16 +2213,16 @@
             // pan_C_Dx_revisioni
             // 
             this.pan_C_Dx_revisioni.BackColor = System.Drawing.Color.Transparent;
-            this.SW_Layout.SetColumnSpan(this.pan_C_Dx_revisioni, 6);
+            this.SW_Layout.SetColumnSpan(this.pan_C_Dx_revisioni, 4);
             this.pan_C_Dx_revisioni.Controls.Add(this.metroPanel9);
             this.pan_C_Dx_revisioni.Controls.Add(this.metroPanel10);
             this.pan_C_Dx_revisioni.Dock = System.Windows.Forms.DockStyle.Top;
             this.pan_C_Dx_revisioni.HorizontalScrollbarBarColor = true;
             this.pan_C_Dx_revisioni.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_C_Dx_revisioni.HorizontalScrollbarSize = 10;
-            this.pan_C_Dx_revisioni.Location = new System.Drawing.Point(955, 560);
+            this.pan_C_Dx_revisioni.Location = new System.Drawing.Point(1091, 560);
             this.pan_C_Dx_revisioni.Name = "pan_C_Dx_revisioni";
-            this.pan_C_Dx_revisioni.Size = new System.Drawing.Size(408, 150);
+            this.pan_C_Dx_revisioni.Size = new System.Drawing.Size(272, 150);
             this.pan_C_Dx_revisioni.TabIndex = 11;
             this.pan_C_Dx_revisioni.UseCustomBackColor = true;
             this.pan_C_Dx_revisioni.VerticalScrollbarBarColor = true;
@@ -2236,7 +2238,7 @@
             this.metroPanel9.HorizontalScrollbarSize = 10;
             this.metroPanel9.Location = new System.Drawing.Point(0, 20);
             this.metroPanel9.Name = "metroPanel9";
-            this.metroPanel9.Size = new System.Drawing.Size(408, 130);
+            this.metroPanel9.Size = new System.Drawing.Size(272, 130);
             this.metroPanel9.TabIndex = 13;
             this.metroPanel9.VerticalScrollbarBarColor = true;
             this.metroPanel9.VerticalScrollbarHighlightOnWheel = false;
@@ -2250,7 +2252,7 @@
             this.richtb__Revisioni_C.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb__Revisioni_C.Location = new System.Drawing.Point(0, 0);
             this.richtb__Revisioni_C.Name = "richtb__Revisioni_C";
-            this.richtb__Revisioni_C.Size = new System.Drawing.Size(408, 130);
+            this.richtb__Revisioni_C.Size = new System.Drawing.Size(272, 130);
             this.richtb__Revisioni_C.TabIndex = 11;
             this.richtb__Revisioni_C.Text = "";
             // 
@@ -2264,7 +2266,7 @@
             this.metroPanel10.HorizontalScrollbarSize = 10;
             this.metroPanel10.Location = new System.Drawing.Point(0, 0);
             this.metroPanel10.Name = "metroPanel10";
-            this.metroPanel10.Size = new System.Drawing.Size(408, 20);
+            this.metroPanel10.Size = new System.Drawing.Size(272, 20);
             this.metroPanel10.TabIndex = 12;
             this.metroPanel10.UseCustomBackColor = true;
             this.metroPanel10.VerticalScrollbarBarColor = true;
@@ -2284,16 +2286,16 @@
             // pan_C_Dx_Funzionamento
             // 
             this.pan_C_Dx_Funzionamento.BackColor = System.Drawing.Color.Transparent;
-            this.SW_Layout.SetColumnSpan(this.pan_C_Dx_Funzionamento, 6);
+            this.SW_Layout.SetColumnSpan(this.pan_C_Dx_Funzionamento, 4);
             this.pan_C_Dx_Funzionamento.Controls.Add(this.metroPanel6);
             this.pan_C_Dx_Funzionamento.Controls.Add(this.metroPanel7);
             this.pan_C_Dx_Funzionamento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarBarColor = true;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarSize = 10;
-            this.pan_C_Dx_Funzionamento.Location = new System.Drawing.Point(955, 716);
+            this.pan_C_Dx_Funzionamento.Location = new System.Drawing.Point(1091, 716);
             this.pan_C_Dx_Funzionamento.Name = "pan_C_Dx_Funzionamento";
-            this.pan_C_Dx_Funzionamento.Size = new System.Drawing.Size(408, 2458);
+            this.pan_C_Dx_Funzionamento.Size = new System.Drawing.Size(272, 4922);
             this.pan_C_Dx_Funzionamento.TabIndex = 12;
             this.pan_C_Dx_Funzionamento.UseCustomBackColor = true;
             this.pan_C_Dx_Funzionamento.VerticalScrollbarBarColor = true;
@@ -2310,7 +2312,7 @@
             this.metroPanel6.HorizontalScrollbarSize = 10;
             this.metroPanel6.Location = new System.Drawing.Point(0, 15);
             this.metroPanel6.Name = "metroPanel6";
-            this.metroPanel6.Size = new System.Drawing.Size(408, 2443);
+            this.metroPanel6.Size = new System.Drawing.Size(272, 4907);
             this.metroPanel6.TabIndex = 13;
             this.metroPanel6.UseCustomBackColor = true;
             this.metroPanel6.VerticalScrollbarBarColor = true;
@@ -2325,7 +2327,7 @@
             this.richtb_Funzionamento_C.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb_Funzionamento_C.Location = new System.Drawing.Point(0, 0);
             this.richtb_Funzionamento_C.Name = "richtb_Funzionamento_C";
-            this.richtb_Funzionamento_C.Size = new System.Drawing.Size(408, 2443);
+            this.richtb_Funzionamento_C.Size = new System.Drawing.Size(272, 4907);
             this.richtb_Funzionamento_C.TabIndex = 11;
             this.richtb_Funzionamento_C.Text = "";
             // 
@@ -2339,7 +2341,7 @@
             this.metroPanel7.HorizontalScrollbarSize = 10;
             this.metroPanel7.Location = new System.Drawing.Point(0, 0);
             this.metroPanel7.Name = "metroPanel7";
-            this.metroPanel7.Size = new System.Drawing.Size(408, 15);
+            this.metroPanel7.Size = new System.Drawing.Size(272, 15);
             this.metroPanel7.TabIndex = 12;
             this.metroPanel7.UseCustomBackColor = true;
             this.metroPanel7.VerticalScrollbarBarColor = true;
@@ -2364,6 +2366,96 @@
             // 
             this.gC_Fam_ProdTableAdapter.ClearBeforeFill = true;
             // 
+            // gC_SchedeTableAdapter
+            // 
+            this.gC_SchedeTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // P_prodSch
+            // 
+            this.P_prodSch.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.P_prodSch.DataPropertyName = "Prod_Sch";
+            this.P_prodSch.HeaderText = "Scheda";
+            this.P_prodSch.Name = "P_prodSch";
+            this.P_prodSch.Width = 67;
+            // 
+            // prodFamDataGridViewTextBoxColumn
+            // 
+            this.prodFamDataGridViewTextBoxColumn.DataPropertyName = "Prod_Fam";
+            this.prodFamDataGridViewTextBoxColumn.HeaderText = "Prod_Fam";
+            this.prodFamDataGridViewTextBoxColumn.Name = "prodFamDataGridViewTextBoxColumn";
+            this.prodFamDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // prodDescrizioneDataGridViewTextBoxColumn
+            // 
+            this.prodDescrizioneDataGridViewTextBoxColumn.DataPropertyName = "Prod_Descrizione";
+            this.prodDescrizioneDataGridViewTextBoxColumn.HeaderText = "Prod_Descrizione";
+            this.prodDescrizioneDataGridViewTextBoxColumn.Name = "prodDescrizioneDataGridViewTextBoxColumn";
+            this.prodDescrizioneDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // prodImageUrlDataGridViewTextBoxColumn
+            // 
+            this.prodImageUrlDataGridViewTextBoxColumn.DataPropertyName = "Prod_Image_Url";
+            this.prodImageUrlDataGridViewTextBoxColumn.HeaderText = "Prod_Image_Url";
+            this.prodImageUrlDataGridViewTextBoxColumn.Name = "prodImageUrlDataGridViewTextBoxColumn";
+            this.prodImageUrlDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // P_SchedaCompatibile
+            // 
+            this.P_SchedaCompatibile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.P_SchedaCompatibile.FillWeight = 83.45178F;
+            this.P_SchedaCompatibile.HeaderText = "Compatibile (S/N)";
+            this.P_SchedaCompatibile.Name = "P_SchedaCompatibile";
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.Visible = false;
+            this.idDataGridViewTextBoxColumn1.Width = 21;
+            // 
+            // C_prodSch
+            // 
+            this.C_prodSch.DataPropertyName = "Prod_Sch";
+            this.C_prodSch.HeaderText = "Scheda";
+            this.C_prodSch.Name = "C_prodSch";
+            // 
+            // prodFamDataGridViewTextBoxColumn1
+            // 
+            this.prodFamDataGridViewTextBoxColumn1.DataPropertyName = "Prod_Fam";
+            this.prodFamDataGridViewTextBoxColumn1.HeaderText = "Prod_Fam";
+            this.prodFamDataGridViewTextBoxColumn1.Name = "prodFamDataGridViewTextBoxColumn1";
+            this.prodFamDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // prodDescrizioneDataGridViewTextBoxColumn1
+            // 
+            this.prodDescrizioneDataGridViewTextBoxColumn1.DataPropertyName = "Prod_Descrizione";
+            this.prodDescrizioneDataGridViewTextBoxColumn1.HeaderText = "Prod_Descrizione";
+            this.prodDescrizioneDataGridViewTextBoxColumn1.Name = "prodDescrizioneDataGridViewTextBoxColumn1";
+            this.prodDescrizioneDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // prodImageUrlDataGridViewTextBoxColumn1
+            // 
+            this.prodImageUrlDataGridViewTextBoxColumn1.DataPropertyName = "Prod_Image_Url";
+            this.prodImageUrlDataGridViewTextBoxColumn1.HeaderText = "Prod_Image_Url";
+            this.prodImageUrlDataGridViewTextBoxColumn1.Name = "prodImageUrlDataGridViewTextBoxColumn1";
+            this.prodImageUrlDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // C_SchedaCompatibile
+            // 
+            this.C_SchedaCompatibile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.C_SchedaCompatibile.FillWeight = 89.54315F;
+            this.C_SchedaCompatibile.HeaderText = "Compatibile (S/N)";
+            this.C_SchedaCompatibile.Name = "C_SchedaCompatibile";
+            // 
             // UC_form_Sw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2384,21 +2476,21 @@
             this.rev_top.ResumeLayout(false);
             this.rev_top.PerformLayout();
             this.pan_SW_P.ResumeLayout(false);
+            this.pan_P_top.ResumeLayout(false);
             this.pan_P_middle.ResumeLayout(false);
             this.pan_P_middle.PerformLayout();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
-            this.pan_P_top.ResumeLayout(false);
-            this.pan_P_top_grid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grid_P_SchedeCompatibili)).EndInit();
             this.pan_P_top_left.ResumeLayout(false);
             this.pan_P_top_left.PerformLayout();
-            this.pan_P_top_top.ResumeLayout(false);
-            this.pan_P_top_top.PerformLayout();
-            this.pan_SW_Codifica.ResumeLayout(false);
-            this.pan_SW_Codifica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_P_SchedeCompatibili)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareGCFamProdBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).EndInit();
+            this.pan_P_top_top.ResumeLayout(false);
+            this.pan_P_top_top.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gCSchedeBindingSource)).EndInit();
+            this.pan_SW_Codifica.ResumeLayout(false);
+            this.pan_SW_Codifica.PerformLayout();
             this.pan_SW_Titolo.ResumeLayout(false);
             this.pan_SW_Titolo.PerformLayout();
             this.SW_Layout.ResumeLayout(false);
@@ -2510,7 +2602,6 @@
         private MetroFramework.Controls.MetroRadioButton ID_radio_None_P;
         private MetroFramework.Controls.MetroRadioButton ID_radio_Filo_P;
         private System.Windows.Forms.ToolStripMenuItem menu_sw_creapdf;
-        private MetroFramework.Controls.MetroPanel pan_P_top_grid;
         private MetroFramework.Controls.MetroPanel pan_P_top_left;
         private MetroFramework.Controls.MetroPanel pan_P_top_top;
         private System.Windows.Forms.ToolStripMenuItem menu_sw_div02;
@@ -2587,8 +2678,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private System.Windows.Forms.ToolStripMenuItem menu_sw_div05;
         private System.Windows.Forms.ToolStripMenuItem visualizzaTuttoToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn P_SchedaCompatibile;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn C_SchedaCompatibile;
         private MetroFramework.Controls.MetroPanel pan_C_Dx_Funzionamento;
         private MetroFramework.Controls.MetroPanel metroPanel6;
         private System.Windows.Forms.RichTextBox richtb_Funzionamento_C;
@@ -2599,5 +2688,19 @@
         private Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl grid_SW_codificati;
         private System.Windows.Forms.BindingSource gCSoftwareGCFamProdBindingSource;
         private DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter gC_Fam_ProdTableAdapter;
+        private System.Windows.Forms.BindingSource gCSchedeBindingSource;
+        private DB_FactoryDataSetTableAdapters.GC_SchedeTableAdapter gC_SchedeTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn P_prodSch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodFamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodDescrizioneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodImageUrlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn P_SchedaCompatibile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C_prodSch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodFamDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodDescrizioneDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prodImageUrlDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn C_SchedaCompatibile;
     }
 }
