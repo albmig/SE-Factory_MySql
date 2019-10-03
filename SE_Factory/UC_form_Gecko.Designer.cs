@@ -111,8 +111,8 @@
             this.lab_sw_Selezionato = new MetroFramework.Controls.MetroLabel();
             this.lab_sw_selezionato_title = new MetroFramework.Controls.MetroLabel();
             this.but_Programma = new MetroFramework.Controls.MetroButton();
-            this.fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.Fam_ProdTableAdapter();
-            this.schedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.SchedeTableAdapter();
+            this.fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.local_Fam_ProdTableAdapter();
+            this.schedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.local_SchedeTableAdapter();
             this.ID_timer = new System.Windows.Forms.Timer(this.components);
             this.Gecko_Layout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.famProdBindingSource)).BeginInit();
@@ -1305,9 +1305,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel20;
         private System.Windows.Forms.BindingSource famProdBindingSource;
         private DB_FactoryDataSet dB_FactoryDataSet;
-        private DB_FactoryDataSetTableAdapters.Fam_ProdTableAdapter fam_ProdTableAdapter;
+        private DB_FactoryDataSetTableAdapters.local_Fam_ProdTableAdapter fam_ProdTableAdapter;
         private System.Windows.Forms.BindingSource schedeBindingSource;
-        private DB_FactoryDataSetTableAdapters.SchedeTableAdapter schedeTableAdapter;
+        private DB_FactoryDataSetTableAdapters.local_SchedeTableAdapter schedeTableAdapter;
         private System.Windows.Forms.Timer ID_timer;
         private System.Windows.Forms.TextBox ID_Result;
         private MetroFramework.Controls.MetroLabel metroLabel10;

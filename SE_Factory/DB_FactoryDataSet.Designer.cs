@@ -24,9 +24,9 @@ namespace SE_Factory {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DB_FactoryDataSet : global::System.Data.DataSet {
         
-        private Fam_ProdDataTable tableFam_Prod;
+        private local_Fam_ProdDataTable tablelocal_Fam_Prod;
         
-        private SchedeDataTable tableSchede;
+        private local_SchedeDataTable tablelocal_Schede;
         
         private SM_V_ANAGRAFICA_CLIENTIDataTable tableSM_V_ANAGRAFICA_CLIENTI;
         
@@ -34,7 +34,7 @@ namespace SE_Factory {
         
         private JLabel_ClientiDataTable tableJLabel_Clienti;
         
-        private SoftwareDataTable tableSoftware;
+        private local_SoftwareDataTable tablelocal_Software;
         
         private GC_Fam_ProdDataTable tableGC_Fam_Prod;
         
@@ -84,11 +84,11 @@ namespace SE_Factory {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Fam_Prod"] != null)) {
-                    base.Tables.Add(new Fam_ProdDataTable(ds.Tables["Fam_Prod"]));
+                if ((ds.Tables["local_Fam_Prod"] != null)) {
+                    base.Tables.Add(new local_Fam_ProdDataTable(ds.Tables["local_Fam_Prod"]));
                 }
-                if ((ds.Tables["Schede"] != null)) {
-                    base.Tables.Add(new SchedeDataTable(ds.Tables["Schede"]));
+                if ((ds.Tables["local_Schede"] != null)) {
+                    base.Tables.Add(new local_SchedeDataTable(ds.Tables["local_Schede"]));
                 }
                 if ((ds.Tables["SM_V_ANAGRAFICA_CLIENTI"] != null)) {
                     base.Tables.Add(new SM_V_ANAGRAFICA_CLIENTIDataTable(ds.Tables["SM_V_ANAGRAFICA_CLIENTI"]));
@@ -99,8 +99,8 @@ namespace SE_Factory {
                 if ((ds.Tables["JLabel_Clienti"] != null)) {
                     base.Tables.Add(new JLabel_ClientiDataTable(ds.Tables["JLabel_Clienti"]));
                 }
-                if ((ds.Tables["Software"] != null)) {
-                    base.Tables.Add(new SoftwareDataTable(ds.Tables["Software"]));
+                if ((ds.Tables["local_Software"] != null)) {
+                    base.Tables.Add(new local_SoftwareDataTable(ds.Tables["local_Software"]));
                 }
                 if ((ds.Tables["GC_Fam_Prod"] != null)) {
                     base.Tables.Add(new GC_Fam_ProdDataTable(ds.Tables["GC_Fam_Prod"]));
@@ -139,9 +139,9 @@ namespace SE_Factory {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Fam_ProdDataTable Fam_Prod {
+        public local_Fam_ProdDataTable local_Fam_Prod {
             get {
-                return this.tableFam_Prod;
+                return this.tablelocal_Fam_Prod;
             }
         }
         
@@ -149,9 +149,9 @@ namespace SE_Factory {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SchedeDataTable Schede {
+        public local_SchedeDataTable local_Schede {
             get {
-                return this.tableSchede;
+                return this.tablelocal_Schede;
             }
         }
         
@@ -189,9 +189,9 @@ namespace SE_Factory {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SoftwareDataTable Software {
+        public local_SoftwareDataTable local_Software {
             get {
-                return this.tableSoftware;
+                return this.tablelocal_Software;
             }
         }
         
@@ -312,11 +312,11 @@ namespace SE_Factory {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Fam_Prod"] != null)) {
-                    base.Tables.Add(new Fam_ProdDataTable(ds.Tables["Fam_Prod"]));
+                if ((ds.Tables["local_Fam_Prod"] != null)) {
+                    base.Tables.Add(new local_Fam_ProdDataTable(ds.Tables["local_Fam_Prod"]));
                 }
-                if ((ds.Tables["Schede"] != null)) {
-                    base.Tables.Add(new SchedeDataTable(ds.Tables["Schede"]));
+                if ((ds.Tables["local_Schede"] != null)) {
+                    base.Tables.Add(new local_SchedeDataTable(ds.Tables["local_Schede"]));
                 }
                 if ((ds.Tables["SM_V_ANAGRAFICA_CLIENTI"] != null)) {
                     base.Tables.Add(new SM_V_ANAGRAFICA_CLIENTIDataTable(ds.Tables["SM_V_ANAGRAFICA_CLIENTI"]));
@@ -327,8 +327,8 @@ namespace SE_Factory {
                 if ((ds.Tables["JLabel_Clienti"] != null)) {
                     base.Tables.Add(new JLabel_ClientiDataTable(ds.Tables["JLabel_Clienti"]));
                 }
-                if ((ds.Tables["Software"] != null)) {
-                    base.Tables.Add(new SoftwareDataTable(ds.Tables["Software"]));
+                if ((ds.Tables["local_Software"] != null)) {
+                    base.Tables.Add(new local_SoftwareDataTable(ds.Tables["local_Software"]));
                 }
                 if ((ds.Tables["GC_Fam_Prod"] != null)) {
                     base.Tables.Add(new GC_Fam_ProdDataTable(ds.Tables["GC_Fam_Prod"]));
@@ -378,16 +378,16 @@ namespace SE_Factory {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableFam_Prod = ((Fam_ProdDataTable)(base.Tables["Fam_Prod"]));
+            this.tablelocal_Fam_Prod = ((local_Fam_ProdDataTable)(base.Tables["local_Fam_Prod"]));
             if ((initTable == true)) {
-                if ((this.tableFam_Prod != null)) {
-                    this.tableFam_Prod.InitVars();
+                if ((this.tablelocal_Fam_Prod != null)) {
+                    this.tablelocal_Fam_Prod.InitVars();
                 }
             }
-            this.tableSchede = ((SchedeDataTable)(base.Tables["Schede"]));
+            this.tablelocal_Schede = ((local_SchedeDataTable)(base.Tables["local_Schede"]));
             if ((initTable == true)) {
-                if ((this.tableSchede != null)) {
-                    this.tableSchede.InitVars();
+                if ((this.tablelocal_Schede != null)) {
+                    this.tablelocal_Schede.InitVars();
                 }
             }
             this.tableSM_V_ANAGRAFICA_CLIENTI = ((SM_V_ANAGRAFICA_CLIENTIDataTable)(base.Tables["SM_V_ANAGRAFICA_CLIENTI"]));
@@ -408,10 +408,10 @@ namespace SE_Factory {
                     this.tableJLabel_Clienti.InitVars();
                 }
             }
-            this.tableSoftware = ((SoftwareDataTable)(base.Tables["Software"]));
+            this.tablelocal_Software = ((local_SoftwareDataTable)(base.Tables["local_Software"]));
             if ((initTable == true)) {
-                if ((this.tableSoftware != null)) {
-                    this.tableSoftware.InitVars();
+                if ((this.tablelocal_Software != null)) {
+                    this.tablelocal_Software.InitVars();
                 }
             }
             this.tableGC_Fam_Prod = ((GC_Fam_ProdDataTable)(base.Tables["GC_Fam_Prod"]));
@@ -459,18 +459,18 @@ namespace SE_Factory {
             this.Namespace = "http://tempuri.org/DB_FactoryDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableFam_Prod = new Fam_ProdDataTable();
-            base.Tables.Add(this.tableFam_Prod);
-            this.tableSchede = new SchedeDataTable();
-            base.Tables.Add(this.tableSchede);
+            this.tablelocal_Fam_Prod = new local_Fam_ProdDataTable();
+            base.Tables.Add(this.tablelocal_Fam_Prod);
+            this.tablelocal_Schede = new local_SchedeDataTable();
+            base.Tables.Add(this.tablelocal_Schede);
             this.tableSM_V_ANAGRAFICA_CLIENTI = new SM_V_ANAGRAFICA_CLIENTIDataTable();
             base.Tables.Add(this.tableSM_V_ANAGRAFICA_CLIENTI);
             this.tableJLabel = new JLabelDataTable();
             base.Tables.Add(this.tableJLabel);
             this.tableJLabel_Clienti = new JLabel_ClientiDataTable();
             base.Tables.Add(this.tableJLabel_Clienti);
-            this.tableSoftware = new SoftwareDataTable();
-            base.Tables.Add(this.tableSoftware);
+            this.tablelocal_Software = new local_SoftwareDataTable();
+            base.Tables.Add(this.tablelocal_Software);
             this.tableGC_Fam_Prod = new GC_Fam_ProdDataTable();
             base.Tables.Add(this.tableGC_Fam_Prod);
             this.tableGC_Schede = new GC_SchedeDataTable();
@@ -487,8 +487,8 @@ namespace SE_Factory {
             this.relationFam_Prod_GC_Schede.Nested = true;
             this.Relations.Add(this.relationFam_Prod_GC_Schede);
             this.relationFam_Prod_Schede = new global::System.Data.DataRelation("Fam_Prod_Schede", new global::System.Data.DataColumn[] {
-                        this.tableFam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSchede.Prod_FamColumn}, false);
+                        this.tablelocal_Fam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tablelocal_Schede.Prod_FamColumn}, false);
             this.Relations.Add(this.relationFam_Prod_Schede);
             this.relationJLabel_JLabel_Clienti = new global::System.Data.DataRelation("JLabel_JLabel_Clienti", new global::System.Data.DataColumn[] {
                         this.tableJLabel.TIPO_ORDINE_CLIENTEColumn,
@@ -497,8 +497,8 @@ namespace SE_Factory {
                         this.tableJLabel_Clienti.NumOrdineColumn}, false);
             this.Relations.Add(this.relationJLabel_JLabel_Clienti);
             this.relationFam_Prod_Software = new global::System.Data.DataRelation("Fam_Prod_Software", new global::System.Data.DataColumn[] {
-                        this.tableFam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSoftware.SW_Fam_ProdColumn}, false);
+                        this.tablelocal_Fam_Prod.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tablelocal_Software.SW_Fam_ProdColumn}, false);
             this.Relations.Add(this.relationFam_Prod_Software);
             this.relationGC_Software_GC_Fam_Prod = new global::System.Data.DataRelation("GC_Software_GC_Fam_Prod", new global::System.Data.DataColumn[] {
                         this.tableGC_Software.SW_Fam_ProdColumn}, new global::System.Data.DataColumn[] {
@@ -508,13 +508,13 @@ namespace SE_Factory {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeFam_Prod() {
+        private bool ShouldSerializelocal_Fam_Prod() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeSchede() {
+        private bool ShouldSerializelocal_Schede() {
             return false;
         }
         
@@ -538,7 +538,7 @@ namespace SE_Factory {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeSoftware() {
+        private bool ShouldSerializelocal_Software() {
             return false;
         }
         
@@ -628,10 +628,10 @@ namespace SE_Factory {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void Fam_ProdRowChangeEventHandler(object sender, Fam_ProdRowChangeEvent e);
+        public delegate void local_Fam_ProdRowChangeEventHandler(object sender, local_Fam_ProdRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void SchedeRowChangeEventHandler(object sender, SchedeRowChangeEvent e);
+        public delegate void local_SchedeRowChangeEventHandler(object sender, local_SchedeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void SM_V_ANAGRAFICA_CLIENTIRowChangeEventHandler(object sender, SM_V_ANAGRAFICA_CLIENTIRowChangeEvent e);
@@ -643,7 +643,7 @@ namespace SE_Factory {
         public delegate void JLabel_ClientiRowChangeEventHandler(object sender, JLabel_ClientiRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void SoftwareRowChangeEventHandler(object sender, SoftwareRowChangeEvent e);
+        public delegate void local_SoftwareRowChangeEventHandler(object sender, local_SoftwareRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void GC_Fam_ProdRowChangeEventHandler(object sender, GC_Fam_ProdRowChangeEvent e);
@@ -665,7 +665,7 @@ namespace SE_Factory {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Fam_ProdDataTable : global::System.Data.TypedTableBase<Fam_ProdRow> {
+        public partial class local_Fam_ProdDataTable : global::System.Data.TypedTableBase<local_Fam_ProdRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -677,8 +677,8 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Fam_ProdDataTable() {
-                this.TableName = "Fam_Prod";
+            public local_Fam_ProdDataTable() {
+                this.TableName = "local_Fam_Prod";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -686,7 +686,7 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal Fam_ProdDataTable(global::System.Data.DataTable table) {
+            internal local_Fam_ProdDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -703,7 +703,7 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected Fam_ProdDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected local_Fam_ProdDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -751,55 +751,55 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Fam_ProdRow this[int index] {
+            public local_Fam_ProdRow this[int index] {
                 get {
-                    return ((Fam_ProdRow)(this.Rows[index]));
+                    return ((local_Fam_ProdRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Fam_ProdRowChangeEventHandler Fam_ProdRowChanging;
+            public event local_Fam_ProdRowChangeEventHandler local_Fam_ProdRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Fam_ProdRowChangeEventHandler Fam_ProdRowChanged;
+            public event local_Fam_ProdRowChangeEventHandler local_Fam_ProdRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Fam_ProdRowChangeEventHandler Fam_ProdRowDeleting;
+            public event local_Fam_ProdRowChangeEventHandler local_Fam_ProdRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event Fam_ProdRowChangeEventHandler Fam_ProdRowDeleted;
+            public event local_Fam_ProdRowChangeEventHandler local_Fam_ProdRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddFam_ProdRow(Fam_ProdRow row) {
+            public void Addlocal_Fam_ProdRow(local_Fam_ProdRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Fam_ProdRow AddFam_ProdRow(string Fam_Name, string Fam_Tipo, string Fam_Hex_ID) {
-                Fam_ProdRow rowFam_ProdRow = ((Fam_ProdRow)(this.NewRow()));
+            public local_Fam_ProdRow Addlocal_Fam_ProdRow(string Fam_Name, string Fam_Tipo, string Fam_Hex_ID) {
+                local_Fam_ProdRow rowlocal_Fam_ProdRow = ((local_Fam_ProdRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Fam_Name,
                         Fam_Tipo,
                         Fam_Hex_ID};
-                rowFam_ProdRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFam_ProdRow);
-                return rowFam_ProdRow;
+                rowlocal_Fam_ProdRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowlocal_Fam_ProdRow);
+                return rowlocal_Fam_ProdRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Fam_ProdRow FindById(int Id) {
-                return ((Fam_ProdRow)(this.Rows.Find(new object[] {
+            public local_Fam_ProdRow FindById(int Id) {
+                return ((local_Fam_ProdRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Fam_ProdDataTable cln = ((Fam_ProdDataTable)(base.Clone()));
+                local_Fam_ProdDataTable cln = ((local_Fam_ProdDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -807,7 +807,7 @@ namespace SE_Factory {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Fam_ProdDataTable();
+                return new local_Fam_ProdDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -848,28 +848,28 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Fam_ProdRow NewFam_ProdRow() {
-                return ((Fam_ProdRow)(this.NewRow()));
+            public local_Fam_ProdRow Newlocal_Fam_ProdRow() {
+                return ((local_Fam_ProdRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Fam_ProdRow(builder);
+                return new local_Fam_ProdRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Fam_ProdRow);
+                return typeof(local_Fam_ProdRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Fam_ProdRowChanged != null)) {
-                    this.Fam_ProdRowChanged(this, new Fam_ProdRowChangeEvent(((Fam_ProdRow)(e.Row)), e.Action));
+                if ((this.local_Fam_ProdRowChanged != null)) {
+                    this.local_Fam_ProdRowChanged(this, new local_Fam_ProdRowChangeEvent(((local_Fam_ProdRow)(e.Row)), e.Action));
                 }
             }
             
@@ -877,8 +877,8 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Fam_ProdRowChanging != null)) {
-                    this.Fam_ProdRowChanging(this, new Fam_ProdRowChangeEvent(((Fam_ProdRow)(e.Row)), e.Action));
+                if ((this.local_Fam_ProdRowChanging != null)) {
+                    this.local_Fam_ProdRowChanging(this, new local_Fam_ProdRowChangeEvent(((local_Fam_ProdRow)(e.Row)), e.Action));
                 }
             }
             
@@ -886,8 +886,8 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Fam_ProdRowDeleted != null)) {
-                    this.Fam_ProdRowDeleted(this, new Fam_ProdRowChangeEvent(((Fam_ProdRow)(e.Row)), e.Action));
+                if ((this.local_Fam_ProdRowDeleted != null)) {
+                    this.local_Fam_ProdRowDeleted(this, new local_Fam_ProdRowChangeEvent(((local_Fam_ProdRow)(e.Row)), e.Action));
                 }
             }
             
@@ -895,14 +895,14 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Fam_ProdRowDeleting != null)) {
-                    this.Fam_ProdRowDeleting(this, new Fam_ProdRowChangeEvent(((Fam_ProdRow)(e.Row)), e.Action));
+                if ((this.local_Fam_ProdRowDeleting != null)) {
+                    this.local_Fam_ProdRowDeleting(this, new local_Fam_ProdRowChangeEvent(((local_Fam_ProdRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveFam_ProdRow(Fam_ProdRow row) {
+            public void Removelocal_Fam_ProdRow(local_Fam_ProdRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -929,7 +929,7 @@ namespace SE_Factory {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Fam_ProdDataTable";
+                attribute2.FixedValue = "local_Fam_ProdDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -975,7 +975,7 @@ namespace SE_Factory {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SchedeDataTable : global::System.Data.TypedTableBase<SchedeRow> {
+        public partial class local_SchedeDataTable : global::System.Data.TypedTableBase<local_SchedeRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -989,8 +989,8 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SchedeDataTable() {
-                this.TableName = "Schede";
+            public local_SchedeDataTable() {
+                this.TableName = "local_Schede";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -998,7 +998,7 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal SchedeDataTable(global::System.Data.DataTable table) {
+            internal local_SchedeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1015,7 +1015,7 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected SchedeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected local_SchedeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1071,59 +1071,59 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SchedeRow this[int index] {
+            public local_SchedeRow this[int index] {
                 get {
-                    return ((SchedeRow)(this.Rows[index]));
+                    return ((local_SchedeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event SchedeRowChangeEventHandler SchedeRowChanging;
+            public event local_SchedeRowChangeEventHandler local_SchedeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event SchedeRowChangeEventHandler SchedeRowChanged;
+            public event local_SchedeRowChangeEventHandler local_SchedeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event SchedeRowChangeEventHandler SchedeRowDeleting;
+            public event local_SchedeRowChangeEventHandler local_SchedeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event SchedeRowChangeEventHandler SchedeRowDeleted;
+            public event local_SchedeRowChangeEventHandler local_SchedeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddSchedeRow(SchedeRow row) {
+            public void Addlocal_SchedeRow(local_SchedeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SchedeRow AddSchedeRow(string Prod_Sch, Fam_ProdRow parentFam_ProdRowByFam_Prod_Schede, string Prod_Descrizione, string Prod_Image_Url) {
-                SchedeRow rowSchedeRow = ((SchedeRow)(this.NewRow()));
+            public local_SchedeRow Addlocal_SchedeRow(string Prod_Sch, local_Fam_ProdRow parentlocal_Fam_ProdRowByFam_Prod_Schede, string Prod_Descrizione, string Prod_Image_Url) {
+                local_SchedeRow rowlocal_SchedeRow = ((local_SchedeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Prod_Sch,
                         null,
                         Prod_Descrizione,
                         Prod_Image_Url};
-                if ((parentFam_ProdRowByFam_Prod_Schede != null)) {
-                    columnValuesArray[2] = parentFam_ProdRowByFam_Prod_Schede[0];
+                if ((parentlocal_Fam_ProdRowByFam_Prod_Schede != null)) {
+                    columnValuesArray[2] = parentlocal_Fam_ProdRowByFam_Prod_Schede[0];
                 }
-                rowSchedeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSchedeRow);
-                return rowSchedeRow;
+                rowlocal_SchedeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowlocal_SchedeRow);
+                return rowlocal_SchedeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SchedeRow FindById(int Id) {
-                return ((SchedeRow)(this.Rows.Find(new object[] {
+            public local_SchedeRow FindById(int Id) {
+                return ((local_SchedeRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SchedeDataTable cln = ((SchedeDataTable)(base.Clone()));
+                local_SchedeDataTable cln = ((local_SchedeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1131,7 +1131,7 @@ namespace SE_Factory {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SchedeDataTable();
+                return new local_SchedeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1174,28 +1174,28 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SchedeRow NewSchedeRow() {
-                return ((SchedeRow)(this.NewRow()));
+            public local_SchedeRow Newlocal_SchedeRow() {
+                return ((local_SchedeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SchedeRow(builder);
+                return new local_SchedeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SchedeRow);
+                return typeof(local_SchedeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SchedeRowChanged != null)) {
-                    this.SchedeRowChanged(this, new SchedeRowChangeEvent(((SchedeRow)(e.Row)), e.Action));
+                if ((this.local_SchedeRowChanged != null)) {
+                    this.local_SchedeRowChanged(this, new local_SchedeRowChangeEvent(((local_SchedeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1203,8 +1203,8 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SchedeRowChanging != null)) {
-                    this.SchedeRowChanging(this, new SchedeRowChangeEvent(((SchedeRow)(e.Row)), e.Action));
+                if ((this.local_SchedeRowChanging != null)) {
+                    this.local_SchedeRowChanging(this, new local_SchedeRowChangeEvent(((local_SchedeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1212,8 +1212,8 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SchedeRowDeleted != null)) {
-                    this.SchedeRowDeleted(this, new SchedeRowChangeEvent(((SchedeRow)(e.Row)), e.Action));
+                if ((this.local_SchedeRowDeleted != null)) {
+                    this.local_SchedeRowDeleted(this, new local_SchedeRowChangeEvent(((local_SchedeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1221,14 +1221,14 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SchedeRowDeleting != null)) {
-                    this.SchedeRowDeleting(this, new SchedeRowChangeEvent(((SchedeRow)(e.Row)), e.Action));
+                if ((this.local_SchedeRowDeleting != null)) {
+                    this.local_SchedeRowDeleting(this, new local_SchedeRowChangeEvent(((local_SchedeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveSchedeRow(SchedeRow row) {
+            public void Removelocal_SchedeRow(local_SchedeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1255,7 +1255,7 @@ namespace SE_Factory {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SchedeDataTable";
+                attribute2.FixedValue = "local_SchedeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3888,7 +3888,7 @@ namespace SE_Factory {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SoftwareDataTable : global::System.Data.TypedTableBase<SoftwareRow> {
+        public partial class local_SoftwareDataTable : global::System.Data.TypedTableBase<local_SoftwareRow> {
             
             private global::System.Data.DataColumn columnId;
             
@@ -3974,8 +3974,8 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SoftwareDataTable() {
-                this.TableName = "Software";
+            public local_SoftwareDataTable() {
+                this.TableName = "local_Software";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3983,7 +3983,7 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal SoftwareDataTable(global::System.Data.DataTable table) {
+            internal local_SoftwareDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -4000,7 +4000,7 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected SoftwareDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected local_SoftwareDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -4344,35 +4344,35 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SoftwareRow this[int index] {
+            public local_SoftwareRow this[int index] {
                 get {
-                    return ((SoftwareRow)(this.Rows[index]));
+                    return ((local_SoftwareRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event SoftwareRowChangeEventHandler SoftwareRowChanging;
+            public event local_SoftwareRowChangeEventHandler local_SoftwareRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event SoftwareRowChangeEventHandler SoftwareRowChanged;
+            public event local_SoftwareRowChangeEventHandler local_SoftwareRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event SoftwareRowChangeEventHandler SoftwareRowDeleting;
+            public event local_SoftwareRowChangeEventHandler local_SoftwareRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event SoftwareRowChangeEventHandler SoftwareRowDeleted;
+            public event local_SoftwareRowChangeEventHandler local_SoftwareRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddSoftwareRow(SoftwareRow row) {
+            public void Addlocal_SoftwareRow(local_SoftwareRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SoftwareRow AddSoftwareRow(
+            public local_SoftwareRow Addlocal_SoftwareRow(
                         string SW_Code, 
-                        Fam_ProdRow parentFam_ProdRowByFam_Prod_Software, 
+                        local_Fam_ProdRow parentlocal_Fam_ProdRowByFam_Prod_Software, 
                         string SW_Descrizione, 
                         string SW_Versione, 
                         string SW_Revisione, 
@@ -4411,7 +4411,7 @@ namespace SE_Factory {
                         int SW_R_Opt_Ana_Input_No, 
                         string SW_Revisioni, 
                         string SW_Funzionamento) {
-                SoftwareRow rowSoftwareRow = ((SoftwareRow)(this.NewRow()));
+                local_SoftwareRow rowlocal_SoftwareRow = ((local_SoftwareRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         SW_Code,
@@ -4454,25 +4454,25 @@ namespace SE_Factory {
                         SW_R_Opt_Ana_Input_No,
                         SW_Revisioni,
                         SW_Funzionamento};
-                if ((parentFam_ProdRowByFam_Prod_Software != null)) {
-                    columnValuesArray[2] = parentFam_ProdRowByFam_Prod_Software[0];
+                if ((parentlocal_Fam_ProdRowByFam_Prod_Software != null)) {
+                    columnValuesArray[2] = parentlocal_Fam_ProdRowByFam_Prod_Software[0];
                 }
-                rowSoftwareRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSoftwareRow);
-                return rowSoftwareRow;
+                rowlocal_SoftwareRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowlocal_SoftwareRow);
+                return rowlocal_SoftwareRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SoftwareRow FindById(int Id) {
-                return ((SoftwareRow)(this.Rows.Find(new object[] {
+            public local_SoftwareRow FindById(int Id) {
+                return ((local_SoftwareRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SoftwareDataTable cln = ((SoftwareDataTable)(base.Clone()));
+                local_SoftwareDataTable cln = ((local_SoftwareDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -4480,7 +4480,7 @@ namespace SE_Factory {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SoftwareDataTable();
+                return new local_SoftwareDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4667,28 +4667,28 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SoftwareRow NewSoftwareRow() {
-                return ((SoftwareRow)(this.NewRow()));
+            public local_SoftwareRow Newlocal_SoftwareRow() {
+                return ((local_SoftwareRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SoftwareRow(builder);
+                return new local_SoftwareRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SoftwareRow);
+                return typeof(local_SoftwareRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SoftwareRowChanged != null)) {
-                    this.SoftwareRowChanged(this, new SoftwareRowChangeEvent(((SoftwareRow)(e.Row)), e.Action));
+                if ((this.local_SoftwareRowChanged != null)) {
+                    this.local_SoftwareRowChanged(this, new local_SoftwareRowChangeEvent(((local_SoftwareRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4696,8 +4696,8 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SoftwareRowChanging != null)) {
-                    this.SoftwareRowChanging(this, new SoftwareRowChangeEvent(((SoftwareRow)(e.Row)), e.Action));
+                if ((this.local_SoftwareRowChanging != null)) {
+                    this.local_SoftwareRowChanging(this, new local_SoftwareRowChangeEvent(((local_SoftwareRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4705,8 +4705,8 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SoftwareRowDeleted != null)) {
-                    this.SoftwareRowDeleted(this, new SoftwareRowChangeEvent(((SoftwareRow)(e.Row)), e.Action));
+                if ((this.local_SoftwareRowDeleted != null)) {
+                    this.local_SoftwareRowDeleted(this, new local_SoftwareRowChangeEvent(((local_SoftwareRow)(e.Row)), e.Action));
                 }
             }
             
@@ -4714,14 +4714,14 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SoftwareRowDeleting != null)) {
-                    this.SoftwareRowDeleting(this, new SoftwareRowChangeEvent(((SoftwareRow)(e.Row)), e.Action));
+                if ((this.local_SoftwareRowDeleting != null)) {
+                    this.local_SoftwareRowDeleting(this, new local_SoftwareRowChangeEvent(((local_SoftwareRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveSoftwareRow(SoftwareRow row) {
+            public void Removelocal_SoftwareRow(local_SoftwareRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -4748,7 +4748,7 @@ namespace SE_Factory {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SoftwareDataTable";
+                attribute2.FixedValue = "local_SoftwareDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6919,25 +6919,25 @@ namespace SE_Factory {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Fam_ProdRow : global::System.Data.DataRow {
+        public partial class local_Fam_ProdRow : global::System.Data.DataRow {
             
-            private Fam_ProdDataTable tableFam_Prod;
+            private local_Fam_ProdDataTable tablelocal_Fam_Prod;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal Fam_ProdRow(global::System.Data.DataRowBuilder rb) : 
+            internal local_Fam_ProdRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableFam_Prod = ((Fam_ProdDataTable)(this.Table));
+                this.tablelocal_Fam_Prod = ((local_Fam_ProdDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableFam_Prod.IdColumn]));
+                    return ((int)(this[this.tablelocal_Fam_Prod.IdColumn]));
                 }
                 set {
-                    this[this.tableFam_Prod.IdColumn] = value;
+                    this[this.tablelocal_Fam_Prod.IdColumn] = value;
                 }
             }
             
@@ -6945,10 +6945,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Fam_Name {
                 get {
-                    return ((string)(this[this.tableFam_Prod.Fam_NameColumn]));
+                    return ((string)(this[this.tablelocal_Fam_Prod.Fam_NameColumn]));
                 }
                 set {
-                    this[this.tableFam_Prod.Fam_NameColumn] = value;
+                    this[this.tablelocal_Fam_Prod.Fam_NameColumn] = value;
                 }
             }
             
@@ -6956,10 +6956,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Fam_Tipo {
                 get {
-                    return ((string)(this[this.tableFam_Prod.Fam_TipoColumn]));
+                    return ((string)(this[this.tablelocal_Fam_Prod.Fam_TipoColumn]));
                 }
                 set {
-                    this[this.tableFam_Prod.Fam_TipoColumn] = value;
+                    this[this.tablelocal_Fam_Prod.Fam_TipoColumn] = value;
                 }
             }
             
@@ -6967,32 +6967,32 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Fam_Hex_ID {
                 get {
-                    return ((string)(this[this.tableFam_Prod.Fam_Hex_IDColumn]));
+                    return ((string)(this[this.tablelocal_Fam_Prod.Fam_Hex_IDColumn]));
                 }
                 set {
-                    this[this.tableFam_Prod.Fam_Hex_IDColumn] = value;
+                    this[this.tablelocal_Fam_Prod.Fam_Hex_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SchedeRow[] GetSchedeRows() {
+            public local_SchedeRow[] Getlocal_SchedeRows() {
                 if ((this.Table.ChildRelations["Fam_Prod_Schede"] == null)) {
-                    return new SchedeRow[0];
+                    return new local_SchedeRow[0];
                 }
                 else {
-                    return ((SchedeRow[])(base.GetChildRows(this.Table.ChildRelations["Fam_Prod_Schede"])));
+                    return ((local_SchedeRow[])(base.GetChildRows(this.Table.ChildRelations["Fam_Prod_Schede"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SoftwareRow[] GetSoftwareRows() {
+            public local_SoftwareRow[] Getlocal_SoftwareRows() {
                 if ((this.Table.ChildRelations["Fam_Prod_Software"] == null)) {
-                    return new SoftwareRow[0];
+                    return new local_SoftwareRow[0];
                 }
                 else {
-                    return ((SoftwareRow[])(base.GetChildRows(this.Table.ChildRelations["Fam_Prod_Software"])));
+                    return ((local_SoftwareRow[])(base.GetChildRows(this.Table.ChildRelations["Fam_Prod_Software"])));
                 }
             }
         }
@@ -7000,25 +7000,25 @@ namespace SE_Factory {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SchedeRow : global::System.Data.DataRow {
+        public partial class local_SchedeRow : global::System.Data.DataRow {
             
-            private SchedeDataTable tableSchede;
+            private local_SchedeDataTable tablelocal_Schede;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal SchedeRow(global::System.Data.DataRowBuilder rb) : 
+            internal local_SchedeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSchede = ((SchedeDataTable)(this.Table));
+                this.tablelocal_Schede = ((local_SchedeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableSchede.IdColumn]));
+                    return ((int)(this[this.tablelocal_Schede.IdColumn]));
                 }
                 set {
-                    this[this.tableSchede.IdColumn] = value;
+                    this[this.tablelocal_Schede.IdColumn] = value;
                 }
             }
             
@@ -7026,10 +7026,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Prod_Sch {
                 get {
-                    return ((string)(this[this.tableSchede.Prod_SchColumn]));
+                    return ((string)(this[this.tablelocal_Schede.Prod_SchColumn]));
                 }
                 set {
-                    this[this.tableSchede.Prod_SchColumn] = value;
+                    this[this.tablelocal_Schede.Prod_SchColumn] = value;
                 }
             }
             
@@ -7037,10 +7037,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int Prod_Fam {
                 get {
-                    return ((int)(this[this.tableSchede.Prod_FamColumn]));
+                    return ((int)(this[this.tablelocal_Schede.Prod_FamColumn]));
                 }
                 set {
-                    this[this.tableSchede.Prod_FamColumn] = value;
+                    this[this.tablelocal_Schede.Prod_FamColumn] = value;
                 }
             }
             
@@ -7049,14 +7049,15 @@ namespace SE_Factory {
             public string Prod_Descrizione {
                 get {
                     try {
-                        return ((string)(this[this.tableSchede.Prod_DescrizioneColumn]));
+                        return ((string)(this[this.tablelocal_Schede.Prod_DescrizioneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'Prod_Descrizione\' nella tabella \'Schede\' è DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'Prod_Descrizione\' nella tabella \'local_Schede\' è DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableSchede.Prod_DescrizioneColumn] = value;
+                    this[this.tablelocal_Schede.Prod_DescrizioneColumn] = value;
                 }
             }
             
@@ -7065,22 +7066,22 @@ namespace SE_Factory {
             public string Prod_Image_Url {
                 get {
                     try {
-                        return ((string)(this[this.tableSchede.Prod_Image_UrlColumn]));
+                        return ((string)(this[this.tablelocal_Schede.Prod_Image_UrlColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'Prod_Image_Url\' nella tabella \'Schede\' è DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'Prod_Image_Url\' nella tabella \'local_Schede\' è DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSchede.Prod_Image_UrlColumn] = value;
+                    this[this.tablelocal_Schede.Prod_Image_UrlColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Fam_ProdRow Fam_ProdRow {
+            public local_Fam_ProdRow Fam_ProdRow {
                 get {
-                    return ((Fam_ProdRow)(this.GetParentRow(this.Table.ParentRelations["Fam_Prod_Schede"])));
+                    return ((local_Fam_ProdRow)(this.GetParentRow(this.Table.ParentRelations["Fam_Prod_Schede"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Fam_Prod_Schede"]);
@@ -7090,25 +7091,25 @@ namespace SE_Factory {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsProd_DescrizioneNull() {
-                return this.IsNull(this.tableSchede.Prod_DescrizioneColumn);
+                return this.IsNull(this.tablelocal_Schede.Prod_DescrizioneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetProd_DescrizioneNull() {
-                this[this.tableSchede.Prod_DescrizioneColumn] = global::System.Convert.DBNull;
+                this[this.tablelocal_Schede.Prod_DescrizioneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsProd_Image_UrlNull() {
-                return this.IsNull(this.tableSchede.Prod_Image_UrlColumn);
+                return this.IsNull(this.tablelocal_Schede.Prod_Image_UrlColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetProd_Image_UrlNull() {
-                this[this.tableSchede.Prod_Image_UrlColumn] = global::System.Convert.DBNull;
+                this[this.tablelocal_Schede.Prod_Image_UrlColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10405,25 +10406,25 @@ namespace SE_Factory {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SoftwareRow : global::System.Data.DataRow {
+        public partial class local_SoftwareRow : global::System.Data.DataRow {
             
-            private SoftwareDataTable tableSoftware;
+            private local_SoftwareDataTable tablelocal_Software;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal SoftwareRow(global::System.Data.DataRowBuilder rb) : 
+            internal local_SoftwareRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSoftware = ((SoftwareDataTable)(this.Table));
+                this.tablelocal_Software = ((local_SoftwareDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tableSoftware.IdColumn]));
+                    return ((int)(this[this.tablelocal_Software.IdColumn]));
                 }
                 set {
-                    this[this.tableSoftware.IdColumn] = value;
+                    this[this.tablelocal_Software.IdColumn] = value;
                 }
             }
             
@@ -10431,10 +10432,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SW_Code {
                 get {
-                    return ((string)(this[this.tableSoftware.SW_CodeColumn]));
+                    return ((string)(this[this.tablelocal_Software.SW_CodeColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_CodeColumn] = value;
+                    this[this.tablelocal_Software.SW_CodeColumn] = value;
                 }
             }
             
@@ -10443,14 +10444,14 @@ namespace SE_Factory {
             public int SW_Fam_Prod {
                 get {
                     try {
-                        return ((int)(this[this.tableSoftware.SW_Fam_ProdColumn]));
+                        return ((int)(this[this.tablelocal_Software.SW_Fam_ProdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Fam_Prod\' nella tabella \'Software\' è DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Fam_Prod\' nella tabella \'local_Software\' è DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSoftware.SW_Fam_ProdColumn] = value;
+                    this[this.tablelocal_Software.SW_Fam_ProdColumn] = value;
                 }
             }
             
@@ -10459,14 +10460,15 @@ namespace SE_Factory {
             public string SW_Descrizione {
                 get {
                     try {
-                        return ((string)(this[this.tableSoftware.SW_DescrizioneColumn]));
+                        return ((string)(this[this.tablelocal_Software.SW_DescrizioneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Descrizione\' nella tabella \'Software\' è DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Descrizione\' nella tabella \'local_Software\' è DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableSoftware.SW_DescrizioneColumn] = value;
+                    this[this.tablelocal_Software.SW_DescrizioneColumn] = value;
                 }
             }
             
@@ -10475,14 +10477,14 @@ namespace SE_Factory {
             public string SW_Versione {
                 get {
                     try {
-                        return ((string)(this[this.tableSoftware.SW_VersioneColumn]));
+                        return ((string)(this[this.tablelocal_Software.SW_VersioneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Versione\' nella tabella \'Software\' è DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Versione\' nella tabella \'local_Software\' è DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSoftware.SW_VersioneColumn] = value;
+                    this[this.tablelocal_Software.SW_VersioneColumn] = value;
                 }
             }
             
@@ -10491,14 +10493,14 @@ namespace SE_Factory {
             public string SW_Revisione {
                 get {
                     try {
-                        return ((string)(this[this.tableSoftware.SW_RevisioneColumn]));
+                        return ((string)(this[this.tablelocal_Software.SW_RevisioneColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Revisione\' nella tabella \'Software\' è DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Revisione\' nella tabella \'local_Software\' è DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSoftware.SW_RevisioneColumn] = value;
+                    this[this.tablelocal_Software.SW_RevisioneColumn] = value;
                 }
             }
             
@@ -10507,14 +10509,14 @@ namespace SE_Factory {
             public bool SW_Standard {
                 get {
                     try {
-                        return ((bool)(this[this.tableSoftware.SW_StandardColumn]));
+                        return ((bool)(this[this.tablelocal_Software.SW_StandardColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Standard\' nella tabella \'Software\' è DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Standard\' nella tabella \'local_Software\' è DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSoftware.SW_StandardColumn] = value;
+                    this[this.tablelocal_Software.SW_StandardColumn] = value;
                 }
             }
             
@@ -10523,15 +10525,15 @@ namespace SE_Factory {
             public string SW_SchedeCompatibili {
                 get {
                     try {
-                        return ((string)(this[this.tableSoftware.SW_SchedeCompatibiliColumn]));
+                        return ((string)(this[this.tablelocal_Software.SW_SchedeCompatibiliColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_SchedeCompatibili\' nella tabella \'Software\' è DBNull." +
-                                "", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_SchedeCompatibili\' nella tabella \'local_Software\' è D" +
+                                "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSoftware.SW_SchedeCompatibiliColumn] = value;
+                    this[this.tablelocal_Software.SW_SchedeCompatibiliColumn] = value;
                 }
             }
             
@@ -10539,10 +10541,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SW_P_Opt_RF {
                 get {
-                    return ((string)(this[this.tableSoftware.SW_P_Opt_RFColumn]));
+                    return ((string)(this[this.tablelocal_Software.SW_P_Opt_RFColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_RFColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_RFColumn] = value;
                 }
             }
             
@@ -10550,10 +10552,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_Oled {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_OledColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_OledColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_OledColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_OledColumn] = value;
                 }
             }
             
@@ -10561,10 +10563,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_Accel {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_AccelColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_AccelColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_AccelColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_AccelColumn] = value;
                 }
             }
             
@@ -10572,10 +10574,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_SP {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_SPColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_SPColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_SPColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_SPColumn] = value;
                 }
             }
             
@@ -10583,10 +10585,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_Buzzer {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_BuzzerColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_BuzzerColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_BuzzerColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_BuzzerColumn] = value;
                 }
             }
             
@@ -10594,10 +10596,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_Vibracall {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_VibracallColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_VibracallColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_VibracallColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_VibracallColumn] = value;
                 }
             }
             
@@ -10605,10 +10607,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_LedTorch {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_LedTorchColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_LedTorchColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_LedTorchColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_LedTorchColumn] = value;
                 }
             }
             
@@ -10616,10 +10618,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_EmButt {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_EmButtColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_EmButtColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_EmButtColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_EmButtColumn] = value;
                 }
             }
             
@@ -10627,10 +10629,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_Use_Backlight {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_Use_BacklightColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_Use_BacklightColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_Use_BacklightColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_Use_BacklightColumn] = value;
                 }
             }
             
@@ -10638,10 +10640,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_ShiftPage {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_ShiftPageColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_ShiftPageColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_ShiftPageColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_ShiftPageColumn] = value;
                 }
             }
             
@@ -10649,10 +10651,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_Use_Accel {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_Use_AccelColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_Use_AccelColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_Use_AccelColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_Use_AccelColumn] = value;
                 }
             }
             
@@ -10660,10 +10662,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_Use_SP {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_Use_SPColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_Use_SPColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_Use_SPColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_Use_SPColumn] = value;
                 }
             }
             
@@ -10671,10 +10673,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_Use_Buzzer {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_Use_BuzzerColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_Use_BuzzerColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_Use_BuzzerColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_Use_BuzzerColumn] = value;
                 }
             }
             
@@ -10682,10 +10684,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_Use_Vibracall {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_Use_VibracallColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_Use_VibracallColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_Use_VibracallColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_Use_VibracallColumn] = value;
                 }
             }
             
@@ -10693,10 +10695,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_P_Opt_Use_LedTorch {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_P_Opt_Use_LedTorchColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_P_Opt_Use_LedTorchColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_Use_LedTorchColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_Use_LedTorchColumn] = value;
                 }
             }
             
@@ -10704,10 +10706,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int SW_P_Opt_MaxPairDevices {
                 get {
-                    return ((int)(this[this.tableSoftware.SW_P_Opt_MaxPairDevicesColumn]));
+                    return ((int)(this[this.tablelocal_Software.SW_P_Opt_MaxPairDevicesColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_P_Opt_MaxPairDevicesColumn] = value;
+                    this[this.tablelocal_Software.SW_P_Opt_MaxPairDevicesColumn] = value;
                 }
             }
             
@@ -10715,10 +10717,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SW_R_Opt_RF {
                 get {
-                    return ((string)(this[this.tableSoftware.SW_R_Opt_RFColumn]));
+                    return ((string)(this[this.tablelocal_Software.SW_R_Opt_RFColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_RFColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_RFColumn] = value;
                 }
             }
             
@@ -10726,10 +10728,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_R_Opt_Plug_Exp {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_R_Opt_Plug_ExpColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_R_Opt_Plug_ExpColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_Plug_ExpColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_Plug_ExpColumn] = value;
                 }
             }
             
@@ -10737,10 +10739,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_R_Opt_Plug_Ple {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_R_Opt_Plug_PleColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_R_Opt_Plug_PleColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_Plug_PleColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_Plug_PleColumn] = value;
                 }
             }
             
@@ -10748,10 +10750,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_R_Opt_Em_Keyb {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_R_Opt_Em_KeybColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_R_Opt_Em_KeybColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_Em_KeybColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_Em_KeybColumn] = value;
                 }
             }
             
@@ -10759,10 +10761,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_R_Opt_Status_Led {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_R_Opt_Status_LedColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_R_Opt_Status_LedColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_Status_LedColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_Status_LedColumn] = value;
                 }
             }
             
@@ -10770,10 +10772,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_R_Opt_Ext_Ant {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_R_Opt_Ext_AntColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_R_Opt_Ext_AntColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_Ext_AntColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_Ext_AntColumn] = value;
                 }
             }
             
@@ -10781,10 +10783,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_R_Opt_Can {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_R_Opt_CanColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_R_Opt_CanColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_CanColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_CanColumn] = value;
                 }
             }
             
@@ -10792,10 +10794,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_R_Opt_Prop_Out {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_R_Opt_Prop_OutColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_R_Opt_Prop_OutColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_Prop_OutColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_Prop_OutColumn] = value;
                 }
             }
             
@@ -10803,10 +10805,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public decimal SW_R_Opt_TimeOut {
                 get {
-                    return ((decimal)(this[this.tableSoftware.SW_R_Opt_TimeOutColumn]));
+                    return ((decimal)(this[this.tablelocal_Software.SW_R_Opt_TimeOutColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_TimeOutColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_TimeOutColumn] = value;
                 }
             }
             
@@ -10814,10 +10816,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int SW_R_Opt_Cont_Keys {
                 get {
-                    return ((int)(this[this.tableSoftware.SW_R_Opt_Cont_KeysColumn]));
+                    return ((int)(this[this.tablelocal_Software.SW_R_Opt_Cont_KeysColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_Cont_KeysColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_Cont_KeysColumn] = value;
                 }
             }
             
@@ -10825,10 +10827,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int SW_R_Opt_MaxPairDevices {
                 get {
-                    return ((int)(this[this.tableSoftware.SW_R_Opt_MaxPairDevicesColumn]));
+                    return ((int)(this[this.tablelocal_Software.SW_R_Opt_MaxPairDevicesColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_MaxPairDevicesColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_MaxPairDevicesColumn] = value;
                 }
             }
             
@@ -10836,10 +10838,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_R_Opt_ShiftPage {
                 get {
-                    return ((bool)(this[this.tableSoftware.SW_R_Opt_ShiftPageColumn]));
+                    return ((bool)(this[this.tablelocal_Software.SW_R_Opt_ShiftPageColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_ShiftPageColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_ShiftPageColumn] = value;
                 }
             }
             
@@ -10847,10 +10849,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int SW_R_Opt_Output_No {
                 get {
-                    return ((int)(this[this.tableSoftware.SW_R_Opt_Output_NoColumn]));
+                    return ((int)(this[this.tablelocal_Software.SW_R_Opt_Output_NoColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_Output_NoColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_Output_NoColumn] = value;
                 }
             }
             
@@ -10858,10 +10860,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int SW_R_Opt_Dig_Input_No {
                 get {
-                    return ((int)(this[this.tableSoftware.SW_R_Opt_Dig_Input_NoColumn]));
+                    return ((int)(this[this.tablelocal_Software.SW_R_Opt_Dig_Input_NoColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_Dig_Input_NoColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_Dig_Input_NoColumn] = value;
                 }
             }
             
@@ -10869,10 +10871,10 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int SW_R_Opt_Ana_Input_No {
                 get {
-                    return ((int)(this[this.tableSoftware.SW_R_Opt_Ana_Input_NoColumn]));
+                    return ((int)(this[this.tablelocal_Software.SW_R_Opt_Ana_Input_NoColumn]));
                 }
                 set {
-                    this[this.tableSoftware.SW_R_Opt_Ana_Input_NoColumn] = value;
+                    this[this.tablelocal_Software.SW_R_Opt_Ana_Input_NoColumn] = value;
                 }
             }
             
@@ -10881,14 +10883,14 @@ namespace SE_Factory {
             public string SW_Revisioni {
                 get {
                     try {
-                        return ((string)(this[this.tableSoftware.SW_RevisioniColumn]));
+                        return ((string)(this[this.tablelocal_Software.SW_RevisioniColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Revisioni\' nella tabella \'Software\' è DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Revisioni\' nella tabella \'local_Software\' è DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSoftware.SW_RevisioniColumn] = value;
+                    this[this.tablelocal_Software.SW_RevisioniColumn] = value;
                 }
             }
             
@@ -10897,22 +10899,23 @@ namespace SE_Factory {
             public string SW_Funzionamento {
                 get {
                     try {
-                        return ((string)(this[this.tableSoftware.SW_FunzionamentoColumn]));
+                        return ((string)(this[this.tablelocal_Software.SW_FunzionamentoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Funzionamento\' nella tabella \'Software\' è DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_Funzionamento\' nella tabella \'local_Software\' è DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableSoftware.SW_FunzionamentoColumn] = value;
+                    this[this.tablelocal_Software.SW_FunzionamentoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Fam_ProdRow Fam_ProdRow {
+            public local_Fam_ProdRow Fam_ProdRow {
                 get {
-                    return ((Fam_ProdRow)(this.GetParentRow(this.Table.ParentRelations["Fam_Prod_Software"])));
+                    return ((local_Fam_ProdRow)(this.GetParentRow(this.Table.ParentRelations["Fam_Prod_Software"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Fam_Prod_Software"]);
@@ -10922,97 +10925,97 @@ namespace SE_Factory {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSW_Fam_ProdNull() {
-                return this.IsNull(this.tableSoftware.SW_Fam_ProdColumn);
+                return this.IsNull(this.tablelocal_Software.SW_Fam_ProdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSW_Fam_ProdNull() {
-                this[this.tableSoftware.SW_Fam_ProdColumn] = global::System.Convert.DBNull;
+                this[this.tablelocal_Software.SW_Fam_ProdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSW_DescrizioneNull() {
-                return this.IsNull(this.tableSoftware.SW_DescrizioneColumn);
+                return this.IsNull(this.tablelocal_Software.SW_DescrizioneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSW_DescrizioneNull() {
-                this[this.tableSoftware.SW_DescrizioneColumn] = global::System.Convert.DBNull;
+                this[this.tablelocal_Software.SW_DescrizioneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSW_VersioneNull() {
-                return this.IsNull(this.tableSoftware.SW_VersioneColumn);
+                return this.IsNull(this.tablelocal_Software.SW_VersioneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSW_VersioneNull() {
-                this[this.tableSoftware.SW_VersioneColumn] = global::System.Convert.DBNull;
+                this[this.tablelocal_Software.SW_VersioneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSW_RevisioneNull() {
-                return this.IsNull(this.tableSoftware.SW_RevisioneColumn);
+                return this.IsNull(this.tablelocal_Software.SW_RevisioneColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSW_RevisioneNull() {
-                this[this.tableSoftware.SW_RevisioneColumn] = global::System.Convert.DBNull;
+                this[this.tablelocal_Software.SW_RevisioneColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSW_StandardNull() {
-                return this.IsNull(this.tableSoftware.SW_StandardColumn);
+                return this.IsNull(this.tablelocal_Software.SW_StandardColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSW_StandardNull() {
-                this[this.tableSoftware.SW_StandardColumn] = global::System.Convert.DBNull;
+                this[this.tablelocal_Software.SW_StandardColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSW_SchedeCompatibiliNull() {
-                return this.IsNull(this.tableSoftware.SW_SchedeCompatibiliColumn);
+                return this.IsNull(this.tablelocal_Software.SW_SchedeCompatibiliColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSW_SchedeCompatibiliNull() {
-                this[this.tableSoftware.SW_SchedeCompatibiliColumn] = global::System.Convert.DBNull;
+                this[this.tablelocal_Software.SW_SchedeCompatibiliColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSW_RevisioniNull() {
-                return this.IsNull(this.tableSoftware.SW_RevisioniColumn);
+                return this.IsNull(this.tablelocal_Software.SW_RevisioniColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSW_RevisioniNull() {
-                this[this.tableSoftware.SW_RevisioniColumn] = global::System.Convert.DBNull;
+                this[this.tablelocal_Software.SW_RevisioniColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSW_FunzionamentoNull() {
-                return this.IsNull(this.tableSoftware.SW_FunzionamentoColumn);
+                return this.IsNull(this.tablelocal_Software.SW_FunzionamentoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSW_FunzionamentoNull() {
-                this[this.tableSoftware.SW_FunzionamentoColumn] = global::System.Convert.DBNull;
+                this[this.tablelocal_Software.SW_FunzionamentoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12697,22 +12700,22 @@ namespace SE_Factory {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class Fam_ProdRowChangeEvent : global::System.EventArgs {
+        public class local_Fam_ProdRowChangeEvent : global::System.EventArgs {
             
-            private Fam_ProdRow eventRow;
+            private local_Fam_ProdRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Fam_ProdRowChangeEvent(Fam_ProdRow row, global::System.Data.DataRowAction action) {
+            public local_Fam_ProdRowChangeEvent(local_Fam_ProdRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public Fam_ProdRow Row {
+            public local_Fam_ProdRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -12731,22 +12734,22 @@ namespace SE_Factory {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class SchedeRowChangeEvent : global::System.EventArgs {
+        public class local_SchedeRowChangeEvent : global::System.EventArgs {
             
-            private SchedeRow eventRow;
+            private local_SchedeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SchedeRowChangeEvent(SchedeRow row, global::System.Data.DataRowAction action) {
+            public local_SchedeRowChangeEvent(local_SchedeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SchedeRow Row {
+            public local_SchedeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -12867,22 +12870,22 @@ namespace SE_Factory {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class SoftwareRowChangeEvent : global::System.EventArgs {
+        public class local_SoftwareRowChangeEvent : global::System.EventArgs {
             
-            private SoftwareRow eventRow;
+            private local_SoftwareRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SoftwareRowChangeEvent(SoftwareRow row, global::System.Data.DataRowAction action) {
+            public local_SoftwareRowChangeEvent(local_SoftwareRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SoftwareRow Row {
+            public local_SoftwareRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -13080,7 +13083,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Fam_ProdTableAdapter : global::System.ComponentModel.Component {
+    public partial class local_Fam_ProdTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -13094,7 +13097,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public Fam_ProdTableAdapter() {
+        public local_Fam_ProdTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -13191,7 +13194,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Fam_Prod";
+            tableMapping.DataSetTable = "local_Fam_Prod";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Fam_Name", "Fam_Name");
             tableMapping.ColumnMappings.Add("Fam_Tipo", "Fam_Tipo");
@@ -13249,7 +13252,7 @@ SELECT Id, Fam_Name, Fam_Tipo, Fam_Hex_ID FROM Fam_Prod WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DB_FactoryDataSet.Fam_ProdDataTable dataTable) {
+        public virtual int Fill(DB_FactoryDataSet.local_Fam_ProdDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13262,9 +13265,9 @@ SELECT Id, Fam_Name, Fam_Tipo, Fam_Hex_ID FROM Fam_Prod WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DB_FactoryDataSet.Fam_ProdDataTable GetData() {
+        public virtual DB_FactoryDataSet.local_Fam_ProdDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DB_FactoryDataSet.Fam_ProdDataTable dataTable = new DB_FactoryDataSet.Fam_ProdDataTable();
+            DB_FactoryDataSet.local_Fam_ProdDataTable dataTable = new DB_FactoryDataSet.local_Fam_ProdDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13272,7 +13275,7 @@ SELECT Id, Fam_Name, Fam_Tipo, Fam_Hex_ID FROM Fam_Prod WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DB_FactoryDataSet.Fam_ProdDataTable dataTable) {
+        public virtual int Update(DB_FactoryDataSet.local_Fam_ProdDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -13280,7 +13283,7 @@ SELECT Id, Fam_Name, Fam_Tipo, Fam_Hex_ID FROM Fam_Prod WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DB_FactoryDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Fam_Prod");
+            return this.Adapter.Update(dataSet, "local_Fam_Prod");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13442,7 +13445,7 @@ SELECT Id, Fam_Name, Fam_Tipo, Fam_Hex_ID FROM Fam_Prod WHERE (Id = @Id)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SchedeTableAdapter : global::System.ComponentModel.Component {
+    public partial class local_SchedeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -13456,7 +13459,7 @@ SELECT Id, Fam_Name, Fam_Tipo, Fam_Hex_ID FROM Fam_Prod WHERE (Id = @Id)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public SchedeTableAdapter() {
+        public local_SchedeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -13553,7 +13556,7 @@ SELECT Id, Fam_Name, Fam_Tipo, Fam_Hex_ID FROM Fam_Prod WHERE (Id = @Id)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Schede";
+            tableMapping.DataSetTable = "local_Schede";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Prod_Sch", "Prod_Sch");
             tableMapping.ColumnMappings.Add("Prod_Fam", "Prod_Fam");
@@ -13611,7 +13614,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DB_FactoryDataSet.SchedeDataTable dataTable) {
+        public virtual int Fill(DB_FactoryDataSet.local_SchedeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13624,9 +13627,9 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DB_FactoryDataSet.SchedeDataTable GetData() {
+        public virtual DB_FactoryDataSet.local_SchedeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DB_FactoryDataSet.SchedeDataTable dataTable = new DB_FactoryDataSet.SchedeDataTable();
+            DB_FactoryDataSet.local_SchedeDataTable dataTable = new DB_FactoryDataSet.local_SchedeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13634,7 +13637,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DB_FactoryDataSet.SchedeDataTable dataTable) {
+        public virtual int Update(DB_FactoryDataSet.local_SchedeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -13642,7 +13645,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DB_FactoryDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Schede");
+            return this.Adapter.Update(dataSet, "local_Schede");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14401,7 +14404,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SoftwareTableAdapter : global::System.ComponentModel.Component {
+    public partial class local_SoftwareTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -14415,7 +14418,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public SoftwareTableAdapter() {
+        public local_SoftwareTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -14512,7 +14515,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Software";
+            tableMapping.DataSetTable = "local_Software";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("SW_Code", "SW_Code");
             tableMapping.ColumnMappings.Add("SW_Fam_Prod", "SW_Fam_Prod");
@@ -14868,7 +14871,7 @@ FROM            Software";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DB_FactoryDataSet.SoftwareDataTable dataTable) {
+        public virtual int Fill(DB_FactoryDataSet.local_SoftwareDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -14881,9 +14884,9 @@ FROM            Software";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DB_FactoryDataSet.SoftwareDataTable GetData() {
+        public virtual DB_FactoryDataSet.local_SoftwareDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DB_FactoryDataSet.SoftwareDataTable dataTable = new DB_FactoryDataSet.SoftwareDataTable();
+            DB_FactoryDataSet.local_SoftwareDataTable dataTable = new DB_FactoryDataSet.local_SoftwareDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -14891,7 +14894,7 @@ FROM            Software";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DB_FactoryDataSet.SoftwareDataTable dataTable) {
+        public virtual int Update(DB_FactoryDataSet.local_SoftwareDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -14899,7 +14902,7 @@ FROM            Software";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DB_FactoryDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Software");
+            return this.Adapter.Update(dataSet, "local_Software");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19827,11 +19830,11 @@ FROM            Software";
         
         private UpdateOrderOption _updateOrder;
         
-        private Fam_ProdTableAdapter _fam_ProdTableAdapter;
+        private local_Fam_ProdTableAdapter _local_Fam_ProdTableAdapter;
         
-        private SchedeTableAdapter _schedeTableAdapter;
+        private local_SchedeTableAdapter _local_SchedeTableAdapter;
         
-        private SoftwareTableAdapter _softwareTableAdapter;
+        private local_SoftwareTableAdapter _local_SoftwareTableAdapter;
         
         private GC_Fam_ProdTableAdapter _gC_Fam_ProdTableAdapter;
         
@@ -19859,12 +19862,12 @@ FROM            Software";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public Fam_ProdTableAdapter Fam_ProdTableAdapter {
+        public local_Fam_ProdTableAdapter local_Fam_ProdTableAdapter {
             get {
-                return this._fam_ProdTableAdapter;
+                return this._local_Fam_ProdTableAdapter;
             }
             set {
-                this._fam_ProdTableAdapter = value;
+                this._local_Fam_ProdTableAdapter = value;
             }
         }
         
@@ -19873,12 +19876,12 @@ FROM            Software";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public SchedeTableAdapter SchedeTableAdapter {
+        public local_SchedeTableAdapter local_SchedeTableAdapter {
             get {
-                return this._schedeTableAdapter;
+                return this._local_SchedeTableAdapter;
             }
             set {
-                this._schedeTableAdapter = value;
+                this._local_SchedeTableAdapter = value;
             }
         }
         
@@ -19887,12 +19890,12 @@ FROM            Software";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public SoftwareTableAdapter SoftwareTableAdapter {
+        public local_SoftwareTableAdapter local_SoftwareTableAdapter {
             get {
-                return this._softwareTableAdapter;
+                return this._local_SoftwareTableAdapter;
             }
             set {
-                this._softwareTableAdapter = value;
+                this._local_SoftwareTableAdapter = value;
             }
         }
         
@@ -19957,17 +19960,17 @@ FROM            Software";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._fam_ProdTableAdapter != null) 
-                            && (this._fam_ProdTableAdapter.Connection != null))) {
-                    return this._fam_ProdTableAdapter.Connection;
+                if (((this._local_Fam_ProdTableAdapter != null) 
+                            && (this._local_Fam_ProdTableAdapter.Connection != null))) {
+                    return this._local_Fam_ProdTableAdapter.Connection;
                 }
-                if (((this._schedeTableAdapter != null) 
-                            && (this._schedeTableAdapter.Connection != null))) {
-                    return this._schedeTableAdapter.Connection;
+                if (((this._local_SchedeTableAdapter != null) 
+                            && (this._local_SchedeTableAdapter.Connection != null))) {
+                    return this._local_SchedeTableAdapter.Connection;
                 }
-                if (((this._softwareTableAdapter != null) 
-                            && (this._softwareTableAdapter.Connection != null))) {
-                    return this._softwareTableAdapter.Connection;
+                if (((this._local_SoftwareTableAdapter != null) 
+                            && (this._local_SoftwareTableAdapter.Connection != null))) {
+                    return this._local_SoftwareTableAdapter.Connection;
                 }
                 if (((this._gC_Fam_ProdTableAdapter != null) 
                             && (this._gC_Fam_ProdTableAdapter.Connection != null))) {
@@ -19994,13 +19997,13 @@ FROM            Software";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._fam_ProdTableAdapter != null)) {
+                if ((this._local_Fam_ProdTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._schedeTableAdapter != null)) {
+                if ((this._local_SchedeTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._softwareTableAdapter != null)) {
+                if ((this._local_SoftwareTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._gC_Fam_ProdTableAdapter != null)) {
@@ -20032,12 +20035,12 @@ FROM            Software";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._fam_ProdTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Fam_Prod.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._local_Fam_ProdTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.local_Fam_Prod.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._fam_ProdTableAdapter.Update(updatedRows));
+                    result = (result + this._local_Fam_ProdTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20050,21 +20053,21 @@ FROM            Software";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._schedeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Schede.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._local_SchedeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.local_Schede.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._schedeTableAdapter.Update(updatedRows));
+                    result = (result + this._local_SchedeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._softwareTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Software.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._local_SoftwareTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.local_Software.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._softwareTableAdapter.Update(updatedRows));
+                    result = (result + this._local_SoftwareTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -20095,11 +20098,11 @@ FROM            Software";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._fam_ProdTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Fam_Prod.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._local_Fam_ProdTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.local_Fam_Prod.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._fam_ProdTableAdapter.Update(addedRows));
+                    result = (result + this._local_Fam_ProdTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20111,19 +20114,19 @@ FROM            Software";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._schedeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Schede.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._local_SchedeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.local_Schede.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._schedeTableAdapter.Update(addedRows));
+                    result = (result + this._local_SchedeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._softwareTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Software.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._local_SoftwareTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.local_Software.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._softwareTableAdapter.Update(addedRows));
+                    result = (result + this._local_SoftwareTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -20153,19 +20156,19 @@ FROM            Software";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._softwareTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Software.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._local_SoftwareTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.local_Software.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._softwareTableAdapter.Update(deletedRows));
+                    result = (result + this._local_SoftwareTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._schedeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Schede.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._local_SchedeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.local_Schede.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._schedeTableAdapter.Update(deletedRows));
+                    result = (result + this._local_SchedeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20177,11 +20180,11 @@ FROM            Software";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._fam_ProdTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Fam_Prod.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._local_Fam_ProdTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.local_Fam_Prod.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._fam_ProdTableAdapter.Update(deletedRows));
+                    result = (result + this._local_Fam_ProdTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20232,18 +20235,18 @@ FROM            Software";
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._fam_ProdTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._fam_ProdTableAdapter.Connection) == false))) {
+            if (((this._local_Fam_ProdTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._local_Fam_ProdTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l" +
                         "a stessa stringa di connessione.");
             }
-            if (((this._schedeTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._schedeTableAdapter.Connection) == false))) {
+            if (((this._local_SchedeTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._local_SchedeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l" +
                         "a stessa stringa di connessione.");
             }
-            if (((this._softwareTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._softwareTableAdapter.Connection) == false))) {
+            if (((this._local_SoftwareTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._local_SoftwareTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l" +
                         "a stessa stringa di connessione.");
             }
@@ -20295,31 +20298,31 @@ FROM            Software";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._fam_ProdTableAdapter != null)) {
-                    revertConnections.Add(this._fam_ProdTableAdapter, this._fam_ProdTableAdapter.Connection);
-                    this._fam_ProdTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._fam_ProdTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._fam_ProdTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._fam_ProdTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._fam_ProdTableAdapter.Adapter);
+                if ((this._local_Fam_ProdTableAdapter != null)) {
+                    revertConnections.Add(this._local_Fam_ProdTableAdapter, this._local_Fam_ProdTableAdapter.Connection);
+                    this._local_Fam_ProdTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._local_Fam_ProdTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._local_Fam_ProdTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._local_Fam_ProdTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._local_Fam_ProdTableAdapter.Adapter);
                     }
                 }
-                if ((this._schedeTableAdapter != null)) {
-                    revertConnections.Add(this._schedeTableAdapter, this._schedeTableAdapter.Connection);
-                    this._schedeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._schedeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._schedeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._schedeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._schedeTableAdapter.Adapter);
+                if ((this._local_SchedeTableAdapter != null)) {
+                    revertConnections.Add(this._local_SchedeTableAdapter, this._local_SchedeTableAdapter.Connection);
+                    this._local_SchedeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._local_SchedeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._local_SchedeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._local_SchedeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._local_SchedeTableAdapter.Adapter);
                     }
                 }
-                if ((this._softwareTableAdapter != null)) {
-                    revertConnections.Add(this._softwareTableAdapter, this._softwareTableAdapter.Connection);
-                    this._softwareTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._softwareTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._softwareTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._softwareTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._softwareTableAdapter.Adapter);
+                if ((this._local_SoftwareTableAdapter != null)) {
+                    revertConnections.Add(this._local_SoftwareTableAdapter, this._local_SoftwareTableAdapter.Connection);
+                    this._local_SoftwareTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._local_SoftwareTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._local_SoftwareTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._local_SoftwareTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._local_SoftwareTableAdapter.Adapter);
                     }
                 }
                 if ((this._gC_Fam_ProdTableAdapter != null)) {
@@ -20407,17 +20410,17 @@ FROM            Software";
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._fam_ProdTableAdapter != null)) {
-                    this._fam_ProdTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._fam_ProdTableAdapter]));
-                    this._fam_ProdTableAdapter.Transaction = null;
+                if ((this._local_Fam_ProdTableAdapter != null)) {
+                    this._local_Fam_ProdTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._local_Fam_ProdTableAdapter]));
+                    this._local_Fam_ProdTableAdapter.Transaction = null;
                 }
-                if ((this._schedeTableAdapter != null)) {
-                    this._schedeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._schedeTableAdapter]));
-                    this._schedeTableAdapter.Transaction = null;
+                if ((this._local_SchedeTableAdapter != null)) {
+                    this._local_SchedeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._local_SchedeTableAdapter]));
+                    this._local_SchedeTableAdapter.Transaction = null;
                 }
-                if ((this._softwareTableAdapter != null)) {
-                    this._softwareTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._softwareTableAdapter]));
-                    this._softwareTableAdapter.Transaction = null;
+                if ((this._local_SoftwareTableAdapter != null)) {
+                    this._local_SoftwareTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._local_SoftwareTableAdapter]));
+                    this._local_SoftwareTableAdapter.Transaction = null;
                 }
                 if ((this._gC_Fam_ProdTableAdapter != null)) {
                     this._gC_Fam_ProdTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._gC_Fam_ProdTableAdapter]));

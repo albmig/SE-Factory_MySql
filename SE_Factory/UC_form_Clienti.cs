@@ -25,9 +25,9 @@ namespace SE_Factory
             this.sMVANAGRAFICACLIENTIBindingSource.Sort = "Mastro ASC, Conto ASC, SOTTOCONTO ASC";
 
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Fam_Prod'. È possibile spostarla o rimuoverla se necessario.
-            this.fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.Fam_Prod);
+            this.fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.local_Fam_Prod);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
-            this.softwareTableAdapter.Fill(this.dB_FactoryDataSet.Software);
+            this.softwareTableAdapter.Fill(this.dB_FactoryDataSet.local_Software);
         }
     }
 }

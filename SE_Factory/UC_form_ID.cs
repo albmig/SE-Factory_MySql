@@ -189,9 +189,9 @@ namespace SE_Factory
         private void ID_uc_form_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
-            this.schedeTableAdapter.Fill(this.dB_FactoryDataSet.Schede);
+            this.schedeTableAdapter.Fill(this.dB_FactoryDataSet.local_Schede);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Fam_Prod'. È possibile spostarla o rimuoverla se necessario.
-            this.fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.Fam_Prod);
+            this.fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.local_Fam_Prod);
         }
 
         private void bt_Home_Click(object sender, EventArgs e)

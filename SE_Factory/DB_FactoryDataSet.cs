@@ -12,15 +12,17 @@
         {
         }
 
-        partial class SoftwareDataTable
+        partial class local_SoftwareDataTable
         {
         }
     }
 }
 
-namespace SE_Factory.DB_FactoryDataSetTableAdapters {
-    
-    
-    public partial class SoftwareTableAdapter {
+namespace SE_Factory.DB_FactoryDataSetTableAdapters
+{
+
+
+    public partial class local_SoftwareTableAdapter
+    {
     }
 }

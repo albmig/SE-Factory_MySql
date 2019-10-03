@@ -75,14 +75,14 @@
             this.sM_V_ANAGRAFICA_CLIENTITableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.SM_V_ANAGRAFICA_CLIENTITableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.famProdBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.Fam_ProdTableAdapter();
+            this.fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.local_Fam_ProdTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.famNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.famTipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.famHexIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.famProdSoftwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.softwareTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.SoftwareTableAdapter();
+            this.softwareTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.local_SoftwareTableAdapter();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sWCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sWFamProdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -898,7 +898,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn famTipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn famHexIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource famProdBindingSource;
-        private DB_FactoryDataSetTableAdapters.Fam_ProdTableAdapter fam_ProdTableAdapter;
+        private DB_FactoryDataSetTableAdapters.local_Fam_ProdTableAdapter fam_ProdTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sWCodeDataGridViewTextBoxColumn;
@@ -940,6 +940,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sWRevisioniDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sWFunzionamentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource famProdSoftwareBindingSource;
-        private DB_FactoryDataSetTableAdapters.SoftwareTableAdapter softwareTableAdapter;
+        private DB_FactoryDataSetTableAdapters.local_SoftwareTableAdapter softwareTableAdapter;
     }
 }

@@ -122,7 +122,7 @@ namespace SE_Factory.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;databas" +
             "e=DB_Factory;certificatefile=C:\\Users\\albmi\\Desktop\\CoDiNg\\SE-Factory_MySql\\Cert" +
-            "ificates\\client-cert.pfx")]
+            "ificates\\pfx\\client-cert.pfx")]
         public string DB_FactoryConnectionString1 {
             get {
                 return ((string)(this["DB_FactoryConnectionString1"]));

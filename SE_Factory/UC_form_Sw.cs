@@ -199,6 +199,10 @@ namespace SE_Factory
 
             if (pan_SW_P.Visible)
             {
+                //int rigacontrol = this.SW_Layout.GetRow(SW_Layout.Controls["pan_SW_C"]);
+                //var control = SW_Layout.GetControlFromPosition(4, rigacontrol);
+                //SW_Layout.Controls.Remove(control);
+
                 //int posizione = this.SW_Layout.GetRow(SW_Layout.Controls["pan_SW_P"]);
                 SW_Layout.Controls["pan_SW_P"].Height = 300;
                 SW_Layout.Controls["pan_P_Dx_Funzionamento"].Height = 170;
@@ -208,9 +212,23 @@ namespace SE_Factory
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_SW_C"], 6);
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_C_Dx_revisioni"], 6);
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_C_Dx_Funzionamento"], 7);
+                SW_Layout.RowStyles[0].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[1].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[2].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[3].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[4].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[5].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[6].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[7].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[8].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[9].SizeType = SizeType.AutoSize;
             }
             if (pan_SW_C.Visible)
             {
+                //int rigacontrol = this.SW_Layout.GetRow(SW_Layout.Controls["pan_SW_P"]);
+                //var control = SW_Layout.GetControlFromPosition(4, rigacontrol);
+                //SW_Layout.Controls.Remove(control);
+
                 //int posizione = this.SW_Layout.GetRow(SW_Layout.Controls["pan_SW_C"]);
                 SW_Layout.Controls["pan_SW_C"].Height = 300;
                 SW_Layout.Controls["pan_C_Dx_Funzionamento"].Height = 170;
@@ -220,6 +238,16 @@ namespace SE_Factory
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_SW_P"], 6);
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_P_Dx_revisioni"], 6);
                 this.SW_Layout.SetRow(SW_Layout.Controls["pan_P_Dx_Funzionamento"], 7);
+                SW_Layout.RowStyles[0].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[1].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[2].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[3].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[4].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[5].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[6].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[7].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[8].SizeType = SizeType.AutoSize;
+                SW_Layout.RowStyles[9].SizeType = SizeType.AutoSize;
             }
 
             //pan_SW_P.Visible = false;
@@ -435,7 +463,7 @@ namespace SE_Factory
 
         private void creaRevisioneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataRow SW_new_record = dB_FactoryDataSet.Software.NewRow();
+            DataRow SW_new_record = dB_FactoryDataSet.GC_Software.NewRow();
             SW_new_record.ItemArray = ((DataRowView)gCSoftwareBindingSource.Current).Row.ItemArray;
             string addline = "\n----------------------------------------\n";
 
@@ -450,7 +478,7 @@ namespace SE_Factory
             //int lastnumber = (int)this.gC_SoftwareTableAdapter.LastID() + 1;
             //SW_new_record["Id"] = lastnumber;
 
-            dB_FactoryDataSet.Software.Rows.Add(SW_new_record);
+            dB_FactoryDataSet.GC_Software.Rows.Add(SW_new_record);
 
             //dB_FactoryDataSet.Software.FindById(lastnumber);
 
@@ -462,7 +490,7 @@ namespace SE_Factory
 
         private void menu_sw_annulla_Click(object sender, EventArgs e)
         {
-            dB_FactoryDataSet.Software.RejectChanges();
+            dB_FactoryDataSet.GC_Software.RejectChanges();
 
             gCSoftwareBindingSource.CancelEdit();
 
@@ -479,10 +507,10 @@ namespace SE_Factory
         {
             if (GVar.glob_form_status == "N")
             {
-                DB_FactoryDataSet.SoftwareRow insertRow;
-                insertRow = dB_FactoryDataSet.Software.NewSoftwareRow();
+                DB_FactoryDataSet.GC_SoftwareRow insertRow;
+                insertRow = dB_FactoryDataSet.GC_Software.NewGC_SoftwareRow();
                 FromRowToRecord(insertRow);
-                this.dB_FactoryDataSet.Software.Rows.Add(insertRow);
+                this.dB_FactoryDataSet.GC_Software.Rows.Add(insertRow);
 
                 try
                 {
