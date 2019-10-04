@@ -379,6 +379,8 @@ namespace SE_Factory
                 pdfStamper.Close();
                 pdfReader.Close();
                 MessageBox.Show("PDF generato correttamente!");
+
+                System.Diagnostics.Process.Start(P_OutputStream);
             }
 
         }
@@ -859,6 +861,11 @@ namespace SE_Factory
                 GVar.glob_result_id[0] = Convert.ToChar(currentRow["Fam_Hex_ID"]);
                 Setting_Form();
             }
+        }
+
+        private void richtb__Revisioni_P_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

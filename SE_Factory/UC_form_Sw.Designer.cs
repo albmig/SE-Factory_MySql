@@ -263,7 +263,7 @@
             this.SW_Layout.SetColumnSpan(this.pan_P_Dx_Funzionamento, 4);
             this.pan_P_Dx_Funzionamento.Controls.Add(this.funz_fill);
             this.pan_P_Dx_Funzionamento.Controls.Add(this.funz_top);
-            this.pan_P_Dx_Funzionamento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pan_P_Dx_Funzionamento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarBarColor = true;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_P_Dx_Funzionamento.HorizontalScrollbarSize = 10;
@@ -297,11 +297,11 @@
             // 
             this.richtb_Funzionamento_P.BackColor = System.Drawing.SystemColors.Window;
             this.richtb_Funzionamento_P.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richtb_Funzionamento_P.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richtb_Funzionamento_P.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richtb_Funzionamento_P.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb_Funzionamento_P.Location = new System.Drawing.Point(0, 0);
             this.richtb_Funzionamento_P.Name = "richtb_Funzionamento_P";
-            this.richtb_Funzionamento_P.Size = new System.Drawing.Size(272, 250);
+            this.richtb_Funzionamento_P.Size = new System.Drawing.Size(272, 242);
             this.richtb_Funzionamento_P.TabIndex = 11;
             this.richtb_Funzionamento_P.Text = "";
             // 
@@ -339,7 +339,7 @@
             this.SW_Layout.SetColumnSpan(this.pan_P_Dx_revisioni, 4);
             this.pan_P_Dx_revisioni.Controls.Add(this.rev_fill);
             this.pan_P_Dx_revisioni.Controls.Add(this.rev_top);
-            this.pan_P_Dx_revisioni.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pan_P_Dx_revisioni.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_P_Dx_revisioni.HorizontalScrollbarBarColor = true;
             this.pan_P_Dx_revisioni.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_P_Dx_revisioni.HorizontalScrollbarSize = 10;
@@ -355,7 +355,7 @@
             // rev_fill
             // 
             this.rev_fill.Controls.Add(this.richtb__Revisioni_P);
-            this.rev_fill.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rev_fill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rev_fill.HorizontalScrollbarBarColor = true;
             this.rev_fill.HorizontalScrollbarHighlightOnWheel = false;
             this.rev_fill.HorizontalScrollbarSize = 10;
@@ -371,13 +371,14 @@
             // 
             this.richtb__Revisioni_P.BackColor = System.Drawing.SystemColors.Window;
             this.richtb__Revisioni_P.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richtb__Revisioni_P.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.richtb__Revisioni_P.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richtb__Revisioni_P.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richtb__Revisioni_P.Location = new System.Drawing.Point(0, -20);
+            this.richtb__Revisioni_P.Location = new System.Drawing.Point(0, 0);
             this.richtb__Revisioni_P.Name = "richtb__Revisioni_P";
-            this.richtb__Revisioni_P.Size = new System.Drawing.Size(272, 150);
+            this.richtb__Revisioni_P.Size = new System.Drawing.Size(272, 130);
             this.richtb__Revisioni_P.TabIndex = 11;
             this.richtb__Revisioni_P.Text = "";
+            this.richtb__Revisioni_P.TextChanged += new System.EventHandler(this.richtb__Revisioni_P_TextChanged);
             // 
             // rev_top
             // 
@@ -2260,7 +2261,7 @@
             this.SW_Layout.SetColumnSpan(this.pan_C_Dx_revisioni, 4);
             this.pan_C_Dx_revisioni.Controls.Add(this.metroPanel9);
             this.pan_C_Dx_revisioni.Controls.Add(this.metroPanel10);
-            this.pan_C_Dx_revisioni.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pan_C_Dx_revisioni.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_C_Dx_revisioni.HorizontalScrollbarBarColor = true;
             this.pan_C_Dx_revisioni.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_C_Dx_revisioni.HorizontalScrollbarSize = 10;
@@ -2276,7 +2277,7 @@
             // metroPanel9
             // 
             this.metroPanel9.Controls.Add(this.richtb__Revisioni_C);
-            this.metroPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroPanel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.metroPanel9.HorizontalScrollbarBarColor = true;
             this.metroPanel9.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel9.HorizontalScrollbarSize = 10;
@@ -2292,7 +2293,7 @@
             // 
             this.richtb__Revisioni_C.BackColor = System.Drawing.SystemColors.Window;
             this.richtb__Revisioni_C.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richtb__Revisioni_C.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.richtb__Revisioni_C.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richtb__Revisioni_C.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb__Revisioni_C.Location = new System.Drawing.Point(0, 0);
             this.richtb__Revisioni_C.Name = "richtb__Revisioni_C";
@@ -2333,7 +2334,7 @@
             this.SW_Layout.SetColumnSpan(this.pan_C_Dx_Funzionamento, 4);
             this.pan_C_Dx_Funzionamento.Controls.Add(this.metroPanel6);
             this.pan_C_Dx_Funzionamento.Controls.Add(this.metroPanel7);
-            this.pan_C_Dx_Funzionamento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pan_C_Dx_Funzionamento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarBarColor = true;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarHighlightOnWheel = false;
             this.pan_C_Dx_Funzionamento.HorizontalScrollbarSize = 10;
@@ -2367,11 +2368,11 @@
             // 
             this.richtb_Funzionamento_C.BackColor = System.Drawing.SystemColors.Window;
             this.richtb_Funzionamento_C.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richtb_Funzionamento_C.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richtb_Funzionamento_C.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richtb_Funzionamento_C.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richtb_Funzionamento_C.Location = new System.Drawing.Point(0, 0);
             this.richtb_Funzionamento_C.Name = "richtb_Funzionamento_C";
-            this.richtb_Funzionamento_C.Size = new System.Drawing.Size(272, 250);
+            this.richtb_Funzionamento_C.Size = new System.Drawing.Size(272, 200);
             this.richtb_Funzionamento_C.TabIndex = 11;
             this.richtb_Funzionamento_C.Text = "";
             // 

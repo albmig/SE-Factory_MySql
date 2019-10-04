@@ -38,8 +38,8 @@ namespace SE_Factory
             //menu_btn_Sw.Visible = false;
             //menu_spacer_05.Visible = false;
 
-            menu_btn_Clienti.Visible = false;
-            menu_spacer_06.Visible = false;
+            menu_btn_Clienti.Visible = true;
+            menu_spacer_06.Visible = true;
 
 
         }
@@ -185,7 +185,7 @@ namespace SE_Factory
 
         private void menu_btn_Ordini_Click(object sender, EventArgs e)
         {
-            UC_form_Ordini frm_child = new UC_form_Ordini();
+            UC_form_Clienti frm_child = new UC_form_Clienti();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
             frm_child.Visible = true;

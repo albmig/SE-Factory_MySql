@@ -138,12 +138,6 @@
     <Compile Include="UC_form_Gecko.Designer.cs">
       <DependentUpon>UC_form_Gecko.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_form_Ordini.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_form_Ordini.Designer.cs">
-      <DependentUpon>UC_form_Ordini.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_form_Paths.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,9 +188,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_form_Gecko.resx">
       <DependentUpon>UC_form_Gecko.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_form_Ordini.resx">
-      <DependentUpon>UC_form_Ordini.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_form_Paths.resx">
       <DependentUpon>UC_form_Paths.cs</DependentUpon>
