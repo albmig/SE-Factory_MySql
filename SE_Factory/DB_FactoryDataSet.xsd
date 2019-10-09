@@ -4,16 +4,14 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="4" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_FactoryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_FactoryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.DB_FactoryConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DYOPENGConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DYOPENGConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.DYOPENGConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_FactoryConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_FactoryConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.DB_FactoryConnectionString1" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_FactoryConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_FactoryConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.DB_FactoryConnectionString2" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_FactoryConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_FactoryConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.DB_FactoryConnectionString2" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LocalDB_Connection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LocalDB_Connection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.LocalDB_Connection" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="OPEN_Connection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="OPEN_Connection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.OPEN_Connection" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GCP_Connection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GCP_Connection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.GCP_Connection" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="local_Fam_ProdTableAdapter" GeneratorDataComponentClassName="local_Fam_ProdTableAdapter" Name="local_Fam_Prod" UserDataComponentName="local_Fam_ProdTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_FactoryConnectionString (Settings)" DbObjectName="dbo.Fam_Prod" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="LocalDB_Connection (Settings)" DbObjectName="dbo.Fam_Prod" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Fam_Prod] WHERE (([Id] = @Original_Id) AND ([Fam_Tipo] = @Original_Fam_Tipo) AND ([Fam_Hex_ID] = @Original_Fam_Hex_ID))</CommandText>
@@ -68,7 +66,7 @@ SELECT Id, Fam_Name, Fam_Tipo, Fam_Hex_ID FROM Fam_Prod WHERE (Id = @Id)</Comman
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="local_SchedeTableAdapter" GeneratorDataComponentClassName="local_SchedeTableAdapter" Name="local_Schede" UserDataComponentName="local_SchedeTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_FactoryConnectionString (Settings)" DbObjectName="dbo.Schede" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="LocalDB_Connection (Settings)" DbObjectName="dbo.Schede" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Schede] WHERE (([Id] = @Original_Id) AND ([Prod_Fam] = @Original_Prod_Fam))</CommandText>
@@ -124,7 +122,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SM_V_ANAGRAFICA_CLIENTITableAdapter" GeneratorDataComponentClassName="SM_V_ANAGRAFICA_CLIENTITableAdapter" Name="SM_V_ANAGRAFICA_CLIENTI" UserDataComponentName="SM_V_ANAGRAFICA_CLIENTITableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DYOPENGConnectionString (Settings)" DbObjectName="DYOPENG.dbo.SM_V_ANAGRAFICA_CLIENTI" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="OPEN_Connection (Settings)" DbObjectName="DYOPENG.dbo.SM_V_ANAGRAFICA_CLIENTI" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT Mastro, Conto, SOTTOCONTO, PARTITA_IVA, CODICE_FISCALE, RAGIONESOCIALE, CODICE_NOMINATIVO, INDIRIZZO, NUMERO_CIVICO, FRAZIONE, CAP, COMUNE, PROVINCIA, REGIONE, COD_ISO_NAZIONE, NAZIONE, CODICE_PAGAMENTO, DESCRIZIONE_PAGAMENTO, AGENTE, FIDO, PREFISSO_TELEFONO, NUMERO_TELEFONO, PREFISSO_TELEFONO_AGGIUNTIVO, NUMERO_TELEFONO_AGGIUNTIVO, NUMERO_VERDE, PREFISSO_FAX, NUMERO_FAX, INDIRIZZO_INTERNET, EMail, EMAIL_PEC, EMAIL_PEC_CAMERA_COMMERCIO, TIPOLOGIA_CLIENTE, CATEGORIA_ECONOMICA_CLIENTE, LISTINO, SCONTO1, SCONTO2, SCONTO3, SCONTO4, PORTO, SPEDIZIONE FROM dbo.SM_V_ANAGRAFICA_CLIENTI</CommandText>
@@ -179,7 +177,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="JLabelTableAdapter" GeneratorDataComponentClassName="JLabelTableAdapter" Name="JLabel" UserDataComponentName="JLabelTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DYOPENGConnectionString (Settings)" DbObjectName="DYOPENG.dbo.JLabel" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="OPEN_Connection (Settings)" DbObjectName="DYOPENG.dbo.JLabel" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT TIPO_ORDINE_CLIENTE, RAGIONE_SOCIALE, NUMERO_ORDINE, NUMERO_RIGA, TIPO_DB, CODICE_KIT, CODICE_SISTEMA, DESCRIZIONE, DATA_RICHIESTA_CONSEGNA, DATA_CONFERMA_CONSEGNA, UM, PREZZO_UNITARIO_KIT, PREZZO_UNITARIO, QTA_ORDINATA_KIT, QTA_ORDINATA, QTA_SPEDITA_KIT, QTA_SPEDITA, IMPORTO_KIT, IMPORTO, IMPORTO_EVASO_KIT, IMPORTO_EVASO, STATO_RIGA_ORDINE, SOFTWARE FROM dbo.JLabel</CommandText>
@@ -217,7 +215,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="JLabel_ClientiTableAdapter" GeneratorDataComponentClassName="JLabel_ClientiTableAdapter" Name="JLabel_Clienti" UserDataComponentName="JLabel_ClientiTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DYOPENGConnectionString (Settings)" DbObjectName="DYOPENG.dbo.JLabel_Clienti" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="OPEN_Connection (Settings)" DbObjectName="DYOPENG.dbo.JLabel_Clienti" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT NumOrdine, TipoOrdine, CodAnagrafico, PartitaIva, CodiceFiscale, RicercaBreve, DataInizioValidita, DataFineValidita, CodAnagraficoOld, CommentoStorico, TipoPersona, RagSocCognome, RagSocNome, RagSocCompleta, IndirizzoFiscale, ToponimoFiscale, IndFiscale, NumCivicoFiscale, FrazioneFiscale, CapFiscale, ComuneFiscale, CodComuneFiscale, ComuneAggiuntivo, ProvinciaFiscale, RegioneFiscale, CasiPartAddReg, NazioneFiscale, Prefisso, Telefono, PrefissoAggiuntivo, TelefonoAggiuntivo, NumeroVerde, PrefissoFax, Fax, Telex, Http, Titolo, CodConcessione, CodLingua, FlCancellato, FlRiservatezza, FlCodFiscNonReg, DataUltModifica, IDUtente, IDTerminale, FlSoggettoEstero, DataValidita, CodAnagraficoNew, Omocodice, FlPIVAChiusa, FlAllineaIndirizzi, FlEmailPEC, EMail, EMailPEC, EMailPECComm, PwdAllegatiEmail FROM dbo.JLabel_Clienti</CommandText>
@@ -288,7 +286,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="local_SoftwareTableAdapter" GeneratorDataComponentClassName="local_SoftwareTableAdapter" Name="local_Software" UserDataComponentName="local_SoftwareTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_FactoryConnectionString (Settings)" DbObjectName="dbo.Software" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="LocalDB_Connection (Settings)" DbObjectName="dbo.Software" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [Software] WHERE (([Id] = @Original_Id) AND ([SW_Code] = @Original_SW_Code) AND ((@IsNull_SW_Fam_Prod = 1 AND [SW_Fam_Prod] IS NULL) OR ([SW_Fam_Prod] = @Original_SW_Fam_Prod)) AND ((@IsNull_SW_Versione = 1 AND [SW_Versione] IS NULL) OR ([SW_Versione] = @Original_SW_Versione)) AND ((@IsNull_SW_Revisione = 1 AND [SW_Revisione] IS NULL) OR ([SW_Revisione] = @Original_SW_Revisione)) AND ((@IsNull_SW_Standard = 1 AND [SW_Standard] IS NULL) OR ([SW_Standard] = @Original_SW_Standard)) AND ([SW_P_Opt_Oled] = @Original_SW_P_Opt_Oled) AND ([SW_P_Opt_Accel] = @Original_SW_P_Opt_Accel) AND ([SW_P_Opt_SP] = @Original_SW_P_Opt_SP) AND ([SW_P_Opt_Buzzer] = @Original_SW_P_Opt_Buzzer) AND ([SW_P_Opt_Vibracall] = @Original_SW_P_Opt_Vibracall) AND ([SW_P_Opt_LedTorch] = @Original_SW_P_Opt_LedTorch) AND ([SW_P_Opt_EmButt] = @Original_SW_P_Opt_EmButt) AND ([SW_P_Opt_Use_Backlight] = @Original_SW_P_Opt_Use_Backlight) AND ([SW_P_Opt_ShiftPage] = @Original_SW_P_Opt_ShiftPage) AND ([SW_P_Opt_Use_Accel] = @Original_SW_P_Opt_Use_Accel) AND ([SW_P_Opt_Use_SP] = @Original_SW_P_Opt_Use_SP) AND ([SW_P_Opt_Use_Buzzer] = @Original_SW_P_Opt_Use_Buzzer) AND ([SW_P_Opt_Use_Vibracall] = @Original_SW_P_Opt_Use_Vibracall) AND ([SW_P_Opt_Use_LedTorch] = @Original_SW_P_Opt_Use_LedTorch) AND ([SW_P_Opt_MaxPairDevices] = @Original_SW_P_Opt_MaxPairDevices) AND ([SW_R_Opt_Plug_Exp] = @Original_SW_R_Opt_Plug_Exp) AND ([SW_R_Opt_Plug_Ple] = @Original_SW_R_Opt_Plug_Ple) AND ([SW_R_Opt_Em_Keyb] = @Original_SW_R_Opt_Em_Keyb) AND ([SW_R_Opt_Status_Led] = @Original_SW_R_Opt_Status_Led) AND ([SW_R_Opt_Ext_Ant] = @Original_SW_R_Opt_Ext_Ant) AND ([SW_R_Opt_Can] = @Original_SW_R_Opt_Can) AND ([SW_R_Opt_Prop_Out] = @Original_SW_R_Opt_Prop_Out) AND ([SW_R_Opt_TimeOut] = @Original_SW_R_Opt_TimeOut) AND ([SW_R_Opt_Cont_Keys] = @Original_SW_R_Opt_Cont_Keys) AND ([SW_R_Opt_MaxPairDevices] = @Original_SW_R_Opt_MaxPairDevices) AND ([SW_R_Opt_ShiftPage] = @Original_SW_R_Opt_ShiftPage) AND ([SW_R_Opt_Output_No] = @Original_SW_R_Opt_Output_No) AND ([SW_R_Opt_Dig_Input_No] = @Original_SW_R_Opt_Dig_Input_No) AND ([SW_R_Opt_Ana_Input_No] = @Original_SW_R_Opt_Ana_Input_No))</CommandText>
@@ -527,7 +525,7 @@ SELECT Id, SW_Code, SW_Fam_Prod, SW_Descrizione, SW_Versione, SW_Revisione, SW_S
               <Mapping SourceColumn="SW_Funzionamento" DataSetColumn="SW_Funzionamento" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="DB_FactoryConnectionString (Settings)" DbObjectName="dbo.Software" DbObjectType="Table" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="LastID" Modifier="Public" Name="LastID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="LastID">
+              <DbSource ConnectionRef="LocalDB_Connection (Settings)" DbObjectName="dbo.Software" DbObjectType="Table" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="LastID" Modifier="Public" Name="LastID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="LastID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        TOP (1) Id
@@ -541,7 +539,7 @@ ORDER BY Id DESC</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GC_Fam_ProdTableAdapter" GeneratorDataComponentClassName="GC_Fam_ProdTableAdapter" Name="GC_Fam_Prod" UserDataComponentName="GC_Fam_ProdTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_FactoryConnectionString1 (Settings)" DbObjectName="DB_Factory.GC_Fam_Prod" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GCP_Connection (Settings)" DbObjectName="DB_Factory.GC_Fam_Prod" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `GC_Fam_Prod` WHERE ((`Id` = @p1) AND (`Fam_Tipo` = @p2) AND ((@p3 = 1 AND `Fam_Hex_ID` IS NULL) OR (`Fam_Hex_ID` = @p4)))</CommandText>
@@ -595,7 +593,7 @@ ORDER BY Id DESC</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GC_SchedeTableAdapter" GeneratorDataComponentClassName="GC_SchedeTableAdapter" Name="GC_Schede" UserDataComponentName="GC_SchedeTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_FactoryConnectionString1 (Settings)" DbObjectName="DB_Factory.GC_Schede" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GCP_Connection (Settings)" DbObjectName="DB_Factory.GC_Schede" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `GC_Schede` WHERE ((`Id` = @p1) AND (`Prod_Fam` = @p2))</CommandText>
@@ -648,7 +646,7 @@ ORDER BY Id DESC</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GC_SoftwareTableAdapter" GeneratorDataComponentClassName="GC_SoftwareTableAdapter" Name="GC_Software" UserDataComponentName="GC_SoftwareTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_FactoryConnectionString1 (Settings)" DbObjectName="DB_Factory.GC_Software" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GCP_Connection (Settings)" DbObjectName="DB_Factory.GC_Software" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `GC_Software` WHERE ((`Id` = @p1) AND (`SW_Code` = @p2) AND ((@p3 = 1 AND `SW_Fam_Prod` IS NULL) OR (`SW_Fam_Prod` = @p4)) AND ((@p5 = 1 AND `SW_Versione` IS NULL) OR (`SW_Versione` = @p6)) AND ((@p7 = 1 AND `SW_Revisione` IS NULL) OR (`SW_Revisione` = @p8)) AND ((@p9 = 1 AND `SW_Standard` IS NULL) OR (`SW_Standard` = @p10)) AND ((@p11 = 1 AND `SW_P_Opt_RF` IS NULL) OR (`SW_P_Opt_RF` = @p12)) AND ((@p13 = 1 AND `SW_P_Opt_Oled` IS NULL) OR (`SW_P_Opt_Oled` = @p14)) AND ((@p15 = 1 AND `SW_P_Opt_Accel` IS NULL) OR (`SW_P_Opt_Accel` = @p16)) AND ((@p17 = 1 AND `SW_P_Opt_SP` IS NULL) OR (`SW_P_Opt_SP` = @p18)) AND ((@p19 = 1 AND `SW_P_Opt_Buzzer` IS NULL) OR (`SW_P_Opt_Buzzer` = @p20)) AND ((@p21 = 1 AND `SW_P_Opt_Vibracall` IS NULL) OR (`SW_P_Opt_Vibracall` = @p22)) AND ((@p23 = 1 AND `SW_P_Opt_LedTorch` IS NULL) OR (`SW_P_Opt_LedTorch` = @p24)) AND ((@p25 = 1 AND `SW_P_Opt_EmButt` IS NULL) OR (`SW_P_Opt_EmButt` = @p26)) AND ((@p27 = 1 AND `SW_P_Opt_Use_Backlight` IS NULL) OR (`SW_P_Opt_Use_Backlight` = @p28)) AND ((@p29 = 1 AND `SW_P_Opt_ShiftPage` IS NULL) OR (`SW_P_Opt_ShiftPage` = @p30)) AND ((@p31 = 1 AND `SW_P_Opt_Use_Accel` IS NULL) OR (`SW_P_Opt_Use_Accel` = @p32)) AND ((@p33 = 1 AND `SW_P_Opt_Use_SP` IS NULL) OR (`SW_P_Opt_Use_SP` = @p34)) AND ((@p35 = 1 AND `SW_P_Opt_Use_Buzzer` IS NULL) OR (`SW_P_Opt_Use_Buzzer` = @p36)) AND ((@p37 = 1 AND `SW_P_Opt_Use_Vibracall` IS NULL) OR (`SW_P_Opt_Use_Vibracall` = @p38)) AND ((@p39 = 1 AND `SW_P_Opt_Use_LedTorch` IS NULL) OR (`SW_P_Opt_Use_LedTorch` = @p40)) AND ((@p41 = 1 AND `SW_P_Opt_MaxPairDevices` IS NULL) OR (`SW_P_Opt_MaxPairDevices` = @p42)) AND ((@p43 = 1 AND `SW_R_Opt_RF` IS NULL) OR (`SW_R_Opt_RF` = @p44)) AND ((@p45 = 1 AND `SW_R_Opt_Plug_Exp` IS NULL) OR (`SW_R_Opt_Plug_Exp` = @p46)) AND ((@p47 = 1 AND `SW_R_Opt_Plug_Ple` IS NULL) OR (`SW_R_Opt_Plug_Ple` = @p48)) AND ((@p49 = 1 AND `SW_R_Opt_Em_Keyb` IS NULL) OR (`SW_R_Opt_Em_Keyb` = @p50)) AND ((@p51 = 1 AND `SW_R_Opt_Status_Led` IS NULL) OR (`SW_R_Opt_Status_Led` = @p52)) AND ((@p53 = 1 AND `SW_R_Opt_Ext_Ant` IS NULL) OR (`SW_R_Opt_Ext_Ant` = @p54)) AND ((@p55 = 1 AND `SW_R_Opt_Can` IS NULL) OR (`SW_R_Opt_Can` = @p56)) AND ((@p57 = 1 AND `SW_R_Opt_Prop_Out` IS NULL) OR (`SW_R_Opt_Prop_Out` = @p58)) AND ((@p59 = 1 AND `SW_R_Opt_TimeOut` IS NULL) OR (`SW_R_Opt_TimeOut` = @p60)) AND ((@p61 = 1 AND `SW_R_Opt_Cont_Keys` IS NULL) OR (`SW_R_Opt_Cont_Keys` = @p62)) AND ((@p63 = 1 AND `SW_R_Opt_MaxPairDevices` IS NULL) OR (`SW_R_Opt_MaxPairDevices` = @p64)) AND ((@p65 = 1 AND `SW_R_Opt_ShiftPage` IS NULL) OR (`SW_R_Opt_ShiftPage` = @p66)) AND ((@p67 = 1 AND `SW_R_Opt_Output_No` IS NULL) OR (`SW_R_Opt_Output_No` = @p68)) AND ((@p69 = 1 AND `SW_R_Opt_Dig_Input_No` IS NULL) OR (`SW_R_Opt_Dig_Input_No` = @p70)) AND ((@p71 = 1 AND `SW_R_Opt_Ana_Input_No` IS NULL) OR (`SW_R_Opt_Ana_Input_No` = @p72)))</CommandText>
@@ -946,7 +944,7 @@ ORDER BY Id DESC</CommandText>
               <Mapping SourceColumn="SW_Funzionamento" DataSetColumn="SW_Funzionamento" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="DB_FactoryConnectionString1 (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LastID" Modifier="Public" Name="LastID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="LastID">
+              <DbSource ConnectionRef="GCP_Connection (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LastID" Modifier="Public" Name="LastID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="LastID">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Id
@@ -961,7 +959,7 @@ LIMIT 1</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GC_CustomersTableAdapter" GeneratorDataComponentClassName="GC_CustomersTableAdapter" Name="GC_Customers" UserDataComponentName="GC_CustomersTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_FactoryConnectionString2 (Settings)" DbObjectName="DB_Factory.GC_Customers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GCP_Connection (Settings)" DbObjectName="DB_Factory.GC_Customers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `GC_Customers` WHERE ((`Id` = @p1) AND ((@p2 = 1 AND `Cli_CAP` IS NULL) OR (`Cli_CAP` = @p3)) AND ((@p4 = 1 AND `Cli_Prov` IS NULL) OR (`Cli_Prov` = @p5)) AND ((@p6 = 1 AND `Cli_Tel_1` IS NULL) OR (`Cli_Tel_1` = @p7)) AND ((@p8 = 1 AND `Cli_Tel_2` IS NULL) OR (`Cli_Tel_2` = @p9)))</CommandText>
@@ -1046,6 +1044,148 @@ LIMIT 1</CommandText>
               <Mapping SourceColumn="Cli_Email_2" DataSetColumn="Cli_Email_2" />
               <Mapping SourceColumn="Cli_Tel_1" DataSetColumn="Cli_Tel_1" />
               <Mapping SourceColumn="Cli_Tel_2" DataSetColumn="Cli_Tel_2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESATableAdapter" GeneratorDataComponentClassName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESATableAdapter" Name="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" UserDataComponentName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="OPEN_Connection (Settings)" DbObjectName="DYOPENG.dbo.NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        CODICE_ASSIEME, SEQUENZA, CODICE_COMPONENTE, U_M, Quantita, DATA_INIZIO_VALIDITA, DATA_FINE_VALIDITA, DATA_ULTIMA_VARIAZIONE, DESEST_COMPOSTO, DESEST_COMPONENTE
+FROM            NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA
+WHERE        (CODICE_ASSIEME LIKE 'XKIT%')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CODICE_ASSIEME" DataSetColumn="CODICE_ASSIEME" />
+              <Mapping SourceColumn="SEQUENZA" DataSetColumn="SEQUENZA" />
+              <Mapping SourceColumn="CODICE_COMPONENTE" DataSetColumn="CODICE_COMPONENTE" />
+              <Mapping SourceColumn="U_M" DataSetColumn="U_M" />
+              <Mapping SourceColumn="Quantita" DataSetColumn="Quantita" />
+              <Mapping SourceColumn="DATA_INIZIO_VALIDITA" DataSetColumn="DATA_INIZIO_VALIDITA" />
+              <Mapping SourceColumn="DATA_FINE_VALIDITA" DataSetColumn="DATA_FINE_VALIDITA" />
+              <Mapping SourceColumn="DATA_ULTIMA_VARIAZIONE" DataSetColumn="DATA_ULTIMA_VARIAZIONE" />
+              <Mapping SourceColumn="DESEST_COMPOSTO" DataSetColumn="DESEST_COMPOSTO" />
+              <Mapping SourceColumn="DESEST_COMPONENTE" DataSetColumn="DESEST_COMPONENTE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="JLabel_fullTableAdapter" GeneratorDataComponentClassName="JLabel_fullTableAdapter" Name="JLabel_full" UserDataComponentName="JLabel_fullTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="OPEN_Connection (Settings)" DbObjectName="DYOPENG.dbo.JLabel_full" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TIPO_ORDINE_CLIENTE, RAGIONE_SOCIALE, NUMERO_ORDINE, NUMERO_RIGA, TIPO_DB, CODICE_KIT, CODICE_SISTEMA, DESCRIZIONE, DATA_RICHIESTA_CONSEGNA, DATA_CONFERMA_CONSEGNA, UM, PREZZO_UNITARIO_KIT, PREZZO_UNITARIO, QTA_ORDINATA_KIT, QTA_ORDINATA, QTA_SPEDITA_KIT, QTA_SPEDITA, IMPORTO_KIT, IMPORTO, IMPORTO_EVASO_KIT, IMPORTO_EVASO, STATO_RIGA_ORDINE, SOFTWARE, DESCR_KIT, DESCREST_KIT, DESCR_SISTEMA, DESCREST_SISTEMA FROM dbo.JLabel_full</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TIPO_ORDINE_CLIENTE" DataSetColumn="TIPO_ORDINE_CLIENTE" />
+              <Mapping SourceColumn="RAGIONE_SOCIALE" DataSetColumn="RAGIONE_SOCIALE" />
+              <Mapping SourceColumn="NUMERO_ORDINE" DataSetColumn="NUMERO_ORDINE" />
+              <Mapping SourceColumn="NUMERO_RIGA" DataSetColumn="NUMERO_RIGA" />
+              <Mapping SourceColumn="TIPO_DB" DataSetColumn="TIPO_DB" />
+              <Mapping SourceColumn="CODICE_KIT" DataSetColumn="CODICE_KIT" />
+              <Mapping SourceColumn="CODICE_SISTEMA" DataSetColumn="CODICE_SISTEMA" />
+              <Mapping SourceColumn="DESCRIZIONE" DataSetColumn="DESCRIZIONE" />
+              <Mapping SourceColumn="DATA_RICHIESTA_CONSEGNA" DataSetColumn="DATA_RICHIESTA_CONSEGNA" />
+              <Mapping SourceColumn="DATA_CONFERMA_CONSEGNA" DataSetColumn="DATA_CONFERMA_CONSEGNA" />
+              <Mapping SourceColumn="UM" DataSetColumn="UM" />
+              <Mapping SourceColumn="PREZZO_UNITARIO_KIT" DataSetColumn="PREZZO_UNITARIO_KIT" />
+              <Mapping SourceColumn="PREZZO_UNITARIO" DataSetColumn="PREZZO_UNITARIO" />
+              <Mapping SourceColumn="QTA_ORDINATA_KIT" DataSetColumn="QTA_ORDINATA_KIT" />
+              <Mapping SourceColumn="QTA_ORDINATA" DataSetColumn="QTA_ORDINATA" />
+              <Mapping SourceColumn="QTA_SPEDITA_KIT" DataSetColumn="QTA_SPEDITA_KIT" />
+              <Mapping SourceColumn="QTA_SPEDITA" DataSetColumn="QTA_SPEDITA" />
+              <Mapping SourceColumn="IMPORTO_KIT" DataSetColumn="IMPORTO_KIT" />
+              <Mapping SourceColumn="IMPORTO" DataSetColumn="IMPORTO" />
+              <Mapping SourceColumn="IMPORTO_EVASO_KIT" DataSetColumn="IMPORTO_EVASO_KIT" />
+              <Mapping SourceColumn="IMPORTO_EVASO" DataSetColumn="IMPORTO_EVASO" />
+              <Mapping SourceColumn="STATO_RIGA_ORDINE" DataSetColumn="STATO_RIGA_ORDINE" />
+              <Mapping SourceColumn="SOFTWARE" DataSetColumn="SOFTWARE" />
+              <Mapping SourceColumn="DESCR_KIT" DataSetColumn="DESCR_KIT" />
+              <Mapping SourceColumn="DESCREST_KIT" DataSetColumn="DESCREST_KIT" />
+              <Mapping SourceColumn="DESCR_SISTEMA" DataSetColumn="DESCR_SISTEMA" />
+              <Mapping SourceColumn="DESCREST_SISTEMA" DataSetColumn="DESCREST_SISTEMA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GC_DevicesTableAdapter" GeneratorDataComponentClassName="GC_DevicesTableAdapter" Name="GC_Devices" UserDataComponentName="GC_DevicesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GCP_Connection (Settings)" DbObjectName="DB_Factory.GC_Devices" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `GC_Devices` WHERE ((`Id` = @p1) AND (`Dev_FamProd` = @p2) AND (`Dev_CodiceItem` = @p3) AND ((@p4 = 1 AND `Dev_Firmware` IS NULL) OR (`Dev_Firmware` = @p5)) AND ((@p6 = 1 AND `Dev_StartDateFW` IS NULL) OR (`Dev_StartDateFW` = @p7)) AND ((@p8 = 1 AND `Dev_EndDateFW` IS NULL) OR (`Dev_EndDateFW` = @p9)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Dev_FamProd" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Dev_CodiceItem" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Dev_Firmware" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Dev_Firmware" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Dev_StartDateFW" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Dev_StartDateFW" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Dev_EndDateFW" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Dev_EndDateFW" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `GC_Devices` (`Dev_FamProd`, `Dev_CodiceItem`, `Dev_DescItem`, `Dev_Firmware`, `Dev_StartDateFW`, `Dev_EndDateFW`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Dev_FamProd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Dev_CodiceItem" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Dev_DescItem" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Dev_Firmware" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Dev_StartDateFW" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Dev_EndDateFW" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Id`, `Dev_FamProd`, `Dev_CodiceItem`, `Dev_DescItem`, `Dev_Firmware`, `Dev_StartDateFW`, `Dev_EndDateFW` FROM `GC_Devices`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `GC_Devices` SET `Dev_FamProd` = @p1, `Dev_CodiceItem` = @p2, `Dev_DescItem` = @p3, `Dev_Firmware` = @p4, `Dev_StartDateFW` = @p5, `Dev_EndDateFW` = @p6 WHERE ((`Id` = @p7) AND (`Dev_FamProd` = @p8) AND (`Dev_CodiceItem` = @p9) AND ((@p10 = 1 AND `Dev_Firmware` IS NULL) OR (`Dev_Firmware` = @p11)) AND ((@p12 = 1 AND `Dev_StartDateFW` IS NULL) OR (`Dev_StartDateFW` = @p13)) AND ((@p14 = 1 AND `Dev_EndDateFW` IS NULL) OR (`Dev_EndDateFW` = @p15)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Dev_FamProd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Dev_CodiceItem" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Dev_DescItem" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Dev_Firmware" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Dev_StartDateFW" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Dev_EndDateFW" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Dev_FamProd" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Dev_CodiceItem" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Dev_Firmware" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="Text" Scale="0" Size="0" SourceColumn="Dev_Firmware" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Dev_StartDateFW" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Dev_StartDateFW" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Dev_EndDateFW" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Dev_EndDateFW" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Dev_FamProd" DataSetColumn="Dev_FamProd" />
+              <Mapping SourceColumn="Dev_CodiceItem" DataSetColumn="Dev_CodiceItem" />
+              <Mapping SourceColumn="Dev_DescItem" DataSetColumn="Dev_DescItem" />
+              <Mapping SourceColumn="Dev_Firmware" DataSetColumn="Dev_Firmware" />
+              <Mapping SourceColumn="Dev_StartDateFW" DataSetColumn="Dev_StartDateFW" />
+              <Mapping SourceColumn="Dev_EndDateFW" DataSetColumn="Dev_EndDateFW" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2108,6 +2248,212 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_TableClassName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESADataTable" msprop:Generator_TableVarName="tableNM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_RowChangedName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChanged" msprop:Generator_TablePropName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_RowDeletingName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowDeleting" msprop:Generator_RowChangingName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChanging" msprop:Generator_RowEvHandlerName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChangeEventHandler" msprop:Generator_RowDeletedName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowDeleted" msprop:Generator_RowClassName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARow" msprop:Generator_UserTableName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_RowEvArgName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CODICE_ASSIEME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCODICE_ASSIEME" msprop:Generator_ColumnPropNameInRow="CODICE_ASSIEME" msprop:Generator_ColumnPropNameInTable="CODICE_ASSIEMEColumn" msprop:Generator_UserColumnName="CODICE_ASSIEME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEQUENZA" msprop:Generator_ColumnVarNameInTable="columnSEQUENZA" msprop:Generator_ColumnPropNameInRow="SEQUENZA" msprop:Generator_ColumnPropNameInTable="SEQUENZAColumn" msprop:Generator_UserColumnName="SEQUENZA" type="xs:int" />
+              <xs:element name="CODICE_COMPONENTE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCODICE_COMPONENTE" msprop:Generator_ColumnPropNameInRow="CODICE_COMPONENTE" msprop:Generator_ColumnPropNameInTable="CODICE_COMPONENTEColumn" msprop:Generator_UserColumnName="CODICE_COMPONENTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="U_M" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnU_M" msprop:Generator_ColumnPropNameInRow="U_M" msprop:Generator_ColumnPropNameInTable="U_MColumn" msprop:Generator_UserColumnName="U_M" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantita" msprop:Generator_ColumnVarNameInTable="columnQuantita" msprop:Generator_ColumnPropNameInRow="Quantita" msprop:Generator_ColumnPropNameInTable="QuantitaColumn" msprop:Generator_UserColumnName="Quantita" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DATA_INIZIO_VALIDITA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDATA_INIZIO_VALIDITA" msprop:Generator_ColumnPropNameInRow="DATA_INIZIO_VALIDITA" msprop:Generator_ColumnPropNameInTable="DATA_INIZIO_VALIDITAColumn" msprop:Generator_UserColumnName="DATA_INIZIO_VALIDITA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATA_FINE_VALIDITA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDATA_FINE_VALIDITA" msprop:Generator_ColumnPropNameInRow="DATA_FINE_VALIDITA" msprop:Generator_ColumnPropNameInTable="DATA_FINE_VALIDITAColumn" msprop:Generator_UserColumnName="DATA_FINE_VALIDITA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATA_ULTIMA_VARIAZIONE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDATA_ULTIMA_VARIAZIONE" msprop:Generator_ColumnPropNameInRow="DATA_ULTIMA_VARIAZIONE" msprop:Generator_ColumnPropNameInTable="DATA_ULTIMA_VARIAZIONEColumn" msprop:Generator_UserColumnName="DATA_ULTIMA_VARIAZIONE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESEST_COMPOSTO" msprop:Generator_ColumnVarNameInTable="columnDESEST_COMPOSTO" msprop:Generator_ColumnPropNameInRow="DESEST_COMPOSTO" msprop:Generator_ColumnPropNameInTable="DESEST_COMPOSTOColumn" msprop:Generator_UserColumnName="DESEST_COMPOSTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESEST_COMPONENTE" msprop:Generator_ColumnVarNameInTable="columnDESEST_COMPONENTE" msprop:Generator_ColumnPropNameInRow="DESEST_COMPONENTE" msprop:Generator_ColumnPropNameInTable="DESEST_COMPONENTEColumn" msprop:Generator_UserColumnName="DESEST_COMPONENTE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="JLabel_full" msprop:Generator_TableClassName="JLabel_fullDataTable" msprop:Generator_TableVarName="tableJLabel_full" msprop:Generator_TablePropName="JLabel_full" msprop:Generator_RowDeletingName="JLabel_fullRowDeleting" msprop:Generator_RowChangingName="JLabel_fullRowChanging" msprop:Generator_RowEvHandlerName="JLabel_fullRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabel_fullRowDeleted" msprop:Generator_UserTableName="JLabel_full" msprop:Generator_RowChangedName="JLabel_fullRowChanged" msprop:Generator_RowEvArgName="JLabel_fullRowChangeEvent" msprop:Generator_RowClassName="JLabel_fullRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TIPO_ORDINE_CLIENTE" msprop:Generator_ColumnVarNameInTable="columnTIPO_ORDINE_CLIENTE" msprop:Generator_ColumnPropNameInRow="TIPO_ORDINE_CLIENTE" msprop:Generator_ColumnPropNameInTable="TIPO_ORDINE_CLIENTEColumn" msprop:Generator_UserColumnName="TIPO_ORDINE_CLIENTE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RAGIONE_SOCIALE" msprop:Generator_ColumnVarNameInTable="columnRAGIONE_SOCIALE" msprop:Generator_ColumnPropNameInRow="RAGIONE_SOCIALE" msprop:Generator_ColumnPropNameInTable="RAGIONE_SOCIALEColumn" msprop:Generator_UserColumnName="RAGIONE_SOCIALE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMERO_ORDINE" msprop:Generator_ColumnVarNameInTable="columnNUMERO_ORDINE" msprop:Generator_ColumnPropNameInRow="NUMERO_ORDINE" msprop:Generator_ColumnPropNameInTable="NUMERO_ORDINEColumn" msprop:Generator_UserColumnName="NUMERO_ORDINE" type="xs:int" />
+              <xs:element name="NUMERO_RIGA" msprop:Generator_ColumnVarNameInTable="columnNUMERO_RIGA" msprop:Generator_ColumnPropNameInRow="NUMERO_RIGA" msprop:Generator_ColumnPropNameInTable="NUMERO_RIGAColumn" msprop:Generator_UserColumnName="NUMERO_RIGA" type="xs:int" />
+              <xs:element name="TIPO_DB" msprop:Generator_ColumnVarNameInTable="columnTIPO_DB" msprop:Generator_ColumnPropNameInRow="TIPO_DB" msprop:Generator_ColumnPropNameInTable="TIPO_DBColumn" msprop:Generator_UserColumnName="TIPO_DB" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODICE_KIT" msprop:Generator_ColumnVarNameInTable="columnCODICE_KIT" msprop:Generator_ColumnPropNameInRow="CODICE_KIT" msprop:Generator_ColumnPropNameInTable="CODICE_KITColumn" msprop:Generator_UserColumnName="CODICE_KIT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CODICE_SISTEMA" msprop:Generator_ColumnVarNameInTable="columnCODICE_SISTEMA" msprop:Generator_ColumnPropNameInRow="CODICE_SISTEMA" msprop:Generator_ColumnPropNameInTable="CODICE_SISTEMAColumn" msprop:Generator_UserColumnName="CODICE_SISTEMA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCRIZIONE" msprop:Generator_ColumnVarNameInTable="columnDESCRIZIONE" msprop:Generator_ColumnPropNameInRow="DESCRIZIONE" msprop:Generator_ColumnPropNameInTable="DESCRIZIONEColumn" msprop:Generator_UserColumnName="DESCRIZIONE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATA_RICHIESTA_CONSEGNA" msprop:Generator_ColumnVarNameInTable="columnDATA_RICHIESTA_CONSEGNA" msprop:Generator_ColumnPropNameInRow="DATA_RICHIESTA_CONSEGNA" msprop:Generator_ColumnPropNameInTable="DATA_RICHIESTA_CONSEGNAColumn" msprop:Generator_UserColumnName="DATA_RICHIESTA_CONSEGNA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DATA_CONFERMA_CONSEGNA" msprop:Generator_ColumnVarNameInTable="columnDATA_CONFERMA_CONSEGNA" msprop:Generator_ColumnPropNameInRow="DATA_CONFERMA_CONSEGNA" msprop:Generator_ColumnPropNameInTable="DATA_CONFERMA_CONSEGNAColumn" msprop:Generator_UserColumnName="DATA_CONFERMA_CONSEGNA" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UM" msprop:Generator_ColumnVarNameInTable="columnUM" msprop:Generator_ColumnPropNameInRow="UM" msprop:Generator_ColumnPropNameInTable="UMColumn" msprop:Generator_UserColumnName="UM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PREZZO_UNITARIO_KIT" msprop:Generator_ColumnVarNameInTable="columnPREZZO_UNITARIO_KIT" msprop:Generator_ColumnPropNameInRow="PREZZO_UNITARIO_KIT" msprop:Generator_ColumnPropNameInTable="PREZZO_UNITARIO_KITColumn" msprop:Generator_UserColumnName="PREZZO_UNITARIO_KIT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PREZZO_UNITARIO" msprop:Generator_ColumnVarNameInTable="columnPREZZO_UNITARIO" msprop:Generator_ColumnPropNameInRow="PREZZO_UNITARIO" msprop:Generator_ColumnPropNameInTable="PREZZO_UNITARIOColumn" msprop:Generator_UserColumnName="PREZZO_UNITARIO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTA_ORDINATA_KIT" msprop:Generator_ColumnVarNameInTable="columnQTA_ORDINATA_KIT" msprop:Generator_ColumnPropNameInRow="QTA_ORDINATA_KIT" msprop:Generator_ColumnPropNameInTable="QTA_ORDINATA_KITColumn" msprop:Generator_UserColumnName="QTA_ORDINATA_KIT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTA_ORDINATA" msprop:Generator_ColumnVarNameInTable="columnQTA_ORDINATA" msprop:Generator_ColumnPropNameInRow="QTA_ORDINATA" msprop:Generator_ColumnPropNameInTable="QTA_ORDINATAColumn" msprop:Generator_UserColumnName="QTA_ORDINATA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTA_SPEDITA_KIT" msprop:Generator_ColumnVarNameInTable="columnQTA_SPEDITA_KIT" msprop:Generator_ColumnPropNameInRow="QTA_SPEDITA_KIT" msprop:Generator_ColumnPropNameInTable="QTA_SPEDITA_KITColumn" msprop:Generator_UserColumnName="QTA_SPEDITA_KIT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QTA_SPEDITA" msprop:Generator_ColumnVarNameInTable="columnQTA_SPEDITA" msprop:Generator_ColumnPropNameInRow="QTA_SPEDITA" msprop:Generator_ColumnPropNameInTable="QTA_SPEDITAColumn" msprop:Generator_UserColumnName="QTA_SPEDITA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMPORTO_KIT" msprop:Generator_ColumnVarNameInTable="columnIMPORTO_KIT" msprop:Generator_ColumnPropNameInRow="IMPORTO_KIT" msprop:Generator_ColumnPropNameInTable="IMPORTO_KITColumn" msprop:Generator_UserColumnName="IMPORTO_KIT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMPORTO" msprop:Generator_ColumnVarNameInTable="columnIMPORTO" msprop:Generator_ColumnPropNameInRow="IMPORTO" msprop:Generator_ColumnPropNameInTable="IMPORTOColumn" msprop:Generator_UserColumnName="IMPORTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMPORTO_EVASO_KIT" msprop:Generator_ColumnVarNameInTable="columnIMPORTO_EVASO_KIT" msprop:Generator_ColumnPropNameInRow="IMPORTO_EVASO_KIT" msprop:Generator_ColumnPropNameInTable="IMPORTO_EVASO_KITColumn" msprop:Generator_UserColumnName="IMPORTO_EVASO_KIT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IMPORTO_EVASO" msprop:Generator_ColumnVarNameInTable="columnIMPORTO_EVASO" msprop:Generator_ColumnPropNameInRow="IMPORTO_EVASO" msprop:Generator_ColumnPropNameInTable="IMPORTO_EVASOColumn" msprop:Generator_UserColumnName="IMPORTO_EVASO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="STATO_RIGA_ORDINE" msprop:Generator_ColumnVarNameInTable="columnSTATO_RIGA_ORDINE" msprop:Generator_ColumnPropNameInRow="STATO_RIGA_ORDINE" msprop:Generator_ColumnPropNameInTable="STATO_RIGA_ORDINEColumn" msprop:Generator_UserColumnName="STATO_RIGA_ORDINE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SOFTWARE" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSOFTWARE" msprop:Generator_ColumnPropNameInRow="SOFTWARE" msprop:Generator_ColumnPropNameInTable="SOFTWAREColumn" msprop:Generator_UserColumnName="SOFTWARE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCR_KIT" msprop:Generator_ColumnVarNameInTable="columnDESCR_KIT" msprop:Generator_ColumnPropNameInRow="DESCR_KIT" msprop:Generator_ColumnPropNameInTable="DESCR_KITColumn" msprop:Generator_UserColumnName="DESCR_KIT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCREST_KIT" msprop:Generator_ColumnVarNameInTable="columnDESCREST_KIT" msprop:Generator_ColumnPropNameInRow="DESCREST_KIT" msprop:Generator_ColumnPropNameInTable="DESCREST_KITColumn" msprop:Generator_UserColumnName="DESCREST_KIT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCR_SISTEMA" msprop:Generator_ColumnVarNameInTable="columnDESCR_SISTEMA" msprop:Generator_ColumnPropNameInRow="DESCR_SISTEMA" msprop:Generator_ColumnPropNameInTable="DESCR_SISTEMAColumn" msprop:Generator_UserColumnName="DESCR_SISTEMA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCREST_SISTEMA" msprop:Generator_ColumnVarNameInTable="columnDESCREST_SISTEMA" msprop:Generator_ColumnPropNameInRow="DESCREST_SISTEMA" msprop:Generator_ColumnPropNameInTable="DESCREST_SISTEMAColumn" msprop:Generator_UserColumnName="DESCREST_SISTEMA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GC_Devices" msprop:Generator_TableClassName="GC_DevicesDataTable" msprop:Generator_TableVarName="tableGC_Devices" msprop:Generator_TablePropName="GC_Devices" msprop:Generator_RowDeletingName="GC_DevicesRowDeleting" msprop:Generator_RowChangingName="GC_DevicesRowChanging" msprop:Generator_RowEvHandlerName="GC_DevicesRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_DevicesRowDeleted" msprop:Generator_UserTableName="GC_Devices" msprop:Generator_RowChangedName="GC_DevicesRowChanged" msprop:Generator_RowEvArgName="GC_DevicesRowChangeEvent" msprop:Generator_RowClassName="GC_DevicesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Dev_FamProd" msprop:Generator_ColumnVarNameInTable="columnDev_FamProd" msprop:Generator_ColumnPropNameInRow="Dev_FamProd" msprop:Generator_ColumnPropNameInTable="Dev_FamProdColumn" msprop:Generator_UserColumnName="Dev_FamProd" type="xs:int" />
+              <xs:element name="Dev_CodiceItem" msprop:Generator_ColumnVarNameInTable="columnDev_CodiceItem" msprop:Generator_ColumnPropNameInRow="Dev_CodiceItem" msprop:Generator_ColumnPropNameInTable="Dev_CodiceItemColumn" msprop:Generator_UserColumnName="Dev_CodiceItem">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dev_DescItem" msprop:Generator_ColumnVarNameInTable="columnDev_DescItem" msprop:Generator_ColumnPropNameInRow="Dev_DescItem" msprop:Generator_ColumnPropNameInTable="Dev_DescItemColumn" msprop:Generator_UserColumnName="Dev_DescItem" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="21845" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dev_Firmware" msprop:Generator_ColumnVarNameInTable="columnDev_Firmware" msprop:Generator_ColumnPropNameInRow="Dev_Firmware" msprop:Generator_ColumnPropNameInTable="Dev_FirmwareColumn" msprop:Generator_UserColumnName="Dev_Firmware" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="85" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dev_StartDateFW" msprop:Generator_ColumnVarNameInTable="columnDev_StartDateFW" msprop:Generator_ColumnPropNameInRow="Dev_StartDateFW" msprop:Generator_ColumnPropNameInTable="Dev_StartDateFWColumn" msprop:Generator_UserColumnName="Dev_StartDateFW" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Dev_EndDateFW" msprop:Generator_ColumnVarNameInTable="columnDev_EndDateFW" msprop:Generator_ColumnPropNameInRow="Dev_EndDateFW" msprop:Generator_ColumnPropNameInTable="Dev_EndDateFWColumn" msprop:Generator_UserColumnName="Dev_EndDateFW" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -2137,6 +2483,10 @@ LIMIT 1</CommandText>
     <xs:unique name="GC_Customers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:GC_Customers" />
       <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="GC_Devices_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GC_Devices" />
+      <xs:field xpath="mstns:Dev_CodiceItem" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

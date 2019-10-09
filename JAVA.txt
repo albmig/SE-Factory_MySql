@@ -1,0 +1,1914 @@
+/**
+ * 
+ */
+package jLabel;
+
+import java.awt.Desktop;
+import java.io.*;
+import java.sql.*;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+
+
+/**
+ * @author networkadmin
+ * TODO: 
+ * 	- GUI
+ *  - Togliere l'etichetta secondaria per CarOil
+ *  - Aggiungere il codice articolo cliente per CarOil
+ */
+public class jLabel 
+{
+	// JDBC driver name and database URL
+	static final String JDBC_DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";  
+	static final String DB_URL = "jdbc:sqlserver://192.168.0.8;instanceName=SQLEXPRESS;databaseName=DYOPENG";
+
+	// Database credentials
+	static final String USER = "sa";
+	static final String PASS = "aavesp19";
+	
+	// Sistematica constants
+	static final String STR_RTX = "((RTX))";
+//	static final String STR_433 = "433.2MHz - 434.6MHz"; 
+	static final String STR_433 = "433.2-434.6MHz";
+//	static final String STR_868 = "865.4MHz - 868.2MHz";
+	static final String STR_868 = "865.0-868.0MHz ; 869.8MHz";
+//	static final String STR_915 = "915.2MHz - 918MHz";
+	static final String STR_915 = "915.2-918MHz";
+	
+	private static boolean is433(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (codiceSistema.substring(12, 13).equalsIgnoreCase("B"))
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean is868(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (codiceSistema.substring(12, 13).equalsIgnoreCase("X"))
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean is915(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (codiceSistema.substring(12, 13).equalsIgnoreCase("A"))
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCarOil(String codiceSistema)
+	{	
+		if (codiceSistema == null)
+			return false;
+	
+		if (
+				(
+				(codiceSistema.startsWith("XS"))
+				||
+				(codiceSistema.startsWith("XX"))
+				)
+				&&
+				(codiceSistema.substring(7, 9).equalsIgnoreCase("CA"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCradle(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if ( 
+			(codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+			&&
+			(codiceSistema.startsWith("XS17", 0))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isPalm(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCntr(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isEasy(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(
+						(codiceSistema.startsWith("XS20"))
+						||
+						(codiceSistema.startsWith("XS01"))
+						||
+						(codiceSistema.startsWith("XS10"))
+						||
+						(codiceSistema.startsWith("XS12"))
+				)
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isNimble(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(codiceSistema.startsWith("XS22")) // Nimble
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isNemo(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(codiceSistema.startsWith("XS38")) // Nemo
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isRescue(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(
+						(codiceSistema.startsWith("XS39")) // Rescue
+						||
+						(codiceSistema.startsWith("XS41")) // Rescue tipo Prolux
+				)
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isLift(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(codiceSistema.startsWith("XS40")) // Lift
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isBravo(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(codiceSistema.startsWith("XS42")) // Bravo
+		)
+			return true;
+		else	
+			return false;
+	}
+
+	private static boolean isPhilo(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(codiceSistema.startsWith("XS45")) // Philo
+		)
+			return true;
+		else	
+			return false;
+	}
+	
+	private static boolean isEasyWire(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				( (codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(codiceSistema.startsWith("XS24")) )
+				
+				||
+				
+				( (codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(codiceSistema.startsWith("XS36")) )
+				
+				||
+
+				( (codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(codiceSistema.startsWith("XX04")) 
+				&&
+				(codiceSistema.substring(7, 11).equalsIgnoreCase("KV01")) )
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isTrend(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(
+						(
+								(!codiceSistema.substring(6, 7).equalsIgnoreCase("A"))
+								&&
+								(!codiceSistema.substring(6, 7).equalsIgnoreCase("D"))
+								&&
+								(codiceSistema.startsWith("XS14"))
+						)
+						||
+						(codiceSistema.startsWith("XS04"))
+						||
+						(codiceSistema.startsWith("XS09"))
+						||
+						(
+								(codiceSistema.startsWith("XX02"))
+								&&
+								(codiceSistema.substring(7, 9).equalsIgnoreCase("CT"))
+						)
+						||
+						(
+								(codiceSistema.startsWith("XX04"))
+								&&
+								(codiceSistema.substring(7, 9).equalsIgnoreCase("CT"))
+						)
+						||
+						(
+								(codiceSistema.startsWith("XX05"))
+								&&
+								(codiceSistema.substring(7, 9).equalsIgnoreCase("CT"))
+						)
+				)
+				
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isTrendB(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 7).equalsIgnoreCase("PD"))
+				&&
+				(codiceSistema.startsWith("XS14"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isTrendLCD(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 7).equalsIgnoreCase("PA"))
+				&&
+				(codiceSistema.startsWith("XS14"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isTrendWire(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("P"))
+				&&
+				(codiceSistema.startsWith("XS26"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isEasyXII(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+				&&
+				(codiceSistema.startsWith("XS02"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isEasyXXI(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+				&&
+				(codiceSistema.startsWith("XS11"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCntr4(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+				&&
+				(
+						(codiceSistema.startsWith("XS21"))
+						||
+						(codiceSistema.startsWith("XS05")) //Ripetitore MOOVEL
+				)
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCntr8(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+				&&
+				(codiceSistema.startsWith("XS20"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCntr20(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+				&&
+				(!codiceSistema.substring(6, 7).equalsIgnoreCase("E"))
+				&&
+				(!codiceSistema.substring(6, 7).equalsIgnoreCase("F"))
+				&&
+				(codiceSistema.startsWith("XS18"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCntr20B(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(
+						(codiceSistema.substring(5, 7).equalsIgnoreCase("RE"))
+						||
+						(codiceSistema.substring(6, 7).equalsIgnoreCase("RF"))
+				)
+				&&
+				(codiceSistema.startsWith("XS18"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCntr32(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+				&&
+				(codiceSistema.startsWith("XS22"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isMulti12(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+				&&
+				(codiceSistema.startsWith("XS19"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isPowerDrive12(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 7).equalsIgnoreCase("RX"))
+				&&
+				(codiceSistema.startsWith("XS34"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isPowerDrive24(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 7).equalsIgnoreCase("RA"))
+				&&
+				(codiceSistema.startsWith("XS34"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isPowerDrive12SW(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 7).equalsIgnoreCase("RX"))
+				&&
+				(codiceSistema.startsWith("XX01"))
+				&&
+				(codiceSistema.substring(7, 9).equalsIgnoreCase("SW"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isPowerDrive24SW(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 7).equalsIgnoreCase("RA"))
+				&&
+				(codiceSistema.startsWith("XX01"))
+				&&
+				(codiceSistema.substring(7, 9).equalsIgnoreCase("SW"))
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCntrNimble(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+				&&
+				(
+						(codiceSistema.startsWith("XS29"))
+						||
+						(codiceSistema.startsWith("XS30"))
+				)
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCntrNimbleSW(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+				&&
+				(
+						(codiceSistema.startsWith("XX02"))
+						&&
+						(codiceSistema.substring(7, 9).equalsIgnoreCase("SW"))
+				)
+		)
+			return true;
+			
+		return false;
+	}
+	
+	private static boolean isCntr8AC(String codiceSistema)
+	{
+		if (codiceSistema == null)
+			return false;
+		
+		if (
+				(codiceSistema.substring(5, 6).equalsIgnoreCase("R"))
+				&&
+				(codiceSistema.startsWith("XS31"))
+		)
+			return true;
+			
+		return false;
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) 
+	{
+		Connection connection = null;
+		ResultSet resultSet = null;
+		Statement statement = null;
+		String sql = null;
+		
+		String tipoOrdineCliente;
+		//String codiceCliente;
+		String ragioneSociale;
+		String numeroOrdine, numeroOrdinePrev = "";
+		String numeroRiga, numeroRigaPrev = "";
+		//String tipoParte;
+		String tipoDB;
+		String codiceKit, codiceKitPrev = "";
+		String codiceSistema, codiceSistemaPrev = "";
+		String descrizione;
+		String dataRichiestaConsegna;
+		String dataConfermaConsegna;
+		String um;
+		String prezzoUnitarioKit;
+		String prezzoUnitario;
+		String qtaOrdinataKit;
+		int qtaOrdinataKitInt;
+		String qtaOrdinata;
+		int qtaOrdinataInt;
+		String qtaSpeditaKit;
+		String qtaSpedita;
+		String importoKit;
+		String importo;
+		String importoEvasoKit;
+		String importoEvaso;
+		//String saldo;
+		String statoRigaOrdine;
+		String software;
+		String commessaPrev = "";
+		
+		String sd_numeroDiSerie;
+		String sd_cliente;
+		String sd_descrizioneArticoloSistematica;
+		String sd_codiceKitSistematica;
+		String sd_codiceArticoloSistematica;
+		String sd_codiceArticoloCliente;
+		String sd_commessa;
+		String sd_quantita;
+		String sd_numDDTSistematica;
+		String sd_dataDDTSistematica;
+		String sd_versioneSoftware;
+		String sd_immagineLogoSistematica;
+		String sd_azienda;
+		String sd_sede;
+		String sd_productImballaggio;
+		String sd_rtx;
+		String sd_s_n;
+		String sd_code;
+		String sd_immagineNormativa;
+		String sd_immagineNormativaImballaggio;
+		String sd_frequenza;
+		String sd_modelloProdotto;
+		String sd_alimentazione;
+		String sd_fccID;
+		String sd_fccIDCode;
+		String sd_immagineE24;
+		String sd_approvalNumber;
+		
+		String textLine;
+		
+		int counterCmsa = 0;
+			
+		int rowCounterSheet1 = 0, rowCounterSheet2 = 0, rowCounterSheet3 = 0;
+		
+		HSSFWorkbook wb = null;
+		FileOutputStream fileOut = null;
+		
+		try
+		{
+			//Register JDBC driver
+			Class.forName(JDBC_DRIVER);
+	
+			//Open a connection
+			connection = DriverManager.getConnection(DB_URL, USER, PASS);
+	
+			//Execute a query
+			statement = connection.createStatement();
+			sql = 
+					"SELECT ORDINI_CLIENTE.*, DBARSWR.ArticoloComponente AS SOFTWARE FROM\r\n" +
+					"( \r\n" +
+					"	( \r\n" +
+					"	SELECT \r\n" +
+					"		dbo.DOCR0000.TipoOrdine AS TIPO_ORDINE_CLIENTE, \r\n" +  
+					"		dbo.ANAA0000.RagSocCognome AS RAGIONE_SOCIALE, \r\n" +
+					"		dbo.DOCR0000.NumOrdine AS NUMERO_ORDINE, \r\n" +
+					"		dbo.DOCR0000.NumRigo AS NUMERO_RIGA, \r\n" +
+					"		dbo.ARTA0000.TipoDB AS TIPO_DB, \r\n" +
+					"		'' AS CODICE_KIT, \r\n" +
+					"		dbo.ARTA0000.Articolo AS CODICE_SISTEMA, \r\n" + 
+					"		dbo.ARTA0000.Descrizione AS DESCRIZIONE, \r\n" +
+					"		dbo.DOCR0000.DataPrevConsegna AS DATA_RICHIESTA_CONSEGNA, \r\n" + 
+					"		dbo.DOCR0000.DataPrevConsegna AS DATA_CONFERMA_CONSEGNA, \r\n" +
+					"		dbo.DOCR0000.UMRigaOrdine AS UM, \r\n" +
+					"		'' AS PREZZO_UNITARIO_KIT, \r\n" +
+					"		dbo.DOCR0000.PrezzoNetto AS PREZZO_UNITARIO, \r\n" + 
+					"		'' AS QTA_ORDINATA_KIT, \r\n" +
+					"		dbo.DOCR0000.QtaOrdinata AS QTA_ORDINATA, \r\n" + 
+					"		'' AS QTA_SPEDITA_KIT, \r\n" +
+					"		dbo.DOCR0000.QtaEvasa AS QTA_SPEDITA, \r\n" + 
+					"		'' AS IMPORTO_KIT, \r\n" +
+					"		dbo.DOCR0000.PrezzoNetto * dbo.DOCR0000.QtaOrdinata AS IMPORTO, \r\n" + 
+					"		'' AS IMPORTO_EVASO_KIT, \r\n" +
+					"		dbo.DOCR0000.PrezzoNetto * dbo.DOCR0000.QtaEvasa AS IMPORTO_EVASO, \r\n" + 
+					"		dbo.DOCR0000.Stato AS STATO_RIGA_ORDINE \r\n" +
+					"	FROM \r\n" +
+					"		dbo.CLIA0000 \r\n" + 
+					"		INNER JOIN \r\n" +
+					"		dbo.DOCT0000 ON \r\n" + 
+					"			dbo.CLIA0000.Entita = dbo.DOCT0000.Entita AND \r\n" + 
+					"			dbo.CLIA0000.Mastro = dbo.DOCT0000.MastroCli AND \r\n" + 
+					"			dbo.CLIA0000.Conto = dbo.DOCT0000.ContoCli AND \r\n" +
+					"			dbo.CLIA0000.Sottoc = dbo.DOCT0000.SottocCli \r\n" +
+					"		INNER JOIN \r\n" +
+					"		dbo.ANAA0000 ON \r\n" + 
+					"			dbo.CLIA0000.CodAnagrafico = dbo.ANAA0000.CodAnagrafico \r\n" + 
+					"		INNER JOIN \r\n" +
+					"		dbo.ARTA0000 ON \r\n" + 
+					"			dbo.CLIA0000.Entita = dbo.ARTA0000.Entita \r\n" + 
+					"		RIGHT OUTER JOIN \r\n" +
+					"		dbo.DOCR0000 ON \r\n" +
+					"			dbo.ARTA0000.Articolo = dbo.DOCR0000.Articolo AND \r\n" + 
+					"			dbo.DOCT0000.Entita = dbo.DOCR0000.Entita AND \r\n" +
+					"			dbo.DOCT0000.TipoOrdine = dbo.DOCR0000.TipoOrdine AND \r\n" + 
+					"			dbo.DOCT0000.NumOrdine = dbo.DOCR0000.NumOrdine \r\n" +
+					"	WHERE \r\n" +
+					"		(dbo.DOCR0000.Stato = '1') AND \r\n" + 
+					"		(dbo.ARTA0000.TipoDB = '1' OR dbo.ARTA0000.TipoDB = '2') AND \r\n" + 
+					"		(dbo.ARTA0000.Articolo LIKE 'xs%' OR dbo.ARTA0000.Articolo LIKE 'xx%') \r\n" +
+					"	) \r\n" +
+					"	UNION \r\n" +
+					"	( \r\n" +
+					"	SELECT \r\n" + 
+					"		dbo.DOCR0000.TipoOrdine AS TIPO_ORDINE_CLIENTE, \r\n" + 
+					"		--dbo.DOCT0000.MastroCli, dbo.DOCT0000.ContoCli, dbo.DOCT0000.SottocCli, \r\n" + 
+					"		dbo.ANAA0000.RagSocCognome AS RAGIONE_SOCIALE, \r\n" +
+					"		dbo.DOCR0000.NumOrdine AS NUMERO_ORDINE, \r\n" +
+					"		dbo.DOCR0000.NumRigo AS NUMERO_RIGA, \r\n" +
+					"		dbo.ARTA0000.TipoDB AS TIPO_DB, \r\n" +
+					"		dbo.DOCR0000.Articolo AS CODICE_KIT, \r\n" + 
+					"		dbo.DBAR0000.ArticoloComponente AS CODICE_SISTEMA, \r\n" + 
+					"		dbo.ARTA0000.Descrizione AS DESCRIZIONE, \r\n" +
+					"		dbo.DOCR0000.DataPrevConsegna AS DATA_RICHIESTA_CONSEGNA, \r\n" + 
+					"		dbo.DOCR0000.DataPrevConsegna AS DATA_CONFERMA_CONSEGNA, \r\n" +
+					"		dbo.DOCR0000.UMRigaOrdine AS UM, \r\n" +
+					"		dbo.DOCR0000.PrezzoNetto AS PREZZO_UNITARIO_KIT, \r\n" + 
+					"		'' AS PREZZO_UNITARIO, \r\n" +
+					"		dbo.DOCR0000.QtaOrdinata AS QTA_ORDINATA_KIT, \r\n" + 
+					"		dbo.DOCR0000.QtaOrdinata * dbo.DBAR0000.Quantita AS QTA_ORDINATA, \r\n" + 
+					"		dbo.DOCR0000.QtaEvasa AS QTA_SPEDITA_KIT, \r\n" +
+					"		dbo.DOCR0000.QtaEvasa * dbo.DBAR0000.Quantita AS QTA_SPEDITA, \r\n" + 
+					"		dbo.DOCR0000.PrezzoNetto * dbo.DOCR0000.QtaOrdinata AS IMPORTO_KIT, \r\n" + 
+					"		'' AS IMPORTO, \r\n" +
+					"		dbo.DOCR0000.PrezzoNetto * dbo.DOCR0000.QtaEvasa AS IMPORTO_EVASO_KIT, \r\n" + 
+					"		'' AS IMPORTO_EVASO, \r\n" +
+					"		dbo.DOCR0000.Stato AS STATO_RIGA_ORDINE \r\n" +
+					"	FROM \r\n" +
+					"		dbo.CLIA0000 INNER JOIN \r\n" +
+					"		dbo.DOCT0000 ON \r\n" +
+					"			dbo.CLIA0000.Entita = dbo.DOCT0000.Entita AND \r\n" + 
+					"			dbo.CLIA0000.Mastro = dbo.DOCT0000.MastroCli AND \r\n" + 
+					"			dbo.CLIA0000.Conto = dbo.DOCT0000.ContoCli AND \r\n" +
+					"			dbo.CLIA0000.Sottoc = dbo.DOCT0000.SottocCli \r\n" +
+					"		INNER JOIN \r\n" +
+					"		dbo.ANAA0000 ON \r\n" + 
+					"			dbo.CLIA0000.CodAnagrafico = dbo.ANAA0000.CodAnagrafico \r\n" + 
+					"		INNER JOIN \r\n" +
+					"		dbo.ARTA0000 ON \r\n" + 
+					"			dbo.CLIA0000.Entita = dbo.ARTA0000.Entita \r\n" + 
+					"		INNER JOIN \r\n" +
+					"		dbo.DBAR0000 ON \r\n" + 
+					"			dbo.CLIA0000.Entita = dbo.DBAR0000.Entita AND \r\n" + 
+					"			dbo.ARTA0000.Articolo = dbo.DBAR0000.ArticoloComponente \r\n" + 
+					"		RIGHT OUTER JOIN \r\n" +
+					"		dbo.DOCR0000 ON \r\n" +
+					"			dbo.DBAR0000.ArticoloComposto = dbo.DOCR0000.Articolo AND \r\n" + 
+					"			dbo.DOCT0000.Entita = dbo.DOCR0000.Entita AND \r\n" +
+					"			dbo.DOCT0000.TipoOrdine = dbo.DOCR0000.TipoOrdine AND \r\n" + 
+					"			dbo.DOCT0000.NumOrdine = dbo.DOCR0000.NumOrdine \r\n" +
+					"	WHERE \r\n" +
+					"		(dbo.DOCR0000.Stato = '1') AND \r\n" + 
+					"		(dbo.ARTA0000.TipoDB = '1' OR dbo.ARTA0000.TipoDB = '2') AND \r\n" + 
+					"		(dbo.DOCR0000.Articolo LIKE 'xkit%') AND \r\n" +
+					//"		( (dbo.DBAR0000.ArticoloComponente >= 'xs000%' AND dbo.DBAR0000.ArticoloComponente <= 'xs999%') OR (dbo.DBAR0000.ArticoloComponente >= 'xx000%' AND dbo.DBAR0000.ArticoloComponente <= 'xx999%') ) \r\n" +
+					"		( (dbo.DBAR0000.ArticoloComponente >= 'xs000%' AND dbo.DBAR0000.ArticoloComponente <= 'xs999%') OR (dbo.DBAR0000.ArticoloComponente >= 'xx000%' AND dbo.DBAR0000.ArticoloComponente <= 'xx999%') ) AND \r\n" +
+					"		(DATEPART(YEAR, dbo.DBAR0000.DataFineValidita) = '1899') \r\n" +
+					"	) \r\n" +
+					") AS ORDINI_CLIENTE \r\n" +
+					"LEFT JOIN \r\n" +
+					"	( \r\n" +
+					"		SELECT * from DBAR0000 \r\n" +
+					"		WHERE \r\n" +
+					"			DBAR0000.ArticoloComponente like 'XSWR%' \r\n" +
+					"			AND \r\n" +
+					"			(DATEPART(YEAR, DBAR0000.DataFineValidita) = '1899')\r\n" + 
+					"	) AS DBARSWR \r\n" +
+					"ON CODICE_SISTEMA = DBARSWR.ArticoloComposto \r\n" +
+					//"ORDER BY NUMERO_ORDINE, NUMERO_RIGA; ";
+					"ORDER BY TIPO_ORDINE_CLIENTE, NUMERO_ORDINE, NUMERO_RIGA; ";
+			
+			//System.out.println(sql);
+			resultSet = statement.executeQuery(sql);
+			
+			wb = new HSSFWorkbook();
+			fileOut = new FileOutputStream(System.getProperty("java.io.tmpdir")+"labeldatasource.xls");
+			HSSFSheet sheet1 = wb.createSheet("ORDINI_CLIENTE");
+			HSSFSheet sheet2 = wb.createSheet("SORGENTE_DATI");
+			HSSFSheet sheet3 = wb.createSheet("SORGENTE_DATI_IMBALLAGGIO");
+			
+			System.out.println(System.getProperty("java.io.tmpdir")+"labeldatasource.xls");
+					
+			HSSFRow row = sheet1.createRow(rowCounterSheet1++);
+			row.createCell(0).setCellValue("TIPO_ORDINE_CLIENTE");
+			//row.createCell(1).setCellValue("CODICE_CLIENTE");
+			row.createCell(1).setCellValue("RAGIONE_SOCIALE");
+			row.createCell(2).setCellValue("NUMERO_ORDINE");
+			row.createCell(3).setCellValue("NUMERO_RIGA");
+			//row.createCell(4).setCellValue("TIPO_PARTE");
+			row.createCell(4).setCellValue("TIPO_DB");
+			row.createCell(5).setCellValue("CODICE_KIT");
+			row.createCell(6).setCellValue("CODICE_SISTEMA");
+			row.createCell(7).setCellValue("DESCRIZIONE");
+			row.createCell(8).setCellValue("DATA_RICHIESTA_CONSEGNA");
+			row.createCell(9).setCellValue("DATA_CONFERMA_CONSEGNA");
+			row.createCell(10).setCellValue("UM");
+			row.createCell(11).setCellValue("PREZZO_UNITARIO_KIT");
+			row.createCell(12).setCellValue("PREZZO_UNITARIO");
+			row.createCell(13).setCellValue("QTA_ORDINATA_KIT");
+			row.createCell(14).setCellValue("QTA_ORDINATA");
+			row.createCell(15).setCellValue("QTA_SPEDITA_KIT");
+			row.createCell(16).setCellValue("QTA_SPEDITA");
+			row.createCell(17).setCellValue("IMPORTO_KIT");
+			row.createCell(18).setCellValue("IMPORTO");
+			row.createCell(19).setCellValue("IMPORTO_EVASO_KIT");
+			row.createCell(20).setCellValue("IMPORTO_EVASO");
+			//row.createCell(22).setCellValue("STATO");
+			row.createCell(21).setCellValue("STATO_RIGA_ORDINE");
+			row.createCell(22).setCellValue("SOFTWARE");
+			
+			row = sheet2.createRow(rowCounterSheet2++);
+			row.createCell(0).setCellValue("ESD_NUMERO_DI_SERIE");
+			row.createCell(1).setCellValue("ESD_CLIENTE");
+			row.createCell(2).setCellValue("ESD_DESCRIZIONE_ARTICOLO_SISTEMATICA");
+			row.createCell(3).setCellValue("ESD_CODICE_KIT_SISTEMATICA");
+			row.createCell(4).setCellValue("ESD_CODICE_ARTICOLO_SISTEMATICA");
+			row.createCell(5).setCellValue("ESD_CODICE_ARTICOLO_CLIENTE");
+			row.createCell(6).setCellValue("ESD_COMMESSA");
+			row.createCell(7).setCellValue("ESD_QUANTITA");
+			row.createCell(8).setCellValue("ESD_NUM_DDT_SISTEMATICA");
+			row.createCell(9).setCellValue("ESD_DATA_DDT_SISTEMATICA");
+			row.createCell(10).setCellValue("ESD_VERSIONE_SOFTWARE");
+			row.createCell(11).setCellValue("ESD_IMMAGINE_LOGO_SISTEMATICA");
+			row.createCell(12).setCellValue("ESD_AZIENDA");
+			row.createCell(13).setCellValue("ESD_SEDE");
+			row.createCell(14).setCellValue("ESD_PRODUCT_IMBALLAGGIO");
+			row.createCell(15).setCellValue("ESD_RTX");
+			row.createCell(16).setCellValue("ESD_S_N");
+			row.createCell(17).setCellValue("ESD_CODE");
+			row.createCell(18).setCellValue("ESD_IMMAGINE_NORMATIVA");
+			row.createCell(19).setCellValue("ESD_IMMAGINE_NORMATIVA_IMBALLAGGIO");
+			row.createCell(20).setCellValue("ESD_FREQUENZA");
+			row.createCell(21).setCellValue("ESD_MODELLO_PRODOTTO");
+			row.createCell(22).setCellValue("ESD_ALIMENTAZIONE");
+			row.createCell(23).setCellValue("ESD_FCC_ID");
+			row.createCell(24).setCellValue("ESD_FCC_ID_CODE");
+			row.createCell(25).setCellValue("ESD_IMMAGINE_E24");
+			row.createCell(26).setCellValue("ESD_APPROVAL_NUMBER");
+			
+			row = sheet3.createRow(rowCounterSheet3++);
+			row.createCell(0).setCellValue("ESDI_NUMERO_DI_SERIE");
+			row.createCell(1).setCellValue("ESDI_CLIENTE");
+			row.createCell(2).setCellValue("ESDI_DESCRIZIONE_ARTICOLO_SISTEMATICA");
+			row.createCell(3).setCellValue("ESDI_CODICE_KIT_SISTEMATICA");
+			row.createCell(4).setCellValue("ESDI_CODICE_ARTICOLO_SISTEMATICA");
+			row.createCell(5).setCellValue("ESDI_CODICE_ARTICOLO_CLIENTE");
+			row.createCell(6).setCellValue("ESDI_COMMESSA");
+			row.createCell(7).setCellValue("ESDI_QUANTITA");
+			row.createCell(8).setCellValue("ESDI_NUM_DDT_SISTEMATICA");
+			row.createCell(9).setCellValue("ESDI_DATA_DDT_SISTEMATICA");
+			row.createCell(10).setCellValue("ESDI_VERSIONE_SOFTWARE");
+			row.createCell(11).setCellValue("ESDI_IMMAGINE_LOGO_SISTEMATICA");
+			row.createCell(12).setCellValue("ESDI_AZIENDA");
+			row.createCell(13).setCellValue("ESDI_SEDE");
+			row.createCell(14).setCellValue("ESDI_PRODUCT_IMBALLAGGIO");
+			row.createCell(15).setCellValue("ESDI_RTX");
+			row.createCell(16).setCellValue("ESDI_S_N");
+			row.createCell(17).setCellValue("ESDI_CODE");
+			row.createCell(18).setCellValue("ESDI_IMMAGINE_NORMATIVA");
+			row.createCell(19).setCellValue("ESDI_IMMAGINE_NORMATIVA_IMBALLAGGIO");
+			row.createCell(20).setCellValue("ESDI_FREQUENZA");
+			row.createCell(21).setCellValue("ESDI_MODELLO_PRODOTTO");
+			row.createCell(22).setCellValue("ESDI_ALIMENTAZIONE");
+			row.createCell(23).setCellValue("ESDI_FCC_ID");
+			row.createCell(24).setCellValue("ESDI_FCC_ID_CODE");
+			row.createCell(25).setCellValue("ESDI_IMMAGINE_E24");
+			row.createCell(26).setCellValue("ESDI_APPROVAL_NUMBER");
+			
+			while(resultSet.next())
+			{
+				//Retrieve each column by its name
+				tipoOrdineCliente = resultSet.getString("TIPO_ORDINE_CLIENTE");
+				//codiceCliente = resultSet.getString("CODICE_CLIENTE");
+				ragioneSociale = resultSet.getString("RAGIONE_SOCIALE");
+				numeroOrdine = resultSet.getString("NUMERO_ORDINE");
+				numeroRiga = resultSet.getString("NUMERO_RIGA");
+				//tipoParte = resultSet.getString("TIPO_PARTE");
+				tipoDB = resultSet.getString("TIPO_DB");
+				codiceKit = resultSet.getString("CODICE_KIT");
+				codiceSistema = resultSet.getString("CODICE_SISTEMA");
+				descrizione = resultSet.getString("DESCRIZIONE");
+				dataRichiestaConsegna = resultSet.getString("DATA_RICHIESTA_CONSEGNA");
+				dataConfermaConsegna = resultSet.getString("DATA_CONFERMA_CONSEGNA");
+				um = resultSet.getString("UM");
+				prezzoUnitarioKit = resultSet.getString("PREZZO_UNITARIO_KIT");
+				prezzoUnitario = resultSet.getString("PREZZO_UNITARIO");
+				qtaOrdinataKit = resultSet.getString("QTA_ORDINATA_KIT");
+				qtaOrdinata = resultSet.getString("QTA_ORDINATA");
+				qtaSpeditaKit = resultSet.getString("QTA_SPEDITA_KIT");
+				qtaSpedita = resultSet.getString("QTA_SPEDITA");
+				importoKit = resultSet.getString("IMPORTO_KIT");
+				importo = resultSet.getString("IMPORTO");
+				importoEvasoKit = resultSet.getString("IMPORTO_EVASO_KIT");
+				importoEvaso = resultSet.getString("IMPORTO_EVASO");
+				//saldo = resultSet.getString("SALDO");
+				statoRigaOrdine = resultSet.getString("STATO_RIGA_ORDINE");
+				software = resultSet.getString("SOFTWARE");
+				try
+				{
+					qtaOrdinataInt = Math.round(Float.parseFloat(qtaOrdinata));
+					qtaOrdinataKitInt = Math.round(Float.parseFloat(qtaOrdinataKit));
+				}
+				catch(NumberFormatException e)
+				{
+					qtaOrdinataInt = 0;
+					qtaOrdinataKitInt = 0;
+				}
+				if (software == null)
+					software = "";
+				
+				//check if there are two softwares for the same system 
+				if (
+						(numeroOrdine.compareTo(numeroOrdinePrev) == 0)
+						&&
+						(numeroRiga.compareTo(numeroRigaPrev) == 0)
+						&&
+						(codiceKit.compareTo(codiceKitPrev) == 0)
+						&&
+						(codiceSistema.compareTo(codiceSistemaPrev) == 0)
+				)
+				{
+					continue; //loop
+				}
+				
+				////////////////////
+				// ORDINI CLIENTE //
+				////////////////////
+				
+				row = sheet1.createRow(rowCounterSheet1++);
+				row.createCell(0).setCellValue(tipoOrdineCliente);
+				//row.createCell(1).setCellValue(codiceCliente);
+				row.createCell(1).setCellValue(ragioneSociale);
+				row.createCell(2).setCellValue(numeroOrdine);
+				row.createCell(3).setCellValue(numeroRiga);
+				//row.createCell(4).setCellValue(tipoParte);
+				row.createCell(4).setCellValue(tipoDB);
+				row.createCell(5).setCellValue(codiceKit);
+				row.createCell(6).setCellValue(codiceSistema);
+				row.createCell(7).setCellValue(descrizione);
+				row.createCell(8).setCellValue(dataRichiestaConsegna);
+				row.createCell(9).setCellValue(dataConfermaConsegna);
+				row.createCell(10).setCellValue(um);
+				row.createCell(11).setCellValue(prezzoUnitarioKit);
+				row.createCell(12).setCellValue(prezzoUnitario);
+				row.createCell(13).setCellValue(qtaOrdinataKit);
+				row.createCell(14).setCellValue(qtaOrdinata);
+				row.createCell(15).setCellValue(qtaSpeditaKit);
+				row.createCell(16).setCellValue(qtaSpedita);
+				row.createCell(17).setCellValue(importoKit);
+				row.createCell(18).setCellValue(importo);
+				row.createCell(19).setCellValue(importoEvasoKit);
+				row.createCell(20).setCellValue(importoEvaso);
+				//row.createCell(22).setCellValue(saldo);
+				row.createCell(21).setCellValue(statoRigaOrdine);
+				row.createCell(22).setCellValue(software);
+				
+				///////////////////
+				// SORGENTE DATI //
+				///////////////////
+				
+				sd_numeroDiSerie = "";
+				sd_cliente = ragioneSociale;
+				sd_descrizioneArticoloSistematica = descrizione;
+				sd_codiceKitSistematica = codiceKit;
+				sd_codiceArticoloSistematica = codiceSistema;
+				sd_codiceArticoloCliente = "";
+				try
+				{
+					int tempInt = Integer.parseInt(numeroRiga.trim()); 
+					//sd_commessa = tipoOrdineCliente.trim() + "." + numeroOrdine.trim().substring(2, numeroOrdine.length()) + String.format("%05d", tempInt);
+					sd_commessa = numeroOrdine.trim() + "/" + tipoOrdineCliente.trim() + "-" + String.format("%05d", tempInt);
+				}
+				catch(NumberFormatException e)
+				{
+					//sd_commessa = numeroOrdine + numeroRiga;
+					sd_commessa = "";
+				}
+				sd_quantita = "";
+				sd_numDDTSistematica = "";
+				sd_dataDDTSistematica = "";
+				sd_versioneSoftware = software;
+				sd_immagineLogoSistematica = ".\\IMMAGINI\\LOGO_SISTEMATICA.bmp";
+				sd_azienda = "Sistematica s.r.l.";
+				sd_sede = "Italy";
+				sd_productImballaggio = "";
+				sd_rtx = "";
+				sd_s_n = "S/N:";
+				sd_code = "Code:";
+				sd_immagineNormativa = "";
+				sd_immagineNormativaImballaggio = "";
+				sd_frequenza = "";
+				sd_modelloProdotto = "";
+				sd_alimentazione = "";
+				sd_fccID = "";
+				sd_fccIDCode = "";
+				sd_immagineE24 = "";
+				sd_approvalNumber = "";
+
+				//codice cliente
+				if (isCarOil(codiceSistema))
+					sd_codiceArticoloCliente = ""; //TODO
+				else
+					sd_codiceArticoloCliente = "";
+				
+				//immagine normativa
+				if(isCradle(codiceSistema))
+					sd_immagineNormativa = ".\\IMMAGINI\\CE_42x29.bmp";
+				else if (isCarOil(codiceSistema))
+					sd_immagineNormativa = ".\\IMMAGINI\\BIANCA.bmp";
+				else if (isEasy(codiceSistema) || isNimble(codiceSistema) || isNemo(codiceSistema) || isRescue(codiceSistema) || isLift(codiceSistema) || (isBravo(codiceSistema)) || (isPhilo(codiceSistema)))
+				{
+					if (is915(codiceSistema))
+						sd_immagineNormativa = ".\\IMMAGINI\\BIANCA.bmp";
+					else
+						//sd_immagineNormativa = ".\\IMMAGINI\\CE0051_26x17.bmp";
+						sd_immagineNormativa = ".\\IMMAGINI\\CE_26x17.bmp";
+				}
+				else if (is915(codiceSistema))
+					sd_immagineNormativa = ".\\IMMAGINI\\FCC_42x29.bmp";
+				else if (is868(codiceSistema)||is433(codiceSistema))
+					//sd_immagineNormativa = ".\\IMMAGINI\\CE0051_42x29.bmp";
+					sd_immagineNormativa = ".\\IMMAGINI\\CE_42x29.bmp";
+				else if (isEasyWire(codiceSistema))
+					sd_immagineNormativa = ".\\IMMAGINI\\CE_26x17.bmp";
+				else if (isTrendWire(codiceSistema))
+					sd_immagineNormativa = ".\\IMMAGINI\\CE_42x29.bmp";
+				else
+					sd_immagineNormativa = ".\\IMMAGINI\\BIANCA.bmp";
+				
+				//frequenza
+				if(isBravo(codiceSistema))
+				{
+					sd_rtx = "";
+					sd_frequenza = "";
+				}
+				else if(isPhilo(codiceSistema))
+				{
+					sd_rtx = "";
+					sd_frequenza = "";
+				}
+				else if(isCradle(codiceSistema))
+				{
+					sd_rtx = "";
+					sd_frequenza = "";
+				}
+				else if (codiceSistema.startsWith("XX401RXCA011X"))
+				{
+					sd_rtx = STR_RTX;
+					sd_frequenza = STR_868;
+				}
+				else if (is915(codiceSistema))
+				{
+					sd_rtx = STR_RTX;
+					sd_frequenza = STR_915;
+				}
+				else if (is868(codiceSistema))
+				{
+					sd_rtx = STR_RTX;
+					sd_frequenza = STR_868;
+				}
+				else if (is433(codiceSistema))
+				{
+					sd_rtx = STR_RTX;
+					sd_frequenza = STR_433;
+				}
+				else
+				{
+					sd_rtx = "";
+					sd_frequenza = "";
+				}
+				
+				//e24
+				if (isCntr(codiceSistema)&&(!isCntr8AC(codiceSistema)))
+				{
+					sd_immagineE24 = ".\\IMMAGINI\\E24.bmp";
+				}
+				else
+				{
+					sd_immagineE24 = ".\\IMMAGINI\\BIANCA.bmp";
+				}
+				
+				//modello prodotto - alimentazione
+				if (isCradle(codiceSistema))
+				{
+					sd_modelloProdotto = "CRADLE";
+					sd_alimentazione = "12-24 Vdc";
+					sd_fccIDCode = "";
+					sd_approvalNumber = "";
+				}
+				else if (isBravo(codiceSistema))
+				{
+					sd_modelloProdotto = "BRAVO"; //DA VERIFICARE
+					sd_alimentazione = "12-24 Vdc, 4A max";
+					sd_fccIDCode = "";
+					sd_approvalNumber = "";
+				}
+				else if (isPhilo(codiceSistema))
+				{
+					sd_modelloProdotto = "PHILO"; //DA VERIFICARE
+					sd_alimentazione = "12-24 Vdc, 4A max";
+					sd_fccIDCode = "";
+					sd_approvalNumber = "";
+				}
+				else if (isEasyWire(codiceSistema))
+				{
+					sd_modelloProdotto = "EASYWIRE";
+					sd_alimentazione = "";
+					sd_fccIDCode = "";
+					sd_approvalNumber = "";
+				}
+				else if (isTrendWire(codiceSistema))
+				{
+					sd_modelloProdotto = "TRENDWIRE";
+					sd_alimentazione = "";
+					sd_fccIDCode = "";
+					sd_approvalNumber = "";
+				}
+				else if (isNimble(codiceSistema))
+				{
+					sd_modelloProdotto = "NIMBLE";
+					sd_alimentazione = "3Vdc 2x1,5 size AAA";
+					sd_fccIDCode = "O8IRTXEASY";
+					sd_approvalNumber = "";
+				}
+				else if (isNemo(codiceSistema))
+				{
+					sd_modelloProdotto = "NEMO";
+					sd_alimentazione = "3Vdc 2x1,5 size AAA";
+					sd_fccIDCode = "O8IRTXEASY";
+					sd_approvalNumber = "";
+				}
+				else if (isRescue(codiceSistema))
+				{
+					sd_modelloProdotto = "RESCUE";
+					sd_alimentazione = "3Vdc 2x1,5 size AAA";
+					sd_fccIDCode = "O8IRTXEASY";
+					sd_approvalNumber = "";
+				}
+				else if (isLift(codiceSistema))
+				{
+					sd_modelloProdotto = "LIFT";
+					sd_alimentazione = "3Vdc 2x1,5 size AAA";
+					sd_fccIDCode = "O8IRTXEASY";
+					sd_approvalNumber = "";
+				}
+				else if (isEasy(codiceSistema))
+				{
+					sd_modelloProdotto = "EASY";
+					sd_alimentazione = "3Vdc 2x1,5 size AAA";
+					sd_fccIDCode = "O8IRTXEASY";
+					sd_approvalNumber = "";
+				}
+				else if (isTrendLCD(codiceSistema))
+				{
+					sd_modelloProdotto = "EGO";
+					sd_alimentazione = "3,7Vdc";
+					sd_fccIDCode = "O8IRTXTREND";
+					sd_approvalNumber = "";
+				}
+				else if (isTrend(codiceSistema))
+				{
+					sd_modelloProdotto = "TREND";
+					sd_alimentazione = "3Vdc 2x1,5 size AA";
+					sd_fccIDCode = "O8IRTXTREND";
+					sd_approvalNumber = "";
+				}
+				else if (isTrendB(codiceSistema))
+				{
+					sd_modelloProdotto = "TRENDB";
+					sd_alimentazione = "3Vdc 2x1,5 size AA";
+					sd_fccIDCode = "O8IRTXTREND";
+					sd_approvalNumber = "";
+				}
+				else if (isEasyXII(codiceSistema))
+				{
+					sd_modelloProdotto = "EASY XII";
+					sd_alimentazione = "12-24 Vdc, 10A max";
+					sd_fccIDCode = "";
+					sd_approvalNumber = "";
+				}
+				else if (isEasyXXI(codiceSistema))
+				{
+					sd_modelloProdotto = "EASY XXI";
+					sd_alimentazione = "12-24 Vdc, 20A max";
+					sd_fccIDCode = "";
+					sd_approvalNumber = "";
+				}
+				else if (isCntr4(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR4";
+					sd_alimentazione = "12-24 Vdc, 10A max";
+					sd_fccIDCode = "O8ICNTR4";
+					sd_approvalNumber = "10 R-04 0778";
+				}
+				else if (isCntr8(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR8";
+					sd_alimentazione = "12-24 Vdc, 10A max";
+					sd_fccIDCode = "O8ICONTROLLER8";
+					sd_approvalNumber = "10 R-04 1050";
+				}
+				else if (isCntr20(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR20";
+					sd_alimentazione = "12-24 Vdc, 20A max";
+					sd_fccIDCode = "O8ICONTROLLER20";
+					sd_approvalNumber = "10 R-03 0779";
+				}
+				else if (isCntr20B(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR20B";
+					sd_alimentazione = "12-24 Vdc, 20A max";
+					sd_fccIDCode = "O8ICONTROLLER20";
+					sd_approvalNumber = "10 R-03 0779";
+				}
+				else if (isCntr32(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR32";
+					sd_alimentazione = "12-24 Vdc, 20A max";
+					sd_fccIDCode = "O8ICONTROLLER32";
+					sd_approvalNumber = "10 R-04 1051";
+				}
+				else if (isMulti12(codiceSistema))
+				{
+					sd_modelloProdotto = "MULTI12";
+					sd_alimentazione = "12-24 Vdc, 10A max";
+					sd_fccIDCode = "O8IMULTIOUT12";
+					sd_approvalNumber = "10 R-03 0780";
+				}
+				else if (isPowerDrive12(codiceSistema))
+				{
+					sd_modelloProdotto = "POWERDRIVE12";
+					sd_alimentazione = "12 Vdc";
+					sd_fccIDCode = "O8IPOWERDRIVE";
+					sd_approvalNumber = "10 R-04 0778";
+				}
+				else if (isPowerDrive24(codiceSistema))
+				{
+					sd_modelloProdotto = "POWERDRIVE24";
+					sd_alimentazione = "24 Vdc";
+					sd_fccIDCode = "O8IPOWERDRIVE";
+					sd_approvalNumber = "10 R-04 0778";
+				}
+				else if (isCntrNimble(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTRNIMBLE";
+					sd_alimentazione = "12-24 Vdc, 7,5A max";
+					sd_fccIDCode = "O8INIMBLE";
+					sd_approvalNumber = "10 R-04 0778";
+				}
+				else if (isCntr8AC(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR8AC";
+					sd_alimentazione = "12-36 Vac-Vdc";
+					sd_fccIDCode = "O8ICONTROLLER8";
+					sd_approvalNumber = "";
+				}
+				else if (codiceSistema.startsWith("XX401RXCA011X"))
+				{
+					sd_modelloProdotto = "CNTRNIMBLE";
+					sd_alimentazione = "12-24 Vdc, 7,5A max";
+					sd_fccIDCode = "O8INIMBLE";
+					sd_approvalNumber = "10 R-04 0778";
+				}
+				else if (isPowerDrive12SW(codiceSistema))
+				{
+					sd_modelloProdotto = "POWERDRIVE12";
+					sd_alimentazione = "12 Vdc";
+					sd_fccIDCode = "O8IPOWERDRIVE";
+					sd_approvalNumber = "10 R-04 0778";
+				}
+				else if (isPowerDrive24SW(codiceSistema))
+				{
+					sd_modelloProdotto = "POWERDRIVE24";
+					sd_alimentazione = "24 Vdc";
+					sd_fccIDCode = "O8IPOWERDRIVE";
+					sd_approvalNumber = "10 R-04 0778";
+				}
+				else if (isCntrNimbleSW(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTRNIMBLE";
+					sd_alimentazione = "12-24 Vdc, 7,5A max";
+					sd_fccIDCode = "O8INIMBLE";
+					sd_approvalNumber = "10 R-04 0778";
+				}
+				else if (isCarOil(codiceSistema))
+				{
+					sd_modelloProdotto = "";
+					sd_alimentazione = "";
+					sd_fccIDCode = "";
+					sd_approvalNumber = "";
+				}
+				
+				//fccID
+				if (is915(codiceSistema))
+				{
+					sd_fccID = "FCC ID:";
+				}
+				else
+					sd_fccIDCode = "";
+				
+				for (int i = 0; i < qtaOrdinataInt; i++)
+				{
+					row = sheet2.createRow(rowCounterSheet2++);
+					row.createCell(0).setCellValue(sd_numeroDiSerie.trim());
+					row.createCell(1).setCellValue(sd_cliente.trim());
+					row.createCell(2).setCellValue(sd_descrizioneArticoloSistematica.trim());
+					row.createCell(3).setCellValue(sd_codiceKitSistematica.trim());
+					row.createCell(4).setCellValue(sd_codiceArticoloSistematica.trim());
+					row.createCell(5).setCellValue(sd_codiceArticoloCliente.trim());
+					//row.createCell(6).setCellValue(Integer.parseInt(sd_commessa));
+					row.createCell(6).setCellValue(sd_commessa.trim());
+					/*
+					try
+					{
+						long tmplng = Long.parseLong(sd_commessa);
+						row.createCell(6).setCellValue(tmplng);
+					}
+					catch (NumberFormatException e)
+					{
+						System.out.println(e.getMessage());
+					    row.createCell(6).setCellValue("ERROR");
+					}
+					*/
+					row.createCell(7).setCellValue(i+1);
+					row.createCell(8).setCellValue(sd_numDDTSistematica.trim());
+					row.createCell(9).setCellValue(sd_dataDDTSistematica.trim());
+					row.createCell(10).setCellValue(sd_versioneSoftware.trim());
+					row.createCell(11).setCellValue(sd_immagineLogoSistematica.trim());
+					row.createCell(12).setCellValue(sd_azienda.trim());
+					row.createCell(13).setCellValue(sd_sede.trim());
+					row.createCell(14).setCellValue(sd_productImballaggio.trim());
+					row.createCell(15).setCellValue(sd_rtx.trim());
+					row.createCell(16).setCellValue(sd_s_n.trim());
+					row.createCell(17).setCellValue(sd_code.trim());
+					row.createCell(18).setCellValue(sd_immagineNormativa.trim());
+					row.createCell(19).setCellValue(sd_immagineNormativaImballaggio.trim());
+					row.createCell(20).setCellValue(sd_frequenza.trim());
+					row.createCell(21).setCellValue(sd_modelloProdotto.trim());
+					row.createCell(22).setCellValue(sd_alimentazione.trim());
+					row.createCell(23).setCellValue(sd_fccID.trim());
+					row.createCell(24).setCellValue(sd_fccIDCode.trim());
+					row.createCell(25).setCellValue(sd_immagineE24.trim());
+					row.createCell(26).setCellValue(sd_approvalNumber.trim());
+				}
+				
+				//////////////////////////////
+				// SORGENTE DATI IMBALLAGGI //
+				//////////////////////////////
+				
+				if (!commessaPrev.equals(sd_commessa))
+				{
+					codiceKitPrev = "";
+					numeroOrdinePrev = "";
+					counterCmsa = 0;
+					
+					//System.out.println("commessaPrev: " + commessaPrev + " - sd_commessa: " + sd_commessa);
+				}
+				else if ( 
+						(!numeroOrdinePrev.equals(numeroOrdine))
+						||
+						((numeroOrdinePrev.equals(numeroOrdine))&&(!numeroRiga.equals(numeroRigaPrev)))
+				)
+				{
+					counterCmsa = 0;
+					
+					//System.out.println("numeroOrdinePrev: " + numeroOrdinePrev + " - numeroOrdine: " + numeroOrdine);
+					//System.out.println("numeroRigaPrev: " + numeroRigaPrev + " - numeroRiga: " + numeroOrdine + "\n\r");
+				}
+				
+				if (
+						(!codiceKit.equals(""))
+						&&
+						(!codiceKit.equals(codiceKitPrev))
+				)
+				{
+					// ETICHETTA PRINCIPALE IMBALLAGGIO: KIT
+					
+					sd_numeroDiSerie = "";
+					sd_cliente = ragioneSociale;
+					sd_descrizioneArticoloSistematica = "";
+					sd_codiceKitSistematica = codiceKit;
+					sd_codiceArticoloSistematica = "";
+					sd_codiceArticoloCliente = "";
+					try
+					{
+						int tempInt = Integer.parseInt(numeroRiga.trim()); 
+						//sd_commessa = tipoOrdineCliente.trim() + "." + numeroOrdine.trim().substring(2, numeroOrdine.length()) + String.format("%05d", tempInt);
+						sd_commessa = numeroOrdine.trim() + "/" + tipoOrdineCliente.trim() + "-" + String.format("%05d", tempInt);
+					}
+					catch(NumberFormatException e)
+					{
+						//sd_commessa = numeroOrdine + numeroRiga;
+						sd_commessa = "";
+					}
+					sd_quantita = "";
+					sd_numDDTSistematica = "";
+					sd_dataDDTSistematica = "";
+					sd_versioneSoftware = "";
+					sd_immagineLogoSistematica = ".\\IMMAGINI\\BIANCA.bmp";
+					sd_azienda = "";
+					sd_sede = "";
+					sd_productImballaggio = "";
+					sd_rtx = "";
+					sd_s_n = "";
+					sd_code = "";
+					sd_immagineNormativa = "";
+					sd_immagineNormativaImballaggio = ".\\IMMAGINI\\BIANCA.bmp";
+					sd_frequenza = "";
+					sd_modelloProdotto = "";
+					sd_alimentazione = "";
+					sd_fccID = "";
+					sd_fccIDCode = "";
+					sd_immagineE24 = ".\\IMMAGINI\\BIANCA.bmp";
+					sd_approvalNumber = "";
+					
+					for (int i = 0; i < qtaOrdinataKitInt; i++)
+					{
+						row = sheet3.createRow(rowCounterSheet3++);
+						row.createCell(0).setCellValue(sd_numeroDiSerie.trim());
+						row.createCell(1).setCellValue(sd_cliente.trim());
+						row.createCell(2).setCellValue(sd_descrizioneArticoloSistematica.trim());
+						row.createCell(3).setCellValue(sd_codiceKitSistematica.trim());
+						row.createCell(4).setCellValue(sd_codiceArticoloSistematica.trim());
+						row.createCell(5).setCellValue(sd_codiceArticoloCliente.trim());
+						//row.createCell(6).setCellValue(Integer.parseInt(sd_commessa));
+						row.createCell(6).setCellValue(sd_commessa.trim());
+						/*
+						try
+						{
+						    long tmplng = Long.parseLong(sd_commessa);
+						    row.createCell(6).setCellValue(tmplng);
+						}
+						catch (NumberFormatException e)
+						{
+							System.out.println(e.getMessage());
+						    row.createCell(6).setCellValue("ERROR");
+						}
+						*/
+						row.createCell(7).setCellValue(++counterCmsa);
+						row.createCell(8).setCellValue(sd_numDDTSistematica.trim());
+						row.createCell(9).setCellValue(sd_dataDDTSistematica.trim());
+						row.createCell(10).setCellValue(sd_versioneSoftware.trim());
+						row.createCell(11).setCellValue(sd_immagineLogoSistematica.trim());
+						row.createCell(12).setCellValue(sd_azienda.trim());
+						row.createCell(13).setCellValue(sd_sede.trim());
+						row.createCell(14).setCellValue(sd_productImballaggio.trim());
+						row.createCell(15).setCellValue(sd_rtx.trim());
+						row.createCell(16).setCellValue(sd_s_n.trim());
+						row.createCell(17).setCellValue(sd_code.trim());
+						row.createCell(18).setCellValue(sd_immagineNormativa.trim());
+						row.createCell(19).setCellValue(sd_immagineNormativaImballaggio.trim());
+						row.createCell(20).setCellValue(sd_frequenza.trim());
+						row.createCell(21).setCellValue(sd_modelloProdotto.trim());
+						row.createCell(22).setCellValue(sd_alimentazione.trim());
+						row.createCell(23).setCellValue(sd_fccID.trim());
+						row.createCell(24).setCellValue(sd_fccIDCode.trim());
+						row.createCell(25).setCellValue(sd_immagineE24.trim());
+						row.createCell(26).setCellValue(sd_approvalNumber.trim());
+					}
+				}
+					
+				if (codiceKit.equals(""))
+				{
+					// ETICHETTA PRINCIPALE IMBALLAGGIO: SISTEMI
+					
+					sd_numeroDiSerie = "";
+					sd_cliente = ragioneSociale;
+					sd_descrizioneArticoloSistematica = "";
+					sd_codiceKitSistematica = "";
+					sd_codiceArticoloSistematica = codiceSistema;
+					sd_codiceArticoloCliente = "";
+					try
+					{
+						//sd_commessa = numeroOrdine.trim() + String.format("%05d", Integer.parseInt(numeroRiga.trim()));
+						int tempInt = Integer.parseInt(numeroRiga.trim()); 
+						//sd_commessa = tipoOrdineCliente.trim() + "." + numeroOrdine.trim().substring(2, numeroOrdine.length()) + String.format("%05d", tempInt);
+						sd_commessa = numeroOrdine.trim() + "/" + tipoOrdineCliente.trim() + "-" + String.format("%05d", tempInt);
+					}
+					catch(NumberFormatException e)
+					{
+						sd_commessa = "";
+					}
+					sd_quantita = "";
+					sd_numDDTSistematica = "";
+					sd_dataDDTSistematica = "";
+					sd_versioneSoftware = "";
+					sd_immagineLogoSistematica = ".\\IMMAGINI\\BIANCA.bmp";
+					sd_azienda = "";
+					sd_sede = "";
+					sd_productImballaggio = "";
+					sd_rtx = "";
+					sd_s_n = "";
+					sd_code = "";
+					sd_immagineNormativa = "";
+					sd_immagineNormativaImballaggio = ".\\IMMAGINI\\BIANCA.bmp";
+					sd_frequenza = "";
+					sd_modelloProdotto = "";
+					sd_alimentazione = "";
+					sd_fccID = "";
+					sd_fccIDCode = "";
+					sd_immagineE24 = ".\\IMMAGINI\\BIANCA.bmp";
+					sd_approvalNumber = "";
+					
+					for (int i = 0; i < qtaOrdinataInt; i++)
+					{
+						row = sheet3.createRow(rowCounterSheet3++);
+						row.createCell(0).setCellValue(sd_numeroDiSerie.trim());
+						row.createCell(1).setCellValue(sd_cliente.trim());
+						row.createCell(2).setCellValue(sd_descrizioneArticoloSistematica.trim());
+						row.createCell(3).setCellValue(sd_codiceKitSistematica.trim());
+						row.createCell(4).setCellValue(sd_codiceArticoloSistematica.trim());
+						row.createCell(5).setCellValue(sd_codiceArticoloCliente.trim());
+						//row.createCell(6).setCellValue(Integer.parseInt(sd_commessa));
+						row.createCell(6).setCellValue(sd_commessa.trim());
+						/*
+						try
+						{
+						    long tmplng = Long.parseLong(sd_commessa);
+						    row.createCell(6).setCellValue(tmplng);
+						}
+						catch (NumberFormatException e)
+						{
+							System.out.println(e.getMessage());
+						    row.createCell(6).setCellValue("ERROR");
+						}
+						*/
+						row.createCell(7).setCellValue(++counterCmsa);
+						row.createCell(8).setCellValue(sd_numDDTSistematica.trim());
+						row.createCell(9).setCellValue(sd_dataDDTSistematica.trim());
+						row.createCell(10).setCellValue(sd_versioneSoftware.trim());
+						row.createCell(11).setCellValue(sd_immagineLogoSistematica.trim());
+						row.createCell(12).setCellValue(sd_azienda.trim());
+						row.createCell(13).setCellValue(sd_sede.trim());
+						row.createCell(14).setCellValue(sd_productImballaggio.trim());
+						row.createCell(15).setCellValue(sd_rtx.trim());
+						row.createCell(16).setCellValue(sd_s_n.trim());
+						row.createCell(17).setCellValue(sd_code.trim());
+						row.createCell(18).setCellValue(sd_immagineNormativa.trim());
+						row.createCell(19).setCellValue(sd_immagineNormativaImballaggio.trim());
+						row.createCell(20).setCellValue(sd_frequenza.trim());
+						row.createCell(21).setCellValue(sd_modelloProdotto.trim());
+						row.createCell(22).setCellValue(sd_alimentazione.trim());
+						row.createCell(23).setCellValue(sd_fccID.trim());
+						row.createCell(24).setCellValue(sd_fccIDCode.trim());
+						row.createCell(25).setCellValue(sd_immagineE24.trim());
+						row.createCell(26).setCellValue(sd_approvalNumber.trim());
+					}
+				}
+				
+				// ETICHETTA SECONDARIA IMBALLAGGIO: SISTEMI
+				
+				sd_numeroDiSerie = "";
+				sd_cliente = ragioneSociale;
+				sd_descrizioneArticoloSistematica = descrizione;
+				sd_codiceKitSistematica = "";
+				sd_codiceArticoloSistematica = "";
+				sd_codiceArticoloCliente = "";
+				try
+				{
+					//sd_commessa = numeroOrdine.trim() + String.format("%05d", Integer.parseInt(numeroRiga.trim()));
+					int tempInt = Integer.parseInt(numeroRiga.trim()); 
+					//sd_commessa = tipoOrdineCliente.trim() + "." + numeroOrdine.trim().substring(2, numeroOrdine.length()) + String.format("%05d", tempInt);
+					sd_commessa = numeroOrdine.trim() + "/" + tipoOrdineCliente.trim() + "-" + String.format("%05d", tempInt);
+				}
+				catch(NumberFormatException e)
+				{
+					sd_commessa = "";
+				}
+				sd_quantita = "";
+				sd_numDDTSistematica = "";
+				sd_dataDDTSistematica = "";
+				sd_versioneSoftware = "";
+				sd_immagineLogoSistematica = ".\\IMMAGINI\\LOGO_SISTEMATICA.bmp";
+				sd_azienda = "Sistematica s.r.l.";
+				sd_sede = "Italy";
+				sd_productImballaggio = "PRODUCT:";
+				sd_rtx = "";
+				sd_s_n = "";
+				sd_code = "";
+				sd_immagineNormativa = "";
+				if (ragioneSociale.startsWith("MEGA PACIFIC"))
+				{
+					sd_immagineNormativaImballaggio = ".\\IMMAGINI\\CTICK_35x13,5.bmp";
+				}
+				else if (is915(codiceSistema))
+				{
+					sd_immagineNormativaImballaggio = ".\\IMMAGINI\\FCC_35x13,5.bmp";
+				}
+				else if (is868(codiceSistema)||is433(codiceSistema))
+				{
+					sd_immagineNormativaImballaggio = ".\\IMMAGINI\\CE0051_35X13,5.bmp";
+				}
+				else
+					sd_immagineNormativaImballaggio = ".\\IMMAGINI\\BIANCA.bmp";
+				sd_frequenza = "";
+				
+				if (isBravo(codiceSistema))
+				{
+					sd_modelloProdotto = "BRAVO"; //DA VERIFICARE
+				}
+				else if (isPhilo(codiceSistema))
+				{
+					sd_modelloProdotto = "PHILO"; //DA VERIFICARE
+				}
+				else if (isCradle(codiceSistema))
+				{
+					sd_modelloProdotto = "CRADLE";
+				}
+				else if (isEasyWire(codiceSistema))
+				{
+					sd_modelloProdotto = "EASYWIRE";
+				}
+				else if (isTrendWire(codiceSistema))
+				{
+					sd_modelloProdotto = "TRENDWIRE";
+				}
+				else if (isNimble(codiceSistema))
+				{
+					sd_modelloProdotto = "NIMBLE";
+				}
+				else if (isNemo(codiceSistema))
+				{
+					sd_modelloProdotto = "NEMO";
+				}
+				else if (isRescue(codiceSistema))
+				{
+					sd_modelloProdotto = "RESCUE";
+				}
+				else if (isLift(codiceSistema))
+				{
+					sd_modelloProdotto = "LIFT";
+				}
+				else if (isEasy(codiceSistema))
+				{
+					sd_modelloProdotto = "EASY";
+				}
+				else if (isTrendLCD(codiceSistema))
+				{
+					sd_modelloProdotto = "EGO";
+				}
+				else if (isTrend(codiceSistema))
+				{
+					sd_modelloProdotto = "TREND";
+				}
+				else if (isTrendB(codiceSistema))
+				{
+					sd_modelloProdotto = "TRENDB";
+				}
+				else if (isEasyXII(codiceSistema))
+				{
+					sd_modelloProdotto = "EASY XII";
+				}
+				else if (isEasyXXI(codiceSistema))
+				{
+					sd_modelloProdotto = "EASY XXI";
+				}
+				else if (isCntr4(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR4";
+				}
+				else if (isCntr8(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR8";
+				}
+				else if (isCntr20(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR20";
+				}
+				else if (isCntr20B(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR20B";
+				}
+				else if (isCntr32(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR32";
+				}
+				else if (isMulti12(codiceSistema))
+				{
+					sd_modelloProdotto = "MULTI12";
+				}
+				else if (isPowerDrive12(codiceSistema))
+				{
+					sd_modelloProdotto = "POWERDRIVE12";
+				}
+				else if (isPowerDrive24(codiceSistema))
+				{
+					sd_modelloProdotto = "POWERDRIVE24";
+				}
+				else if (isCntrNimble(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTRNIMBLE";
+				}
+				else if (isCntr8AC(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTR8AC";
+				}
+				else if (codiceSistema.startsWith("XX401RXCA011X"))
+				{
+					sd_modelloProdotto = "CNTRNIMBLE";
+				}
+				else if (isPowerDrive12SW(codiceSistema))
+				{
+					sd_modelloProdotto = "POWERDRIVE12";
+				}
+				else if (isPowerDrive24SW(codiceSistema))
+				{
+					sd_modelloProdotto = "POWERDRIVE24";
+				}
+				else if (isCntrNimbleSW(codiceSistema))
+				{
+					sd_modelloProdotto = "CNTRNIMBLE";
+				}
+				else if (isCarOil(codiceSistema))
+				{
+					sd_modelloProdotto = "";
+				}
+				sd_alimentazione = "";
+				sd_fccID = "";
+				sd_fccIDCode = "";
+				//e24
+				if (isCntr(codiceSistema)&&(!isCntr8AC(codiceSistema)))
+				{
+					sd_immagineE24 = ".\\IMMAGINI\\E24.bmp";
+				}
+				else
+				{
+					sd_immagineE24 = ".\\IMMAGINI\\BIANCA.bmp";
+				}
+				sd_approvalNumber = "";
+				
+				for (int i = 0; i < qtaOrdinataInt; i++)
+				{
+					row = sheet3.createRow(rowCounterSheet3++);
+					row.createCell(0).setCellValue(sd_numeroDiSerie.trim());
+					row.createCell(1).setCellValue(sd_cliente.trim());
+					row.createCell(2).setCellValue(sd_descrizioneArticoloSistematica.trim());
+					row.createCell(3).setCellValue(sd_codiceKitSistematica.trim());
+					row.createCell(4).setCellValue(sd_codiceArticoloSistematica.trim());
+					row.createCell(5).setCellValue(sd_codiceArticoloCliente.trim());
+					//row.createCell(6).setCellValue(Integer.parseInt(sd_commessa));
+					row.createCell(6).setCellValue(sd_commessa.trim());
+					/*
+					try
+					{
+					    long tmplng = Long.parseLong(sd_commessa);
+					    row.createCell(6).setCellValue(tmplng);
+					}
+					catch (NumberFormatException e)
+					{
+						System.out.println(e.getMessage());
+					    row.createCell(6).setCellValue("ERROR");
+					}
+					*/
+					row.createCell(7).setCellValue(++counterCmsa);
+					row.createCell(8).setCellValue(sd_numDDTSistematica.trim());
+					row.createCell(9).setCellValue(sd_dataDDTSistematica.trim());
+					row.createCell(10).setCellValue(sd_versioneSoftware.trim());
+					row.createCell(11).setCellValue(sd_immagineLogoSistematica.trim());
+					row.createCell(12).setCellValue(sd_azienda.trim());
+					row.createCell(13).setCellValue(sd_sede.trim());
+					row.createCell(14).setCellValue(sd_productImballaggio.trim());
+					row.createCell(15).setCellValue(sd_rtx.trim());
+					row.createCell(16).setCellValue(sd_s_n.trim());
+					row.createCell(17).setCellValue(sd_code.trim());
+					row.createCell(18).setCellValue(sd_immagineNormativa.trim());
+					row.createCell(19).setCellValue(sd_immagineNormativaImballaggio.trim());
+					row.createCell(20).setCellValue(sd_frequenza.trim());
+					row.createCell(21).setCellValue(sd_modelloProdotto.trim());
+					row.createCell(22).setCellValue(sd_alimentazione.trim());
+					row.createCell(23).setCellValue(sd_fccID.trim());
+					row.createCell(24).setCellValue(sd_fccIDCode.trim());
+					row.createCell(25).setCellValue(sd_immagineE24.trim());
+					row.createCell(26).setCellValue(sd_approvalNumber.trim());
+				}
+												
+				///////////////////
+				///////////////////
+				numeroOrdinePrev = numeroOrdine;
+				numeroRigaPrev = numeroRiga;
+				codiceKitPrev = codiceKit;
+				codiceSistemaPrev = codiceSistema;
+				commessaPrev = sd_commessa;
+			}
+			
+			//Clean-up environment
+			resultSet.close();
+			statement.close();
+			connection.close();
+		}
+		catch (FileNotFoundException e) 
+		{
+			//e.printStackTrace();
+			System.out.println("FileNotFoundException: " + e.getMessage());
+		}
+		catch (IOException e) 
+		{
+			//e.printStackTrace();
+			System.out.println("IOException: " + e.getMessage());
+		}
+		catch(SQLException se)
+		{
+			//Handle errors for JDBC
+			//se.printStackTrace();
+			System.out.println("SQLException: " + se.getMessage());
+		}
+		catch(Exception e)
+		{
+			//Handle errors for Class.forName
+			e.printStackTrace();
+		}
+		finally
+		{
+			try
+			{
+				/*if (bufferedWriter != null)
+				{
+					bufferedWriter.close();
+					Desktop.getDesktop().open(new File(System.getProperty("java.io.tmpdir")+"swr2do.csv"));
+				}*/
+				if (fileOut != null)
+				{
+					wb.write(fileOut);
+					fileOut.close();
+					Desktop.getDesktop().open(new File(System.getProperty("java.io.tmpdir")+"labeldatasource.xls"));
+				}
+			}
+			catch(IllegalArgumentException e)
+			{
+				System.out.println("IllegalArgumentException: " + e.getMessage());
+			}
+			catch(IOException e)
+			{
+				System.out.println("IOException: " + e.getMessage());
+			}
+			//finally block used to close resources
+			try
+			{
+				if (statement != null)
+					statement.close();
+			}
+			catch(SQLException se2)
+			{
+			} // nothing we can do
+			try
+			{
+				if (connection != null)
+					connection.close();
+			}
+			catch(SQLException se)
+			{
+				se.printStackTrace();
+			}
+		}//end finally
+		
+		//System.out.println("END!");
+
+
+	}
+
+}

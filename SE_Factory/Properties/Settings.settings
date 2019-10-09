@@ -2,21 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SE_Factory.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="DB_FactoryConnectionString" Type="(Connection string)" Scope="Application">
+    <Setting Name="LocalDB_Connection" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;ConnectionString&gt;Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DB_Factory.mdf;Integrated Security=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DB_Factory.mdf;Integrated Security=True</Value>
-    </Setting>
-    <Setting Name="DYOPENGConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=SERVER08\SQLEXPRESS;Initial Catalog=DYOPENG;Persist Security Info=True;User ID=sa;Password=aavesp19&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=SERVER08\SQLEXPRESS;Initial Catalog=DYOPENG;Persist Security Info=True;User ID=sa;Password=aavesp19</Value>
     </Setting>
     <Setting Name="IP_Printer" Type="System.String" Scope="User">
       <Value Profile="(Default)">192.168.000.107</Value>
@@ -36,13 +28,29 @@
     <Setting Name="IP_Printer_alwaysprint" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="DB_FactoryConnectionString1" Type="(Connection string)" Scope="Application">
+    <Setting Name="GCP_Connection" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;database=DB_Factory;certificatefile=C:\Users\albmi\Desktop\CoDiNg\SE-Factory_MySql\Certificates\pfx\client-cert.pfx&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;database=DB_Factory;certificatefile=.\client-cert.pfx&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;database=DB_Factory;certificatefile=C:\Users\albmi\Desktop\CoDiNg\SE-Factory_MySql\Certificates\pfx\client-cert.pfx</Value>
+      <Value Profile="(Default)">server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;database=DB_Factory;certificatefile=.\client-cert.pfx</Value>
+    </Setting>
+    <Setting Name="OPEN_Connection" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.0.8\SQLEXPRESS;Initial Catalog=DYOPENG;Persist Security Info=True;User ID=sa;Password=aavesp19&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.0.8\SQLEXPRESS;Initial Catalog=DYOPENG;Persist Security Info=True;User ID=sa;Password=aavesp19</Value>
+    </Setting>
+    <Setting Name="DB_FactoryConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=34.65.242.38;user id=sa;certificatefile=C:\Users\albmi\Desktop\CoDiNg\SE-Factory_MySql\Certificates\pfx\client-cert.pfx;database=DB_Factory;persistsecurityinfo=True;allowuservariables=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=34.65.242.38;user id=sa;certificatefile=C:\Users\albmi\Desktop\CoDiNg\SE-Factory_MySql\Certificates\pfx\client-cert.pfx;database=DB_Factory;persistsecurityinfo=True;allowuservariables=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

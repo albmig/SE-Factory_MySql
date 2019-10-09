@@ -2424,6 +2424,7 @@
             this.Name = "UC_form_Sw";
             this.Size = new System.Drawing.Size(1366, 768);
             this.Load += new System.EventHandler(this.UC_form_Sw_Load);
+            this.Layout += new System.Windows.Forms.LayoutEventHandler(this.UC_form_Sw_Layout);
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).EndInit();
             this.pan_P_Dx_Funzionamento.ResumeLayout(false);
             this.funz_fill.ResumeLayout(false);

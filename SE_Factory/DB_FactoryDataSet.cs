@@ -4,23 +4,15 @@
 
     partial class DB_FactoryDataSet
     {
-        partial class JLabel_ClientiDataTable
+        partial class NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESADataTable
         {
         }
 
-        partial class GC_CustomersDataTable
+        partial class NM_V_ANAGRAFICA_DBDataTable
         {
         }
 
         partial class xls_SerialsDataTable
-        {
-        }
-
-        partial class JLabelDataTable
-        {
-        }
-
-        partial class local_SoftwareDataTable
         {
         }
     }
@@ -28,11 +20,4 @@
 
 namespace SE_Factory.DB_FactoryDataSetTableAdapters
 {
-    partial class GC_CustomersTableAdapter
-    {
-    }
-
-    public partial class local_SoftwareTableAdapter
-    {
-    }
 }

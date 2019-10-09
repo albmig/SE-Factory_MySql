@@ -33,7 +33,7 @@
             this.Gecko_Layout = new System.Windows.Forms.TableLayoutPanel();
             this.ID_lab_Famiglia = new MetroFramework.Controls.MetroLabel();
             this.ID_combo_Famiglia = new System.Windows.Forms.ComboBox();
-            this.famProdBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.localFamProdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_FactoryDataSet = new SE_Factory.DB_FactoryDataSet();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.ID_Result = new System.Windows.Forms.TextBox();
@@ -68,7 +68,7 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.ID_combo_Scheda_P = new System.Windows.Forms.ComboBox();
-            this.schedeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.famProdSchedeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.ID_lab_Palmare = new MetroFramework.Controls.MetroLabel();
             this.ID_pan_C = new MetroFramework.Controls.MetroPanel();
@@ -111,18 +111,18 @@
             this.lab_sw_Selezionato = new MetroFramework.Controls.MetroLabel();
             this.lab_sw_selezionato_title = new MetroFramework.Controls.MetroLabel();
             this.but_Programma = new MetroFramework.Controls.MetroButton();
-            this.fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.local_Fam_ProdTableAdapter();
-            this.schedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.local_SchedeTableAdapter();
             this.ID_timer = new System.Windows.Forms.Timer(this.components);
+            this.local_Fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.local_Fam_ProdTableAdapter();
+            this.local_SchedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.local_SchedeTableAdapter();
             this.Gecko_Layout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.famProdBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.localFamProdBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).BeginInit();
             this.pan_SW_Titolo.SuspendLayout();
             this.pan_Menu_exit.SuspendLayout();
             this.ID_pan_P.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P_sch_image)).BeginInit();
             this.metroPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.schedeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.famProdSchedeBindingSource)).BeginInit();
             this.ID_pan_C.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.C_sch_image)).BeginInit();
             this.metroPanel3.SuspendLayout();
@@ -193,7 +193,7 @@
             this.ID_combo_Famiglia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ID_combo_Famiglia.BackColor = System.Drawing.SystemColors.Window;
             this.Gecko_Layout.SetColumnSpan(this.ID_combo_Famiglia, 2);
-            this.ID_combo_Famiglia.DataSource = this.famProdBindingSource;
+            this.ID_combo_Famiglia.DataSource = this.localFamProdBindingSource;
             this.ID_combo_Famiglia.DisplayMember = "Fam_Name";
             this.ID_combo_Famiglia.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ID_combo_Famiglia.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,11 +204,11 @@
             this.ID_combo_Famiglia.Size = new System.Drawing.Size(200, 23);
             this.ID_combo_Famiglia.TabIndex = 6;
             // 
-            // famProdBindingSource
+            // localFamProdBindingSource
             // 
-            this.famProdBindingSource.DataMember = "Fam_Prod";
-            this.famProdBindingSource.DataSource = this.dB_FactoryDataSet;
-            this.famProdBindingSource.CurrentChanged += new System.EventHandler(this.famProdBindingSource_CurrentChanged);
+            this.localFamProdBindingSource.DataMember = "local_Fam_Prod";
+            this.localFamProdBindingSource.DataSource = this.dB_FactoryDataSet;
+            this.localFamProdBindingSource.CurrentChanged += new System.EventHandler(this.localFamProdBindingSource_CurrentChanged);
             // 
             // dB_FactoryDataSet
             // 
@@ -619,7 +619,7 @@
             // 
             // ID_combo_Scheda_P
             // 
-            this.ID_combo_Scheda_P.DataSource = this.schedeBindingSource;
+            this.ID_combo_Scheda_P.DataSource = this.famProdSchedeBindingSource;
             this.ID_combo_Scheda_P.DisplayMember = "Prod_Sch";
             this.ID_combo_Scheda_P.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ID_combo_Scheda_P.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
@@ -630,11 +630,11 @@
             this.ID_combo_Scheda_P.Size = new System.Drawing.Size(200, 23);
             this.ID_combo_Scheda_P.TabIndex = 11;
             // 
-            // schedeBindingSource
+            // famProdSchedeBindingSource
             // 
-            this.schedeBindingSource.DataMember = "Schede";
-            this.schedeBindingSource.DataSource = this.dB_FactoryDataSet;
-            this.schedeBindingSource.CurrentChanged += new System.EventHandler(this.schedeBindingSource_CurrentChanged);
+            this.famProdSchedeBindingSource.DataMember = "Fam_Prod_Schede";
+            this.famProdSchedeBindingSource.DataSource = this.localFamProdBindingSource;
+            this.famProdSchedeBindingSource.CurrentChanged += new System.EventHandler(this.famProdSchedeBindingSource_CurrentChanged);
             // 
             // metroLabel1
             // 
@@ -948,8 +948,6 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.schedeBindingSource;
-            this.comboBox1.DisplayMember = "Prod_Sch";
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
             this.comboBox1.FormattingEnabled = true;
@@ -1192,18 +1190,18 @@
             this.but_Programma.UseSelectable = true;
             this.but_Programma.Click += new System.EventHandler(this.but_Programma_Click);
             // 
-            // fam_ProdTableAdapter
-            // 
-            this.fam_ProdTableAdapter.ClearBeforeFill = true;
-            // 
-            // schedeTableAdapter
-            // 
-            this.schedeTableAdapter.ClearBeforeFill = true;
-            // 
             // ID_timer
             // 
             this.ID_timer.Enabled = true;
             this.ID_timer.Tick += new System.EventHandler(this.ID_timer_Tick);
+            // 
+            // local_Fam_ProdTableAdapter
+            // 
+            this.local_Fam_ProdTableAdapter.ClearBeforeFill = true;
+            // 
+            // local_SchedeTableAdapter
+            // 
+            this.local_SchedeTableAdapter.ClearBeforeFill = true;
             // 
             // UC_form_Gecko
             // 
@@ -1215,7 +1213,7 @@
             this.Load += new System.EventHandler(this.UC_form_Gecko_Load);
             this.Gecko_Layout.ResumeLayout(false);
             this.Gecko_Layout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.famProdBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.localFamProdBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).EndInit();
             this.pan_SW_Titolo.ResumeLayout(false);
             this.pan_SW_Titolo.PerformLayout();
@@ -1226,7 +1224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.P_sch_image)).EndInit();
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.schedeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.famProdSchedeBindingSource)).EndInit();
             this.ID_pan_C.ResumeLayout(false);
             this.ID_pan_C.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.C_sch_image)).EndInit();
@@ -1303,11 +1301,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private MetroFramework.Controls.MetroLabel metroLabel19;
         private MetroFramework.Controls.MetroLabel metroLabel20;
-        private System.Windows.Forms.BindingSource famProdBindingSource;
         private DB_FactoryDataSet dB_FactoryDataSet;
-        private DB_FactoryDataSetTableAdapters.local_Fam_ProdTableAdapter fam_ProdTableAdapter;
-        private System.Windows.Forms.BindingSource schedeBindingSource;
-        private DB_FactoryDataSetTableAdapters.local_SchedeTableAdapter schedeTableAdapter;
         private System.Windows.Forms.Timer ID_timer;
         private System.Windows.Forms.TextBox ID_Result;
         private MetroFramework.Controls.MetroLabel metroLabel10;
@@ -1326,5 +1320,9 @@
         private MetroFramework.Controls.MetroLabel lab_SN;
         private MetroFramework.Controls.MetroLabel lab_Emulator;
         private MetroFramework.Controls.MetroButton but_print_again;
+        private System.Windows.Forms.BindingSource localFamProdBindingSource;
+        private DB_FactoryDataSetTableAdapters.local_Fam_ProdTableAdapter local_Fam_ProdTableAdapter;
+        private System.Windows.Forms.BindingSource famProdSchedeBindingSource;
+        private DB_FactoryDataSetTableAdapters.local_SchedeTableAdapter local_SchedeTableAdapter;
     }
 }

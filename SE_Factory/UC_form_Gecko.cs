@@ -43,20 +43,20 @@ namespace SE_Factory
         private void UC_form_Gecko_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
-            this.schedeTableAdapter.Fill(this.dB_FactoryDataSet.local_Schede);
+            this.local_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.local_Schede);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Fam_Prod'. È possibile spostarla o rimuoverla se necessario.
-            this.fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.local_Fam_Prod);
+            this.local_Fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.local_Fam_Prod);
         }
 
         private void famProdBindingSource_CurrentChanged(object sender, EventArgs e)
         {
             {
-                schedeBindingSource.Filter = "";
+                famProdSchedeBindingSource.Filter = "";
                 P_sch_image.Image = null;
                 C_sch_image.Image = null;
-                if (famProdBindingSource.Current != null)
+                if (localFamProdBindingSource.Current != null)
                 {
-                    DataRow currentRow = ((DataRowView)famProdBindingSource.Current).Row;
+                    DataRow currentRow = ((DataRowView)localFamProdBindingSource.Current).Row;
 
                     GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
                     GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
@@ -67,14 +67,14 @@ namespace SE_Factory
                         ID_pan_C.Visible = false;
                         ID_pan_P.Visible = true;
 
-                        schedeBindingSource.Filter = "Prod_Fam = " + currentRow["Id"].ToString();
+                        famProdSchedeBindingSource.Filter = "Prod_Fam = " + currentRow["Id"].ToString();
                     }
                     if (GVar.glob_tipo_item == "C")
                     {
                         ID_pan_P.Visible = false;
                         ID_pan_C.Visible = true;
 
-                        schedeBindingSource.Filter = "Prod_Fam = " + currentRow["Id"].ToString();
+                        famProdSchedeBindingSource.Filter = "Prod_Fam = " + currentRow["Id"].ToString();
                     }
                 }
             }
@@ -105,7 +105,7 @@ namespace SE_Factory
             ID_toggle_CanBus.Checked = false;
             ID_toggle_Prop.Checked = false;
 
-            DataRow currentRow = ((DataRowView)schedeBindingSource.Current).Row;
+            DataRow currentRow = ((DataRowView)famProdSchedeBindingSource.Current).Row;
 
             if (GVar.glob_tipo_item == "P")
             {
@@ -654,6 +654,118 @@ namespace SE_Factory
         private void but_print_again_Click(object sender, EventArgs e)
         {
             PrintLabel();
+        }
+
+        private void localFamProdBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            {
+                famProdSchedeBindingSource.Filter = "";
+                P_sch_image.Image = null;
+                C_sch_image.Image = null;
+                if (localFamProdBindingSource.Current != null)
+                {
+                    DataRow currentRow = ((DataRowView)localFamProdBindingSource.Current).Row;
+
+                    GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
+                    GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
+                    GVar.glob_result_id[0] = Convert.ToChar(currentRow["Fam_Hex_ID"]);
+
+                    if (GVar.glob_tipo_item == "P")
+                    {
+                        ID_pan_C.Visible = false;
+                        ID_pan_P.Visible = true;
+
+                        famProdSchedeBindingSource.Filter = "Prod_Fam = " + currentRow["Id"].ToString();
+                    }
+                    if (GVar.glob_tipo_item == "C")
+                    {
+                        ID_pan_P.Visible = false;
+                        ID_pan_C.Visible = true;
+
+                        famProdSchedeBindingSource.Filter = "Prod_Fam = " + currentRow["Id"].ToString();
+                    }
+                }
+            }
+        }
+
+        private void famProdSchedeBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            ID_radio_868_P.Checked = true;
+            ID_radio_868_C.Checked = true;
+
+            //Azzero Palmari
+            ID_toggle_Display.Checked = false;
+            ID_toggle_Accel.Checked = false;
+            ID_toggle_SP.Checked = false;
+            ID_toggle_Buzzer.Checked = false;
+            ID_toggle_Vibracall.Checked = false;
+            ID_toggle_Torcia.Checked = false;
+            ID_toggle_Fungo.Checked = false;
+            ID_toggle_Display.Enabled = false;
+            ID_toggle_Accel.Enabled = false;
+
+            //Azzero Controller
+            ID_toggle_PlugExp.Checked = false;
+            ID_toggle_PlugPLE.Checked = false;
+            ID_toggle_TastEmerg.Checked = false;
+            ID_toggle_GuidaLuce.Checked = false;
+            ID_toggle_AntExt.Checked = false;
+            ID_toggle_CanBus.Checked = false;
+            ID_toggle_Prop.Checked = false;
+
+            DataRow currentRow = ((DataRowView)famProdSchedeBindingSource.Current).Row;
+
+            if (GVar.glob_tipo_item == "P")
+            {
+                lab_Des_Scheda_P.Text = currentRow["Prod_Descrizione"].ToString();
+
+                switch (currentRow["Prod_Sch"])
+                {
+                    case "XSCHSE371PXX": //Easy SmartLine Display - Completa - retroilluminazione, accelerometro, display
+                        ID_toggle_Display.Checked = true;
+                        ID_toggle_Accel.Checked = true;
+                        break;
+                    case "XSCHSE371PAX": //Easy SmartLine - Retroilluminazione, accelerometro
+                        ID_toggle_Accel.Checked = true;
+                        break;
+                    case "XSCHSE371PBX": //Easy SmartLine - Solo retroilluminazione
+                        break;
+                    case "XSCHSE381PXX": //Trend SmartLine Display - Completa - retroilluminazione, accelerometro, display
+                        ID_toggle_Display.Checked = true;
+                        ID_toggle_Accel.Checked = true;
+                        break;
+                    case "XSCHSE381PAX": //Trend SmartLine - Retroilluminazione, accelerometro
+                        ID_toggle_Accel.Checked = true;
+                        break;
+                    case "XSCHSE381PBX": //Trend SmartLine - Solo retroilluminazione
+                        break;
+                    default:
+                        break;
+                }
+
+                //Carica immagine scheda
+                var request = WebRequest.Create(currentRow["Prod_Image_Url"].ToString());
+
+                using (var response = request.GetResponse())
+                using (var stream = response.GetResponseStream())
+                {
+                    P_sch_image.Image = Bitmap.FromStream(stream);
+                }
+            }
+
+            if (GVar.glob_tipo_item == "C")
+            {
+                lab_Des_Scheda_C.Text = currentRow["Prod_Descrizione"].ToString();
+                //Carica immagine scheda
+                var request = WebRequest.Create(currentRow["Prod_Image_Url"].ToString());
+
+                using (var response = request.GetResponse())
+                using (var stream = response.GetResponseStream())
+                {
+                    C_sch_image.Image = Bitmap.FromStream(stream);
+                }
+            }
+
         }
     }
 }

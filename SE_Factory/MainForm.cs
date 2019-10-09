@@ -138,7 +138,7 @@ namespace SE_Factory
 
         private void menu_btn_Clienti_Click(object sender, EventArgs e)
         {
-            UC_form_Clienti frm_child = new UC_form_Clienti();
+            UC_form_PopolaDB frm_child = new UC_form_PopolaDB();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
             frm_child.Visible = true;
@@ -185,7 +185,7 @@ namespace SE_Factory
 
         private void menu_btn_Ordini_Click(object sender, EventArgs e)
         {
-            UC_form_Clienti frm_child = new UC_form_Clienti();
+            UC_form_PopolaDB frm_child = new UC_form_PopolaDB();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
             frm_child.Visible = true;

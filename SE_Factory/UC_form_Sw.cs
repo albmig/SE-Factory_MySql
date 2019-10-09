@@ -19,6 +19,9 @@ namespace SE_Factory
 {
     public partial class UC_form_Sw : UserControl
     {
+        Splash SplashDB = new Splash();
+        bool splashclosed = false;
+
         public string SchedeCompatibili_SW = "";
         public string TemplateFolder = @"D:\VS2017 - Projects\SE_Factory\Prova Moduli SW\Template_PDF_Software.pdf";
 
@@ -307,6 +310,9 @@ namespace SE_Factory
             this.gC_Fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.GC_Fam_Prod);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
             this.gC_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.GC_Schede);
+
+            SplashDB.Close();
+            splashclosed = true;
 
             Setting_Form();
         }
@@ -866,6 +872,14 @@ namespace SE_Factory
         private void richtb__Revisioni_P_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void UC_form_Sw_Layout(object sender, LayoutEventArgs e)
+        {
+            if (!splashclosed)
+            {
+                SplashDB.Show();
+            }
         }
     }
 }

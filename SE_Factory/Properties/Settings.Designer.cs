@@ -28,20 +28,9 @@ namespace SE_Factory.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DB_Factory.md" +
             "f;Integrated Security=True")]
-        public string DB_FactoryConnectionString {
+        public string LocalDB_Connection {
             get {
-                return ((string)(this["DB_FactoryConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SERVER08\\SQLEXPRESS;Initial Catalog=DYOPENG;Persist Security Info=Tru" +
-            "e;User ID=sa;Password=aavesp19")]
-        public string DYOPENGConnectionString {
-            get {
-                return ((string)(this["DYOPENGConnectionString"]));
+                return ((string)(this["LocalDB_Connection"]));
             }
         }
         
@@ -121,11 +110,33 @@ namespace SE_Factory.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;databas" +
-            "e=DB_Factory;certificatefile=C:\\Users\\albmi\\Desktop\\CoDiNg\\SE-Factory_MySql\\Cert" +
-            "ificates\\pfx\\client-cert.pfx")]
-        public string DB_FactoryConnectionString1 {
+            "e=DB_Factory;certificatefile=.\\client-cert.pfx")]
+        public string GCP_Connection {
             get {
-                return ((string)(this["DB_FactoryConnectionString1"]));
+                return ((string)(this["GCP_Connection"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.0.8\\SQLEXPRESS;Initial Catalog=DYOPENG;Persist Security Info=" +
+            "True;User ID=sa;Password=aavesp19")]
+        public string OPEN_Connection {
+            get {
+                return ((string)(this["OPEN_Connection"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=34.65.242.38;user id=sa;certificatefile=C:\\Users\\albmi\\Desktop\\CoDiNg\\SE-F" +
+            "actory_MySql\\Certificates\\pfx\\client-cert.pfx;database=DB_Factory;persistsecurit" +
+            "yinfo=True;allowuservariables=True")]
+        public string DB_FactoryConnectionString {
+            get {
+                return ((string)(this["DB_FactoryConnectionString"]));
             }
         }
     }

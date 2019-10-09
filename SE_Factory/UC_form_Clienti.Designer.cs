@@ -43,12 +43,6 @@
             this.menu_sw_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.dg_Ordini_Layout = new System.Windows.Forms.TableLayoutPanel();
             this.dg_Ordini = new System.Windows.Forms.DataGridView();
-            this.jLabelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dg_Clienti_Layout = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.jLabelJLabelClientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jLabelTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabelTableAdapter();
-            this.jLabel_ClientiTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabel_ClientiTableAdapter();
             this.tIPOORDINECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAGIONESOCIALEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nUMEROORDINEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,7 +66,10 @@
             this.iMPORTOEVASODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTATORIGAORDINEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sOFTWAREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jLabelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_FactoryDataSet = new SE_Factory.DB_FactoryDataSet();
+            this.dg_Clienti_Layout = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.numOrdineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoOrdineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codAnagraficoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -129,6 +126,9 @@
             this.eMailPECDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMailPECCommDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pwdAllegatiEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jLabelJLabelClientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.jLabelTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabelTableAdapter();
+            this.jLabel_ClientiTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabel_ClientiTableAdapter();
             this.gCCustomersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gC_CustomersTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_CustomersTableAdapter();
             this.Ordini_Layout.SuspendLayout();
@@ -138,10 +138,10 @@
             this.dg_Ordini_Layout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_Ordini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jLabelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).BeginInit();
             this.dg_Clienti_Layout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jLabelJLabelClientiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCCustomersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -350,117 +350,6 @@
             this.dg_Ordini.Size = new System.Drawing.Size(1188, 294);
             this.dg_Ordini.TabIndex = 59;
             // 
-            // jLabelBindingSource
-            // 
-            this.jLabelBindingSource.DataMember = "JLabel";
-            this.jLabelBindingSource.DataSource = this.dB_FactoryDataSet;
-            // 
-            // dg_Clienti_Layout
-            // 
-            this.dg_Clienti_Layout.ColumnCount = 1;
-            this.Ordini_Layout.SetColumnSpan(this.dg_Clienti_Layout, 10);
-            this.dg_Clienti_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.dg_Clienti_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.dg_Clienti_Layout.Controls.Add(this.dataGridView1, 0, 0);
-            this.dg_Clienti_Layout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dg_Clienti_Layout.Location = new System.Drawing.Point(3, 361);
-            this.dg_Clienti_Layout.Name = "dg_Clienti_Layout";
-            this.dg_Clienti_Layout.RowCount = 1;
-            this.dg_Clienti_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.dg_Clienti_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
-            this.dg_Clienti_Layout.Size = new System.Drawing.Size(1194, 300);
-            this.dg_Clienti_Layout.TabIndex = 61;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.numOrdineDataGridViewTextBoxColumn,
-            this.tipoOrdineDataGridViewTextBoxColumn,
-            this.codAnagraficoDataGridViewTextBoxColumn,
-            this.partitaIvaDataGridViewTextBoxColumn,
-            this.codiceFiscaleDataGridViewTextBoxColumn,
-            this.ricercaBreveDataGridViewTextBoxColumn,
-            this.dataInizioValiditaDataGridViewTextBoxColumn,
-            this.dataFineValiditaDataGridViewTextBoxColumn,
-            this.codAnagraficoOldDataGridViewTextBoxColumn,
-            this.commentoStoricoDataGridViewTextBoxColumn,
-            this.tipoPersonaDataGridViewTextBoxColumn,
-            this.ragSocCognomeDataGridViewTextBoxColumn,
-            this.ragSocNomeDataGridViewTextBoxColumn,
-            this.ragSocCompletaDataGridViewTextBoxColumn,
-            this.indirizzoFiscaleDataGridViewTextBoxColumn,
-            this.toponimoFiscaleDataGridViewTextBoxColumn,
-            this.indFiscaleDataGridViewTextBoxColumn,
-            this.numCivicoFiscaleDataGridViewTextBoxColumn,
-            this.frazioneFiscaleDataGridViewTextBoxColumn,
-            this.capFiscaleDataGridViewTextBoxColumn,
-            this.comuneFiscaleDataGridViewTextBoxColumn,
-            this.codComuneFiscaleDataGridViewTextBoxColumn,
-            this.comuneAggiuntivoDataGridViewTextBoxColumn,
-            this.provinciaFiscaleDataGridViewTextBoxColumn,
-            this.regioneFiscaleDataGridViewTextBoxColumn,
-            this.casiPartAddRegDataGridViewTextBoxColumn,
-            this.nazioneFiscaleDataGridViewTextBoxColumn,
-            this.prefissoDataGridViewTextBoxColumn,
-            this.telefonoDataGridViewTextBoxColumn,
-            this.prefissoAggiuntivoDataGridViewTextBoxColumn,
-            this.telefonoAggiuntivoDataGridViewTextBoxColumn,
-            this.numeroVerdeDataGridViewTextBoxColumn,
-            this.prefissoFaxDataGridViewTextBoxColumn,
-            this.faxDataGridViewTextBoxColumn,
-            this.telexDataGridViewTextBoxColumn,
-            this.httpDataGridViewTextBoxColumn,
-            this.titoloDataGridViewTextBoxColumn,
-            this.codConcessioneDataGridViewTextBoxColumn,
-            this.codLinguaDataGridViewTextBoxColumn,
-            this.flCancellatoDataGridViewTextBoxColumn,
-            this.flRiservatezzaDataGridViewTextBoxColumn,
-            this.flCodFiscNonRegDataGridViewTextBoxColumn,
-            this.dataUltModificaDataGridViewTextBoxColumn,
-            this.iDUtenteDataGridViewTextBoxColumn,
-            this.iDTerminaleDataGridViewTextBoxColumn,
-            this.flSoggettoEsteroDataGridViewTextBoxColumn,
-            this.dataValiditaDataGridViewTextBoxColumn,
-            this.codAnagraficoNewDataGridViewTextBoxColumn,
-            this.omocodiceDataGridViewTextBoxColumn,
-            this.flPIVAChiusaDataGridViewTextBoxColumn,
-            this.flAllineaIndirizziDataGridViewTextBoxColumn,
-            this.flEmailPECDataGridViewTextBoxColumn,
-            this.eMailDataGridViewTextBoxColumn,
-            this.eMailPECDataGridViewTextBoxColumn,
-            this.eMailPECCommDataGridViewTextBoxColumn,
-            this.pwdAllegatiEmailDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.jLabelJLabelClientiBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1188, 294);
-            this.dataGridView1.TabIndex = 59;
-            // 
-            // jLabelJLabelClientiBindingSource
-            // 
-            this.jLabelJLabelClientiBindingSource.DataMember = "JLabel_JLabel_Clienti";
-            this.jLabelJLabelClientiBindingSource.DataSource = this.jLabelBindingSource;
-            // 
-            // jLabelTableAdapter
-            // 
-            this.jLabelTableAdapter.ClearBeforeFill = true;
-            // 
-            // jLabel_ClientiTableAdapter
-            // 
-            this.jLabel_ClientiTableAdapter.ClearBeforeFill = true;
-            // 
             // tIPOORDINECLIENTEDataGridViewTextBoxColumn
             // 
             this.tIPOORDINECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "TIPO_ORDINE_CLIENTE";
@@ -622,10 +511,108 @@
             this.sOFTWAREDataGridViewTextBoxColumn.Name = "sOFTWAREDataGridViewTextBoxColumn";
             this.sOFTWAREDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // jLabelBindingSource
+            // 
+            this.jLabelBindingSource.DataMember = "JLabel";
+            this.jLabelBindingSource.DataSource = this.dB_FactoryDataSet;
+            // 
             // dB_FactoryDataSet
             // 
             this.dB_FactoryDataSet.DataSetName = "DB_FactoryDataSet";
             this.dB_FactoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dg_Clienti_Layout
+            // 
+            this.dg_Clienti_Layout.ColumnCount = 1;
+            this.Ordini_Layout.SetColumnSpan(this.dg_Clienti_Layout, 10);
+            this.dg_Clienti_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.dg_Clienti_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.dg_Clienti_Layout.Controls.Add(this.dataGridView1, 0, 0);
+            this.dg_Clienti_Layout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dg_Clienti_Layout.Location = new System.Drawing.Point(3, 361);
+            this.dg_Clienti_Layout.Name = "dg_Clienti_Layout";
+            this.dg_Clienti_Layout.RowCount = 1;
+            this.dg_Clienti_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.dg_Clienti_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.dg_Clienti_Layout.Size = new System.Drawing.Size(1194, 300);
+            this.dg_Clienti_Layout.TabIndex = 61;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.numOrdineDataGridViewTextBoxColumn,
+            this.tipoOrdineDataGridViewTextBoxColumn,
+            this.codAnagraficoDataGridViewTextBoxColumn,
+            this.partitaIvaDataGridViewTextBoxColumn,
+            this.codiceFiscaleDataGridViewTextBoxColumn,
+            this.ricercaBreveDataGridViewTextBoxColumn,
+            this.dataInizioValiditaDataGridViewTextBoxColumn,
+            this.dataFineValiditaDataGridViewTextBoxColumn,
+            this.codAnagraficoOldDataGridViewTextBoxColumn,
+            this.commentoStoricoDataGridViewTextBoxColumn,
+            this.tipoPersonaDataGridViewTextBoxColumn,
+            this.ragSocCognomeDataGridViewTextBoxColumn,
+            this.ragSocNomeDataGridViewTextBoxColumn,
+            this.ragSocCompletaDataGridViewTextBoxColumn,
+            this.indirizzoFiscaleDataGridViewTextBoxColumn,
+            this.toponimoFiscaleDataGridViewTextBoxColumn,
+            this.indFiscaleDataGridViewTextBoxColumn,
+            this.numCivicoFiscaleDataGridViewTextBoxColumn,
+            this.frazioneFiscaleDataGridViewTextBoxColumn,
+            this.capFiscaleDataGridViewTextBoxColumn,
+            this.comuneFiscaleDataGridViewTextBoxColumn,
+            this.codComuneFiscaleDataGridViewTextBoxColumn,
+            this.comuneAggiuntivoDataGridViewTextBoxColumn,
+            this.provinciaFiscaleDataGridViewTextBoxColumn,
+            this.regioneFiscaleDataGridViewTextBoxColumn,
+            this.casiPartAddRegDataGridViewTextBoxColumn,
+            this.nazioneFiscaleDataGridViewTextBoxColumn,
+            this.prefissoDataGridViewTextBoxColumn,
+            this.telefonoDataGridViewTextBoxColumn,
+            this.prefissoAggiuntivoDataGridViewTextBoxColumn,
+            this.telefonoAggiuntivoDataGridViewTextBoxColumn,
+            this.numeroVerdeDataGridViewTextBoxColumn,
+            this.prefissoFaxDataGridViewTextBoxColumn,
+            this.faxDataGridViewTextBoxColumn,
+            this.telexDataGridViewTextBoxColumn,
+            this.httpDataGridViewTextBoxColumn,
+            this.titoloDataGridViewTextBoxColumn,
+            this.codConcessioneDataGridViewTextBoxColumn,
+            this.codLinguaDataGridViewTextBoxColumn,
+            this.flCancellatoDataGridViewTextBoxColumn,
+            this.flRiservatezzaDataGridViewTextBoxColumn,
+            this.flCodFiscNonRegDataGridViewTextBoxColumn,
+            this.dataUltModificaDataGridViewTextBoxColumn,
+            this.iDUtenteDataGridViewTextBoxColumn,
+            this.iDTerminaleDataGridViewTextBoxColumn,
+            this.flSoggettoEsteroDataGridViewTextBoxColumn,
+            this.dataValiditaDataGridViewTextBoxColumn,
+            this.codAnagraficoNewDataGridViewTextBoxColumn,
+            this.omocodiceDataGridViewTextBoxColumn,
+            this.flPIVAChiusaDataGridViewTextBoxColumn,
+            this.flAllineaIndirizziDataGridViewTextBoxColumn,
+            this.flEmailPECDataGridViewTextBoxColumn,
+            this.eMailDataGridViewTextBoxColumn,
+            this.eMailPECDataGridViewTextBoxColumn,
+            this.eMailPECCommDataGridViewTextBoxColumn,
+            this.pwdAllegatiEmailDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.jLabelJLabelClientiBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1188, 294);
+            this.dataGridView1.TabIndex = 59;
             // 
             // numOrdineDataGridViewTextBoxColumn
             // 
@@ -1075,6 +1062,24 @@
             this.pwdAllegatiEmailDataGridViewTextBoxColumn.ReadOnly = true;
             this.pwdAllegatiEmailDataGridViewTextBoxColumn.Width = 112;
             // 
+            // jLabelJLabelClientiBindingSource
+            // 
+            this.jLabelJLabelClientiBindingSource.DataMember = "JLabel_JLabel_Clienti";
+            this.jLabelJLabelClientiBindingSource.DataSource = this.jLabelBindingSource;
+            // 
+            // jLabelTableAdapter
+            // 
+            this.jLabelTableAdapter.ClearBeforeFill = true;
+            // 
+            // jLabel_ClientiTableAdapter
+            // 
+            this.jLabel_ClientiTableAdapter.ClearBeforeFill = true;
+            // 
+            // gCCustomersBindingSource
+            // 
+            this.gCCustomersBindingSource.DataSource = this.dB_FactoryDataSet;
+            this.gCCustomersBindingSource.Position = 0;
+            // 
             // gC_CustomersTableAdapter
             // 
             this.gC_CustomersTableAdapter.ClearBeforeFill = true;
@@ -1098,10 +1103,10 @@
             this.dg_Ordini_Layout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dg_Ordini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jLabelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).EndInit();
             this.dg_Clienti_Layout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jLabelJLabelClientiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCCustomersBindingSource)).EndInit();
             this.ResumeLayout(false);
 

@@ -123,14 +123,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_FactoryDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="GFunc.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="UC_form_Clienti.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UC_form_Clienti.Designer.cs">
-      <DependentUpon>UC_form_Clienti.cs</DependentUpon>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_form_Gecko.cs">
       <SubType>UserControl</SubType>
@@ -143,6 +143,12 @@
     </Compile>
     <Compile Include="UC_form_Paths.Designer.cs">
       <DependentUpon>UC_form_Paths.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_form_PopolaDB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_form_PopolaDB.Designer.cs">
+      <DependentUpon>UC_form_PopolaDB.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_form_Spedizioni.cs">
       <SubType>UserControl</SubType>
@@ -183,14 +189,17 @@
     <Compile Include="UC_form_Prodotti.Designer.cs">
       <DependentUpon>UC_form_Prodotti.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UC_form_Clienti.resx">
-      <DependentUpon>UC_form_Clienti.cs</DependentUpon>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_form_Gecko.resx">
       <DependentUpon>UC_form_Gecko.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_form_Paths.resx">
       <DependentUpon>UC_form_Paths.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_form_PopolaDB.resx">
+      <DependentUpon>UC_form_PopolaDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_form_Spedizioni.resx">
       <DependentUpon>UC_form_Spedizioni.cs</DependentUpon>
@@ -228,9 +237,9 @@
     </None>
     <None Include="DB_FactoryDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DB_FactoryDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <LastGenOutput>DB_FactoryDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="DB_FactoryDataSet.xss">
       <DependentUpon>DB_FactoryDataSet.xsd</DependentUpon>

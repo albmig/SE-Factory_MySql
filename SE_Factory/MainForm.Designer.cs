@@ -260,7 +260,7 @@
             this.menu_btn_Clienti.Size = new System.Drawing.Size(150, 42);
             this.menu_btn_Clienti.Style = MetroFramework.MetroColorStyle.White;
             this.menu_btn_Clienti.TabIndex = 6;
-            this.menu_btn_Clienti.Text = "Conv. Clienti";
+            this.menu_btn_Clienti.Text = "Popola DB";
             this.menu_btn_Clienti.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.menu_btn_Clienti.Theme = MetroFramework.MetroThemeStyle.Light;
             this.menu_btn_Clienti.TileImage = ((System.Drawing.Image)(resources.GetObject("menu_btn_Clienti.TileImage")));
