@@ -60,7 +60,7 @@ namespace SE_Factory
             //public bool isCntr8AC;
         }
 
-        bool ArticoloDaScrivere = false; 
+        bool ArticoloDaScrivere = false;
         int NumCliToAdd = 0;
         int NumKitToAdd = 0;
         int NumArtToAdd = 0;
@@ -85,20 +85,17 @@ namespace SE_Factory
         {
             lab_clienti.Text = "";
             lab_articoli.Text = "";
+            lab_Conv_Art.Text = "";
 
             jLabelBindingSource.Filter = "DATA_RICHIESTA_CONSEGNA <> '30/12/1899'";
             jLabelBindingSource.Sort = "DATA_RICHIESTA_CONSEGNA ASC, NUMERO_ORDINE ASC, NUMERO_RIGA ASC";
 
-            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.JLabel'. È possibile spostarla o rimuoverla se necessario.
             this.jLabelTableAdapter.Fill(this.dB_FactoryDataSet.JLabel);
-            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.JLabel_Clienti'. È possibile spostarla o rimuoverla se necessario.
             this.jLabel_ClientiTableAdapter.Fill(this.dB_FactoryDataSet.JLabel_Clienti);
-            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
             this.gC_CustomersTableAdapter.Fill(this.dB_FactoryDataSet.GC_Customers);
-            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
             this.jLabel_fullTableAdapter.Fill(this.dB_FactoryDataSet.JLabel_full);
-            // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
             this.gC_DevicesTableAdapter.Fill(this.dB_FactoryDataSet.GC_Devices);
+            this.gC_KitTableAdapter.Fill(this.dB_FactoryDataSet.GC_Kit);
 
             SplashDB.Close();
             splashclosed = true;
@@ -130,9 +127,6 @@ namespace SE_Factory
         {
             foreach (DataRow JLabelFull in dB_FactoryDataSet.JLabel_full.Rows)
             {
-                //device NewDevice = new device();
-                //NewDevice.Dev_CodiceItem = (string)JLabelFull["CODICE_SISTEMA"].ToString().TrimEnd(' ');
-
                 //Ricerca su Devices
                 string key = (string)JLabelFull["CODICE_SISTEMA"].ToString().TrimEnd(' ');
                 string filter = "Dev_CodiceItem = " + "'" + key + "'";
@@ -191,7 +185,7 @@ namespace SE_Factory
                 }
             }
 
-            dB_FactoryDataSet.AcceptChanges();
+            dB_FactoryDataSet.GC_Customers.AcceptChanges();
         }
 
         private void verificaArchiviToolStripMenuItem_Click(object sender, EventArgs e)
@@ -206,13 +200,21 @@ namespace SE_Factory
 
         private void update_Articoli_Click(object sender, EventArgs e)
         {
+            lab_Conv_Art.Text = "Conversione in corso...";
             string codicedev = "";
             foreach (DataRow JLabelFull in dB_FactoryDataSet.JLabel_full.Rows)
             {
                 codicedev = (string)JLabelFull["CODICE_SISTEMA"].ToString().TrimEnd(' ');
+                if ((codicedev == "XS381PXSE011X") || (codicedev == "XS182RBMC281X") || (codicedev == "XS291RFSE031X") || (codicedev == "XS381PXSE021X"))
+                {
+                }
                 device NewDevice = new device();
                 NewDevice.Dev_CodiceItem = codicedev;
                 NewDevice.Dev_DescItem = (string)JLabelFull["DESCREST_SISTEMA"].ToString().TrimEnd(' ');
+                if (NewDevice.Dev_DescItem == "")
+                {
+                    NewDevice.Dev_DescItem = (string)JLabelFull["DESCR_SISTEMA"].ToString().TrimEnd(' ');
+                }
                 NewDevice.Dev_Firmware = (string)JLabelFull["SOFTWARE"].ToString().TrimEnd(' ');
 
                 NewDevice.isPalm = GFunc.isPalm(codicedev);
@@ -276,35 +278,36 @@ namespace SE_Factory
                     NewDevice.isSmartLine = false;
                 }
 
-                if (!ArticoloDaScrivere)
+                if ((!ArticoloDaScrivere) || ((NewDevice.Dev_FamProd != 7) && (NewDevice.Dev_FamProd != 8)))
                 {
                     continue;
                 }
 
                 //Ricerca su Devices
-                //string filter = "Dev_CodiceItem = " + "'" + codicedev + "'";
-                //dB_FactoryDataSet.GC_Devices.PrimaryKey = new DataColumn[] { dB_FactoryDataSet.GC_Devices.Columns["Dev_CodiceItem"] };
-                DataRow DBF_row = dB_FactoryDataSet.GC_Devices.FindByDev_CodiceItem(codicedev);
-                //DataRow DBF_row = dB_FactoryDataSet.GC_Devices.Rows.Find(codicedev);
-                //DataRow[] DBF_row = dB_FactoryDataSet.GC_Devices.Select(filter);
+                DataRow DBF_row = dB_FactoryDataSet.GC_Devices.Rows.Find(codicedev);
                 if (DBF_row != null) // verifica contenuti
                 {
+                    DBF_row.SetModified();
+                    DBF_row.BeginEdit();
                     DBF_row["Dev_FamProd"] = NewDevice.Dev_FamProd;
                     DBF_row["Dev_CodiceItem"] = NewDevice.Dev_CodiceItem;
                     DBF_row["Dev_DescItem"] = NewDevice.Dev_DescItem;
                     DBF_row["Dev_Firmware"] = NewDevice.Dev_Firmware;
                     DBF_row["Dev_StartDateFW"] = NewDevice.Dev_StartDateFW;
                     DBF_row["Dev_EndDateFW"] = NewDevice.Dev_EndDateFW;
+                    DBF_row.EndEdit();
                     //gC_DevicesTableAdapter.Update(DBF_row);
                     try
                     {
-                        this.Validate();
-                        this.gCDevicesBindingSource.EndEdit();
                         this.gC_DevicesTableAdapter.Update(DBF_row);
                     }
-                    catch (System.Exception ex)
+                    //catch (System.Exception ex)
+                    //{
+                    //    //MessageBox.Show("Error");
+                    //}
+                    catch (DBConcurrencyException exc)
                     {
-                        //MessageBox.Show("Error");
+
                     }
                 }
                 else // scrivi nuovo record
@@ -319,8 +322,59 @@ namespace SE_Factory
                     dB_FactoryDataSet.GC_Devices.Rows.Add(DBF_newrow);
                     gC_DevicesTableAdapter.Update(DBF_newrow);
                 }
+                dB_FactoryDataSet.GC_Devices.AcceptChanges();
+
+                // Scrittura KIT - I° passaggio - cancellazione
+                codicedev = "";
+                foreach (DataRow JLabelFull_Del in dB_FactoryDataSet.JLabel_full.Rows)
+                {
+                    codicedev = (string)JLabelFull_Del["CODICE_KIT"].ToString().TrimEnd(' ');
+
+                    DataRow[] rowstodelete = dB_FactoryDataSet.GC_Kit.Select("Kit_Composto = " + "'" + codicedev +  "'");
+                    foreach (var drow in rowstodelete)
+                    {
+                        drow.Delete();
+                    }
+                }
+                dB_FactoryDataSet.GC_Kit.AcceptChanges();
+
+                // Scrittura KIT - II° passaggio - scrittura
+                codicedev = "";
+                foreach (DataRow JLabelFull_Ins in dB_FactoryDataSet.JLabel_full.Rows)
+                {
+                    DataRow Kit_newrow = dB_FactoryDataSet.GC_Kit.NewRow();
+                    Kit_newrow["Kit_Composto"] = JLabelFull_Ins["CODICE_KIT"];
+                    Kit_newrow["Kit_Componente"] = JLabelFull_Ins["CODICE_SISTEMA"];
+                    //Verifica se presente kit
+                    if ((string)Kit_newrow["Kit_Composto"] =="")
+                    {
+                        continue;
+                    }
+
+                    string filtro = "Kit_Composto = " + "'" + (string)Kit_newrow["Kit_Composto"] + "' AND Kit_Componente = " + "'" + (string)Kit_newrow["Kit_Componente"] + "'";
+                    DataRow[] kit_exisistingrows = dB_FactoryDataSet.GC_Kit.Select(filtro);
+                    if (kit_exisistingrows.Count() >0)
+                    {
+                        continue;
+                    }
+
+                    Kit_newrow["Kit_DescComposto"] = JLabelFull_Ins["DESCREST_KIT"];
+                    if ((string)Kit_newrow["Kit_DescComposto"]=="")
+                    {
+                        Kit_newrow["Kit_DescComposto"] = JLabelFull_Ins["DESCR_KIT"];
+                    }
+                    Kit_newrow["Kit_Componente"] = JLabelFull_Ins["CODICE_SISTEMA"];
+                    decimal qta_o = (decimal)JLabelFull_Ins["QTA_ORDINATA"];
+                    decimal qta_k = (decimal)JLabelFull_Ins["QTA_ORDINATA_KIT"];
+                    int qtaint = (int)qta_o / (int)qta_k;
+                    Kit_newrow["Kit_Qta"] = qtaint;
+                    dB_FactoryDataSet.GC_Kit.Rows.Add(Kit_newrow);
+                    gC_KitTableAdapter.Update(Kit_newrow);
+                }
+                dB_FactoryDataSet.GC_Kit.AcceptChanges();
             }
 
+            lab_Conv_Art.Text = "";
         }
     }
 }

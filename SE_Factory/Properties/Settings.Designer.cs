@@ -127,17 +127,5 @@ namespace SE_Factory.Properties {
                 return ((string)(this["OPEN_Connection"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=34.65.242.38;user id=sa;certificatefile=C:\\Users\\albmi\\Desktop\\CoDiNg\\SE-F" +
-            "actory_MySql\\Certificates\\pfx\\client-cert.pfx;database=DB_Factory;persistsecurit" +
-            "yinfo=True;allowuservariables=True")]
-        public string DB_FactoryConnectionString {
-            get {
-                return ((string)(this["DB_FactoryConnectionString"]));
-            }
-        }
     }
 }

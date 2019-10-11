@@ -4,6 +4,10 @@
 
     partial class DB_FactoryDataSet
     {
+        partial class GC_KitDataTable
+        {
+        }
+
         partial class NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESADataTable
         {
         }

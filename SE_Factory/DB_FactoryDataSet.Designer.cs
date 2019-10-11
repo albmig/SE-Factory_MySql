@@ -8150,8 +8150,7 @@ namespace SE_Factory {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDev_CodiceItem}, true));
                 this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = -1;
-                this.columnId.AutoIncrementStep = -1;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnDev_FamProd.AllowDBNull = false;
                 this.columnDev_CodiceItem.AllowDBNull = false;
@@ -8302,8 +8301,6 @@ namespace SE_Factory {
             
             private global::System.Data.DataColumn columnKit_Qta;
             
-            private global::System.Data.DataColumn columnGC_Kitcol;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public GC_KitDataTable() {
@@ -8379,14 +8376,6 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn GC_KitcolColumn {
-                get {
-                    return this.columnGC_Kitcol;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8422,15 +8411,14 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public GC_KitRow AddGC_KitRow(string Kit_Composto, string Kit_DescComposto, string Kit_Componente, int Kit_Qta, string GC_Kitcol) {
+            public GC_KitRow AddGC_KitRow(string Kit_Composto, string Kit_DescComposto, string Kit_Componente, int Kit_Qta) {
                 GC_KitRow rowGC_KitRow = ((GC_KitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Kit_Composto,
                         Kit_DescComposto,
                         Kit_Componente,
-                        Kit_Qta,
-                        GC_Kitcol};
+                        Kit_Qta};
                 rowGC_KitRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGC_KitRow);
                 return rowGC_KitRow;
@@ -8465,7 +8453,6 @@ namespace SE_Factory {
                 this.columnKit_DescComposto = base.Columns["Kit_DescComposto"];
                 this.columnKit_Componente = base.Columns["Kit_Componente"];
                 this.columnKit_Qta = base.Columns["Kit_Qta"];
-                this.columnGC_Kitcol = base.Columns["GC_Kitcol"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8481,19 +8468,16 @@ namespace SE_Factory {
                 base.Columns.Add(this.columnKit_Componente);
                 this.columnKit_Qta = new global::System.Data.DataColumn("Kit_Qta", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKit_Qta);
-                this.columnGC_Kitcol = new global::System.Data.DataColumn("GC_Kitcol", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGC_Kitcol);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = -1;
-                this.columnId.AutoIncrementStep = -1;
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
+                this.columnKit_Composto.AllowDBNull = false;
                 this.columnKit_Composto.MaxLength = 15;
-                this.columnKit_DescComposto.MaxLength = 85;
+                this.columnKit_DescComposto.MaxLength = 21845;
                 this.columnKit_Componente.MaxLength = 15;
-                this.columnGC_Kitcol.MaxLength = 45;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16253,12 +16237,7 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Kit_Composto {
                 get {
-                    try {
-                        return ((string)(this[this.tableGC_Kit.Kit_CompostoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'Kit_Composto\' nella tabella \'GC_Kit\' è DBNull.", e);
-                    }
+                    return ((string)(this[this.tableGC_Kit.Kit_CompostoColumn]));
                 }
                 set {
                     this[this.tableGC_Kit.Kit_CompostoColumn] = value;
@@ -16315,34 +16294,6 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string GC_Kitcol {
-                get {
-                    try {
-                        return ((string)(this[this.tableGC_Kit.GC_KitcolColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'GC_Kitcol\' nella tabella \'GC_Kit\' è DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGC_Kit.GC_KitcolColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsKit_CompostoNull() {
-                return this.IsNull(this.tableGC_Kit.Kit_CompostoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetKit_CompostoNull() {
-                this[this.tableGC_Kit.Kit_CompostoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsKit_DescCompostoNull() {
                 return this.IsNull(this.tableGC_Kit.Kit_DescCompostoColumn);
             }
@@ -16375,18 +16326,6 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetKit_QtaNull() {
                 this[this.tableGC_Kit.Kit_QtaColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsGC_KitcolNull() {
-                return this.IsNull(this.tableGC_Kit.GC_KitcolColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetGC_KitcolNull() {
-                this[this.tableGC_Kit.GC_KitcolColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -25959,11 +25898,12 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             tableMapping.ColumnMappings.Add("Kit_DescComposto", "Kit_DescComposto");
             tableMapping.ColumnMappings.Add("Kit_Componente", "Kit_Componente");
             tableMapping.ColumnMappings.Add("Kit_Qta", "Kit_Qta");
-            tableMapping.ColumnMappings.Add("GC_Kitcol", "GC_Kitcol");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `GC_Kit` WHERE ((`Id` = @p1) AND ((@p2 = 1 AND `Kit_Composto` IS NULL) OR (`Kit_Composto` = @p3)) AND ((@p4 = 1 AND `Kit_DescComposto` IS NULL) OR (`Kit_DescComposto` = @p5)) AND ((@p6 = 1 AND `Kit_Componente` IS NULL) OR (`Kit_Componente` = @p7)) AND ((@p8 = 1 AND `Kit_Qta` IS NULL) OR (`Kit_Qta` = @p9)) AND ((@p10 = 1 AND `GC_Kitcol` IS NULL) OR (`GC_Kitcol` = @p11)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `GC_Kit` WHERE ((`Id` = @p1) AND (`Kit_Composto` = @p2) AND ((@p3 = 1" +
+                " AND `Kit_Componente` IS NULL) OR (`Kit_Componente` = @p4)) AND ((@p5 = 1 AND `K" +
+                "it_Qta` IS NULL) OR (`Kit_Qta` = @p6)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -25975,15 +25915,6 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Kit_Composto";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -25991,76 +25922,43 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
+            param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Kit_DescComposto";
+            param.SourceColumn = "Kit_Componente";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Kit_DescComposto";
+            param.SourceColumn = "Kit_Componente";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "Kit_Qta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Kit_Componente";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "Kit_Componente";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
             param.SourceColumn = "Kit_Qta";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p9";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Kit_Qta";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p10";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "GC_Kitcol";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p11";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "GC_Kitcol";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO `GC_Kit` (`Kit_Composto`, `Kit_DescComposto`, `Kit_Componente`, `Kit_" +
-                "Qta`, `GC_Kitcol`) VALUES (@p1, @p2, @p3, @p4, @p5)";
+                "Qta`) VALUES (@p1, @p2, @p3, @p4)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -26089,16 +25987,9 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             param.IsNullable = true;
             param.SourceColumn = "Kit_Qta";
             this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "GC_Kitcol";
-            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `GC_Kit` SET `Kit_Composto` = @p1, `Kit_DescComposto` = @p2, `Kit_Componente` = @p3, `Kit_Qta` = @p4, `GC_Kitcol` = @p5 WHERE ((`Id` = @p6) AND ((@p7 = 1 AND `Kit_Composto` IS NULL) OR (`Kit_Composto` = @p8)) AND ((@p9 = 1 AND `Kit_DescComposto` IS NULL) OR (`Kit_DescComposto` = @p10)) AND ((@p11 = 1 AND `Kit_Componente` IS NULL) OR (`Kit_Componente` = @p12)) AND ((@p13 = 1 AND `Kit_Qta` IS NULL) OR (`Kit_Qta` = @p14)) AND ((@p15 = 1 AND `GC_Kitcol` IS NULL) OR (`GC_Kitcol` = @p16)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `GC_Kit` SET `Kit_Composto` = @p1, `Kit_DescComposto` = @p2, `Kit_Componente` = @p3, `Kit_Qta` = @p4 WHERE ((`Id` = @p5) AND (`Kit_Composto` = @p6) AND ((@p7 = 1 AND `Kit_Componente` IS NULL) OR (`Kit_Componente` = @p8)) AND ((@p9 = 1 AND `Kit_Qta` IS NULL) OR (`Kit_Qta` = @p10)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -26129,13 +26020,6 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "GC_Kitcol";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -26143,11 +26027,19 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "Kit_Composto";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Kit_Composto";
+            param.SourceColumn = "Kit_Componente";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -26156,7 +26048,7 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Kit_Composto";
+            param.SourceColumn = "Kit_Componente";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -26164,66 +26056,16 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "Kit_DescComposto";
+            param.SourceColumn = "Kit_Qta";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "Kit_DescComposto";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p11";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Kit_Componente";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p12";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "Kit_Componente";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p13";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Kit_Qta";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p14";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Kit_Qta";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p15";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "GC_Kitcol";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p16";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "GC_Kitcol";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -26232,7 +26074,7 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.DB_FactoryConnectionString;
+            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.GCP_Connection;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26241,8 +26083,8 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `Id`, `Kit_Composto`, `Kit_DescComposto`, `Kit_Componente`, `Kit_Qta`, `GC" +
-                "_Kitcol` FROM `GC_Kit`";
+            this._commandCollection[0].CommandText = "SELECT `Id`, `Kit_Composto`, `Kit_DescComposto`, `Kit_Componente`, `Kit_Qta` FROM" +
+                " `GC_Kit`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -26303,47 +26145,29 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, string p3, string p5, string p7, global::System.Nullable<int> p9, string p11) {
+        public virtual int Delete(int p1, string p2, string p4, global::System.Nullable<int> p6) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
-            if ((p3 == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((p2 == null)) {
+                throw new global::System.ArgumentNullException("p2");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(p3));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(p2));
             }
-            if ((p5 == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(p5));
-            }
-            if ((p7 == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((p4 == null)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(p7));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(p4));
             }
-            if ((p9.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(p9.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((p11 == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((p6.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(p6.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(p11));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -26365,9 +26189,9 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string p1, string p2, string p3, global::System.Nullable<int> p4, string p5) {
+        public virtual int Insert(string p1, string p2, string p3, global::System.Nullable<int> p4) {
             if ((p1 == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
@@ -26390,12 +26214,6 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((p5 == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p5));
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -26416,9 +26234,9 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string p1, string p2, string p3, global::System.Nullable<int> p4, string p5, int p6, string p8, string p10, string p12, global::System.Nullable<int> p14, string p16) {
+        public virtual int Update(string p1, string p2, string p3, global::System.Nullable<int> p4, int p5, string p6, string p8, global::System.Nullable<int> p10) {
             if ((p1 == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p1");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
@@ -26441,13 +26259,13 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((p5 == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p5));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
             if ((p8 == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
@@ -26456,37 +26274,13 @@ WHERE        (CODICE_ASSIEME LIKE 'XKIT%')";
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(p8));
             }
-            if ((p10 == null)) {
+            if ((p10.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(p10.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(p10));
-            }
-            if ((p12 == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(p12));
-            }
-            if ((p14.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(p14.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((p16 == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(p16));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
