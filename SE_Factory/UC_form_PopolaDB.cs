@@ -326,17 +326,34 @@ namespace SE_Factory
 
                 // Scrittura KIT - I° passaggio - cancellazione
                 codicedev = "";
+                dB_FactoryDataSet.GC_Kit.AcceptChanges();
                 foreach (DataRow JLabelFull_Del in dB_FactoryDataSet.JLabel_full.Rows)
                 {
                     codicedev = (string)JLabelFull_Del["CODICE_KIT"].ToString().TrimEnd(' ');
-
-                    DataRow[] rowstodelete = dB_FactoryDataSet.GC_Kit.Select("Kit_Composto = " + "'" + codicedev +  "'");
-                    foreach (var drow in rowstodelete)
+                    string sel = "Kit_Composto = " + "'" + codicedev + "'";
+                    DataRow[] rowstodelete = dB_FactoryDataSet.GC_Kit.Select(sel);
+                    foreach (DataRow rowtd in rowstodelete)
                     {
-                        drow.Delete();
+                        int key = (int)rowtd["Id"];
+
+                        rowtd.Delete();
+                        dB_FactoryDataSet.GC_Kit.AcceptChanges();
+                        gC_KitTableAdapter.Update(rowtd);
+
+                        gC_KitTableAdapter.DeleteQuery(key);
+                            
+                        //dB_FactoryDataSet.GC_Kit.Rows.Remove(rowtd);
+                        //dB_FactoryDataSet.GC_Kit.AcceptChanges();
+                        //int key = (int)rowtd["Id"];
+                        //gC_KitTableAdapter.Update(rowtd);
+                        //rowtd.Delete();
+                        //dB_FactoryDataSet.GC_Kit.AcceptChanges();
+                        //gC_KitTableAdapter.Update(rowtd);
                     }
+                    dB_FactoryDataSet.GC_Kit.AcceptChanges();
+                    gCKitBindingSource.EndEdit();
+                    gC_KitTableAdapter.Update(dB_FactoryDataSet.GC_Kit);
                 }
-                dB_FactoryDataSet.GC_Kit.AcceptChanges();
 
                 // Scrittura KIT - II° passaggio - scrittura
                 codicedev = "";
@@ -346,20 +363,25 @@ namespace SE_Factory
                     Kit_newrow["Kit_Composto"] = JLabelFull_Ins["CODICE_KIT"];
                     Kit_newrow["Kit_Componente"] = JLabelFull_Ins["CODICE_SISTEMA"];
                     //Verifica se presente kit
-                    if ((string)Kit_newrow["Kit_Composto"] =="")
+                    if ((string)Kit_newrow["Kit_Composto"] == "")
                     {
                         continue;
                     }
 
                     string filtro = "Kit_Composto = " + "'" + (string)Kit_newrow["Kit_Composto"] + "' AND Kit_Componente = " + "'" + (string)Kit_newrow["Kit_Componente"] + "'";
+                    if (((string)Kit_newrow["Kit_Composto"] == "XKITAN081XXXA") && ((string)Kit_newrow["Kit_Componente"] == "XS201RBAN011A"))
+                    {
+
+                    }
+
                     DataRow[] kit_exisistingrows = dB_FactoryDataSet.GC_Kit.Select(filtro);
-                    if (kit_exisistingrows.Count() >0)
+                    if (kit_exisistingrows.Count() > 0)
                     {
                         continue;
                     }
 
                     Kit_newrow["Kit_DescComposto"] = JLabelFull_Ins["DESCREST_KIT"];
-                    if ((string)Kit_newrow["Kit_DescComposto"]=="")
+                    if ((string)Kit_newrow["Kit_DescComposto"] == "")
                     {
                         Kit_newrow["Kit_DescComposto"] = JLabelFull_Ins["DESCR_KIT"];
                     }

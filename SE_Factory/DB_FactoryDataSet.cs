@@ -24,4 +24,7 @@
 
 namespace SE_Factory.DB_FactoryDataSetTableAdapters
 {
+    partial class GC_KitTableAdapter
+    {
+    }
 }
