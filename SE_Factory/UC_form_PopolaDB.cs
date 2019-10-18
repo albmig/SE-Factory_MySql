@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Syncfusion.Windows.Forms.Tools;
 using Syncfusion.Drawing;
 using System.Reflection;
+using System.Data.SqlClient;
 
 namespace SE_Factory
 {
@@ -18,13 +19,17 @@ namespace SE_Factory
         public class device
         {
             public int Dev_FamProd;
-            public string Dev_CodiceItem;
-            public string Dev_DescItem;
+            public string Dev_CodiceKit;
+            public string Dev_DescKit;
+            public string Dev_CodiceComponente;
+            public string Dev_DescComponente;
             public string Dev_Firmware;
-            public DateTime Dev_StartDateFW;
-            public DateTime Dev_EndDateFW;
+            public DateTime Dev_StartDate;
+            public DateTime Dev_EndDate;
+            public int Dev_Qta;
             public bool isPalm;
             public bool isCntr;
+            public bool isCable;
             public bool isSmartLine;
             //public bool is433;
             //public bool is868;
@@ -60,7 +65,6 @@ namespace SE_Factory
             //public bool isCntr8AC;
         }
 
-        bool ArticoloDaScrivere = false;
         int NumCliToAdd = 0;
         int NumKitToAdd = 0;
         int NumArtToAdd = 0;
@@ -90,12 +94,12 @@ namespace SE_Factory
             jLabelBindingSource.Filter = "DATA_RICHIESTA_CONSEGNA <> '30/12/1899'";
             jLabelBindingSource.Sort = "DATA_RICHIESTA_CONSEGNA ASC, NUMERO_ORDINE ASC, NUMERO_RIGA ASC";
 
-            this.jLabelTableAdapter.Fill(this.dB_FactoryDataSet.JLabel);
-            this.jLabel_ClientiTableAdapter.Fill(this.dB_FactoryDataSet.JLabel_Clienti);
+            //this.jLabelTableAdapter.Fill(this.dB_FactoryDataSet.JLabel);
+            //this.jLabel_ClientiTableAdapter.Fill(this.dB_FactoryDataSet.JLabel_Clienti);
             this.gC_CustomersTableAdapter.Fill(this.dB_FactoryDataSet.GC_Customers);
-            this.jLabel_fullTableAdapter.Fill(this.dB_FactoryDataSet.JLabel_full);
             this.gC_DevicesTableAdapter.Fill(this.dB_FactoryDataSet.GC_Devices);
             this.gC_KitTableAdapter.Fill(this.dB_FactoryDataSet.GC_Kit);
+            this.jLabel_fullTableAdapter.Fill(this.dB_FactoryDataSet.JLabel_full);
 
             SplashDB.Close();
             splashclosed = true;
@@ -200,203 +204,268 @@ namespace SE_Factory
 
         private void update_Articoli_Click(object sender, EventArgs e)
         {
+            string codicekitlavorato = "";
+            string codicesistemalavorato = "";
+            bool solosistema = false;
             lab_Conv_Art.Text = "Conversione in corso...";
-            string codicedev = "";
-            foreach (DataRow JLabelFull in dB_FactoryDataSet.JLabel_full.Rows)
+            lab_Conv_Art.Refresh();
+
+            DataView JlabelFull_DV = dB_FactoryDataSet.JLabel_full.DefaultView;
+            JlabelFull_DV.Sort = "CODICE_KIT ASC, CODICE_SISTEMA ASC";
+            foreach (DataRowView JLabelFull in JlabelFull_DV)
             {
-                codicedev = (string)JLabelFull["CODICE_SISTEMA"].ToString().TrimEnd(' ');
-                if ((codicedev == "XS381PXSE011X") || (codicedev == "XS182RBMC281X") || (codicedev == "XS291RFSE031X") || (codicedev == "XS381PXSE021X"))
-                {
-                }
                 device NewDevice = new device();
-                NewDevice.Dev_CodiceItem = codicedev;
-                NewDevice.Dev_DescItem = (string)JLabelFull["DESCREST_SISTEMA"].ToString().TrimEnd(' ');
-                if (NewDevice.Dev_DescItem == "")
-                {
-                    NewDevice.Dev_DescItem = (string)JLabelFull["DESCR_SISTEMA"].ToString().TrimEnd(' ');
-                }
-                NewDevice.Dev_Firmware = (string)JLabelFull["SOFTWARE"].ToString().TrimEnd(' ');
+                NewDevice.Dev_CodiceKit = (string)JLabelFull["CODICE_KIT"].ToString().TrimEnd(' ');
+                NewDevice.Dev_DescKit = (string)JLabelFull["DESCREST_KIT"].ToString().TrimEnd(' ');
+                if (NewDevice.Dev_DescKit == "") { NewDevice.Dev_DescKit = (string)JLabelFull["DESCR_KIT"].ToString().TrimEnd(' '); }
 
-                NewDevice.isPalm = GFunc.isPalm(codicedev);
-                NewDevice.isCntr = GFunc.isCntr(codicedev);
+                lab_Conv_Art.Text = NewDevice.Dev_CodiceKit;
+                if (lab_Conv_Art.Text=="") { lab_Conv_Art.Text = (string)JLabelFull["CODICE_SISTEMA"].ToString().TrimEnd(' '); }
+                lab_Conv_Art.Refresh();
 
-                if ((!NewDevice.isPalm) && (!NewDevice.isCntr))
-                {
-                    continue;
-                }
+                //Settaggio per lavorazione solo sistema (non kit+sistema)
+                if (NewDevice.Dev_CodiceKit == "") { solosistema = true; } else { solosistema = false; }
 
-                ArticoloDaScrivere = false;
 
-                //elimino articoli fuori standard
-                if (GFunc.isCarOil(codicedev) || GFunc.isCradle(codicedev))
-                {
-                    ArticoloDaScrivere = false;
-                    NewDevice.isSmartLine = false;
-                }
-                else
-                {
-                    ArticoloDaScrivere = true;
-                    NewDevice.isSmartLine = false;
-                }
+                if ((!solosistema) && (NewDevice.Dev_CodiceKit == codicekitlavorato)) { continue; }
+                if ((solosistema) && (NewDevice.Dev_CodiceComponente == codicesistemalavorato)) { continue; }
 
-                //test aggiuntivi x definire se SmartLine (al momento non ho la famiglia)
-                if (NewDevice.isPalm && (GFunc.isEasy(codicedev) ||
-                                         GFunc.isNimble(codicedev) ||
-                                         GFunc.isNemo(codicedev) ||
-                                         GFunc.isRescue(codicedev) ||
-                                         GFunc.isLift(codicedev) ||
-                                         GFunc.isBravo(codicedev) ||
-                                         GFunc.isPhilo(codicedev) ||
-                                         GFunc.isEasyWire(codicedev) ||
-                                         GFunc.isTrend(codicedev) ||
-                                         GFunc.isTrendB(codicedev) ||
-                                         GFunc.isTrendLCD(codicedev) ||
-                                         GFunc.isTrendWire(codicedev)))
+                //Trovato solo il codice sistema (vendita device singolo)
+                if (solosistema)
                 {
-                    NewDevice.Dev_FamProd = 7;
-                    ArticoloDaScrivere = true;
-                    NewDevice.isSmartLine = false;
-                }
+                    string codicecomp = (string)JLabelFull["CODICE_SISTEMA"].ToString().TrimEnd(' ');
+                    if (codicecomp.StartsWith("XCBL")) { NewDevice.isCable = true; } else { NewDevice.isCable = false; }
+                    if ((!codicecomp.StartsWith("XS")) && (!codicecomp.StartsWith("XX")) && (!NewDevice.isCable)) { continue; }
+                    if (codicecomp.StartsWith("XS172P")) { continue; } // verifica se cradle
 
-                if (NewDevice.isCntr && (GFunc.isEasyXII(codicedev) ||
-                                         GFunc.isCntr4(codicedev) ||
-                                         GFunc.isCntr8(codicedev) ||
-                                         GFunc.isCntr20(codicedev) ||
-                                         GFunc.isCntr20B(codicedev) ||
-                                         GFunc.isCntr32(codicedev) ||
-                                         GFunc.isMulti12(codicedev) ||
-                                         GFunc.isPowerDrive12(codicedev) ||
-                                         GFunc.isPowerDrive24(codicedev) ||
-                                         GFunc.isPowerDrive12SW(codicedev) ||
-                                         GFunc.isPowerDrive24SW(codicedev) ||
-                                         GFunc.isCntrNimble(codicedev) ||
-                                         GFunc.isCntrNimbleSW(codicedev) ||
-                                         GFunc.isCntr8AC(codicedev)))
-                {
-                    NewDevice.Dev_FamProd = 8;
-                    ArticoloDaScrivere = true;
-                    NewDevice.isSmartLine = false;
-                }
+                    NewDevice.isPalm = GFunc.isPalm(codicecomp);
+                    NewDevice.isCntr = GFunc.isCntr(codicecomp);
+                    if (((!NewDevice.isPalm) && (!NewDevice.isCntr)) && (!NewDevice.isCable)) { continue; }
 
-                if ((!ArticoloDaScrivere) || ((NewDevice.Dev_FamProd != 7) && (NewDevice.Dev_FamProd != 8)))
-                {
-                    continue;
-                }
+                    NewDevice.Dev_CodiceComponente = (string)JLabelFull["CODICE_SISTEMA"].ToString().TrimEnd(' ');
+                    NewDevice.Dev_DescComponente = (string)JLabelFull["DESCREST_SISTEMA"].ToString().TrimEnd(' ');
+                    if (NewDevice.Dev_DescComponente == "") { NewDevice.Dev_DescComponente = (string)JLabelFull["DESCR_SISTEMA"].ToString().TrimEnd(' '); }
+                    NewDevice.Dev_Firmware = (string)JLabelFull["SOFTWARE"].ToString().TrimEnd(' ');
+                    NewDevice.Dev_StartDate = DateTime.Today;
+                    NewDevice.Dev_EndDate = default(DateTime);
 
-                //Ricerca su Devices
-                DataRow DBF_row = dB_FactoryDataSet.GC_Devices.Rows.Find(codicedev);
-                if (DBF_row != null) // verifica contenuti
-                {
-                    DBF_row.SetModified();
-                    DBF_row.BeginEdit();
-                    DBF_row["Dev_FamProd"] = NewDevice.Dev_FamProd;
-                    DBF_row["Dev_CodiceItem"] = NewDevice.Dev_CodiceItem;
-                    DBF_row["Dev_DescItem"] = NewDevice.Dev_DescItem;
-                    DBF_row["Dev_Firmware"] = NewDevice.Dev_Firmware;
-                    DBF_row["Dev_StartDateFW"] = NewDevice.Dev_StartDateFW;
-                    DBF_row["Dev_EndDateFW"] = NewDevice.Dev_EndDateFW;
-                    DBF_row.EndEdit();
-                    //gC_DevicesTableAdapter.Update(DBF_row);
-                    try
+                    //test aggiuntivi x definire se SmartLine (al momento non ho la famiglia)
+                    if (NewDevice.isPalm && (GFunc.isEasy(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isNimble(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isNemo(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isRescue(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isLift(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isBravo(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isPhilo(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isEasyWire(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isTrend(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isTrendB(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isTrendLCD(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isTrendWire(NewDevice.Dev_CodiceComponente)))
                     {
-                        this.gC_DevicesTableAdapter.Update(DBF_row);
+                        NewDevice.Dev_FamProd = 7;
+                        NewDevice.isSmartLine = false;
                     }
-                    //catch (System.Exception ex)
-                    //{
-                    //    //MessageBox.Show("Error");
-                    //}
-                    catch (DBConcurrencyException exc)
-                    {
 
+                    if (NewDevice.isCntr && (GFunc.isEasyXII(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isCntr4(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isCntr8(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isCntr20(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isCntr20B(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isCntr32(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isMulti12(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isPowerDrive12(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isPowerDrive24(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isPowerDrive12SW(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isPowerDrive24SW(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isCntrNimble(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isCntrNimbleSW(NewDevice.Dev_CodiceComponente) ||
+                                             GFunc.isCntr8AC(NewDevice.Dev_CodiceComponente)))
+                    {
+                        NewDevice.Dev_FamProd = 8;
+                        NewDevice.isSmartLine = false;
+                    }
+                    if (!NewDevice.isCable)
+                    {
+                        //Verifica se presente in devices
+                        DataRow DBF_row = dB_FactoryDataSet.GC_Devices.Rows.Find(NewDevice.Dev_CodiceComponente);
+                        if (DBF_row != null) // verifica contenuti
+                        {
+                            DBF_row.SetModified();
+                            DBF_row.BeginEdit();
+                            DBF_row["Dev_FamProd"] = NewDevice.Dev_FamProd;
+                            DBF_row["Dev_CodiceItem"] = NewDevice.Dev_CodiceComponente;
+                            DBF_row["Dev_DescItem"] = NewDevice.Dev_DescComponente;
+                            DBF_row["Dev_Firmware"] = NewDevice.Dev_Firmware;
+                            DBF_row["Dev_StartDateFW"] = Convert.ToDateTime(NewDevice.Dev_StartDate);
+                            DBF_row["Dev_EndDateFW"] = Convert.ToDateTime(NewDevice.Dev_EndDate);
+                            DBF_row.EndEdit();
+                            try
+                            {
+                                dB_FactoryDataSet.GC_Devices.AcceptChanges();
+                                this.gC_DevicesTableAdapter.Update(DBF_row);
+                            }
+                            catch (DBConcurrencyException exc) { MessageBox.Show("aa"); }
+                        }
+                        else // scrivi nuovo record
+                        {
+                            DataRow DBF_newrow = dB_FactoryDataSet.GC_Devices.NewRow();
+                            DBF_newrow["Dev_FamProd"] = NewDevice.Dev_FamProd;
+                            DBF_newrow["Dev_CodiceItem"] = NewDevice.Dev_CodiceComponente;
+                            DBF_newrow["Dev_DescItem"] = NewDevice.Dev_DescComponente;
+                            DBF_newrow["Dev_Firmware"] = NewDevice.Dev_Firmware;
+                            DBF_newrow["Dev_StartDateFW"] = Convert.ToDateTime(NewDevice.Dev_StartDate);
+                            DBF_newrow["Dev_EndDateFW"] = Convert.ToDateTime(NewDevice.Dev_EndDate);
+                            dB_FactoryDataSet.GC_Devices.Rows.Add(DBF_newrow);
+                            gC_DevicesTableAdapter.Update(DBF_newrow);
+                        }
+
+                        dB_FactoryDataSet.GC_Devices.AcceptChanges();
                     }
                 }
-                else // scrivi nuovo record
-                {
-                    DataRow DBF_newrow = dB_FactoryDataSet.GC_Devices.NewRow();
-                    DBF_newrow["Dev_FamProd"] = NewDevice.Dev_FamProd;
-                    DBF_newrow["Dev_CodiceItem"] = NewDevice.Dev_CodiceItem;
-                    DBF_newrow["Dev_DescItem"] = NewDevice.Dev_DescItem;
-                    DBF_newrow["Dev_Firmware"] = NewDevice.Dev_Firmware;
-                    DBF_newrow["Dev_StartDateFW"] = NewDevice.Dev_StartDateFW;
-                    DBF_newrow["Dev_EndDateFW"] = NewDevice.Dev_EndDateFW;
-                    dB_FactoryDataSet.GC_Devices.Rows.Add(DBF_newrow);
-                    gC_DevicesTableAdapter.Update(DBF_newrow);
-                }
-                dB_FactoryDataSet.GC_Devices.AcceptChanges();
 
-                // Scrittura KIT - I° passaggio - cancellazione
-                codicedev = "";
-                dB_FactoryDataSet.GC_Kit.AcceptChanges();
-                foreach (DataRow JLabelFull_Del in dB_FactoryDataSet.JLabel_full.Rows)
+                //Trovato codice kit (vendita kit completo)
+                if (!solosistema)
                 {
-                    codicedev = (string)JLabelFull_Del["CODICE_KIT"].ToString().TrimEnd(' ');
-                    string sel = "Kit_Composto = " + "'" + codicedev + "'";
-                    DataRow[] rowstodelete = dB_FactoryDataSet.GC_Kit.Select(sel);
-                    foreach (DataRow rowtd in rowstodelete)
+                    NewDevice.Dev_Firmware = (string)JLabelFull["SOFTWARE"].ToString().TrimEnd(' ');
+
+                    //Cancello la versione di kit già presente in db
+                    if (NewDevice.Dev_CodiceKit != codicekitlavorato)
                     {
-                        int key = (int)rowtd["Id"];
+                        string sel = "Kit_Composto = " + "'" + NewDevice.Dev_CodiceKit + "'";
+                        DataRow[] rowstodelete = dB_FactoryDataSet.GC_Kit.Select(sel);
+                        foreach (DataRow rowtd in rowstodelete)
+                        {
+                            int key = (int)rowtd["Id"];
+                            gC_KitTableAdapter.DeleteQuery(key);
+                            rowtd.Delete();
+                            dB_FactoryDataSet.GC_Kit.AcceptChanges();
+                        }
+                    }
 
-                        rowtd.Delete();
-                        dB_FactoryDataSet.GC_Kit.AcceptChanges();
-                        gC_KitTableAdapter.Update(rowtd);
+                    DataTable db_esploso = new DB_FactoryDataSet.NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESADataTable();
+                    db_esploso = this.db_esplosoTableAdapter.GetDataBy(NewDevice.Dev_CodiceKit);
 
-                        gC_KitTableAdapter.DeleteQuery(key);
-                            
-                        //dB_FactoryDataSet.GC_Kit.Rows.Remove(rowtd);
-                        //dB_FactoryDataSet.GC_Kit.AcceptChanges();
-                        //int key = (int)rowtd["Id"];
-                        //gC_KitTableAdapter.Update(rowtd);
-                        //rowtd.Delete();
-                        //dB_FactoryDataSet.GC_Kit.AcceptChanges();
-                        //gC_KitTableAdapter.Update(rowtd);
+                    foreach (DataRow rigaesploso in db_esploso.Rows)
+                    {
+                        string codicecomp = rigaesploso["CODICE_COMPONENTE"].ToString().TrimEnd(' ');
+                        if (codicecomp.StartsWith("XCBL")) { NewDevice.isCable = true; } else { NewDevice.isCable = false; }
+                        if ((!codicecomp.StartsWith("XS")) && (!codicecomp.StartsWith("XX")) && (!NewDevice.isCable)) { continue; }
+                        if (codicecomp.StartsWith("XS172P")) { continue; } // verifica se cradle
+
+                        NewDevice.isPalm = GFunc.isPalm(codicecomp);
+                        NewDevice.isCntr = GFunc.isCntr(codicecomp);
+                        if (((!NewDevice.isPalm) && (!NewDevice.isCntr)) && (!NewDevice.isCable)) { continue; }
+
+                        //verifica presenza su GC_Kit
+                        string filtro = "Kit_Composto = " + "'" + NewDevice.Dev_CodiceKit + "' AND Kit_Componente = " + "'" + codicecomp + "'";
+                        DataRow[] kit_exisistingrows = dB_FactoryDataSet.GC_Kit.Select(filtro);
+                        if (kit_exisistingrows.Count() > 0) { continue; }
+
+                        NewDevice.Dev_CodiceComponente = rigaesploso["CODICE_COMPONENTE"].ToString().TrimEnd(' ');
+                        NewDevice.Dev_DescComponente = (string)rigaesploso["DESEST_COMPONENTE"].ToString().TrimEnd(' ');
+                        if (NewDevice.Dev_DescComponente == "") { NewDevice.Dev_DescComponente = (string)rigaesploso["Descrizione"].ToString().TrimEnd(' '); }
+                        NewDevice.Dev_StartDate = default(DateTime);
+                        NewDevice.Dev_EndDate = default(DateTime);
+                        if (rigaesploso["DATA_INIZIO_VALIDITA"].ToString() != "") { NewDevice.Dev_StartDate = Convert.ToDateTime(rigaesploso["DATA_INIZIO_VALIDITA"].ToString()); }
+                        if (rigaesploso["DATA_FINE_VALIDITA"].ToString() != "") { NewDevice.Dev_EndDate = Convert.ToDateTime(rigaesploso["DATA_FINE_VALIDITA"].ToString()); }
+                        NewDevice.Dev_Qta = Convert.ToInt16(rigaesploso["Quantita"]);
+
+                        //Scrittura del record
+                        DataRow Kit_newrow = dB_FactoryDataSet.GC_Kit.NewRow();
+                        Kit_newrow["Kit_Composto"] = NewDevice.Dev_CodiceKit;
+                        Kit_newrow["Kit_DescComposto"] = NewDevice.Dev_DescKit;
+                        Kit_newrow["Kit_Componente"] = NewDevice.Dev_CodiceComponente;
+                        Kit_newrow["Kit_DescComponente"] = NewDevice.Dev_DescComponente;
+                        Kit_newrow["Kit_Qta"] = NewDevice.Dev_Qta;
+                        Kit_newrow["Kit_DataInizioVal"] = NewDevice.Dev_StartDate;
+                        Kit_newrow["Kit_DataFineVal"] = NewDevice.Dev_EndDate;
+                        dB_FactoryDataSet.GC_Kit.Rows.Add(Kit_newrow);
+                        gC_KitTableAdapter.Update(Kit_newrow);
+
+                        //test aggiuntivi x definire se SmartLine (al momento non ho la famiglia)
+                        if (NewDevice.isPalm && (GFunc.isEasy(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isNimble(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isNemo(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isRescue(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isLift(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isBravo(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isPhilo(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isEasyWire(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isTrend(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isTrendB(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isTrendLCD(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isTrendWire(NewDevice.Dev_CodiceComponente)))
+                        {
+                            NewDevice.Dev_FamProd = 7;
+                            NewDevice.isSmartLine = false;
+                        }
+
+                        if (NewDevice.isCntr && (GFunc.isEasyXII(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isCntr4(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isCntr8(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isCntr20(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isCntr20B(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isCntr32(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isMulti12(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isPowerDrive12(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isPowerDrive24(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isPowerDrive12SW(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isPowerDrive24SW(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isCntrNimble(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isCntrNimbleSW(NewDevice.Dev_CodiceComponente) ||
+                                                 GFunc.isCntr8AC(NewDevice.Dev_CodiceComponente)))
+                        {
+                            NewDevice.Dev_FamProd = 8;
+                            NewDevice.isSmartLine = false;
+                        }
+
+                        if (!NewDevice.isCable)
+                        {
+                            //Verifica se presente in devices
+                            DataRow DBF_row = dB_FactoryDataSet.GC_Devices.Rows.Find(NewDevice.Dev_CodiceComponente);
+                            if (DBF_row != null) // verifica contenuti
+                            {
+                                DBF_row.SetModified();
+                                DBF_row.BeginEdit();
+                                DBF_row["Dev_FamProd"] = NewDevice.Dev_FamProd;
+                                DBF_row["Dev_CodiceItem"] = NewDevice.Dev_CodiceComponente;
+                                DBF_row["Dev_DescItem"] = NewDevice.Dev_DescComponente;
+                                DBF_row["Dev_Firmware"] = NewDevice.Dev_Firmware;
+                                DBF_row["Dev_StartDateFW"] = Convert.ToDateTime(NewDevice.Dev_StartDate);
+                                DBF_row["Dev_EndDateFW"] = Convert.ToDateTime(NewDevice.Dev_EndDate);
+                                DBF_row.EndEdit();
+                                try
+                                {
+                                    dB_FactoryDataSet.GC_Devices.AcceptChanges();
+                                    this.gC_DevicesTableAdapter.Update(DBF_row);
+                                }
+                                catch (DBConcurrencyException exc) { MessageBox.Show("aa"); }
+                            }
+                            else // scrivi nuovo record
+                            {
+                                DataRow DBF_newrow = dB_FactoryDataSet.GC_Devices.NewRow();
+                                DBF_newrow["Dev_FamProd"] = NewDevice.Dev_FamProd;
+                                DBF_newrow["Dev_CodiceItem"] = NewDevice.Dev_CodiceComponente;
+                                DBF_newrow["Dev_DescItem"] = NewDevice.Dev_DescComponente;
+                                DBF_newrow["Dev_Firmware"] = NewDevice.Dev_Firmware;
+                                DBF_newrow["Dev_StartDateFW"] = Convert.ToDateTime(NewDevice.Dev_StartDate);
+                                DBF_newrow["Dev_EndDateFW"] = Convert.ToDateTime(NewDevice.Dev_EndDate);
+                                dB_FactoryDataSet.GC_Devices.Rows.Add(DBF_newrow);
+                                gC_DevicesTableAdapter.Update(DBF_newrow);
+                            }
+                        }
                     }
                     dB_FactoryDataSet.GC_Kit.AcceptChanges();
-                    gCKitBindingSource.EndEdit();
-                    gC_KitTableAdapter.Update(dB_FactoryDataSet.GC_Kit);
+                    dB_FactoryDataSet.GC_Devices.AcceptChanges();
                 }
 
-                // Scrittura KIT - II° passaggio - scrittura
-                codicedev = "";
-                foreach (DataRow JLabelFull_Ins in dB_FactoryDataSet.JLabel_full.Rows)
-                {
-                    DataRow Kit_newrow = dB_FactoryDataSet.GC_Kit.NewRow();
-                    Kit_newrow["Kit_Composto"] = JLabelFull_Ins["CODICE_KIT"];
-                    Kit_newrow["Kit_Componente"] = JLabelFull_Ins["CODICE_SISTEMA"];
-                    //Verifica se presente kit
-                    if ((string)Kit_newrow["Kit_Composto"] == "")
-                    {
-                        continue;
-                    }
-
-                    string filtro = "Kit_Composto = " + "'" + (string)Kit_newrow["Kit_Composto"] + "' AND Kit_Componente = " + "'" + (string)Kit_newrow["Kit_Componente"] + "'";
-                    if (((string)Kit_newrow["Kit_Composto"] == "XKITAN081XXXA") && ((string)Kit_newrow["Kit_Componente"] == "XS201RBAN011A"))
-                    {
-
-                    }
-
-                    DataRow[] kit_exisistingrows = dB_FactoryDataSet.GC_Kit.Select(filtro);
-                    if (kit_exisistingrows.Count() > 0)
-                    {
-                        continue;
-                    }
-
-                    Kit_newrow["Kit_DescComposto"] = JLabelFull_Ins["DESCREST_KIT"];
-                    if ((string)Kit_newrow["Kit_DescComposto"] == "")
-                    {
-                        Kit_newrow["Kit_DescComposto"] = JLabelFull_Ins["DESCR_KIT"];
-                    }
-                    Kit_newrow["Kit_Componente"] = JLabelFull_Ins["CODICE_SISTEMA"];
-                    decimal qta_o = (decimal)JLabelFull_Ins["QTA_ORDINATA"];
-                    decimal qta_k = (decimal)JLabelFull_Ins["QTA_ORDINATA_KIT"];
-                    int qtaint = (int)qta_o / (int)qta_k;
-                    Kit_newrow["Kit_Qta"] = qtaint;
-                    dB_FactoryDataSet.GC_Kit.Rows.Add(Kit_newrow);
-                    gC_KitTableAdapter.Update(Kit_newrow);
-                }
-                dB_FactoryDataSet.GC_Kit.AcceptChanges();
+                codicekitlavorato = NewDevice.Dev_CodiceKit;
+                codicesistemalavorato = NewDevice.Dev_CodiceComponente;
             }
 
-            lab_Conv_Art.Text = "";
+            lab_Conv_Art.Text = "Conversione terminata!";
+            lab_Conv_Art.Refresh();
         }
     }
 }
