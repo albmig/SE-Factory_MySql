@@ -47,9 +47,6 @@
             this.lab_articoli = new MetroFramework.Controls.MetroLabel();
             this.update_Articoli = new Syncfusion.WinForms.Controls.SfButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lab_Conv_Art = new MetroFramework.Controls.MetroLabel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.jLabelJLabelClientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tIPOORDINECLIENTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rAGIONESOCIALEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nUMEROORDINEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,12 +76,15 @@
             this.dESCRESTSISTEMADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jLabelfullBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_FactoryDataSet = new SE_Factory.DB_FactoryDataSet();
+            this.lab_Conv_Art = new MetroFramework.Controls.MetroLabel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kitCompostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kitDescCompostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kitComponenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kitQtaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gCKitBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.jLabelJLabelClientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jLabelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jLabelTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabelTableAdapter();
             this.jLabel_ClientiTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabel_ClientiTableAdapter();
@@ -95,19 +95,22 @@
             this.db_esplosoTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESATableAdapter();
             this.gCDevicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gC_DevicesTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_DevicesTableAdapter();
+            this.gCCustomersFWBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gC_CustomersFWTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_CustomersFWTableAdapter();
             this.Popola_Layout.SuspendLayout();
             this.pan_SW_Titolo.SuspendLayout();
             this.pan_Menu_comandi.SuspendLayout();
             this.pan_Menu_exit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jLabelJLabelClientiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jLabelfullBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCKitBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jLabelJLabelClientiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jLabelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCCustomersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCDevicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gCCustomersFWBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Popola_Layout
@@ -375,39 +378,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1194, 150);
             this.dataGridView1.TabIndex = 67;
             // 
-            // lab_Conv_Art
-            // 
-            this.lab_Conv_Art.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lab_Conv_Art.AutoSize = true;
-            this.lab_Conv_Art.BackColor = System.Drawing.Color.Transparent;
-            this.Popola_Layout.SetColumnSpan(this.lab_Conv_Art, 2);
-            this.lab_Conv_Art.Location = new System.Drawing.Point(722, 104);
-            this.lab_Conv_Art.Name = "lab_Conv_Art";
-            this.lab_Conv_Art.Size = new System.Drawing.Size(81, 19);
-            this.lab_Conv_Art.TabIndex = 68;
-            this.lab_Conv_Art.Text = "metroLabel1";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.kitCompostoDataGridViewTextBoxColumn,
-            this.kitDescCompostoDataGridViewTextBoxColumn,
-            this.kitComponenteDataGridViewTextBoxColumn,
-            this.kitQtaDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.gCKitBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 293);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(114, 150);
-            this.dataGridView2.TabIndex = 69;
-            // 
-            // jLabelJLabelClientiBindingSource
-            // 
-            this.jLabelJLabelClientiBindingSource.DataMember = "JLabel_JLabel_Clienti";
-            this.jLabelJLabelClientiBindingSource.DataSource = this.jLabelBindingSource;
-            // 
             // tIPOORDINECLIENTEDataGridViewTextBoxColumn
             // 
             this.tIPOORDINECLIENTEDataGridViewTextBoxColumn.DataPropertyName = "TIPO_ORDINE_CLIENTE";
@@ -581,6 +551,34 @@
             this.dB_FactoryDataSet.DataSetName = "DB_FactoryDataSet";
             this.dB_FactoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // lab_Conv_Art
+            // 
+            this.lab_Conv_Art.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lab_Conv_Art.AutoSize = true;
+            this.lab_Conv_Art.BackColor = System.Drawing.Color.Transparent;
+            this.Popola_Layout.SetColumnSpan(this.lab_Conv_Art, 2);
+            this.lab_Conv_Art.Location = new System.Drawing.Point(722, 104);
+            this.lab_Conv_Art.Name = "lab_Conv_Art";
+            this.lab_Conv_Art.Size = new System.Drawing.Size(81, 19);
+            this.lab_Conv_Art.TabIndex = 68;
+            this.lab_Conv_Art.Text = "metroLabel1";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.kitCompostoDataGridViewTextBoxColumn,
+            this.kitDescCompostoDataGridViewTextBoxColumn,
+            this.kitComponenteDataGridViewTextBoxColumn,
+            this.kitQtaDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.gCKitBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 293);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(114, 150);
+            this.dataGridView2.TabIndex = 69;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -615,6 +613,11 @@
             // 
             this.gCKitBindingSource.DataMember = "GC_Kit";
             this.gCKitBindingSource.DataSource = this.dB_FactoryDataSet;
+            // 
+            // jLabelJLabelClientiBindingSource
+            // 
+            this.jLabelJLabelClientiBindingSource.DataMember = "JLabel_JLabel_Clienti";
+            this.jLabelJLabelClientiBindingSource.DataSource = this.jLabelBindingSource;
             // 
             // jLabelBindingSource
             // 
@@ -659,6 +662,15 @@
             // 
             this.gC_DevicesTableAdapter.ClearBeforeFill = true;
             // 
+            // gCCustomersFWBindingSource
+            // 
+            this.gCCustomersFWBindingSource.DataMember = "GC_CustomersFW";
+            this.gCCustomersFWBindingSource.DataSource = this.dB_FactoryDataSet;
+            // 
+            // gC_CustomersFWTableAdapter
+            // 
+            this.gC_CustomersFWTableAdapter.ClearBeforeFill = true;
+            // 
             // UC_form_PopolaDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,14 +689,15 @@
             this.pan_Menu_exit.ResumeLayout(false);
             this.pan_Menu_exit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jLabelJLabelClientiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jLabelfullBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCKitBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jLabelJLabelClientiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jLabelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCCustomersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCDevicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gCCustomersFWBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -755,5 +768,7 @@
         private DB_FactoryDataSetTableAdapters.NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESATableAdapter db_esplosoTableAdapter;
         private System.Windows.Forms.BindingSource gCDevicesBindingSource;
         private DB_FactoryDataSetTableAdapters.GC_DevicesTableAdapter gC_DevicesTableAdapter;
+        private System.Windows.Forms.BindingSource gCCustomersFWBindingSource;
+        private DB_FactoryDataSetTableAdapters.GC_CustomersFWTableAdapter gC_CustomersFWTableAdapter;
     }
 }

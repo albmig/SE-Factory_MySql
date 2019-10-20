@@ -27,6 +27,7 @@ namespace SE_Factory
             public DateTime Dev_StartDate;
             public DateTime Dev_EndDate;
             public int Dev_Qta;
+            public int Dev_Customer;
             public bool isPalm;
             public bool isCntr;
             public bool isCable;
@@ -95,7 +96,7 @@ namespace SE_Factory
             jLabelBindingSource.Sort = "DATA_RICHIESTA_CONSEGNA ASC, NUMERO_ORDINE ASC, NUMERO_RIGA ASC";
 
             //this.jLabelTableAdapter.Fill(this.dB_FactoryDataSet.JLabel);
-            //this.jLabel_ClientiTableAdapter.Fill(this.dB_FactoryDataSet.JLabel_Clienti);
+            this.jLabel_ClientiTableAdapter.Fill(this.dB_FactoryDataSet.JLabel_Clienti);
             this.gC_CustomersTableAdapter.Fill(this.dB_FactoryDataSet.GC_Customers);
             this.gC_DevicesTableAdapter.Fill(this.dB_FactoryDataSet.GC_Devices);
             this.gC_KitTableAdapter.Fill(this.dB_FactoryDataSet.GC_Kit);
@@ -220,15 +221,18 @@ namespace SE_Factory
                 if (NewDevice.Dev_DescKit == "") { NewDevice.Dev_DescKit = (string)JLabelFull["DESCR_KIT"].ToString().TrimEnd(' '); }
 
                 lab_Conv_Art.Text = NewDevice.Dev_CodiceKit;
-                if (lab_Conv_Art.Text=="") { lab_Conv_Art.Text = (string)JLabelFull["CODICE_SISTEMA"].ToString().TrimEnd(' '); }
+                if (lab_Conv_Art.Text == "") { lab_Conv_Art.Text = (string)JLabelFull["CODICE_SISTEMA"].ToString().TrimEnd(' '); }
                 lab_Conv_Art.Refresh();
 
                 //Settaggio per lavorazione solo sistema (non kit+sistema)
                 if (NewDevice.Dev_CodiceKit == "") { solosistema = true; } else { solosistema = false; }
 
-
                 if ((!solosistema) && (NewDevice.Dev_CodiceKit == codicekitlavorato)) { continue; }
                 if ((solosistema) && (NewDevice.Dev_CodiceComponente == codicesistemalavorato)) { continue; }
+
+                //Aggiornamento tabella Customer - Firmware
+                NewDevice.Dev_Customer = 0;
+                if ((string)JLabelFull["SOFTWARE"].ToString().TrimEnd(' ') != "") { NewDevice.Dev_Customer = FindCustomerFirmware(JLabelFull); }
 
                 //Trovato solo il codice sistema (vendita device singolo)
                 if (solosistema)
@@ -306,6 +310,8 @@ namespace SE_Factory
                                 this.gC_DevicesTableAdapter.Update(DBF_row);
                             }
                             catch (DBConcurrencyException exc) { MessageBox.Show("aa"); }
+
+                            UpdateCustomerFirmware(NewDevice.Dev_Customer, NewDevice.Dev_Firmware);
                         }
                         else // scrivi nuovo record
                         {
@@ -318,6 +324,8 @@ namespace SE_Factory
                             DBF_newrow["Dev_EndDateFW"] = Convert.ToDateTime(NewDevice.Dev_EndDate);
                             dB_FactoryDataSet.GC_Devices.Rows.Add(DBF_newrow);
                             gC_DevicesTableAdapter.Update(DBF_newrow);
+
+                            UpdateCustomerFirmware(NewDevice.Dev_Customer, NewDevice.Dev_Firmware);
                         }
 
                         dB_FactoryDataSet.GC_Devices.AcceptChanges();
@@ -441,6 +449,8 @@ namespace SE_Factory
                                     this.gC_DevicesTableAdapter.Update(DBF_row);
                                 }
                                 catch (DBConcurrencyException exc) { MessageBox.Show("aa"); }
+
+                                UpdateCustomerFirmware(NewDevice.Dev_Customer, NewDevice.Dev_Firmware);
                             }
                             else // scrivi nuovo record
                             {
@@ -453,6 +463,8 @@ namespace SE_Factory
                                 DBF_newrow["Dev_EndDateFW"] = Convert.ToDateTime(NewDevice.Dev_EndDate);
                                 dB_FactoryDataSet.GC_Devices.Rows.Add(DBF_newrow);
                                 gC_DevicesTableAdapter.Update(DBF_newrow);
+
+                                UpdateCustomerFirmware(NewDevice.Dev_Customer, NewDevice.Dev_Firmware);
                             }
                         }
                     }
@@ -466,6 +478,43 @@ namespace SE_Factory
 
             lab_Conv_Art.Text = "Conversione terminata!";
             lab_Conv_Art.Refresh();
+        }
+
+        private int FindCustomerFirmware(DataRowView RigaOrd)
+        {
+            //Trovo riga ordine in JLabel_Clienti
+            string selord = "NumOrdine = " + "'" + RigaOrd["NUMERO_ORDINE"].ToString().TrimEnd(' ') + "'" +
+                            " AND TipoOrdine = " + "'" + RigaOrd["TIPO_ORDINE_CLIENTE"].ToString().TrimEnd(' ') + "'";
+            DataRow[] TestaOrdine = dB_FactoryDataSet.JLabel_Clienti.Select(selord);
+            int codcli = 0;
+            if (TestaOrdine.Count() > 0)
+            {
+                foreach (DataRow RigaTestaOrdine in TestaOrdine)
+                {
+                    return (int)RigaTestaOrdine["CodAnagrafico"];
+                }
+            }
+            return codcli;
+        }
+
+        private void UpdateCustomerFirmware(int codcli, string codfw)
+        {
+            if (codcli == 0)
+            {
+                return;
+            }
+
+            string sel = "CFW_IdCustomer = " + "'" + codcli + "'" +
+                " AND CFW_SW_Code = " + "'" + codfw.TrimEnd(' ') + "'";
+            DataRow[] FWpresente = dB_FactoryDataSet.GC_CustomersFW.Select(sel);
+            if (FWpresente.Count() == 0)
+            {
+                DataRow DBF_newrow = dB_FactoryDataSet.GC_CustomersFW.NewRow();
+                DBF_newrow["CFW_IdCustomer"] = codcli;
+                DBF_newrow["CFW_SW_Code"] = codfw.TrimEnd(' ');
+                dB_FactoryDataSet.GC_CustomersFW.Rows.Add(DBF_newrow);
+                gC_CustomersFWTableAdapter.Update(DBF_newrow);
+            }
         }
     }
 }
