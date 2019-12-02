@@ -147,7 +147,9 @@ namespace SE_Factory
                         }
 
                     }
+#pragma warning disable CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
                     catch (System.FormatException ex)
+#pragma warning restore CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
                     {
                         continue;
                     }
@@ -165,7 +167,9 @@ namespace SE_Factory
                     {
                         anno = Int32.Parse(annovalorecella);
                     }
+#pragma warning disable CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
                     catch (FormatException ex)
+#pragma warning restore CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
                     {
                     }
 
@@ -317,7 +321,9 @@ namespace SE_Factory
                         {
                             anno = Int32.Parse(annovalorecella);
                         }
+#pragma warning disable CS0168 // La variabile 'e' è dichiarata, ma non viene mai usata
                         catch (FormatException e)
+#pragma warning restore CS0168 // La variabile 'e' è dichiarata, ma non viene mai usata
                         {
                         }
 

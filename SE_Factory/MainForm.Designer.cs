@@ -39,6 +39,8 @@
             this.menu_btn_Gecko = new MetroFramework.Controls.MetroTile();
             this.menu_spacer_06 = new MetroFramework.Controls.MetroPanel();
             this.menu_btn_Clienti = new MetroFramework.Controls.MetroTile();
+            this.menu_spacer_10 = new MetroFramework.Controls.MetroPanel();
+            this.menu_btn_FWCust = new MetroFramework.Controls.MetroTile();
             this.menu_spacer_05 = new MetroFramework.Controls.MetroPanel();
             this.menu_btn_Sw = new MetroFramework.Controls.MetroTile();
             this.menu_spacer_04 = new MetroFramework.Controls.MetroPanel();
@@ -78,6 +80,8 @@
             this.panel_Menu.Controls.Add(this.menu_btn_Gecko);
             this.panel_Menu.Controls.Add(this.menu_spacer_06);
             this.panel_Menu.Controls.Add(this.menu_btn_Clienti);
+            this.panel_Menu.Controls.Add(this.menu_spacer_10);
+            this.panel_Menu.Controls.Add(this.menu_btn_FWCust);
             this.panel_Menu.Controls.Add(this.menu_spacer_05);
             this.panel_Menu.Controls.Add(this.menu_btn_Sw);
             this.panel_Menu.Controls.Add(this.menu_spacer_04);
@@ -107,7 +111,7 @@
             this.menu_btn_Home.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menu_btn_Home.Dock = System.Windows.Forms.DockStyle.Top;
             this.menu_btn_Home.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.menu_btn_Home.Location = new System.Drawing.Point(0, 492);
+            this.menu_btn_Home.Location = new System.Drawing.Point(0, 544);
             this.menu_btn_Home.Name = "menu_btn_Home";
             this.menu_btn_Home.Size = new System.Drawing.Size(150, 42);
             this.menu_btn_Home.Style = MetroFramework.MetroColorStyle.White;
@@ -130,7 +134,7 @@
             this.menu_spacer_09.HorizontalScrollbarBarColor = true;
             this.menu_spacer_09.HorizontalScrollbarHighlightOnWheel = false;
             this.menu_spacer_09.HorizontalScrollbarSize = 10;
-            this.menu_spacer_09.Location = new System.Drawing.Point(0, 482);
+            this.menu_spacer_09.Location = new System.Drawing.Point(0, 534);
             this.menu_spacer_09.Name = "menu_spacer_09";
             this.menu_spacer_09.Size = new System.Drawing.Size(150, 10);
             this.menu_spacer_09.TabIndex = 22;
@@ -144,7 +148,7 @@
             this.menu_btn_Spedizioni.BackColor = System.Drawing.SystemColors.Control;
             this.menu_btn_Spedizioni.Dock = System.Windows.Forms.DockStyle.Top;
             this.menu_btn_Spedizioni.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.menu_btn_Spedizioni.Location = new System.Drawing.Point(0, 440);
+            this.menu_btn_Spedizioni.Location = new System.Drawing.Point(0, 492);
             this.menu_btn_Spedizioni.Name = "menu_btn_Spedizioni";
             this.menu_btn_Spedizioni.Size = new System.Drawing.Size(150, 42);
             this.menu_btn_Spedizioni.Style = MetroFramework.MetroColorStyle.White;
@@ -167,7 +171,7 @@
             this.menu_spacer_08.HorizontalScrollbarBarColor = true;
             this.menu_spacer_08.HorizontalScrollbarHighlightOnWheel = false;
             this.menu_spacer_08.HorizontalScrollbarSize = 10;
-            this.menu_spacer_08.Location = new System.Drawing.Point(0, 430);
+            this.menu_spacer_08.Location = new System.Drawing.Point(0, 482);
             this.menu_spacer_08.Name = "menu_spacer_08";
             this.menu_spacer_08.Size = new System.Drawing.Size(150, 10);
             this.menu_spacer_08.TabIndex = 20;
@@ -181,7 +185,7 @@
             this.menu_btn_Ordini.BackColor = System.Drawing.SystemColors.Control;
             this.menu_btn_Ordini.Dock = System.Windows.Forms.DockStyle.Top;
             this.menu_btn_Ordini.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.menu_btn_Ordini.Location = new System.Drawing.Point(0, 388);
+            this.menu_btn_Ordini.Location = new System.Drawing.Point(0, 440);
             this.menu_btn_Ordini.Name = "menu_btn_Ordini";
             this.menu_btn_Ordini.Size = new System.Drawing.Size(150, 42);
             this.menu_btn_Ordini.Style = MetroFramework.MetroColorStyle.White;
@@ -204,7 +208,7 @@
             this.menu_spacer_07.HorizontalScrollbarBarColor = true;
             this.menu_spacer_07.HorizontalScrollbarHighlightOnWheel = false;
             this.menu_spacer_07.HorizontalScrollbarSize = 10;
-            this.menu_spacer_07.Location = new System.Drawing.Point(0, 378);
+            this.menu_spacer_07.Location = new System.Drawing.Point(0, 430);
             this.menu_spacer_07.Name = "menu_spacer_07";
             this.menu_spacer_07.Size = new System.Drawing.Size(150, 10);
             this.menu_spacer_07.TabIndex = 19;
@@ -218,7 +222,7 @@
             this.menu_btn_Gecko.BackColor = System.Drawing.SystemColors.Control;
             this.menu_btn_Gecko.Dock = System.Windows.Forms.DockStyle.Top;
             this.menu_btn_Gecko.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.menu_btn_Gecko.Location = new System.Drawing.Point(0, 336);
+            this.menu_btn_Gecko.Location = new System.Drawing.Point(0, 388);
             this.menu_btn_Gecko.Name = "menu_btn_Gecko";
             this.menu_btn_Gecko.Size = new System.Drawing.Size(150, 42);
             this.menu_btn_Gecko.Style = MetroFramework.MetroColorStyle.White;
@@ -241,7 +245,7 @@
             this.menu_spacer_06.HorizontalScrollbarBarColor = true;
             this.menu_spacer_06.HorizontalScrollbarHighlightOnWheel = false;
             this.menu_spacer_06.HorizontalScrollbarSize = 10;
-            this.menu_spacer_06.Location = new System.Drawing.Point(0, 326);
+            this.menu_spacer_06.Location = new System.Drawing.Point(0, 378);
             this.menu_spacer_06.Name = "menu_spacer_06";
             this.menu_spacer_06.Size = new System.Drawing.Size(150, 10);
             this.menu_spacer_06.TabIndex = 18;
@@ -255,7 +259,7 @@
             this.menu_btn_Clienti.BackColor = System.Drawing.SystemColors.Control;
             this.menu_btn_Clienti.Dock = System.Windows.Forms.DockStyle.Top;
             this.menu_btn_Clienti.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.menu_btn_Clienti.Location = new System.Drawing.Point(0, 284);
+            this.menu_btn_Clienti.Location = new System.Drawing.Point(0, 336);
             this.menu_btn_Clienti.Name = "menu_btn_Clienti";
             this.menu_btn_Clienti.Size = new System.Drawing.Size(150, 42);
             this.menu_btn_Clienti.Style = MetroFramework.MetroColorStyle.White;
@@ -271,6 +275,43 @@
             this.menu_btn_Clienti.UseSelectable = true;
             this.menu_btn_Clienti.UseTileImage = true;
             this.menu_btn_Clienti.Click += new System.EventHandler(this.menu_btn_Clienti_Click);
+            // 
+            // menu_spacer_10
+            // 
+            this.menu_spacer_10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menu_spacer_10.HorizontalScrollbarBarColor = true;
+            this.menu_spacer_10.HorizontalScrollbarHighlightOnWheel = false;
+            this.menu_spacer_10.HorizontalScrollbarSize = 10;
+            this.menu_spacer_10.Location = new System.Drawing.Point(0, 326);
+            this.menu_spacer_10.Name = "menu_spacer_10";
+            this.menu_spacer_10.Size = new System.Drawing.Size(150, 10);
+            this.menu_spacer_10.TabIndex = 25;
+            this.menu_spacer_10.VerticalScrollbarBarColor = true;
+            this.menu_spacer_10.VerticalScrollbarHighlightOnWheel = false;
+            this.menu_spacer_10.VerticalScrollbarSize = 10;
+            // 
+            // menu_btn_FWCust
+            // 
+            this.menu_btn_FWCust.ActiveControl = null;
+            this.menu_btn_FWCust.BackColor = System.Drawing.SystemColors.Control;
+            this.menu_btn_FWCust.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menu_btn_FWCust.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.menu_btn_FWCust.Location = new System.Drawing.Point(0, 284);
+            this.menu_btn_FWCust.Name = "menu_btn_FWCust";
+            this.menu_btn_FWCust.Size = new System.Drawing.Size(150, 42);
+            this.menu_btn_FWCust.Style = MetroFramework.MetroColorStyle.White;
+            this.menu_btn_FWCust.TabIndex = 24;
+            this.menu_btn_FWCust.Text = "Tag Firmware";
+            this.menu_btn_FWCust.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.menu_btn_FWCust.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.menu_btn_FWCust.TileImage = ((System.Drawing.Image)(resources.GetObject("menu_btn_FWCust.TileImage")));
+            this.menu_btn_FWCust.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menu_btn_FWCust.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.menu_btn_FWCust.UseCustomBackColor = true;
+            this.menu_btn_FWCust.UseCustomForeColor = true;
+            this.menu_btn_FWCust.UseSelectable = true;
+            this.menu_btn_FWCust.UseTileImage = true;
+            this.menu_btn_FWCust.Click += new System.EventHandler(this.menu_btn_FWCust_Click);
             // 
             // menu_spacer_05
             // 
@@ -297,7 +338,7 @@
             this.menu_btn_Sw.Size = new System.Drawing.Size(150, 42);
             this.menu_btn_Sw.Style = MetroFramework.MetroColorStyle.White;
             this.menu_btn_Sw.TabIndex = 5;
-            this.menu_btn_Sw.Text = "Doc. Software";
+            this.menu_btn_Sw.Text = "Doc. Firmware";
             this.menu_btn_Sw.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.menu_btn_Sw.Theme = MetroFramework.MetroThemeStyle.Light;
             this.menu_btn_Sw.TileImage = ((System.Drawing.Image)(resources.GetObject("menu_btn_Sw.TileImage")));
@@ -513,6 +554,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.Transparent;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tool_Strip_label_SW,
             this.tool_Strip_path_SW,
@@ -617,6 +659,8 @@
         private MetroFramework.Controls.MetroTile menu_btn_Ordini;
         private MetroFramework.Controls.MetroPanel menu_spacer_09;
         private MetroFramework.Controls.MetroTile menu_btn_Spedizioni;
+        private MetroFramework.Controls.MetroPanel menu_spacer_10;
+        private MetroFramework.Controls.MetroTile menu_btn_FWCust;
     }
 }
 

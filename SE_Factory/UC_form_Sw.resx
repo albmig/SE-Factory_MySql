@@ -120,6 +120,33 @@
   <metadata name="dB_FactoryDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="P_SchedaCompatibile.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gCSchedeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>667, 56</value>
+  </metadata>
+  <metadata name="gCSoftwareGCFamProdBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>210, 56</value>
+  </metadata>
+  <metadata name="gCSoftwareBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>770, 17</value>
+  </metadata>
+  <metadata name="gCSoftwareGCFamProdBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>210, 56</value>
+  </metadata>
+  <metadata name="metroContextMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>170, 17</value>
+  </metadata>
+  <metadata name="pan_Menu_comandi.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>335, 17</value>
+  </metadata>
+  <metadata name="pan_Menu_salva.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>629, 17</value>
+  </metadata>
+  <metadata name="pan_Menu_exit.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>496, 17</value>
+  </metadata>
   <metadata name="pan_Menu_comandi.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>335, 17</value>
   </metadata>
@@ -226,24 +253,30 @@
         gg==
 </value>
   </data>
-  <metadata name="gCSoftwareBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>770, 17</value>
-  </metadata>
-  <metadata name="gCSoftwareGCFamProdBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>210, 56</value>
-  </metadata>
-  <metadata name="P_SchedaCompatibile.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="gCSchedeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>667, 56</value>
-  </metadata>
   <metadata name="C_SchedaCompatibile.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="metroContextMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>170, 17</value>
-  </metadata>
+  <data name="btn_pdfview.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACsAAAAgCAYAAACLmoEDAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAA4xJREFUWEfVl+tLFFEUwPcP6ENE9DL60uNTkYVg7IdIIyqixVBMe+jm40MPsDLD
+        EMKgPlUIUSkZZoqJmRBmRrCZrZqrGS5k+c50zVfk5qqpid3OuexsM7Nnde7sGnThx+6ce+ecn2fGOzsG
+        xth/Axn0l9l3y8xA/k9b0AB8MjWjtZt6hqq3lcP3COp8X5BBPUDhpUDmTOOKcUlKC866jU7HK2MKlVMN
+        GRQFikbMNC53qUVEGHkTPND1creRyi9BBkWAQpnqwnoZr1832/zUdJmqg5BBrUCBfHXBQFBdHHuTqucV
+        0AokPasu8ttlhylto8/Rz4bbHinOl1N4O+EiLFPUVBxoBZIFq5MjorJ19TafwnhLpKUc2w5LPXUVElqZ
+        blxZQxXQIzufsLUkphmWeuoqJLQASSLUSSX0ys4nnH7ueDws57W9ZBZiqmF1BZUU8UfWl7Cl6Gg7LOe1
+        vWTmA07Gjd8roYSILDXwfHVO2H+nDAbDBpgWliVvAVfTQdZgq2VjYy5Ypn9Qssip5MMXYFpYlnwA2F9X
+        8cu4WLJZ1xKfwbSY7KRt7VsqWUthGbMX5DDHnTQ2nHtJEy5rKaRUDl+yZfdOdMC0mOyPuvVNVLKWvMfs
+        Y+pJ1moKYR/WBGlGLexLtiQnoQemAyvbEb+LTdotnN5UE+vPPMa/Oytz2WDWaS74veS6Zw12WD7+qWxn
+        0h4ugZJzk042cj+Dw7tY84T/ATgvdXZRZb9Zt9ygksllfw11c7CbctnPyWE8JnUVO6xV9mqGuQmmxWTh
+        RHLrkmS7ksLZdNd71rZ3MxeUy+KndFuIdjY22pQH08Ky5EPBI5sYppBBQTzGjiIYE5V1PxTMMC0miwxW
+        h3htX21F+Vy2PTKEdUaHemSww3j5pWNEPq9FtvJhnEPXEwwZsW6NUSecqAlnfXePsJ4z4aw7KUwTX86b
+        2NzEKKT8OyjZyEMH+AMB8ZLRwteq0E51UgSL+TPUsu6u7oMpXtdLRAv4YidPKhFIWfzxbTTuyIawp65C
+        QgR7uemWXBQJpCy8JdRL96qEQkCUT8/32+SygQJ+uLTKL7+E4kAP8CZqoQrqAS+9L1HEK6CHigdxV7AQ
+        JaCVXsvO8cT4KCuIBlM1EDKoB3wTfVEQZxOVxk3f3c10YAmVW4IM+gN2pjg7oRTeTAdRhBLELuK2hM98
+        t+QqKpcaMhgoUBwwE0QBiv/0hWGGPxIRGGV9iH+BAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="gC_SoftwareTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>

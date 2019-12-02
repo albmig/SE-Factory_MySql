@@ -14,16 +14,16 @@ using iTextSharp.text.pdf;
 using Syncfusion.Windows.Forms.Tools;
 using Syncfusion.Windows.Forms.Grid;
 using DataRelation = System.Data.DataRelation;
+using System.Web;
+using Renci.SshNet;
+
 
 namespace SE_Factory
 {
     public partial class UC_form_Sw : UserControl
     {
-        Splash SplashDB = new Splash();
-        bool splashclosed = false;
-
         public string SchedeCompatibili_SW = "";
-        public string TemplateFolder = @"D:\VS2017 - Projects\SE_Factory\Prova Moduli SW\Template_PDF_Software.pdf";
+        //public string TemplateFolder = @"D:\VS2017 - Projects\SE_Factory\Prova Moduli SW\Template_PDF_Software.pdf";
 
         public UC_form_Sw()
         {
@@ -93,6 +93,7 @@ namespace SE_Factory
             {
                 case "N":
                     pan_SW_Codifica.Enabled = true;
+                    pan_SW_Standard.Enabled = true;
                     //pan_SW_Lista.Visible = true;
                     //pan_SW_Lista.Enabled = false;
                     ID_combo_Famiglia.Enabled = true;
@@ -131,6 +132,7 @@ namespace SE_Factory
                     pan_Menu_comandi.Enabled = false;
                     pan_Menu_salva.Enabled = true;
                     pan_Menu_exit.Enabled = false;
+                    pan_SW_Standard.Enabled = false;
                     break;
                 case "V":
                     //pan_SW_Lista.Visible = true;
@@ -161,6 +163,7 @@ namespace SE_Factory
                         pan_SW_C.Enabled = false;
                     }
                     pan_SW_Codifica.Enabled = false;
+                    pan_SW_Standard.Enabled = false;
                     pan_Menu_comandi.Enabled = true;
                     pan_Menu_salva.Enabled = false;
                     pan_Menu_exit.Enabled = true;
@@ -305,14 +308,13 @@ namespace SE_Factory
         private void UC_form_Sw_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Software'. È possibile spostarla o rimuoverla se necessario.
-             this.gC_SoftwareTableAdapter.Fill(this.dB_FactoryDataSet.GC_Software);
+            this.gC_SoftwareTableAdapter.Fill(this.dB_FactoryDataSet.GC_Software);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Fam_Prod'. È possibile spostarla o rimuoverla se necessario.
             this.gC_Fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.GC_Fam_Prod);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
             this.gC_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.GC_Schede);
 
-            SplashDB.Close();
-            splashclosed = true;
+            GVar.CloseSplash = true;
 
             Setting_Form();
         }
@@ -321,9 +323,41 @@ namespace SE_Factory
         {
             System.Threading.Thread.Sleep(1000);
 
-            string P_InputStream = TemplateFolder;
+            Processing ProcSplash = new Processing();
+            ProcSplash.Show();
 
-            string P_OutputStream = @"D:\VS2017 - Projects\SE_Factory\Prova Moduli SW\FolderOut\result.pdf";
+            //definizione della connessione
+            var host = "sistematicaweb.it";
+            var username = "files";
+            var password = "ZL9HKwcq5eZEFt";
+
+
+            //Download del template
+            string P_InputStream = Properties.Settings.Default.Path_URL_Software + "Template_PDF_Software.pdf";
+
+            using (var client = new SftpClient(host, username, password))
+            {
+                client.Connect();
+                if (client.IsConnected)
+                {
+                    //string rel_path = Properties.Settings.Default.Path_URL_Software;
+
+                    //client.ChangeDirectory(@"./public_html/SE_Factory/fw");
+
+                    string pathremoto = @"/home/files/public_html/SE_Factory/fw/Template_PDF_Software.pdf";
+                    string pathlocale = Path.GetTempPath() + "Template_PDF_Software.pdf";
+                    Stream outputTemplate = File.OpenWrite(pathlocale);
+                    client.DownloadFile(pathremoto, outputTemplate);
+
+                    client.Disconnect();
+                    client.Dispose();
+                }
+            }
+
+            //string P_OutputStream = @"D:\VS2017 - Projects\SE_Factory\Prova Moduli SW\FolderOut\result.pdf";
+            string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
+            string myWebUrlFile = Properties.Settings.Default.Path_URL_Software + "//" + nome_sw + "//" + nome_sw + ".pdf";
+            string P_OutputStream = Path.GetTempPath() + nome_sw + ".pdf";
 
             using (FileStream outFile = new FileStream(P_OutputStream, FileMode.Create))
             {
@@ -339,6 +373,7 @@ namespace SE_Factory
                     fields.SetField("Schede", SW_view["SW_SchedeCompatibili"].ToString());
                     fields.SetField("Revision", SW_view["SW_Revisioni"].ToString());
                     fields.SetField("Operation", SW_view["SW_Funzionamento"].ToString());
+                    if ((bool)SW_view["SW_Standard"]) { fields.SetField("SW_Standard", "1"); }
 
                     // Setta campi Palmare
                     if (GVar.glob_tipo_item == "P")
@@ -381,12 +416,39 @@ namespace SE_Factory
                         fields.SetField("C_InpAna", SW_view["SW_R_Opt_Ana_Input_No"].ToString());
                     }
                 }
-
+                pdfStamper.FormFlattening = true;
                 pdfStamper.Close();
                 pdfReader.Close();
-                MessageBox.Show("PDF generato correttamente!");
+                //MessageBox.Show("PDF generato correttamente!");
 
-                System.Diagnostics.Process.Start(P_OutputStream);
+                //Upload del file su www.sistematicaweb.it
+                using (var client = new SftpClient(host, username, password))
+                {
+                    client.Connect();
+                    if (client.IsConnected)
+                    {
+                        string rel_path = Properties.Settings.Default.Path_URL_Software; //http://sistematicaweb.it/files/SE_Factory/fw/
+
+                        client.ChangeDirectory(@"./public_html/SE_Factory/fw");
+
+                        string fullpath = client.WorkingDirectory + @"/" + nome_sw;
+                        if (!client.Exists(fullpath)) { client.CreateDirectory(nome_sw); }
+                        client.ChangeDirectory(fullpath);
+
+                        FileInfo f = new FileInfo(P_OutputStream);
+                        string uploadfile = f.FullName;
+                        var fileStream = new FileStream(uploadfile, FileMode.Open);
+                        client.BufferSize = 4 * 1024;
+                        client.UploadFile(fileStream, f.Name, null);
+                        client.Disconnect();
+                        client.Dispose();
+                    }
+                }
+
+                ProcSplash.Close();
+                ProcSplash.Dispose();
+
+                MessageBox.Show("Upload del PDF effettuato correttamente!");
             }
 
         }
@@ -524,7 +586,9 @@ namespace SE_Factory
                 {
                     this.gC_SoftwareTableAdapter.Update(this.dB_FactoryDataSet.GC_Software);
                 }
+#pragma warning disable CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
                 catch (System.Exception ex)
+#pragma warning restore CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
                 {
                     MessageBox.Show("Failed update");
                 }
@@ -541,7 +605,9 @@ namespace SE_Factory
                     this.gCSoftwareBindingSource.EndEdit();
                     //this.gCSoftwareBindingSource.Update(this.dB_FactoryDataSet.GC_Software);
                 }
+#pragma warning disable CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
                 catch (System.Exception ex)
+#pragma warning restore CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
                 {
                     MessageBox.Show("Failed update");
                 }
@@ -556,7 +622,7 @@ namespace SE_Factory
             //Ricostruisco il codice del software
             string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
             SW_new_record["SW_Code"] = nome_sw;
-
+            if (ID_SW_Standard.Checked) { SW_new_record["SW_Standard"] = true; } else { SW_new_record["SW_Standard"] = false; }
             DataRowView famiglie = (DataRowView)gCSoftwareGCFamProdBindingSource.Current;
 
             //SW_new_record["SW_Fam_Prod"] = ID_combo_Famiglia.ValueMember;
@@ -621,7 +687,8 @@ namespace SE_Factory
             tbox_Sw_version.Text = nome_sw.Substring(9, 3);
             tbox_Sw_frequency.Text = nome_sw.Substring(12, 1);
 
-
+            bool swstand = (bool)SW_view["SW_Standard"];
+            if (swstand) { ID_SW_Standard.Checked = true; } else { ID_SW_Standard.Checked = false; }
             //Analizzo i campi del record
             string analisi_schede = SW_view["SW_SchedeCompatibili"].ToString();
             char[] delimitatore = new char[] { '|' };
@@ -874,11 +941,28 @@ namespace SE_Factory
 
         }
 
-        private void UC_form_Sw_Layout(object sender, LayoutEventArgs e)
+        private void btn_pdfview_Click(object sender, EventArgs e)
         {
-            if (!splashclosed)
+            // Costruzione dell'indirizzo IP
+            string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
+            string myWebUrlFile = Properties.Settings.Default.Path_URL_Software + nome_sw + @"/" + nome_sw + ".pdf";
+            string windowsTempPath = Path.GetTempPath() + nome_sw + ".pdf";
+
+            bool documentotrovato = true;
+            using (var client = new WebClient())
             {
-                SplashDB.Show();
+                try { client.DownloadFile(myWebUrlFile, windowsTempPath); }
+                catch (WebException ex) { documentotrovato = false; }
+            }
+
+            if (documentotrovato)
+            {
+                Win_form_PDF form_pdf = new Win_form_PDF(windowsTempPath);
+                form_pdf.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Documento PDF non trovato!");
             }
         }
     }

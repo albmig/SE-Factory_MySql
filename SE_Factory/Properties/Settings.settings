@@ -14,13 +14,13 @@
       <Value Profile="(Default)">192.168.000.107</Value>
     </Setting>
     <Setting Name="Path_URL_Documentazione" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">http://sistematicaweb.it/files/SE_Factory/doc/</Value>
     </Setting>
     <Setting Name="Path_URL_Software" Type="System.String" Scope="User">
-      <Value Profile="(Default)">\\192.168.0.8\Firmware\Motorola\Ufficio Collaudi\Sistemi</Value>
+      <Value Profile="(Default)">http://sistematicaweb.it/files/SE_Factory/fw/</Value>
     </Setting>
     <Setting Name="Path_URL_Images" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\VS2017 - Projects\SE_Factory\Products_Images</Value>
+      <Value Profile="(Default)">http://sistematicaweb.it/files/SE_Factory/images/</Value>
     </Setting>
     <Setting Name="Path_URL_Commander" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Commander</Value>
@@ -31,10 +31,10 @@
     <Setting Name="GCP_Connection" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;database=DB_Factory;certificatefile=.\client-cert.pfx&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;server=127.0.0.1;user id=sa;password=aavesp19;persistsecurityinfo=True;database=DB_Factory;certificatefile=.\client-cert.pfx&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;database=DB_Factory;certificatefile=.\client-cert.pfx</Value>
+      <Value Profile="(Default)">server=127.0.0.1;user id=sa;password=aavesp19;persistsecurityinfo=True;database=DB_Factory;certificatefile=.\client-cert.pfx</Value>
     </Setting>
     <Setting Name="OPEN_Connection" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;

@@ -46,6 +46,10 @@ namespace SE_Factory
 
         private void menu_btn_ID_Click(object sender, EventArgs e)
         {
+            GVar.CloseSplash = false;
+            Splash SplashDB = new Splash();
+            SplashDB.Show();
+
             UC_form_ID frm_child = new UC_form_ID();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -67,6 +71,10 @@ namespace SE_Factory
 
         private void menu_btn_printer_Click(object sender, EventArgs e)
         {
+            GVar.CloseSplash = false;
+            Splash SplashDB = new Splash();
+            SplashDB.Show();
+
             UC_form_Printers frm_child = new UC_form_Printers();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -106,6 +114,10 @@ namespace SE_Factory
 
         private void menu_btn_prodotti_Click(object sender, EventArgs e)
         {
+            GVar.CloseSplash = false;
+            Splash SplashDB = new Splash();
+            SplashDB.Show();
+
             UC_form_Prodotti frm_child = new UC_form_Prodotti();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -122,6 +134,10 @@ namespace SE_Factory
 
         private void menu_btn_Sw_Click(object sender, EventArgs e)
         {
+            GVar.CloseSplash = false;
+            Splash SplashDB = new Splash();
+            SplashDB.Show();
+
             UC_form_Sw frm_child = new UC_form_Sw();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -138,6 +154,10 @@ namespace SE_Factory
 
         private void menu_btn_Clienti_Click(object sender, EventArgs e)
         {
+            GVar.CloseSplash = false;
+            Splash SplashDB = new Splash();
+            SplashDB.Show();
+
             UC_form_PopolaDB frm_child = new UC_form_PopolaDB();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -155,6 +175,10 @@ namespace SE_Factory
 
         private void menu_btn_paths_Click(object sender, EventArgs e)
         {
+            GVar.CloseSplash = false;
+            Splash SplashDB = new Splash();
+            SplashDB.Show();
+
             UC_form_Paths frm_child = new UC_form_Paths();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -170,6 +194,10 @@ namespace SE_Factory
 
         private void menu_btn_Gecko_Click(object sender, EventArgs e)
         {
+            GVar.CloseSplash = false;
+            Splash SplashDB = new Splash();
+            SplashDB.Show();
+
             UC_form_Gecko frm_child = new UC_form_Gecko();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -185,6 +213,10 @@ namespace SE_Factory
 
         private void menu_btn_Ordini_Click(object sender, EventArgs e)
         {
+            GVar.CloseSplash = false;
+            Splash SplashDB = new Splash();
+            SplashDB.Show();
+
             UC_form_PopolaDB frm_child = new UC_form_PopolaDB();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
@@ -201,10 +233,34 @@ namespace SE_Factory
 
         private void menu_btn_Spedizioni_Click(object sender, EventArgs e)
         {
+            GVar.CloseSplash = false;
+            Splash SplashDB = new Splash();
+            SplashDB.Show();
+
             UC_form_Spedizioni frm_child = new UC_form_Spedizioni();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
             frm_child.Visible = true;
+            panel_Application.Controls.Add(frm_child);
+            panel_Application.Dock = DockStyle.Fill;
+            frm_child.Show();
+
+            panel_Menu.Visible = false;
+            panel_Application.Dock = DockStyle.Fill;
+            panel_Application.Visible = true;
+        }
+
+        private void menu_btn_FWCust_Click(object sender, EventArgs e)
+        {
+            GVar.CloseSplash = false;
+            Splash SplashDB = new Splash();
+            SplashDB.Show();
+
+            UC_form_TagFW frm_child = new UC_form_TagFW();
+            frm_child.AutoSize = true;
+            frm_child.Dock = DockStyle.Fill;
+            frm_child.Visible = true;
+
             panel_Application.Controls.Add(frm_child);
             panel_Application.Dock = DockStyle.Fill;
             frm_child.Show();

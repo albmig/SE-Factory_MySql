@@ -421,7 +421,9 @@ namespace SE_Factory
                 dos_box.SelectionStart = dos_box.Text.Length;
                 dos_box.ScrollToCaret();
             }
+#pragma warning disable CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
             catch (Exception ex)
+#pragma warning restore CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
             {
 
             }
@@ -500,7 +502,9 @@ namespace SE_Factory
                 dos_box.SelectionStart = dos_box.Text.Length;
                 dos_box.ScrollToCaret();
             }
+#pragma warning disable CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
             catch (Exception ex)
+#pragma warning restore CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
             {
 
             }
@@ -537,7 +541,9 @@ namespace SE_Factory
                 dos_box.SelectionStart = dos_box.Text.Length;
                 dos_box.ScrollToCaret();
             }
+#pragma warning disable CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
             catch (Exception ex)
+#pragma warning restore CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
             {
 
             }
@@ -566,7 +572,9 @@ namespace SE_Factory
                 dos_box.SelectionStart = dos_box.Text.Length;
                 dos_box.ScrollToCaret();
             }
+#pragma warning disable CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
             catch (Exception ex)
+#pragma warning restore CS0168 // La variabile 'ex' è dichiarata, ma non viene mai usata
             {
 
             }

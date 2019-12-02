@@ -23,5 +23,7 @@ namespace SE_Factory
         public static ArrayList glob_schede_compatibili = new ArrayList();
 
         public static int Last_SW_ID_Record = 0;
+
+        public static bool CloseSplash = false;
     }
 }

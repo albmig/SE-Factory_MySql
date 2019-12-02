@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "proven-cider-252811",
+  "private_key_id": "cd6719a50d30ef91b84e5df7a1c32ead36470ad5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQChLmxQXJHUJSlf\nYosR0DCs1Qicr0yFNQu5ddnA/oKcmNlrzSBW5HS9lJBLz4h3MZyEeHai1GfiESI4\nw7ojTiKliKc5Ohap6CQ78t6OVvoifVDLz6cuQnVlbHA9PuYN8p69EWVDIXQ9m7Ek\nvXtQI2vkI1Pw8nKfObej+zvk0CgAlTdQjWrpz5cJ2UEohxeiqXG57GQJeIJvOFig\n+93VRTNiy7m1QESgu4kYoRmdLNIlCqAT5TIHLTTz5QJsMhLIfaNivKSRw3G+AjeY\nbNerqKrOXJTbQyuAF6WIWvA1Eb5b78D7mKcfRL/qoa31E2Kd7vm9Ct3p1/OYa37v\nhZWNR5EjAgMBAAECggEAJiKnufPNBRatzUWxhctuWNYmrXvEbRf56C18Ee+l04tO\nlfT4m9Z90IUgBu/ZZ+ozEBy4ZRpAYfqP0EJu/f90rxnABwg5aIXmXNC/24m0sQhZ\nX3+IHKfYwuB/Rd5l7BLlf/JntRRrPlBh/0Fdtb5LvrSlHbMfb5DmZEQDDcY6ULid\nNs3iHI4dQHB4isPk0M2r7rciRZDxQSlOm8ySWqlsrE8+vhECPB0ZS+lL64q2crd+\nKQLY+4O8DvFmcLjrEI5p+vUj2yJJmFRx6VcqwYYWT3d6+79GlKuLESZACck16umz\n5Y13wWJJ2qDi22Tp2FnlBfmj2Mx5xeXDQ+TYopcKQQKBgQDNaAQfJvVbqk9LsRrS\nfsPmQR1VKfEZy1EDG5Whom54zwOkaLxGu5TqpXFTDTP3Ep88SVPH+buHGI7amKdl\n7mlCnvgEu3Gzgp5FzMzAclwb8cdTuZ1ko/8dNZpbmQrRAQkCr+2C+Ity5LO5V77G\nWamiA1JzJBx39DbbrU5yWTHmcwKBgQDI4cg/vBzeUK9JpVAUD9AR67tlLKznw3YD\n2H1pjAct6y97msaev1rENSIbvSHduRHcCjaDAl7l6aSWRkMPOb7ht1WRAcVEJheZ\neMtxljOydsmVNjbkWNdjsXahWroYgm6SdUAi8tEFfOLvfe7KeRs4W+8iH08SEm6q\nsZaWjL9OkQKBgHBy7z62rz/dfserT0nJSCm3n/1NlsZOPi17XnE8YUoV2qKZC+mV\nK7NBm0aiRb6PHUl9wzYJC5ar5Rja1VnCKTHloVXF4Dsr2MXRlo4MjUxnEn5NcVL1\nTOaKv9RBdmBxNqOX+Gjo9D6T4agn1zLzRyCAvRR3wnYQ5i9hMz76gYztAoGBAK8O\n04t3S1ERzy/GuHpDLXfwjmYlAKkYVQgU6XXJaZhClCaLQvukllzWUNsLfy/R0BaJ\nb+fLcRe6/ItYv6fNEuNw+Uhc2qQA7h/4fJKH6pVjn1hA3qUwJsPiKxeCERq6z9Ei\nDLpoEG9P3hQHEsmvsGD0/PgngKinF3n5ONoJ3c2BAoGBAMG3EaRIGjs0vP+8FCve\nW8lgvnYx72/0PGKNafNRNmuEzWShAR+tv1qnLOufCRb3bwBnUQABTDBeoNK8U7wA\ndrxUIec/DYhBMlZoH67scsYLHayWPQtIuAZ3psLDwU5/h1PUpDlQumY1jAGsZxoJ\nEVbQrV3uncGRAJP1kaCPTJib\n-----END PRIVATE KEY-----\n",
+  "client_email": "service-account-for-se-factory@proven-cider-252811.iam.gserviceaccount.com",
+  "client_id": "117772293356241775952",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service-account-for-se-factory%40proven-cider-252811.iam.gserviceaccount.com"
+}

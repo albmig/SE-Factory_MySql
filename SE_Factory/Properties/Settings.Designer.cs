@@ -48,7 +48,7 @@ namespace SE_Factory.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://sistematicaweb.it/files/SE_Factory/doc/")]
         public string Path_URL_Documentazione {
             get {
                 return ((string)(this["Path_URL_Documentazione"]));
@@ -60,7 +60,7 @@ namespace SE_Factory.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\192.168.0.8\\Firmware\\Motorola\\Ufficio Collaudi\\Sistemi")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://sistematicaweb.it/files/SE_Factory/fw/")]
         public string Path_URL_Software {
             get {
                 return ((string)(this["Path_URL_Software"]));
@@ -72,7 +72,7 @@ namespace SE_Factory.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("D:\\VS2017 - Projects\\SE_Factory\\Products_Images")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://sistematicaweb.it/files/SE_Factory/images/")]
         public string Path_URL_Images {
             get {
                 return ((string)(this["Path_URL_Images"]));
@@ -109,8 +109,8 @@ namespace SE_Factory.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=34.65.242.38;user id=sa;password=aavesp19;persistsecurityinfo=True;databas" +
-            "e=DB_Factory;certificatefile=.\\client-cert.pfx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;user id=sa;password=aavesp19;persistsecurityinfo=True;database=D" +
+            "B_Factory;certificatefile=.\\client-cert.pfx")]
         public string GCP_Connection {
             get {
                 return ((string)(this["GCP_Connection"]));

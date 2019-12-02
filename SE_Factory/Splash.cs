@@ -16,5 +16,13 @@ namespace SE_Factory
         {
             InitializeComponent();
         }
+
+        private void SplashTimer_Tick(object sender, EventArgs e)
+        {
+            if (GVar.CloseSplash)
+            {
+                this.Close();
+            }
+        }
     }
 }

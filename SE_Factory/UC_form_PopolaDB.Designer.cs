@@ -97,6 +97,7 @@
             this.gC_DevicesTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_DevicesTableAdapter();
             this.gCCustomersFWBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gC_CustomersFWTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_CustomersFWTableAdapter();
+            this.lab_Conv_Cli = new MetroFramework.Controls.MetroLabel();
             this.Popola_Layout.SuspendLayout();
             this.pan_SW_Titolo.SuspendLayout();
             this.pan_Menu_comandi.SuspendLayout();
@@ -139,6 +140,7 @@
             this.Popola_Layout.Controls.Add(this.dataGridView1, 0, 4);
             this.Popola_Layout.Controls.Add(this.lab_Conv_Art, 5, 3);
             this.Popola_Layout.Controls.Add(this.dataGridView2, 0, 9);
+            this.Popola_Layout.Controls.Add(this.lab_Conv_Cli, 6, 2);
             this.Popola_Layout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Popola_Layout.Location = new System.Drawing.Point(0, 0);
             this.Popola_Layout.Name = "Popola_Layout";
@@ -671,6 +673,18 @@
             // 
             this.gC_CustomersFWTableAdapter.ClearBeforeFill = true;
             // 
+            // lab_Conv_Cli
+            // 
+            this.lab_Conv_Cli.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lab_Conv_Cli.AutoSize = true;
+            this.lab_Conv_Cli.BackColor = System.Drawing.Color.Transparent;
+            this.Popola_Layout.SetColumnSpan(this.lab_Conv_Cli, 2);
+            this.lab_Conv_Cli.Location = new System.Drawing.Point(722, 63);
+            this.lab_Conv_Cli.Name = "lab_Conv_Cli";
+            this.lab_Conv_Cli.Size = new System.Drawing.Size(81, 19);
+            this.lab_Conv_Cli.TabIndex = 70;
+            this.lab_Conv_Cli.Text = "metroLabel1";
+            // 
             // UC_form_PopolaDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -679,7 +693,6 @@
             this.Name = "UC_form_PopolaDB";
             this.Size = new System.Drawing.Size(1200, 1200);
             this.Load += new System.EventHandler(this.UC_form_PopolaDB_Load);
-            this.Layout += new System.Windows.Forms.LayoutEventHandler(this.UC_form_PopolaDB_Layout);
             this.Popola_Layout.ResumeLayout(false);
             this.Popola_Layout.PerformLayout();
             this.pan_SW_Titolo.ResumeLayout(false);
@@ -770,5 +783,6 @@
         private DB_FactoryDataSetTableAdapters.GC_DevicesTableAdapter gC_DevicesTableAdapter;
         private System.Windows.Forms.BindingSource gCCustomersFWBindingSource;
         private DB_FactoryDataSetTableAdapters.GC_CustomersFWTableAdapter gC_CustomersFWTableAdapter;
+        private MetroFramework.Controls.MetroLabel lab_Conv_Cli;
     }
 }

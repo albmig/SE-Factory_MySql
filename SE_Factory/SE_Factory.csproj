@@ -57,8 +57,8 @@
     <Reference Include="EPPlus, Version=4.5.3.2, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>packages\EPPlus.4.5.3.2\lib\net40\EPPlus.dll</HintPath>
     </Reference>
-    <Reference Include="FluentFTP, Version=27.0.2.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
-      <HintPath>packages\FluentFTP.27.0.2\lib\net45\FluentFTP.dll</HintPath>
+    <Reference Include="FluentFTP, Version=28.0.1.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
+      <HintPath>packages\FluentFTP.28.0.1\lib\net45\FluentFTP.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
@@ -75,6 +75,9 @@
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.Core.WinForms, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Data.WinForms, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grid.Base, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -82,6 +85,8 @@
     <Reference Include="Syncfusion.Grid.Windows, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.GridCommon.WinForms, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grouping.Base, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Pdf.Base, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.PdfViewer.Windows, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.SfInput.WinForms, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.SfListView.WinForms, Version=17.2460.0.34, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -125,6 +130,12 @@
       <DependentUpon>DB_FactoryDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="GFunc.cs" />
+    <Compile Include="Processing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Processing.Designer.cs">
+      <DependentUpon>Processing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
@@ -189,6 +200,21 @@
     <Compile Include="UC_form_Prodotti.Designer.cs">
       <DependentUpon>UC_form_Prodotti.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_form_TagFW.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_form_TagFW.Designer.cs">
+      <DependentUpon>UC_form_TagFW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Win_form_PDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Win_form_PDF.Designer.cs">
+      <DependentUpon>Win_form_PDF.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Processing.resx">
+      <DependentUpon>Processing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +254,12 @@
     <EmbeddedResource Include="UC_form_Prodotti.resx">
       <DependentUpon>UC_form_Prodotti.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_form_TagFW.resx">
+      <DependentUpon>UC_form_TagFW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Win_form_PDF.resx">
+      <DependentUpon>Win_form_PDF.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="client-cert.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -249,6 +281,7 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -259,6 +292,7 @@
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>

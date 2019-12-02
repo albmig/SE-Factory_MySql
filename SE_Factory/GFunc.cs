@@ -574,7 +574,7 @@ namespace SE_Factory
                 return false;
 
             if (
-                    (codiceSistema.Substring(5, 1).ToUpper()== "R")
+                    (codiceSistema.Substring(5, 1).ToUpper() == "R")
                     &&
                     (codiceSistema.StartsWith("XS31"))
             )
@@ -582,5 +582,72 @@ namespace SE_Factory
 
             return false;
         }
+
+        public static bool isEasy_SL(String codiceSistema)
+        {
+            if (codiceSistema == null)
+                return false;
+
+            if (
+                    (codiceSistema.Substring(5, 1).ToUpper() == "P")
+                    &&
+                    (
+                            (codiceSistema.StartsWith("XS47"))
+                            ||
+                            (codiceSistema.StartsWith("XS51"))
+                    )
+            )
+                return true;
+
+            return false;
+        }
+
+        public static bool isTrend_SL(String codiceSistema)
+        {
+            if (codiceSistema == null)
+                return false;
+
+            if (
+                    (codiceSistema.Substring(5, 1).ToUpper() == "P")
+                    &&
+                    (codiceSistema.StartsWith("XS46"))
+            )
+                return true;
+
+            return false;
+        }
+
+        public static bool isSmartbox8_SL(String codiceSistema)
+        {
+            if (codiceSistema == null)
+                return false;
+
+            if (
+                    (codiceSistema.Substring(5, 1).ToUpper() == "R")
+                    &&
+                            (codiceSistema.StartsWith("XS49"))
+                            ||
+                            (codiceSistema.StartsWith("XS52"))
+            )
+                return true;
+
+            return false;
+        }
+
+        public static bool isSmartbox20_SL(String codiceSistema)
+        {
+            if (codiceSistema == null)
+                return false;
+
+            if (
+                    (codiceSistema.Substring(5, 1).ToUpper() == "R")
+                    &&
+                    codiceSistema.StartsWith("XS48")
+            )
+                return true;
+
+            return false;
+        }
+
     }
 }
