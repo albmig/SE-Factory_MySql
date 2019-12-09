@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace SE_Factory
 {
@@ -588,16 +589,25 @@ namespace SE_Factory
             if (codiceSistema == null)
                 return false;
 
-            if (
-                    (codiceSistema.Substring(5, 1).ToUpper() == "P")
-                    &&
-                    (
-                            (codiceSistema.StartsWith("XS47"))
-                            ||
-                            (codiceSistema.StartsWith("XS51"))
-                    )
-            )
-                return true;
+            if ( (codiceSistema.Substring(5, 1).ToUpper() == "P")
+                 &&
+                 (codiceSistema.StartsWith("XS47"))
+               )
+               return true;
+
+            return false;
+        }
+
+        public static bool isEasy_SL_ULIFT(String codiceSistema)
+        {
+            if (codiceSistema == null)
+                return false;
+
+            if ( (codiceSistema.Substring(5, 1).ToUpper() == "P")
+                 &&
+                 (codiceSistema.StartsWith("XS51"))
+               )
+               return true;
 
             return false;
         }
@@ -607,12 +617,11 @@ namespace SE_Factory
             if (codiceSistema == null)
                 return false;
 
-            if (
-                    (codiceSistema.Substring(5, 1).ToUpper() == "P")
-                    &&
-                    (codiceSistema.StartsWith("XS46"))
-            )
-                return true;
+            if ( (codiceSistema.Substring(5, 1).ToUpper() == "P")
+                 &&
+                 (codiceSistema.StartsWith("XS46"))
+               )
+               return true;
 
             return false;
         }
@@ -622,14 +631,25 @@ namespace SE_Factory
             if (codiceSistema == null)
                 return false;
 
-            if (
-                    (codiceSistema.Substring(5, 1).ToUpper() == "R")
-                    &&
-                            (codiceSistema.StartsWith("XS49"))
-                            ||
-                            (codiceSistema.StartsWith("XS52"))
-            )
+            if ( (codiceSistema.Substring(5, 1).ToUpper() == "R")
+                 &&
+                 (codiceSistema.StartsWith("XS49") )
+               )
                 return true;
+
+            return false;
+        }
+
+        public static bool isSmartbox8_SL_ULIFT(String codiceSistema)
+        {
+            if (codiceSistema == null)
+                return false;
+
+            if ( (codiceSistema.Substring(5, 1).ToUpper() == "R")
+                 &&
+                 (codiceSistema.StartsWith("XS52"))
+               )
+               return true;
 
             return false;
         }
@@ -649,5 +669,40 @@ namespace SE_Factory
             return false;
         }
 
+        public static string TempFolder()
+        {
+            var newfolder = Directory.GetCurrentDirectory();
+            newfolder = newfolder + "\\Temp\\";
+
+            if (!Directory.Exists(newfolder))
+            {
+                Directory.CreateDirectory(newfolder);
+            }
+
+            System.IO.DirectoryInfo di = new DirectoryInfo(newfolder);
+
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
+
+            return newfolder.ToString();
+        }
+
+        public static void DelTempFolder()
+        {
+            var newfolder = Directory.GetCurrentDirectory();
+            newfolder = newfolder + "\\Temp\\";
+
+            if (Directory.Exists(newfolder))
+            {
+                System.IO.DirectoryInfo di = new DirectoryInfo(newfolder);
+
+                foreach (FileInfo file in di.GetFiles())
+                {
+                     file.Delete();
+                }
+            }
+        }
     }
 }

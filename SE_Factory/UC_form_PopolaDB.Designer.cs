@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_form_PopolaDB));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Popola_Layout = new System.Windows.Forms.TableLayoutPanel();
             this.pan_SW_Titolo = new MetroFramework.Controls.MetroPanel();
             this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
@@ -74,6 +74,9 @@
             this.dESCRESTKITDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dESCRSISTEMADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dESCRESTSISTEMADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dESCRSOFTWAREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dESCRESTSOFTWAREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jLabelfullBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dB_FactoryDataSet = new SE_Factory.DB_FactoryDataSet();
             this.lab_Conv_Art = new MetroFramework.Controls.MetroLabel();
@@ -84,7 +87,7 @@
             this.kitComponenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kitQtaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gCKitBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jLabelJLabelClientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lab_Conv_Cli = new MetroFramework.Controls.MetroLabel();
             this.jLabelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jLabelTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabelTableAdapter();
             this.jLabel_ClientiTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.JLabel_ClientiTableAdapter();
@@ -97,7 +100,10 @@
             this.gC_DevicesTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_DevicesTableAdapter();
             this.gCCustomersFWBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gC_CustomersFWTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_CustomersFWTableAdapter();
-            this.lab_Conv_Cli = new MetroFramework.Controls.MetroLabel();
+            this.gCOrdiniBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gC_OrdiniTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_OrdiniTableAdapter();
+            this.jLabelJLabelClientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Popola_Layout.SuspendLayout();
             this.pan_SW_Titolo.SuspendLayout();
             this.pan_Menu_comandi.SuspendLayout();
@@ -107,11 +113,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCKitBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jLabelJLabelClientiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jLabelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCCustomersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCDevicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCCustomersFWBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gCOrdiniBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jLabelJLabelClientiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Popola_Layout
@@ -227,12 +234,14 @@
             this.pan_Menu_exit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_Menu_exit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem5,
+            this.toolStripMenuItem1,
             this.menu_sw_exit});
             this.pan_Menu_exit.Location = new System.Drawing.Point(1079, 28);
             this.pan_Menu_exit.Name = "pan_Menu_exit";
             this.pan_Menu_exit.Size = new System.Drawing.Size(121, 24);
             this.pan_Menu_exit.TabIndex = 58;
             this.pan_Menu_exit.Text = "menuStrip1";
+            this.pan_Menu_exit.Click += new System.EventHandler(this.pan_Menu_exit_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -244,9 +253,8 @@
             // 
             // menu_sw_exit
             // 
-            this.menu_sw_exit.Image = ((System.Drawing.Image)(resources.GetObject("menu_sw_exit.Image")));
             this.menu_sw_exit.Name = "menu_sw_exit";
-            this.menu_sw_exit.Size = new System.Drawing.Size(67, 20);
+            this.menu_sw_exit.Size = new System.Drawing.Size(51, 20);
             this.menu_sw_exit.Text = "Uscita";
             this.menu_sw_exit.Click += new System.EventHandler(this.menu_sw_exit_Click);
             // 
@@ -363,17 +371,20 @@
             this.dESCRKITDataGridViewTextBoxColumn,
             this.dESCRESTKITDataGridViewTextBoxColumn,
             this.dESCRSISTEMADataGridViewTextBoxColumn,
-            this.dESCRESTSISTEMADataGridViewTextBoxColumn});
+            this.dESCRESTSISTEMADataGridViewTextBoxColumn,
+            this.modelloDataGridViewTextBoxColumn,
+            this.dESCRSOFTWAREDataGridViewTextBoxColumn,
+            this.dESCRESTSOFTWAREDataGridViewTextBoxColumn});
             this.Popola_Layout.SetColumnSpan(this.dataGridView1, 10);
             this.dataGridView1.DataSource = this.jLabelfullBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 137);
             this.dataGridView1.Name = "dataGridView1";
@@ -543,6 +554,24 @@
             this.dESCRESTSISTEMADataGridViewTextBoxColumn.HeaderText = "DESCREST_SISTEMA";
             this.dESCRESTSISTEMADataGridViewTextBoxColumn.Name = "dESCRESTSISTEMADataGridViewTextBoxColumn";
             // 
+            // modelloDataGridViewTextBoxColumn
+            // 
+            this.modelloDataGridViewTextBoxColumn.DataPropertyName = "Modello";
+            this.modelloDataGridViewTextBoxColumn.HeaderText = "Modello";
+            this.modelloDataGridViewTextBoxColumn.Name = "modelloDataGridViewTextBoxColumn";
+            // 
+            // dESCRSOFTWAREDataGridViewTextBoxColumn
+            // 
+            this.dESCRSOFTWAREDataGridViewTextBoxColumn.DataPropertyName = "DESCR_SOFTWARE";
+            this.dESCRSOFTWAREDataGridViewTextBoxColumn.HeaderText = "DESCR_SOFTWARE";
+            this.dESCRSOFTWAREDataGridViewTextBoxColumn.Name = "dESCRSOFTWAREDataGridViewTextBoxColumn";
+            // 
+            // dESCRESTSOFTWAREDataGridViewTextBoxColumn
+            // 
+            this.dESCRESTSOFTWAREDataGridViewTextBoxColumn.DataPropertyName = "DESCREST_SOFTWARE";
+            this.dESCRESTSOFTWAREDataGridViewTextBoxColumn.HeaderText = "DESCREST_SOFTWARE";
+            this.dESCRESTSOFTWAREDataGridViewTextBoxColumn.Name = "dESCRESTSOFTWAREDataGridViewTextBoxColumn";
+            // 
             // jLabelfullBindingSource
             // 
             this.jLabelfullBindingSource.DataMember = "JLabel_full";
@@ -616,10 +645,17 @@
             this.gCKitBindingSource.DataMember = "GC_Kit";
             this.gCKitBindingSource.DataSource = this.dB_FactoryDataSet;
             // 
-            // jLabelJLabelClientiBindingSource
+            // lab_Conv_Cli
             // 
-            this.jLabelJLabelClientiBindingSource.DataMember = "JLabel_JLabel_Clienti";
-            this.jLabelJLabelClientiBindingSource.DataSource = this.jLabelBindingSource;
+            this.lab_Conv_Cli.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lab_Conv_Cli.AutoSize = true;
+            this.lab_Conv_Cli.BackColor = System.Drawing.Color.Transparent;
+            this.Popola_Layout.SetColumnSpan(this.lab_Conv_Cli, 2);
+            this.lab_Conv_Cli.Location = new System.Drawing.Point(722, 63);
+            this.lab_Conv_Cli.Name = "lab_Conv_Cli";
+            this.lab_Conv_Cli.Size = new System.Drawing.Size(81, 19);
+            this.lab_Conv_Cli.TabIndex = 70;
+            this.lab_Conv_Cli.Text = "metroLabel1";
             // 
             // jLabelBindingSource
             // 
@@ -673,17 +709,26 @@
             // 
             this.gC_CustomersFWTableAdapter.ClearBeforeFill = true;
             // 
-            // lab_Conv_Cli
+            // gCOrdiniBindingSource
             // 
-            this.lab_Conv_Cli.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lab_Conv_Cli.AutoSize = true;
-            this.lab_Conv_Cli.BackColor = System.Drawing.Color.Transparent;
-            this.Popola_Layout.SetColumnSpan(this.lab_Conv_Cli, 2);
-            this.lab_Conv_Cli.Location = new System.Drawing.Point(722, 63);
-            this.lab_Conv_Cli.Name = "lab_Conv_Cli";
-            this.lab_Conv_Cli.Size = new System.Drawing.Size(81, 19);
-            this.lab_Conv_Cli.TabIndex = 70;
-            this.lab_Conv_Cli.Text = "metroLabel1";
+            this.gCOrdiniBindingSource.DataSource = this.dB_FactoryDataSet;
+            this.gCOrdiniBindingSource.Position = 0;
+            // 
+            // gC_OrdiniTableAdapter
+            // 
+            this.gC_OrdiniTableAdapter.ClearBeforeFill = true;
+            // 
+            // jLabelJLabelClientiBindingSource
+            // 
+            this.jLabelJLabelClientiBindingSource.DataMember = "JLabel_JLabel_Clienti";
+            this.jLabelJLabelClientiBindingSource.DataSource = this.jLabelBindingSource;
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
+            this.toolStripMenuItem1.Text = "Uscita";
             // 
             // UC_form_PopolaDB
             // 
@@ -706,11 +751,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCKitBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jLabelJLabelClientiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jLabelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCCustomersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCDevicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCCustomersFWBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gCOrdiniBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jLabelJLabelClientiBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -739,6 +785,24 @@
         private MetroFramework.Controls.MetroLabel lab_articoli;
         private Syncfusion.WinForms.Controls.SfButton update_Articoli;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource jLabelfullBindingSource;
+        private DB_FactoryDataSetTableAdapters.JLabel_fullTableAdapter jLabel_fullTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem verificaArchiviToolStripMenuItem;
+        private MetroFramework.Controls.MetroLabel lab_Conv_Art;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kitCompostoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kitDescCompostoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kitComponenteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kitQtaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource gCKitBindingSource;
+        private DB_FactoryDataSetTableAdapters.GC_KitTableAdapter gC_KitTableAdapter;
+        private DB_FactoryDataSetTableAdapters.NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESATableAdapter db_esplosoTableAdapter;
+        private System.Windows.Forms.BindingSource gCDevicesBindingSource;
+        private DB_FactoryDataSetTableAdapters.GC_DevicesTableAdapter gC_DevicesTableAdapter;
+        private System.Windows.Forms.BindingSource gCCustomersFWBindingSource;
+        private DB_FactoryDataSetTableAdapters.GC_CustomersFWTableAdapter gC_CustomersFWTableAdapter;
+        private MetroFramework.Controls.MetroLabel lab_Conv_Cli;
         private System.Windows.Forms.DataGridViewTextBoxColumn tIPOORDINECLIENTEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rAGIONESOCIALEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nUMEROORDINEDataGridViewTextBoxColumn;
@@ -766,23 +830,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dESCRESTKITDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dESCRSISTEMADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dESCRESTSISTEMADataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource jLabelfullBindingSource;
-        private DB_FactoryDataSetTableAdapters.JLabel_fullTableAdapter jLabel_fullTableAdapter;
-        private System.Windows.Forms.ToolStripMenuItem verificaArchiviToolStripMenuItem;
-        private MetroFramework.Controls.MetroLabel lab_Conv_Art;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kitCompostoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kitDescCompostoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kitComponenteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kitQtaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource gCKitBindingSource;
-        private DB_FactoryDataSetTableAdapters.GC_KitTableAdapter gC_KitTableAdapter;
-        private DB_FactoryDataSetTableAdapters.NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESATableAdapter db_esplosoTableAdapter;
-        private System.Windows.Forms.BindingSource gCDevicesBindingSource;
-        private DB_FactoryDataSetTableAdapters.GC_DevicesTableAdapter gC_DevicesTableAdapter;
-        private System.Windows.Forms.BindingSource gCCustomersFWBindingSource;
-        private DB_FactoryDataSetTableAdapters.GC_CustomersFWTableAdapter gC_CustomersFWTableAdapter;
-        private MetroFramework.Controls.MetroLabel lab_Conv_Cli;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dESCRSOFTWAREDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dESCRESTSOFTWAREDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource gCOrdiniBindingSource;
+        private DB_FactoryDataSetTableAdapters.GC_OrdiniTableAdapter gC_OrdiniTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

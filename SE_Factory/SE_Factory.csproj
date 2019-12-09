@@ -161,6 +161,12 @@
     <Compile Include="UC_form_PopolaDB.Designer.cs">
       <DependentUpon>UC_form_PopolaDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_form_Produzione.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_form_Produzione.Designer.cs">
+      <DependentUpon>UC_form_Produzione.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_form_Spedizioni.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_form_PopolaDB.resx">
       <DependentUpon>UC_form_PopolaDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_form_Produzione.resx">
+      <DependentUpon>UC_form_Produzione.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_form_Spedizioni.resx">
       <DependentUpon>UC_form_Spedizioni.cs</DependentUpon>

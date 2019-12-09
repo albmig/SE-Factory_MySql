@@ -334,30 +334,29 @@ namespace SE_Factory
 
             //Download del template
             string P_InputStream = Properties.Settings.Default.Path_URL_Software + "Template_PDF_Software.pdf";
+            string tmpfolder = GFunc.TempFolder();
 
             using (var client = new SftpClient(host, username, password))
             {
                 client.Connect();
                 if (client.IsConnected)
                 {
-                    //string rel_path = Properties.Settings.Default.Path_URL_Software;
-
-                    //client.ChangeDirectory(@"./public_html/SE_Factory/fw");
+                    //verifica e/o creazione della directory Temp
 
                     string pathremoto = @"/home/files/public_html/SE_Factory/fw/Template_PDF_Software.pdf";
-                    string pathlocale = Path.GetTempPath() + "Template_PDF_Software.pdf";
+                    string pathlocale = tmpfolder + "Template_PDF_Software.pdf";
                     Stream outputTemplate = File.OpenWrite(pathlocale);
                     client.DownloadFile(pathremoto, outputTemplate);
 
                     client.Disconnect();
                     client.Dispose();
+                    outputTemplate.Close();
                 }
             }
 
-            //string P_OutputStream = @"D:\VS2017 - Projects\SE_Factory\Prova Moduli SW\FolderOut\result.pdf";
             string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
             string myWebUrlFile = Properties.Settings.Default.Path_URL_Software + "//" + nome_sw + "//" + nome_sw + ".pdf";
-            string P_OutputStream = Path.GetTempPath() + nome_sw + ".pdf";
+            string P_OutputStream = tmpfolder + nome_sw + ".pdf";
 
             using (FileStream outFile = new FileStream(P_OutputStream, FileMode.Create))
             {
@@ -419,7 +418,8 @@ namespace SE_Factory
                 pdfStamper.FormFlattening = true;
                 pdfStamper.Close();
                 pdfReader.Close();
-                //MessageBox.Show("PDF generato correttamente!");
+                pdfReader.Dispose();
+                outFile.Dispose();
 
                 //Upload del file su www.sistematicaweb.it
                 using (var client = new SftpClient(host, username, password))
@@ -442,11 +442,14 @@ namespace SE_Factory
                         client.UploadFile(fileStream, f.Name, null);
                         client.Disconnect();
                         client.Dispose();
+                        fileStream.Dispose();
+                        File.Delete(uploadfile);
                     }
                 }
 
                 ProcSplash.Close();
                 ProcSplash.Dispose();
+                GFunc.DelTempFolder();
 
                 MessageBox.Show("Upload del PDF effettuato correttamente!");
             }
@@ -946,7 +949,8 @@ namespace SE_Factory
             // Costruzione dell'indirizzo IP
             string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
             string myWebUrlFile = Properties.Settings.Default.Path_URL_Software + nome_sw + @"/" + nome_sw + ".pdf";
-            string windowsTempPath = Path.GetTempPath() + nome_sw + ".pdf";
+            string tmpfolder = GFunc.TempFolder();
+            string windowsTempPath = tmpfolder + nome_sw + ".pdf";
 
             bool documentotrovato = true;
             using (var client = new WebClient())

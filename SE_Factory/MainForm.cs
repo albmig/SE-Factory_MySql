@@ -198,7 +198,15 @@ namespace SE_Factory
             Splash SplashDB = new Splash();
             SplashDB.Show();
 
-            UC_form_Gecko frm_child = new UC_form_Gecko();
+            //UC_form_Gecko frm_child = new UC_form_Gecko();
+            //frm_child.AutoSize = true;
+            //frm_child.Dock = DockStyle.Fill;
+            //frm_child.Visible = true;
+            //panel_Application.Controls.Add(frm_child);
+            //panel_Application.Dock = DockStyle.Fill;
+            //frm_child.Show();
+
+            UC_form_Produzione frm_child = new UC_form_Produzione();
             frm_child.AutoSize = true;
             frm_child.Dock = DockStyle.Fill;
             frm_child.Visible = true;
