@@ -419,7 +419,7 @@ namespace SE_Factory
                 pdfStamper.Close();
                 pdfReader.Close();
                 pdfReader.Dispose();
-                outFile.Dispose();
+                outFile.Close();
 
                 //Upload del file su www.sistematicaweb.it
                 using (var client = new SftpClient(host, username, password))

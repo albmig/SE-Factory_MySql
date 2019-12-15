@@ -211,9 +211,6 @@ namespace SE_Factory
                 NewDevice.isPalm = GFunc.isPalm(NewDevice.Dev_CodiceComponente);
                 NewDevice.isCntr = GFunc.isCntr(NewDevice.Dev_CodiceComponente);
 
-                if (NewDevice.Dev_CodiceComponente == "XS511PBSE011X")
-                {
-                }
                 lab_Conv_Art.Text = NewDevice.Dev_CodiceKit;
                 if (lab_Conv_Art.Text == "") { lab_Conv_Art.Text = (string)JLabelFull["CODICE_SISTEMA"].ToString().TrimEnd(' '); }
                 lab_Conv_Art.Refresh();
@@ -285,12 +282,18 @@ namespace SE_Factory
                         RicreaKit(Newricreakit);
                     }
 
-                    PopolaDevice(NewDevice);
+                    if (NewDevice.Dev_CodiceComponente != codicesistemalavorato) //Caso ULift con componente uguale e software diverso
+                    {
+                        PopolaDevice(NewDevice);
+                    }
                     PopolaCustomers(NewDevice);
                     PopolaFWCustomers(NewDevice);
 
                     DataRow JlabelFull_Row = (DataRow)JLabelFull.Row;
-                    PopolaOrdini(JlabelFull_Row);
+                    if (NewDevice.Dev_CodiceComponente != codicesistemalavorato) //Caso ULift con componente uguale e software diverso
+                    {
+                        PopolaOrdini(JlabelFull_Row);
+                    }
 
                     codicekitlavorato = NewDevice.Dev_CodiceKit;
                     codicesistemalavorato = NewDevice.Dev_CodiceComponente;
@@ -420,6 +423,7 @@ namespace SE_Factory
                     DBF_row.EndEdit();
                     try
                     {
+                        this.gC_DevicesTableAdapter.Update(DBF_row);
                         dB_FactoryDataSet.GC_Devices.AcceptChanges();
                         this.gC_DevicesTableAdapter.Update(DBF_row);
                     }
@@ -522,6 +526,7 @@ namespace SE_Factory
                     RigaOrdini.EndEdit();
                     try
                     {
+                        this.gC_OrdiniTableAdapter.Update(RigaOrdini);
                         dB_FactoryDataSet.GC_Ordini.AcceptChanges();
                         this.gC_OrdiniTableAdapter.Update(RigaOrdini);
                     }

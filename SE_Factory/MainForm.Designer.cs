@@ -99,7 +99,7 @@
             this.panel_Menu.HorizontalScrollbarSize = 10;
             this.panel_Menu.Location = new System.Drawing.Point(23, 83);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(150, 568);
+            this.panel_Menu.Size = new System.Drawing.Size(150, 590);
             this.panel_Menu.TabIndex = 1;
             this.panel_Menu.VerticalScrollbarBarColor = true;
             this.panel_Menu.VerticalScrollbarHighlightOnWheel = false;
@@ -227,7 +227,7 @@
             this.menu_btn_Gecko.Size = new System.Drawing.Size(150, 42);
             this.menu_btn_Gecko.Style = MetroFramework.MetroColorStyle.White;
             this.menu_btn_Gecko.TabIndex = 7;
-            this.menu_btn_Gecko.Text = "Prog. Gecko";
+            this.menu_btn_Gecko.Text = "Progr. Devices";
             this.menu_btn_Gecko.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.menu_btn_Gecko.Theme = MetroFramework.MetroThemeStyle.Light;
             this.menu_btn_Gecko.TileImage = ((System.Drawing.Image)(resources.GetObject("menu_btn_Gecko.TileImage")));
@@ -503,7 +503,7 @@
             this.panel_default_printer.HorizontalScrollbarBarColor = true;
             this.panel_default_printer.HorizontalScrollbarHighlightOnWheel = false;
             this.panel_default_printer.HorizontalScrollbarSize = 10;
-            this.panel_default_printer.Location = new System.Drawing.Point(0, 508);
+            this.panel_default_printer.Location = new System.Drawing.Point(0, 530);
             this.panel_default_printer.Name = "panel_default_printer";
             this.panel_default_printer.Size = new System.Drawing.Size(150, 60);
             this.panel_default_printer.TabIndex = 10;
@@ -542,7 +542,7 @@
             this.panel_Application.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Application.Location = new System.Drawing.Point(173, 83);
             this.panel_Application.Name = "panel_Application";
-            this.panel_Application.Size = new System.Drawing.Size(770, 568);
+            this.panel_Application.Size = new System.Drawing.Size(770, 590);
             this.panel_Application.TabIndex = 4;
             this.panel_Application.UseSelectable = true;
             this.panel_Application.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.panel_Application_ControlRemoved);
@@ -561,11 +561,12 @@
             this.lab_sep_strip_01,
             this.tool_Strip_label_Commander,
             this.tool_Strip_path_Commander});
-            this.statusStrip1.Location = new System.Drawing.Point(23, 651);
+            this.statusStrip1.Location = new System.Drawing.Point(173, 651);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(920, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(770, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.Visible = false;
             // 
             // tool_Strip_label_SW
             // 
@@ -604,9 +605,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 701);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel_Application);
             this.Controls.Add(this.panel_Menu);
-            this.Controls.Add(this.statusStrip1);
             this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

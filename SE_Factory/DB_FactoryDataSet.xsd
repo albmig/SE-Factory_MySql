@@ -2,11 +2,12 @@
 <xs:schema id="DB_FactoryDataSet" targetNamespace="http://tempuri.org/DB_FactoryDataSet.xsd" xmlns:mstns="http://tempuri.org/DB_FactoryDataSet.xsd" xmlns="http://tempuri.org/DB_FactoryDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="4" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LocalDB_Connection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LocalDB_Connection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.LocalDB_Connection" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="OPEN_Connection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="OPEN_Connection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.OPEN_Connection" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="GCP_Connection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="GCP_Connection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.GCP_Connection" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_FactoryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_FactoryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.DB_FactoryConnectionString" Provider="MySql.Data.MySqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_FactoryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_FactoryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SE_Factory.Properties.Settings.GlobalReference.Default.DB_FactoryConnectionString" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
@@ -1349,7 +1350,7 @@ LIMIT 1</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GC_OrdiniTableAdapter" GeneratorDataComponentClassName="GC_OrdiniTableAdapter" Name="GC_Ordini" UserDataComponentName="GC_OrdiniTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DB_FactoryConnectionString (Settings)" DbObjectName="DB_Factory.GC_Ordini" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="GCP_Connection (Settings)" DbObjectName="DB_Factory.GC_Ordini" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `GC_Ordini` WHERE ((`Id` = @p1) AND ((@p2 = 1 AND `Ord_TIPO_ORDINE_CLIENTE` IS NULL) OR (`Ord_TIPO_ORDINE_CLIENTE` = @p3)) AND ((@p4 = 1 AND `Ord_Id_Cli` IS NULL) OR (`Ord_Id_Cli` = @p5)) AND ((@p6 = 1 AND `Ord_RAGIONE_SOCIALE` IS NULL) OR (`Ord_RAGIONE_SOCIALE` = @p7)) AND ((@p8 = 1 AND `Ord_NUMERO_ORDINE` IS NULL) OR (`Ord_NUMERO_ORDINE` = @p9)) AND ((@p10 = 1 AND `Ord_NUMERO_RIGA` IS NULL) OR (`Ord_NUMERO_RIGA` = @p11)) AND ((@p12 = 1 AND `Ord_CODICE_KIT` IS NULL) OR (`Ord_CODICE_KIT` = @p13)) AND ((@p14 = 1 AND `Ord_CODICE_SISTEMA` IS NULL) OR (`Ord_CODICE_SISTEMA` = @p15)) AND ((@p16 = 1 AND `Ord_DESCRIZIONE` IS NULL) OR (`Ord_DESCRIZIONE` = @p17)) AND ((@p18 = 1 AND `Ord_DATA_RICHIESTA_CONSEGNA` IS NULL) OR (`Ord_DATA_RICHIESTA_CONSEGNA` = @p19)) AND ((@p20 = 1 AND `Ord_DATA_CONFERMA_CONSEGNA` IS NULL) OR (`Ord_DATA_CONFERMA_CONSEGNA` = @p21)) AND ((@p22 = 1 AND `Ord_UM` IS NULL) OR (`Ord_UM` = @p23)) AND ((@p24 = 1 AND `Ord_QTA_ORDINATA_KIT` IS NULL) OR (`Ord_QTA_ORDINATA_KIT` = @p25)) AND ((@p26 = 1 AND `Ord_QTA_ORDINATA` IS NULL) OR (`Ord_QTA_ORDINATA` = @p27)) AND ((@p28 = 1 AND `Ord_QTA_EVASA` IS NULL) OR (`Ord_QTA_EVASA` = @p29)) AND ((@p30 = 1 AND `Ord_SOFTWARE` IS NULL) OR (`Ord_SOFTWARE` = @p31)) AND ((@p32 = 1 AND `Ord_DESCR_KIT` IS NULL) OR (`Ord_DESCR_KIT` = @p33)) AND ((@p34 = 1 AND `Ord_DESCREST_KIT` IS NULL) OR (`Ord_DESCREST_KIT` = @p35)) AND ((@p36 = 1 AND `Ord_DESCR_SISTEMA` IS NULL) OR (`Ord_DESCR_SISTEMA` = @p37)) AND ((@p38 = 1 AND `Ord_DESCREST_SISTEMA` IS NULL) OR (`Ord_DESCREST_SISTEMA` = @p39)) AND ((@p40 = 1 AND `Ord_MODELLO` IS NULL) OR (`Ord_MODELLO` = @p41)) AND ((@p42 = 1 AND `Ord_DESCR_SOFTWARE` IS NULL) OR (`Ord_DESCR_SOFTWARE` = @p43)) AND ((@p44 = 1 AND `Ord_DESCREST_SOFTWARE` IS NULL) OR (`Ord_DESCREST_SOFTWARE` = @p45)) AND ((@p46 = 1 AND `Ord_STATO_ORDINE` IS NULL) OR (`Ord_STATO_ORDINE` = @p47)) AND ((@p48 = 1 AND `Ord_PROG_PROGRAMMAZIONI` IS NULL) OR (`Ord_PROG_PROGRAMMAZIONI` = @p49)))</CommandText>
@@ -1554,6 +1555,122 @@ LIMIT 1</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GC_SerialNumbersTableAdapter" GeneratorDataComponentClassName="GC_SerialNumbersTableAdapter" Name="GC_SerialNumbers" UserDataComponentName="GC_SerialNumbersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_FactoryConnectionString (Settings)" DbObjectName="DB_Factory.GC_SerialNumbers" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `GC_SerialNumbers` WHERE ((`Id` = @p1) AND ((@p2 = 1 AND `Ser_Kit` IS NULL) OR (`Ser_Kit` = @p3)) AND ((@p4 = 1 AND `Ser_ID_Cli` IS NULL) OR (`Ser_ID_Cli` = @p5)) AND ((@p6 = 1 AND `Ser_Device` IS NULL) OR (`Ser_Device` = @p7)) AND ((@p8 = 1 AND `Ser_Device_ID_Code` IS NULL) OR (`Ser_Device_ID_Code` = @p9)) AND ((@p10 = 1 AND `Ser_OfficialSerial` IS NULL) OR (`Ser_OfficialSerial` = @p11)) AND ((@p12 = 1 AND `Ser_ReadSerial` IS NULL) OR (`Ser_ReadSerial` = @p13)) AND ((@p14 = 1 AND `Ser_SW_Code` IS NULL) OR (`Ser_SW_Code` = @p15)) AND ((@p16 = 1 AND `Ser_DateProduction` IS NULL) OR (`Ser_DateProduction` = @p17)) AND ((@p18 = 1 AND `Ser_Commessa` IS NULL) OR (`Ser_Commessa` = @p19)) AND ((@p20 = 1 AND `Ser_FamProd_ID_HEX` IS NULL) OR (`Ser_FamProd_ID_HEX` = @p21)) AND ((@p22 = 1 AND `Ser_HW_Compatible` IS NULL) OR (`Ser_HW_Compatible` = @p23)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_Kit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Kit" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_ID_Cli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_ID_Cli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_Device" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Device" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_Device_ID_Code" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Device_ID_Code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_OfficialSerial" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_OfficialSerial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_ReadSerial" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_ReadSerial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_SW_Code" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_SW_Code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p16" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_DateProduction" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p17" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ser_DateProduction" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p18" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_Commessa" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p19" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Commessa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p20" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_FamProd_ID_HEX" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p21" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_FamProd_ID_HEX" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p22" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_HW_Compatible" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p23" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_HW_Compatible" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `GC_SerialNumbers` (`Ser_Kit`, `Ser_ID_Cli`, `Ser_Device`, `Ser_Device_ID_Code`, `Ser_OfficialSerial`, `Ser_ReadSerial`, `Ser_SW_Code`, `Ser_DateProduction`, `Ser_Commessa`, `Ser_FamProd_ID_HEX`, `Ser_HW_Compatible`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Kit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_ID_Cli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Device" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Device_ID_Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_OfficialSerial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_ReadSerial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_SW_Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ser_DateProduction" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Commessa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_FamProd_ID_HEX" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_HW_Compatible" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Id`, `Ser_Kit`, `Ser_ID_Cli`, `Ser_Device`, `Ser_Device_ID_Code`, `Ser_OfficialSerial`, `Ser_ReadSerial`, `Ser_SW_Code`, `Ser_DateProduction`, `Ser_Commessa`, `Ser_FamProd_ID_HEX`, `Ser_HW_Compatible` FROM `GC_SerialNumbers`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `GC_SerialNumbers` SET `Ser_Kit` = @p1, `Ser_ID_Cli` = @p2, `Ser_Device` = @p3, `Ser_Device_ID_Code` = @p4, `Ser_OfficialSerial` = @p5, `Ser_ReadSerial` = @p6, `Ser_SW_Code` = @p7, `Ser_DateProduction` = @p8, `Ser_Commessa` = @p9, `Ser_FamProd_ID_HEX` = @p10, `Ser_HW_Compatible` = @p11 WHERE ((`Id` = @p12) AND ((@p13 = 1 AND `Ser_Kit` IS NULL) OR (`Ser_Kit` = @p14)) AND ((@p15 = 1 AND `Ser_ID_Cli` IS NULL) OR (`Ser_ID_Cli` = @p16)) AND ((@p17 = 1 AND `Ser_Device` IS NULL) OR (`Ser_Device` = @p18)) AND ((@p19 = 1 AND `Ser_Device_ID_Code` IS NULL) OR (`Ser_Device_ID_Code` = @p20)) AND ((@p21 = 1 AND `Ser_OfficialSerial` IS NULL) OR (`Ser_OfficialSerial` = @p22)) AND ((@p23 = 1 AND `Ser_ReadSerial` IS NULL) OR (`Ser_ReadSerial` = @p24)) AND ((@p25 = 1 AND `Ser_SW_Code` IS NULL) OR (`Ser_SW_Code` = @p26)) AND ((@p27 = 1 AND `Ser_DateProduction` IS NULL) OR (`Ser_DateProduction` = @p28)) AND ((@p29 = 1 AND `Ser_Commessa` IS NULL) OR (`Ser_Commessa` = @p30)) AND ((@p31 = 1 AND `Ser_FamProd_ID_HEX` IS NULL) OR (`Ser_FamProd_ID_HEX` = @p32)) AND ((@p33 = 1 AND `Ser_HW_Compatible` IS NULL) OR (`Ser_HW_Compatible` = @p34)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Kit" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_ID_Cli" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Device" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Device_ID_Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_OfficialSerial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_ReadSerial" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_SW_Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ser_DateProduction" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Commessa" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_FamProd_ID_HEX" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_HW_Compatible" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p12" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p13" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_Kit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p14" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Kit" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p15" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_ID_Cli" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p16" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_ID_Cli" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p17" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_Device" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p18" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Device" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p19" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_Device_ID_Code" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p20" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Device_ID_Code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p21" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_OfficialSerial" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p22" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_OfficialSerial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p23" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_ReadSerial" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p24" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_ReadSerial" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p25" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_SW_Code" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p26" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_SW_Code" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p27" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_DateProduction" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@p28" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="Ser_DateProduction" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p29" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_Commessa" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p30" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_Commessa" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p31" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_FamProd_ID_HEX" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p32" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_FamProd_ID_HEX" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p33" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="Ser_HW_Compatible" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p34" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ser_HW_Compatible" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Ser_Kit" DataSetColumn="Ser_Kit" />
+              <Mapping SourceColumn="Ser_ID_Cli" DataSetColumn="Ser_ID_Cli" />
+              <Mapping SourceColumn="Ser_Device" DataSetColumn="Ser_Device" />
+              <Mapping SourceColumn="Ser_Device_ID_Code" DataSetColumn="Ser_Device_ID_Code" />
+              <Mapping SourceColumn="Ser_OfficialSerial" DataSetColumn="Ser_OfficialSerial" />
+              <Mapping SourceColumn="Ser_ReadSerial" DataSetColumn="Ser_ReadSerial" />
+              <Mapping SourceColumn="Ser_SW_Code" DataSetColumn="Ser_SW_Code" />
+              <Mapping SourceColumn="Ser_DateProduction" DataSetColumn="Ser_DateProduction" />
+              <Mapping SourceColumn="Ser_Commessa" DataSetColumn="Ser_Commessa" />
+              <Mapping SourceColumn="Ser_FamProd_ID_HEX" DataSetColumn="Ser_FamProd_ID_HEX" />
+              <Mapping SourceColumn="Ser_HW_Compatible" DataSetColumn="Ser_HW_Compatible" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1562,7 +1679,7 @@ LIMIT 1</CommandText>
   <xs:element name="DB_FactoryDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DB_FactoryDataSet" msprop:Generator_UserDSName="DB_FactoryDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="local_Fam_Prod" msprop:Generator_TableClassName="local_Fam_ProdDataTable" msprop:Generator_TableVarName="tablelocal_Fam_Prod" msprop:Generator_TablePropName="local_Fam_Prod" msprop:Generator_RowDeletingName="local_Fam_ProdRowDeleting" msprop:Generator_RowChangingName="local_Fam_ProdRowChanging" msprop:Generator_RowEvHandlerName="local_Fam_ProdRowChangeEventHandler" msprop:Generator_RowDeletedName="local_Fam_ProdRowDeleted" msprop:Generator_UserTableName="local_Fam_Prod" msprop:Generator_RowChangedName="local_Fam_ProdRowChanged" msprop:Generator_RowEvArgName="local_Fam_ProdRowChangeEvent" msprop:Generator_RowClassName="local_Fam_ProdRow">
+        <xs:element name="local_Fam_Prod" msprop:Generator_TableClassName="local_Fam_ProdDataTable" msprop:Generator_TableVarName="tablelocal_Fam_Prod" msprop:Generator_RowChangedName="local_Fam_ProdRowChanged" msprop:Generator_TablePropName="local_Fam_Prod" msprop:Generator_RowDeletingName="local_Fam_ProdRowDeleting" msprop:Generator_RowChangingName="local_Fam_ProdRowChanging" msprop:Generator_RowEvHandlerName="local_Fam_ProdRowChangeEventHandler" msprop:Generator_RowDeletedName="local_Fam_ProdRowDeleted" msprop:Generator_RowClassName="local_Fam_ProdRow" msprop:Generator_UserTableName="local_Fam_Prod" msprop:Generator_RowEvArgName="local_Fam_ProdRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1590,7 +1707,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="local_Schede" msprop:Generator_TableClassName="local_SchedeDataTable" msprop:Generator_TableVarName="tablelocal_Schede" msprop:Generator_RowChangedName="local_SchedeRowChanged" msprop:Generator_TablePropName="local_Schede" msprop:Generator_RowDeletingName="local_SchedeRowDeleting" msprop:Generator_RowChangingName="local_SchedeRowChanging" msprop:Generator_RowEvHandlerName="local_SchedeRowChangeEventHandler" msprop:Generator_RowDeletedName="local_SchedeRowDeleted" msprop:Generator_RowClassName="local_SchedeRow" msprop:Generator_UserTableName="local_Schede" msprop:Generator_RowEvArgName="local_SchedeRowChangeEvent">
+        <xs:element name="local_Schede" msprop:Generator_TableClassName="local_SchedeDataTable" msprop:Generator_TableVarName="tablelocal_Schede" msprop:Generator_TablePropName="local_Schede" msprop:Generator_RowDeletingName="local_SchedeRowDeleting" msprop:Generator_RowChangingName="local_SchedeRowChanging" msprop:Generator_RowEvHandlerName="local_SchedeRowChangeEventHandler" msprop:Generator_RowDeletedName="local_SchedeRowDeleted" msprop:Generator_UserTableName="local_Schede" msprop:Generator_RowChangedName="local_SchedeRowChanged" msprop:Generator_RowEvArgName="local_SchedeRowChangeEvent" msprop:Generator_RowClassName="local_SchedeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1619,7 +1736,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_TableClassName="SM_V_ANAGRAFICA_CLIENTIDataTable" msprop:Generator_TableVarName="tableSM_V_ANAGRAFICA_CLIENTI" msprop:Generator_TablePropName="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_RowDeletingName="SM_V_ANAGRAFICA_CLIENTIRowDeleting" msprop:Generator_RowChangingName="SM_V_ANAGRAFICA_CLIENTIRowChanging" msprop:Generator_RowEvHandlerName="SM_V_ANAGRAFICA_CLIENTIRowChangeEventHandler" msprop:Generator_RowDeletedName="SM_V_ANAGRAFICA_CLIENTIRowDeleted" msprop:Generator_UserTableName="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_RowChangedName="SM_V_ANAGRAFICA_CLIENTIRowChanged" msprop:Generator_RowEvArgName="SM_V_ANAGRAFICA_CLIENTIRowChangeEvent" msprop:Generator_RowClassName="SM_V_ANAGRAFICA_CLIENTIRow">
+        <xs:element name="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_TableClassName="SM_V_ANAGRAFICA_CLIENTIDataTable" msprop:Generator_TableVarName="tableSM_V_ANAGRAFICA_CLIENTI" msprop:Generator_RowChangedName="SM_V_ANAGRAFICA_CLIENTIRowChanged" msprop:Generator_TablePropName="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_RowDeletingName="SM_V_ANAGRAFICA_CLIENTIRowDeleting" msprop:Generator_RowChangingName="SM_V_ANAGRAFICA_CLIENTIRowChanging" msprop:Generator_RowEvHandlerName="SM_V_ANAGRAFICA_CLIENTIRowChangeEventHandler" msprop:Generator_RowDeletedName="SM_V_ANAGRAFICA_CLIENTIRowDeleted" msprop:Generator_RowClassName="SM_V_ANAGRAFICA_CLIENTIRow" msprop:Generator_UserTableName="SM_V_ANAGRAFICA_CLIENTI" msprop:Generator_RowEvArgName="SM_V_ANAGRAFICA_CLIENTIRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Mastro" msprop:Generator_ColumnVarNameInTable="columnMastro" msprop:Generator_ColumnPropNameInRow="Mastro" msprop:Generator_ColumnPropNameInTable="MastroColumn" msprop:Generator_UserColumnName="Mastro" type="xs:short" />
@@ -1851,7 +1968,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="JLabel" msprop:Generator_TableClassName="JLabelDataTable" msprop:Generator_TableVarName="tableJLabel" msprop:Generator_RowChangedName="JLabelRowChanged" msprop:Generator_TablePropName="JLabel" msprop:Generator_RowDeletingName="JLabelRowDeleting" msprop:Generator_RowChangingName="JLabelRowChanging" msprop:Generator_RowEvHandlerName="JLabelRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabelRowDeleted" msprop:Generator_RowClassName="JLabelRow" msprop:Generator_UserTableName="JLabel" msprop:Generator_RowEvArgName="JLabelRowChangeEvent">
+        <xs:element name="JLabel" msprop:Generator_TableClassName="JLabelDataTable" msprop:Generator_TableVarName="tableJLabel" msprop:Generator_TablePropName="JLabel" msprop:Generator_RowDeletingName="JLabelRowDeleting" msprop:Generator_RowChangingName="JLabelRowChanging" msprop:Generator_RowEvHandlerName="JLabelRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabelRowDeleted" msprop:Generator_UserTableName="JLabel" msprop:Generator_RowChangedName="JLabelRowChanged" msprop:Generator_RowEvArgName="JLabelRowChangeEvent" msprop:Generator_RowClassName="JLabelRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TIPO_ORDINE_CLIENTE" msprop:Generator_ColumnVarNameInTable="columnTIPO_ORDINE_CLIENTE" msprop:Generator_ColumnPropNameInRow="TIPO_ORDINE_CLIENTE" msprop:Generator_ColumnPropNameInTable="TIPO_ORDINE_CLIENTEColumn" msprop:Generator_UserColumnName="TIPO_ORDINE_CLIENTE">
@@ -1934,7 +2051,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="JLabel_Clienti" msprop:Generator_TableClassName="JLabel_ClientiDataTable" msprop:Generator_TableVarName="tableJLabel_Clienti" msprop:Generator_TablePropName="JLabel_Clienti" msprop:Generator_RowDeletingName="JLabel_ClientiRowDeleting" msprop:Generator_RowChangingName="JLabel_ClientiRowChanging" msprop:Generator_RowEvHandlerName="JLabel_ClientiRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabel_ClientiRowDeleted" msprop:Generator_UserTableName="JLabel_Clienti" msprop:Generator_RowChangedName="JLabel_ClientiRowChanged" msprop:Generator_RowEvArgName="JLabel_ClientiRowChangeEvent" msprop:Generator_RowClassName="JLabel_ClientiRow">
+        <xs:element name="JLabel_Clienti" msprop:Generator_TableClassName="JLabel_ClientiDataTable" msprop:Generator_TableVarName="tableJLabel_Clienti" msprop:Generator_RowChangedName="JLabel_ClientiRowChanged" msprop:Generator_TablePropName="JLabel_Clienti" msprop:Generator_RowDeletingName="JLabel_ClientiRowDeleting" msprop:Generator_RowChangingName="JLabel_ClientiRowChanging" msprop:Generator_RowEvHandlerName="JLabel_ClientiRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabel_ClientiRowDeleted" msprop:Generator_RowClassName="JLabel_ClientiRow" msprop:Generator_UserTableName="JLabel_Clienti" msprop:Generator_RowEvArgName="JLabel_ClientiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NumOrdine" msprop:Generator_ColumnVarNameInTable="columnNumOrdine" msprop:Generator_ColumnPropNameInRow="NumOrdine" msprop:Generator_ColumnPropNameInTable="NumOrdineColumn" msprop:Generator_UserColumnName="NumOrdine" type="xs:int" />
@@ -2236,7 +2353,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SpedNeohm" msprop:Generator_TableClassName="SpedNeohmDataTable" msprop:Generator_TableVarName="tableSpedNeohm" msprop:Generator_TablePropName="SpedNeohm" msprop:Generator_RowDeletingName="SpedNeohmRowDeleting" msprop:Generator_RowChangingName="SpedNeohmRowChanging" msprop:Generator_RowEvHandlerName="SpedNeohmRowChangeEventHandler" msprop:Generator_RowDeletedName="SpedNeohmRowDeleted" msprop:Generator_UserTableName="SpedNeohm" msprop:Generator_RowChangedName="SpedNeohmRowChanged" msprop:Generator_RowEvArgName="SpedNeohmRowChangeEvent" msprop:Generator_RowClassName="SpedNeohmRow">
+        <xs:element name="SpedNeohm" msprop:Generator_TableClassName="SpedNeohmDataTable" msprop:Generator_TableVarName="tableSpedNeohm" msprop:Generator_RowChangedName="SpedNeohmRowChanged" msprop:Generator_TablePropName="SpedNeohm" msprop:Generator_RowDeletingName="SpedNeohmRowDeleting" msprop:Generator_RowChangingName="SpedNeohmRowChanging" msprop:Generator_RowEvHandlerName="SpedNeohmRowChangeEventHandler" msprop:Generator_RowDeletedName="SpedNeohmRowDeleted" msprop:Generator_RowClassName="SpedNeohmRow" msprop:Generator_UserTableName="SpedNeohm" msprop:Generator_RowEvArgName="SpedNeohmRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="File_Sped" msprop:Generator_ColumnVarNameInTable="columnFile_Sped" msprop:Generator_ColumnPropNameInRow="File_Sped" msprop:Generator_ColumnPropNameInTable="File_SpedColumn" msprop:Generator_UserColumnName="File_Sped" type="xs:string" />
@@ -2244,7 +2361,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="xls_Serials" msprop:Generator_TableClassName="xls_SerialsDataTable" msprop:Generator_TableVarName="tablexls_Serials" msprop:Generator_RowChangedName="xls_SerialsRowChanged" msprop:Generator_TablePropName="xls_Serials" msprop:Generator_RowDeletingName="xls_SerialsRowDeleting" msprop:Generator_RowChangingName="xls_SerialsRowChanging" msprop:Generator_RowEvHandlerName="xls_SerialsRowChangeEventHandler" msprop:Generator_RowDeletedName="xls_SerialsRowDeleted" msprop:Generator_RowClassName="xls_SerialsRow" msprop:Generator_UserTableName="xls_Serials" msprop:Generator_RowEvArgName="xls_SerialsRowChangeEvent">
+        <xs:element name="xls_Serials" msprop:Generator_TableClassName="xls_SerialsDataTable" msprop:Generator_TableVarName="tablexls_Serials" msprop:Generator_TablePropName="xls_Serials" msprop:Generator_RowDeletingName="xls_SerialsRowDeleting" msprop:Generator_RowChangingName="xls_SerialsRowChanging" msprop:Generator_RowEvHandlerName="xls_SerialsRowChangeEventHandler" msprop:Generator_RowDeletedName="xls_SerialsRowDeleted" msprop:Generator_UserTableName="xls_Serials" msprop:Generator_RowChangedName="xls_SerialsRowChanged" msprop:Generator_RowEvArgName="xls_SerialsRowChangeEvent" msprop:Generator_RowClassName="xls_SerialsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Serial_Id" msprop:Generator_ColumnVarNameInTable="columnSerial_Id" msprop:Generator_ColumnPropNameInRow="Serial_Id" msprop:Generator_ColumnPropNameInTable="Serial_IdColumn" msprop:Generator_UserColumnName="Serial_Id" type="xs:int" minOccurs="0" />
@@ -2259,7 +2376,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="local_Software" msprop:Generator_TableClassName="local_SoftwareDataTable" msprop:Generator_TableVarName="tablelocal_Software" msprop:Generator_TablePropName="local_Software" msprop:Generator_RowDeletingName="local_SoftwareRowDeleting" msprop:Generator_RowChangingName="local_SoftwareRowChanging" msprop:Generator_RowEvHandlerName="local_SoftwareRowChangeEventHandler" msprop:Generator_RowDeletedName="local_SoftwareRowDeleted" msprop:Generator_UserTableName="local_Software" msprop:Generator_RowChangedName="local_SoftwareRowChanged" msprop:Generator_RowEvArgName="local_SoftwareRowChangeEvent" msprop:Generator_RowClassName="local_SoftwareRow">
+        <xs:element name="local_Software" msprop:Generator_TableClassName="local_SoftwareDataTable" msprop:Generator_TableVarName="tablelocal_Software" msprop:Generator_RowChangedName="local_SoftwareRowChanged" msprop:Generator_TablePropName="local_Software" msprop:Generator_RowDeletingName="local_SoftwareRowDeleting" msprop:Generator_RowChangingName="local_SoftwareRowChanging" msprop:Generator_RowEvHandlerName="local_SoftwareRowChangeEventHandler" msprop:Generator_RowDeletedName="local_SoftwareRowDeleted" msprop:Generator_RowClassName="local_SoftwareRow" msprop:Generator_UserTableName="local_Software" msprop:Generator_RowEvArgName="local_SoftwareRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2360,7 +2477,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GC_Fam_Prod" msprop:Generator_TableClassName="GC_Fam_ProdDataTable" msprop:Generator_TableVarName="tableGC_Fam_Prod" msprop:Generator_RowChangedName="GC_Fam_ProdRowChanged" msprop:Generator_TablePropName="GC_Fam_Prod" msprop:Generator_RowDeletingName="GC_Fam_ProdRowDeleting" msprop:Generator_RowChangingName="GC_Fam_ProdRowChanging" msprop:Generator_RowEvHandlerName="GC_Fam_ProdRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_Fam_ProdRowDeleted" msprop:Generator_RowClassName="GC_Fam_ProdRow" msprop:Generator_UserTableName="GC_Fam_Prod" msprop:Generator_RowEvArgName="GC_Fam_ProdRowChangeEvent">
+        <xs:element name="GC_Fam_Prod" msprop:Generator_TableClassName="GC_Fam_ProdDataTable" msprop:Generator_TableVarName="tableGC_Fam_Prod" msprop:Generator_TablePropName="GC_Fam_Prod" msprop:Generator_RowDeletingName="GC_Fam_ProdRowDeleting" msprop:Generator_RowChangingName="GC_Fam_ProdRowChanging" msprop:Generator_RowEvHandlerName="GC_Fam_ProdRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_Fam_ProdRowDeleted" msprop:Generator_UserTableName="GC_Fam_Prod" msprop:Generator_RowChangedName="GC_Fam_ProdRowChanged" msprop:Generator_RowEvArgName="GC_Fam_ProdRowChangeEvent" msprop:Generator_RowClassName="GC_Fam_ProdRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2385,10 +2502,10 @@ LIMIT 1</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="GC_Schede" msprop:Generator_TableClassName="GC_SchedeDataTable" msprop:Generator_TableVarName="tableGC_Schede" msprop:Generator_RowChangedName="GC_SchedeRowChanged" msprop:Generator_TablePropName="GC_Schede" msprop:Generator_RowDeletingName="GC_SchedeRowDeleting" msprop:Generator_RowChangingName="GC_SchedeRowChanging" msprop:Generator_RowEvHandlerName="GC_SchedeRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_SchedeRowDeleted" msprop:Generator_RowClassName="GC_SchedeRow" msprop:Generator_UserTableName="GC_Schede" msprop:Generator_RowEvArgName="GC_SchedeRowChangeEvent" minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="GC_Schede" msprop:Generator_TableClassName="GC_SchedeDataTable" msprop:Generator_TableVarName="tableGC_Schede" msprop:Generator_TablePropName="GC_Schede" msprop:Generator_RowDeletingName="GC_SchedeRowDeleting" msprop:Generator_RowChangingName="GC_SchedeRowChanging" msprop:Generator_RowEvHandlerName="GC_SchedeRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_SchedeRowDeleted" msprop:Generator_UserTableName="GC_Schede" msprop:Generator_RowChangedName="GC_SchedeRowChanged" msprop:Generator_RowEvArgName="GC_SchedeRowChangeEvent" msprop:Generator_RowClassName="GC_SchedeRow" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                   <xs:appinfo>
-                    <msdata:Relationship name="Fam_Prod_GC_Schede" msdata:parent="GC_Fam_Prod" msdata:child="GC_Schede" msdata:parentkey="Id" msdata:childkey="Prod_Fam" msprop:Generator_UserChildTable="GC_Schede" msprop:Generator_ChildPropName="GetGC_SchedeRows" msprop:Generator_UserRelationName="Fam_Prod_GC_Schede" msprop:Generator_ParentPropName="GC_Fam_ProdRow" msprop:Generator_RelationVarName="relationFam_Prod_GC_Schede" msprop:Generator_UserParentTable="GC_Fam_Prod" />
+                    <msdata:Relationship name="Fam_Prod_GC_Schede" msdata:parent="GC_Fam_Prod" msdata:child="GC_Schede" msdata:parentkey="Id" msdata:childkey="Prod_Fam" msprop:Generator_UserChildTable="GC_Schede" msprop:Generator_ChildPropName="GetGC_SchedeRows" msprop:Generator_UserRelationName="Fam_Prod_GC_Schede" msprop:Generator_RelationVarName="relationFam_Prod_GC_Schede" msprop:Generator_UserParentTable="GC_Fam_Prod" msprop:Generator_ParentPropName="GC_Fam_ProdRow" />
                   </xs:appinfo>
                 </xs:annotation>
                 <xs:complexType>
@@ -2422,7 +2539,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GC_Customers" msprop:Generator_TableClassName="GC_CustomersDataTable" msprop:Generator_TableVarName="tableGC_Customers" msprop:Generator_TablePropName="GC_Customers" msprop:Generator_RowDeletingName="GC_CustomersRowDeleting" msprop:Generator_RowChangingName="GC_CustomersRowChanging" msprop:Generator_RowEvHandlerName="GC_CustomersRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_CustomersRowDeleted" msprop:Generator_UserTableName="GC_Customers" msprop:Generator_RowChangedName="GC_CustomersRowChanged" msprop:Generator_RowEvArgName="GC_CustomersRowChangeEvent" msprop:Generator_RowClassName="GC_CustomersRow">
+        <xs:element name="GC_Customers" msprop:Generator_TableClassName="GC_CustomersDataTable" msprop:Generator_TableVarName="tableGC_Customers" msprop:Generator_RowChangedName="GC_CustomersRowChanged" msprop:Generator_TablePropName="GC_Customers" msprop:Generator_RowDeletingName="GC_CustomersRowDeleting" msprop:Generator_RowChangingName="GC_CustomersRowChanging" msprop:Generator_RowEvHandlerName="GC_CustomersRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_CustomersRowDeleted" msprop:Generator_RowClassName="GC_CustomersRow" msprop:Generator_UserTableName="GC_Customers" msprop:Generator_RowEvArgName="GC_CustomersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2506,7 +2623,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GC_Kit" msprop:Generator_TableClassName="GC_KitDataTable" msprop:Generator_TableVarName="tableGC_Kit" msprop:Generator_RowChangedName="GC_KitRowChanged" msprop:Generator_TablePropName="GC_Kit" msprop:Generator_RowDeletingName="GC_KitRowDeleting" msprop:Generator_RowChangingName="GC_KitRowChanging" msprop:Generator_RowEvHandlerName="GC_KitRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_KitRowDeleted" msprop:Generator_RowClassName="GC_KitRow" msprop:Generator_UserTableName="GC_Kit" msprop:Generator_RowEvArgName="GC_KitRowChangeEvent">
+        <xs:element name="GC_Kit" msprop:Generator_TableClassName="GC_KitDataTable" msprop:Generator_TableVarName="tableGC_Kit" msprop:Generator_TablePropName="GC_Kit" msprop:Generator_RowDeletingName="GC_KitRowDeleting" msprop:Generator_RowChangingName="GC_KitRowChanging" msprop:Generator_RowEvHandlerName="GC_KitRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_KitRowDeleted" msprop:Generator_UserTableName="GC_Kit" msprop:Generator_RowChangedName="GC_KitRowChanged" msprop:Generator_RowEvArgName="GC_KitRowChangeEvent" msprop:Generator_RowClassName="GC_KitRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2544,7 +2661,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_TableClassName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESADataTable" msprop:Generator_TableVarName="tableNM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_TablePropName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_RowDeletingName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowDeleting" msprop:Generator_RowChangingName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChanging" msprop:Generator_RowEvHandlerName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChangeEventHandler" msprop:Generator_RowDeletedName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowDeleted" msprop:Generator_UserTableName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_RowChangedName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChanged" msprop:Generator_RowEvArgName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChangeEvent" msprop:Generator_RowClassName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARow">
+        <xs:element name="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_TableClassName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESADataTable" msprop:Generator_TableVarName="tableNM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_RowChangedName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChanged" msprop:Generator_TablePropName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_RowDeletingName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowDeleting" msprop:Generator_RowChangingName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChanging" msprop:Generator_RowEvHandlerName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChangeEventHandler" msprop:Generator_RowDeletedName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowDeleted" msprop:Generator_RowClassName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARow" msprop:Generator_UserTableName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESA" msprop:Generator_RowEvArgName="NM_V_ANAGRAFICA_DB_DESCRIZIONEESTESARowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CODICE_ASSIEME" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCODICE_ASSIEME" msprop:Generator_ColumnPropNameInRow="CODICE_ASSIEME" msprop:Generator_ColumnPropNameInTable="CODICE_ASSIEMEColumn" msprop:Generator_UserColumnName="CODICE_ASSIEME" minOccurs="0">
@@ -2615,7 +2732,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GC_Software" msprop:Generator_TableClassName="GC_SoftwareDataTable" msprop:Generator_TableVarName="tableGC_Software" msprop:Generator_TablePropName="GC_Software" msprop:Generator_RowDeletingName="GC_SoftwareRowDeleting" msprop:Generator_RowChangingName="GC_SoftwareRowChanging" msprop:Generator_RowEvHandlerName="GC_SoftwareRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_SoftwareRowDeleted" msprop:Generator_UserTableName="GC_Software" msprop:Generator_RowChangedName="GC_SoftwareRowChanged" msprop:Generator_RowEvArgName="GC_SoftwareRowChangeEvent" msprop:Generator_RowClassName="GC_SoftwareRow">
+        <xs:element name="GC_Software" msprop:Generator_TableClassName="GC_SoftwareDataTable" msprop:Generator_TableVarName="tableGC_Software" msprop:Generator_RowChangedName="GC_SoftwareRowChanged" msprop:Generator_TablePropName="GC_Software" msprop:Generator_RowDeletingName="GC_SoftwareRowDeleting" msprop:Generator_RowChangingName="GC_SoftwareRowChanging" msprop:Generator_RowEvHandlerName="GC_SoftwareRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_SoftwareRowDeleted" msprop:Generator_RowClassName="GC_SoftwareRow" msprop:Generator_UserTableName="GC_Software" msprop:Generator_RowEvArgName="GC_SoftwareRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2729,7 +2846,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GC_Devices" msprop:Generator_TableClassName="GC_DevicesDataTable" msprop:Generator_TableVarName="tableGC_Devices" msprop:Generator_RowChangedName="GC_DevicesRowChanged" msprop:Generator_TablePropName="GC_Devices" msprop:Generator_RowDeletingName="GC_DevicesRowDeleting" msprop:Generator_RowChangingName="GC_DevicesRowChanging" msprop:Generator_RowEvHandlerName="GC_DevicesRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_DevicesRowDeleted" msprop:Generator_RowClassName="GC_DevicesRow" msprop:Generator_UserTableName="GC_Devices" msprop:Generator_RowEvArgName="GC_DevicesRowChangeEvent">
+        <xs:element name="GC_Devices" msprop:Generator_TableClassName="GC_DevicesDataTable" msprop:Generator_TableVarName="tableGC_Devices" msprop:Generator_TablePropName="GC_Devices" msprop:Generator_RowDeletingName="GC_DevicesRowDeleting" msprop:Generator_RowChangingName="GC_DevicesRowChanging" msprop:Generator_RowEvHandlerName="GC_DevicesRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_DevicesRowDeleted" msprop:Generator_UserTableName="GC_Devices" msprop:Generator_RowChangedName="GC_DevicesRowChanged" msprop:Generator_RowEvArgName="GC_DevicesRowChangeEvent" msprop:Generator_RowClassName="GC_DevicesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2767,7 +2884,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="JLabel_full" msprop:Generator_TableClassName="JLabel_fullDataTable" msprop:Generator_TableVarName="tableJLabel_full" msprop:Generator_TablePropName="JLabel_full" msprop:Generator_RowDeletingName="JLabel_fullRowDeleting" msprop:Generator_RowChangingName="JLabel_fullRowChanging" msprop:Generator_RowEvHandlerName="JLabel_fullRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabel_fullRowDeleted" msprop:Generator_UserTableName="JLabel_full" msprop:Generator_RowChangedName="JLabel_fullRowChanged" msprop:Generator_RowEvArgName="JLabel_fullRowChangeEvent" msprop:Generator_RowClassName="JLabel_fullRow">
+        <xs:element name="JLabel_full" msprop:Generator_TableClassName="JLabel_fullDataTable" msprop:Generator_TableVarName="tableJLabel_full" msprop:Generator_RowChangedName="JLabel_fullRowChanged" msprop:Generator_TablePropName="JLabel_full" msprop:Generator_RowDeletingName="JLabel_fullRowDeleting" msprop:Generator_RowChangingName="JLabel_fullRowChanging" msprop:Generator_RowEvHandlerName="JLabel_fullRowChangeEventHandler" msprop:Generator_RowDeletedName="JLabel_fullRowDeleted" msprop:Generator_RowClassName="JLabel_fullRow" msprop:Generator_UserTableName="JLabel_full" msprop:Generator_RowEvArgName="JLabel_fullRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TIPO_ORDINE_CLIENTE" msprop:Generator_ColumnVarNameInTable="columnTIPO_ORDINE_CLIENTE" msprop:Generator_ColumnPropNameInRow="TIPO_ORDINE_CLIENTE" msprop:Generator_ColumnPropNameInTable="TIPO_ORDINE_CLIENTEColumn" msprop:Generator_UserColumnName="TIPO_ORDINE_CLIENTE">
@@ -2899,7 +3016,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GC_CustomersFW" msprop:Generator_TableClassName="GC_CustomersFWDataTable" msprop:Generator_TableVarName="tableGC_CustomersFW" msprop:Generator_RowChangedName="GC_CustomersFWRowChanged" msprop:Generator_TablePropName="GC_CustomersFW" msprop:Generator_RowDeletingName="GC_CustomersFWRowDeleting" msprop:Generator_RowChangingName="GC_CustomersFWRowChanging" msprop:Generator_RowEvHandlerName="GC_CustomersFWRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_CustomersFWRowDeleted" msprop:Generator_RowClassName="GC_CustomersFWRow" msprop:Generator_UserTableName="GC_CustomersFW" msprop:Generator_RowEvArgName="GC_CustomersFWRowChangeEvent">
+        <xs:element name="GC_CustomersFW" msprop:Generator_TableClassName="GC_CustomersFWDataTable" msprop:Generator_TableVarName="tableGC_CustomersFW" msprop:Generator_TablePropName="GC_CustomersFW" msprop:Generator_RowDeletingName="GC_CustomersFWRowDeleting" msprop:Generator_RowChangingName="GC_CustomersFWRowChanging" msprop:Generator_RowEvHandlerName="GC_CustomersFWRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_CustomersFWRowDeleted" msprop:Generator_UserTableName="GC_CustomersFW" msprop:Generator_RowChangedName="GC_CustomersFWRowChanged" msprop:Generator_RowEvArgName="GC_CustomersFWRowChangeEvent" msprop:Generator_RowClassName="GC_CustomersFWRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -2921,7 +3038,7 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GC_Ordini" msprop:Generator_TableClassName="GC_OrdiniDataTable" msprop:Generator_TableVarName="tableGC_Ordini" msprop:Generator_TablePropName="GC_Ordini" msprop:Generator_RowDeletingName="GC_OrdiniRowDeleting" msprop:Generator_RowChangingName="GC_OrdiniRowChanging" msprop:Generator_RowEvHandlerName="GC_OrdiniRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_OrdiniRowDeleted" msprop:Generator_UserTableName="GC_Ordini" msprop:Generator_RowChangedName="GC_OrdiniRowChanged" msprop:Generator_RowEvArgName="GC_OrdiniRowChangeEvent" msprop:Generator_RowClassName="GC_OrdiniRow">
+        <xs:element name="GC_Ordini" msprop:Generator_TableClassName="GC_OrdiniDataTable" msprop:Generator_TableVarName="tableGC_Ordini" msprop:Generator_RowChangedName="GC_OrdiniRowChanged" msprop:Generator_TablePropName="GC_Ordini" msprop:Generator_RowDeletingName="GC_OrdiniRowDeleting" msprop:Generator_RowChangingName="GC_OrdiniRowChanging" msprop:Generator_RowEvHandlerName="GC_OrdiniRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_OrdiniRowDeleted" msprop:Generator_RowClassName="GC_OrdiniRow" msprop:Generator_UserTableName="GC_Ordini" msprop:Generator_RowEvArgName="GC_OrdiniRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -3042,6 +3159,78 @@ LIMIT 1</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="GC_SerialNumbers" msprop:Generator_TableClassName="GC_SerialNumbersDataTable" msprop:Generator_TableVarName="tableGC_SerialNumbers" msprop:Generator_TablePropName="GC_SerialNumbers" msprop:Generator_RowDeletingName="GC_SerialNumbersRowDeleting" msprop:Generator_RowChangingName="GC_SerialNumbersRowChanging" msprop:Generator_RowEvHandlerName="GC_SerialNumbersRowChangeEventHandler" msprop:Generator_RowDeletedName="GC_SerialNumbersRowDeleted" msprop:Generator_UserTableName="GC_SerialNumbers" msprop:Generator_RowChangedName="GC_SerialNumbersRowChanged" msprop:Generator_RowEvArgName="GC_SerialNumbersRowChangeEvent" msprop:Generator_RowClassName="GC_SerialNumbersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Ser_Kit" msprop:Generator_ColumnVarNameInTable="columnSer_Kit" msprop:Generator_ColumnPropNameInRow="Ser_Kit" msprop:Generator_ColumnPropNameInTable="Ser_KitColumn" msprop:Generator_UserColumnName="Ser_Kit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ser_ID_Cli" msprop:Generator_ColumnVarNameInTable="columnSer_ID_Cli" msprop:Generator_ColumnPropNameInRow="Ser_ID_Cli" msprop:Generator_ColumnPropNameInTable="Ser_ID_CliColumn" msprop:Generator_UserColumnName="Ser_ID_Cli" type="xs:int" minOccurs="0" />
+              <xs:element name="Ser_Device" msprop:Generator_ColumnVarNameInTable="columnSer_Device" msprop:Generator_ColumnPropNameInRow="Ser_Device" msprop:Generator_ColumnPropNameInTable="Ser_DeviceColumn" msprop:Generator_UserColumnName="Ser_Device" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ser_Device_ID_Code" msprop:Generator_ColumnVarNameInTable="columnSer_Device_ID_Code" msprop:Generator_ColumnPropNameInRow="Ser_Device_ID_Code" msprop:Generator_ColumnPropNameInTable="Ser_Device_ID_CodeColumn" msprop:Generator_UserColumnName="Ser_Device_ID_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ser_OfficialSerial" msprop:Generator_ColumnVarNameInTable="columnSer_OfficialSerial" msprop:Generator_ColumnPropNameInRow="Ser_OfficialSerial" msprop:Generator_ColumnPropNameInTable="Ser_OfficialSerialColumn" msprop:Generator_UserColumnName="Ser_OfficialSerial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ser_ReadSerial" msprop:Generator_ColumnVarNameInTable="columnSer_ReadSerial" msprop:Generator_ColumnPropNameInRow="Ser_ReadSerial" msprop:Generator_ColumnPropNameInTable="Ser_ReadSerialColumn" msprop:Generator_UserColumnName="Ser_ReadSerial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ser_SW_Code" msprop:Generator_ColumnVarNameInTable="columnSer_SW_Code" msprop:Generator_ColumnPropNameInRow="Ser_SW_Code" msprop:Generator_ColumnPropNameInTable="Ser_SW_CodeColumn" msprop:Generator_UserColumnName="Ser_SW_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ser_DateProduction" msprop:Generator_ColumnVarNameInTable="columnSer_DateProduction" msprop:Generator_ColumnPropNameInRow="Ser_DateProduction" msprop:Generator_ColumnPropNameInTable="Ser_DateProductionColumn" msprop:Generator_UserColumnName="Ser_DateProduction" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Ser_Commessa" msprop:Generator_ColumnVarNameInTable="columnSer_Commessa" msprop:Generator_ColumnPropNameInRow="Ser_Commessa" msprop:Generator_ColumnPropNameInTable="Ser_CommessaColumn" msprop:Generator_UserColumnName="Ser_Commessa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ser_FamProd_ID_HEX" msprop:Generator_ColumnVarNameInTable="columnSer_FamProd_ID_HEX" msprop:Generator_ColumnPropNameInRow="Ser_FamProd_ID_HEX" msprop:Generator_ColumnPropNameInTable="Ser_FamProd_ID_HEXColumn" msprop:Generator_UserColumnName="Ser_FamProd_ID_HEX" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ser_HW_Compatible" msprop:Generator_ColumnVarNameInTable="columnSer_HW_Compatible" msprop:Generator_ColumnPropNameInRow="Ser_HW_Compatible" msprop:Generator_ColumnPropNameInTable="Ser_HW_CompatibleColumn" msprop:Generator_UserColumnName="Ser_HW_Compatible" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -3088,13 +3277,17 @@ LIMIT 1</CommandText>
       <xs:selector xpath=".//mstns:GC_Ordini" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
+    <xs:unique name="GC_SerialNumbers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GC_SerialNumbers" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Fam_Prod_Schede" msdata:parent="local_Fam_Prod" msdata:child="local_Schede" msdata:parentkey="Id" msdata:childkey="Prod_Fam" msprop:Generator_UserChildTable="local_Schede" msprop:Generator_ChildPropName="Getlocal_SchedeRows" msprop:Generator_UserRelationName="Fam_Prod_Schede" msprop:Generator_RelationVarName="relationFam_Prod_Schede" msprop:Generator_UserParentTable="local_Fam_Prod" msprop:Generator_ParentPropName="Fam_ProdRow" />
-      <msdata:Relationship name="JLabel_JLabel_Clienti" msdata:parent="JLabel" msdata:child="JLabel_Clienti" msdata:parentkey="TIPO_ORDINE_CLIENTE NUMERO_ORDINE" msdata:childkey="TipoOrdine NumOrdine" msprop:Generator_UserChildTable="JLabel_Clienti" msprop:Generator_ChildPropName="GetJLabel_ClientiRows" msprop:Generator_UserRelationName="JLabel_JLabel_Clienti" msprop:Generator_ParentPropName="JLabelRowParent" msprop:Generator_RelationVarName="relationJLabel_JLabel_Clienti" msprop:Generator_UserParentTable="JLabel" />
-      <msdata:Relationship name="Fam_Prod_Software" msdata:parent="local_Fam_Prod" msdata:child="local_Software" msdata:parentkey="Id" msdata:childkey="SW_Fam_Prod" msprop:Generator_UserChildTable="local_Software" msprop:Generator_ChildPropName="Getlocal_SoftwareRows" msprop:Generator_UserRelationName="Fam_Prod_Software" msprop:Generator_ParentPropName="Fam_ProdRow" msprop:Generator_RelationVarName="relationFam_Prod_Software" msprop:Generator_UserParentTable="local_Fam_Prod" />
-      <msdata:Relationship name="GC_Software_GC_Fam_Prod" msdata:parent="GC_Software" msdata:child="GC_Fam_Prod" msdata:parentkey="SW_Fam_Prod" msdata:childkey="Id" msprop:Generator_UserChildTable="GC_Fam_Prod" msprop:Generator_ChildPropName="GetGC_Fam_ProdRows" msprop:Generator_UserRelationName="GC_Software_GC_Fam_Prod" msprop:Generator_ParentPropName="GC_SoftwareRow" msprop:Generator_RelationVarName="relationGC_Software_GC_Fam_Prod" msprop:Generator_UserParentTable="GC_Software" />
+      <msdata:Relationship name="Fam_Prod_Schede" msdata:parent="local_Fam_Prod" msdata:child="local_Schede" msdata:parentkey="Id" msdata:childkey="Prod_Fam" msprop:Generator_UserChildTable="local_Schede" msprop:Generator_ChildPropName="Getlocal_SchedeRows" msprop:Generator_UserRelationName="Fam_Prod_Schede" msprop:Generator_ParentPropName="Fam_ProdRow" msprop:Generator_RelationVarName="relationFam_Prod_Schede" msprop:Generator_UserParentTable="local_Fam_Prod" />
+      <msdata:Relationship name="JLabel_JLabel_Clienti" msdata:parent="JLabel" msdata:child="JLabel_Clienti" msdata:parentkey="TIPO_ORDINE_CLIENTE NUMERO_ORDINE" msdata:childkey="TipoOrdine NumOrdine" msprop:Generator_UserChildTable="JLabel_Clienti" msprop:Generator_ChildPropName="GetJLabel_ClientiRows" msprop:Generator_UserRelationName="JLabel_JLabel_Clienti" msprop:Generator_RelationVarName="relationJLabel_JLabel_Clienti" msprop:Generator_UserParentTable="JLabel" msprop:Generator_ParentPropName="JLabelRowParent" />
+      <msdata:Relationship name="Fam_Prod_Software" msdata:parent="local_Fam_Prod" msdata:child="local_Software" msdata:parentkey="Id" msdata:childkey="SW_Fam_Prod" msprop:Generator_UserChildTable="local_Software" msprop:Generator_ChildPropName="Getlocal_SoftwareRows" msprop:Generator_UserRelationName="Fam_Prod_Software" msprop:Generator_RelationVarName="relationFam_Prod_Software" msprop:Generator_UserParentTable="local_Fam_Prod" msprop:Generator_ParentPropName="Fam_ProdRow" />
+      <msdata:Relationship name="GC_Software_GC_Fam_Prod" msdata:parent="GC_Software" msdata:child="GC_Fam_Prod" msdata:parentkey="SW_Fam_Prod" msdata:childkey="Id" msprop:Generator_UserChildTable="GC_Fam_Prod" msprop:Generator_ChildPropName="GetGC_Fam_ProdRows" msprop:Generator_UserRelationName="GC_Software_GC_Fam_Prod" msprop:Generator_RelationVarName="relationGC_Software_GC_Fam_Prod" msprop:Generator_UserParentTable="GC_Software" msprop:Generator_ParentPropName="GC_SoftwareRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
