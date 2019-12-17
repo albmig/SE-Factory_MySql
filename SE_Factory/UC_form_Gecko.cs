@@ -43,9 +43,9 @@ namespace SE_Factory
         private void UC_form_Gecko_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
-            this.local_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.local_Schede);
+            this.local_SchedeTableAdapter.Fill(this.dB_FactoryDataSet.Schede);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Fam_Prod'. È possibile spostarla o rimuoverla se necessario.
-            this.local_Fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.local_Fam_Prod);
+            this.local_Fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.Fam_Prod);
         }
 
         private void famProdBindingSource_CurrentChanged(object sender, EventArgs e)

@@ -91,8 +91,8 @@
             this.ID_Result = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.ID_timer = new System.Windows.Forms.Timer(this.components);
-            this.fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.local_Fam_ProdTableAdapter();
-            this.schedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.local_SchedeTableAdapter();
+            this.fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.Fam_ProdTableAdapter();
+            this.schedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.SchedeTableAdapter();
             this.pan_Menu_comandi = new System.Windows.Forms.MenuStrip();
             this.pan_SW_Titolo = new MetroFramework.Controls.MetroPanel();
             this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
@@ -1106,8 +1106,8 @@
         private System.Windows.Forms.Timer ID_timer;
         private System.Windows.Forms.BindingSource schedeBindingSource;
         private System.Windows.Forms.BindingSource famProdBindingSource;
-        private DB_FactoryDataSetTableAdapters.local_Fam_ProdTableAdapter fam_ProdTableAdapter;
-        private DB_FactoryDataSetTableAdapters.local_SchedeTableAdapter schedeTableAdapter;
+        private DB_FactoryDataSetTableAdapters.Fam_ProdTableAdapter fam_ProdTableAdapter;
+        private DB_FactoryDataSetTableAdapters.SchedeTableAdapter schedeTableAdapter;
         private System.Windows.Forms.PictureBox P_sch_image;
         private System.Windows.Forms.PictureBox C_sch_image;
         private System.Windows.Forms.MenuStrip pan_Menu_comandi;

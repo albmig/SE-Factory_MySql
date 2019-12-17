@@ -97,7 +97,6 @@
             this.P_prodSch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodFamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodDescrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodImageUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.P_SchedaCompatibile = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gCSchedeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -197,7 +196,6 @@
             this.C_prodSch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodFamDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodDescrizioneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodImageUrlDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_SchedaCompatibile = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.metroLabel49 = new MetroFramework.Controls.MetroLabel();
             this.pan_C_top_top = new MetroFramework.Controls.MetroPanel();
@@ -214,6 +212,7 @@
             this.metroLabel50 = new MetroFramework.Controls.MetroLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_pdfview = new MetroFramework.Controls.MetroTile();
+            this.gridGroupingControl1 = new Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl();
             this.gC_SoftwareTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_SoftwareTableAdapter();
             this.gC_Fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter();
             this.gC_SchedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_SchedeTableAdapter();
@@ -256,6 +255,7 @@
             this.metroPanel6.SuspendLayout();
             this.metroPanel7.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridGroupingControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // dB_FactoryDataSet
@@ -924,7 +924,6 @@
             this.P_prodSch,
             this.prodFamDataGridViewTextBoxColumn,
             this.prodDescrizioneDataGridViewTextBoxColumn,
-            this.prodImageUrlDataGridViewTextBoxColumn,
             this.P_SchedaCompatibile});
             this.grid_P_SchedeCompatibili.DataSource = this.gCSchedeBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -990,13 +989,6 @@
             this.prodDescrizioneDataGridViewTextBoxColumn.HeaderText = "Prod_Descrizione";
             this.prodDescrizioneDataGridViewTextBoxColumn.Name = "prodDescrizioneDataGridViewTextBoxColumn";
             this.prodDescrizioneDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // prodImageUrlDataGridViewTextBoxColumn
-            // 
-            this.prodImageUrlDataGridViewTextBoxColumn.DataPropertyName = "Prod_Image_Url";
-            this.prodImageUrlDataGridViewTextBoxColumn.HeaderText = "Prod_Image_Url";
-            this.prodImageUrlDataGridViewTextBoxColumn.Name = "prodImageUrlDataGridViewTextBoxColumn";
-            this.prodImageUrlDataGridViewTextBoxColumn.Visible = false;
             // 
             // P_SchedaCompatibile
             // 
@@ -2175,7 +2167,6 @@
             this.C_prodSch,
             this.prodFamDataGridViewTextBoxColumn1,
             this.prodDescrizioneDataGridViewTextBoxColumn1,
-            this.prodImageUrlDataGridViewTextBoxColumn1,
             this.C_SchedaCompatibile});
             this.grid_C_SchedeCompatibili.DataSource = this.gCSchedeBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2241,13 +2232,6 @@
             this.prodDescrizioneDataGridViewTextBoxColumn1.HeaderText = "Prod_Descrizione";
             this.prodDescrizioneDataGridViewTextBoxColumn1.Name = "prodDescrizioneDataGridViewTextBoxColumn1";
             this.prodDescrizioneDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // prodImageUrlDataGridViewTextBoxColumn1
-            // 
-            this.prodImageUrlDataGridViewTextBoxColumn1.DataPropertyName = "Prod_Image_Url";
-            this.prodImageUrlDataGridViewTextBoxColumn1.HeaderText = "Prod_Image_Url";
-            this.prodImageUrlDataGridViewTextBoxColumn1.Name = "prodImageUrlDataGridViewTextBoxColumn1";
-            this.prodImageUrlDataGridViewTextBoxColumn1.Visible = false;
             // 
             // C_SchedaCompatibile
             // 
@@ -2456,6 +2440,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.btn_pdfview, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.gridGroupingControl1, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 254);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -2490,6 +2475,23 @@
             this.btn_pdfview.UseSelectable = true;
             this.btn_pdfview.UseTileImage = true;
             this.btn_pdfview.Click += new System.EventHandler(this.btn_pdfview_Click);
+            // 
+            // gridGroupingControl1
+            // 
+            this.gridGroupingControl1.AlphaBlendSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.gridGroupingControl1.BackColor = System.Drawing.SystemColors.Window;
+            this.tableLayoutPanel1.SetColumnSpan(this.gridGroupingControl1, 5);
+            this.gridGroupingControl1.DataSource = this.gCSoftwareBindingSource;
+            this.gridGroupingControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridGroupingControl1.Location = new System.Drawing.Point(3, 63);
+            this.gridGroupingControl1.Name = "gridGroupingControl1";
+            this.tableLayoutPanel1.SetRowSpan(this.gridGroupingControl1, 4);
+            this.gridGroupingControl1.ShowCurrentCellBorderBehavior = Syncfusion.Windows.Forms.Grid.GridShowCurrentCellBorder.GrayWhenLostFocus;
+            this.gridGroupingControl1.Size = new System.Drawing.Size(260, 234);
+            this.gridGroupingControl1.TabIndex = 3;
+            this.gridGroupingControl1.Text = "gridGroupingControl1";
+            this.gridGroupingControl1.UseRightToLeftCompatibleTextBox = true;
+            this.gridGroupingControl1.VersionInfo = "17.2460.0.34";
             // 
             // gC_SoftwareTableAdapter
             // 
@@ -2570,6 +2572,7 @@
             this.metroPanel7.ResumeLayout(false);
             this.metroPanel7.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridGroupingControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2755,5 +2758,6 @@
         private MetroFramework.Controls.MetroCheckBox ID_SW_Standard;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MetroFramework.Controls.MetroTile btn_pdfview;
+        private Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl gridGroupingControl1;
     }
 }

@@ -75,25 +75,45 @@ namespace SE_Factory
                 }
 
                 //Carica immagine scheda
-                var request = WebRequest.Create(currentRow["Prod_Image_Url"].ToString());
+                string pathimage = Properties.Settings.Default.Path_URL_Images;
+                char last = pathimage[pathimage.Length - 1];
+                if (last != '/') { pathimage = pathimage + '/'; }
+                pathimage = pathimage + currentRow["Prod_Sch"].ToString() + '/' + currentRow["Prod_Sch"].ToString() + ".png";
+                var request = WebRequest.Create(pathimage);
 
-                using (var response = request.GetResponse())
-                using (var stream = response.GetResponseStream())
+                try
                 {
-                    P_sch_image.Image = Bitmap.FromStream(stream);
+                    using (var response = request.GetResponse())
+                    using (var stream = response.GetResponseStream())
+                    {
+                        P_sch_image.Image = Bitmap.FromStream(stream);
+                    }
+                }
+                catch (System.Net.WebException exception)
+                {
+                    P_sch_image.Image = null;
                 }
             }
 
             if (GVar.glob_tipo_item == "C")
-            {
-                lab_Des_Scheda_C.Text = currentRow["Prod_Descrizione"].ToString();
-                //Carica immagine scheda
-                var request = WebRequest.Create(currentRow["Prod_Image_Url"].ToString());
+            {   //Carica immagine scheda
+                string pathimage = Properties.Settings.Default.Path_URL_Images;
+                char last = pathimage[pathimage.Length - 1];
+                if (last != '/') { pathimage = pathimage + '/'; }
+                pathimage = pathimage + currentRow["Prod_Sch"].ToString() + '/' + currentRow["Prod_Sch"].ToString() + ".png";
+                var request = WebRequest.Create(pathimage);
 
-                using (var response = request.GetResponse())
-                using (var stream = response.GetResponseStream())
+                try
                 {
-                    C_sch_image.Image = Bitmap.FromStream(stream);
+                    using (var response = request.GetResponse())
+                    using (var stream = response.GetResponseStream())
+                    {
+                        C_sch_image.Image = Bitmap.FromStream(stream);
+                    }
+                }
+                catch (System.Net.WebException exception)
+                {
+                    C_sch_image.Image = null;
                 }
             }
         }
@@ -189,9 +209,11 @@ namespace SE_Factory
         private void ID_uc_form_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Schede'. È possibile spostarla o rimuoverla se necessario.
-            this.schedeTableAdapter.Fill(this.dB_FactoryDataSet.local_Schede);
+            this.schedeTableAdapter.Fill(this.dB_FactoryDataSet.Schede);
             // TODO: questa riga di codice carica i dati nella tabella 'dB_FactoryDataSet.Fam_Prod'. È possibile spostarla o rimuoverla se necessario.
-            this.fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.local_Fam_Prod);
+            this.fam_ProdTableAdapter.Fill(this.dB_FactoryDataSet.Fam_Prod);
+
+            GVar.CloseSplash = true;
         }
 
         private void bt_Home_Click(object sender, EventArgs e)
