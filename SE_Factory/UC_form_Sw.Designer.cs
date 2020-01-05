@@ -29,18 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_form_Sw));
-            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor1 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
-            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor2 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dB_FactoryDataSet = new SE_Factory.DB_FactoryDataSet();
+            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor16 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
+            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor17 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor18 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
             this.pan_P_Dx_Funzionamento = new MetroFramework.Controls.MetroPanel();
             this.funz_fill = new MetroFramework.Controls.MetroPanel();
             this.richtb_Funzionamento_P = new System.Windows.Forms.RichTextBox();
@@ -93,17 +91,11 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.pan_P_top_left = new MetroFramework.Controls.MetroPanel();
             this.grid_P_SchedeCompatibili = new MetroFramework.Controls.MetroGrid();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_prodSch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodFamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodDescrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.P_SchedaCompatibile = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.gCSchedeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dB_FactoryDataSet = new SE_Factory.DB_FactoryDataSet();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.pan_P_top_top = new MetroFramework.Controls.MetroPanel();
             this.ID_lab_Palmare = new MetroFramework.Controls.MetroLabel();
-            this.gCSoftwareGCFamProdBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gCSoftwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pan_SW_Codifica = new MetroFramework.Controls.MetroPanel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.SW_lab_codice_SW = new MetroFramework.Controls.MetroLabel();
@@ -113,6 +105,7 @@
             this.tbox_Sw_frequency = new System.Windows.Forms.MaskedTextBox();
             this.SW_lab_Famiglia = new MetroFramework.Controls.MetroLabel();
             this.ID_combo_Famiglia = new System.Windows.Forms.ComboBox();
+            this.gCFamProdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pan_SW_Titolo = new MetroFramework.Controls.MetroPanel();
             this.titolo_ID = new MetroFramework.Controls.MetroLabel();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
@@ -139,6 +132,8 @@
             this.menu_sw_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.pan_SW_Standard = new MetroFramework.Controls.MetroPanel();
             this.ID_SW_Standard = new MetroFramework.Controls.MetroCheckBox();
+            this.pan_SW_Obsolete = new MetroFramework.Controls.MetroPanel();
+            this.ID_SW_Obsolete = new MetroFramework.Controls.MetroCheckBox();
             this.grid_SW_codificati = new Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl();
             this.pan_SW_C = new MetroFramework.Controls.MetroPanel();
             this.pan_C_top = new MetroFramework.Controls.MetroPanel();
@@ -192,10 +187,7 @@
             this.metroLabel48 = new MetroFramework.Controls.MetroLabel();
             this.pan_C_top_left = new MetroFramework.Controls.MetroPanel();
             this.grid_C_SchedeCompatibili = new MetroFramework.Controls.MetroGrid();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C_prodSch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodFamDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prodDescrizioneDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C_Prod_Sch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C_SchedaCompatibile = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.metroLabel49 = new MetroFramework.Controls.MetroLabel();
             this.pan_C_top_top = new MetroFramework.Controls.MetroPanel();
@@ -213,10 +205,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_pdfview = new MetroFramework.Controls.MetroTile();
             this.gridGroupingControl1 = new Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl();
+            this.gCSoftwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gC_SoftwareTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_SoftwareTableAdapter();
             this.gC_Fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter();
             this.gC_SchedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_SchedeTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).BeginInit();
+            this.P_Prod_Sch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.P_SchedaCompatibile = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.pan_P_Dx_Funzionamento.SuspendLayout();
             this.funz_fill.SuspendLayout();
             this.funz_top.SuspendLayout();
@@ -230,16 +225,17 @@
             this.pan_P_top_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_P_SchedeCompatibili)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCSchedeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).BeginInit();
             this.pan_P_top_top.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareGCFamProdBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).BeginInit();
             this.pan_SW_Codifica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gCFamProdBindingSource)).BeginInit();
             this.pan_SW_Titolo.SuspendLayout();
             this.SW_Layout.SuspendLayout();
             this.pan_Menu_comandi.SuspendLayout();
             this.pan_Menu_salva.SuspendLayout();
             this.pan_Menu_exit.SuspendLayout();
             this.pan_SW_Standard.SuspendLayout();
+            this.pan_SW_Obsolete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_SW_codificati)).BeginInit();
             this.pan_SW_C.SuspendLayout();
             this.pan_C_top.SuspendLayout();
@@ -256,12 +252,8 @@
             this.metroPanel7.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridGroupingControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dB_FactoryDataSet
-            // 
-            this.dB_FactoryDataSet.DataSetName = "DB_FactoryDataSet";
-            this.dB_FactoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pan_P_Dx_Funzionamento
             // 
@@ -384,7 +376,6 @@
             this.richtb__Revisioni_P.Size = new System.Drawing.Size(272, 130);
             this.richtb__Revisioni_P.TabIndex = 11;
             this.richtb__Revisioni_P.Text = "";
-            this.richtb__Revisioni_P.TextChanged += new System.EventHandler(this.richtb__Revisioni_P_TextChanged);
             // 
             // rev_top
             // 
@@ -910,30 +901,27 @@
             this.grid_P_SchedeCompatibili.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid_P_SchedeCompatibili.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grid_P_SchedeCompatibili.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_P_SchedeCompatibili.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_P_SchedeCompatibili.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.grid_P_SchedeCompatibili.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_P_SchedeCompatibili.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.P_prodSch,
-            this.prodFamDataGridViewTextBoxColumn,
-            this.prodDescrizioneDataGridViewTextBoxColumn,
+            this.P_Prod_Sch,
             this.P_SchedaCompatibile});
             this.grid_P_SchedeCompatibili.DataSource = this.gCSchedeBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_P_SchedeCompatibili.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_P_SchedeCompatibili.DefaultCellStyle = dataGridViewCellStyle32;
             this.grid_P_SchedeCompatibili.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_P_SchedeCompatibili.EnableHeadersVisualStyles = false;
             this.grid_P_SchedeCompatibili.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -942,14 +930,14 @@
             this.grid_P_SchedeCompatibili.Location = new System.Drawing.Point(0, 19);
             this.grid_P_SchedeCompatibili.Name = "grid_P_SchedeCompatibili";
             this.grid_P_SchedeCompatibili.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_P_SchedeCompatibili.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_P_SchedeCompatibili.RowHeadersDefaultCellStyle = dataGridViewCellStyle33;
             this.grid_P_SchedeCompatibili.RowHeadersVisible = false;
             this.grid_P_SchedeCompatibili.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_P_SchedeCompatibili.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -959,48 +947,15 @@
             this.grid_P_SchedeCompatibili.UseStyleColors = true;
             this.grid_P_SchedeCompatibili.Validated += new System.EventHandler(this.grid_P_SchedeCompatibili_Validated);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // P_prodSch
-            // 
-            this.P_prodSch.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.P_prodSch.DataPropertyName = "Prod_Sch";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.P_prodSch.DefaultCellStyle = dataGridViewCellStyle2;
-            this.P_prodSch.HeaderText = "Scheda";
-            this.P_prodSch.Name = "P_prodSch";
-            this.P_prodSch.Width = 67;
-            // 
-            // prodFamDataGridViewTextBoxColumn
-            // 
-            this.prodFamDataGridViewTextBoxColumn.DataPropertyName = "Prod_Fam";
-            this.prodFamDataGridViewTextBoxColumn.HeaderText = "Prod_Fam";
-            this.prodFamDataGridViewTextBoxColumn.Name = "prodFamDataGridViewTextBoxColumn";
-            this.prodFamDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // prodDescrizioneDataGridViewTextBoxColumn
-            // 
-            this.prodDescrizioneDataGridViewTextBoxColumn.DataPropertyName = "Prod_Descrizione";
-            this.prodDescrizioneDataGridViewTextBoxColumn.HeaderText = "Prod_Descrizione";
-            this.prodDescrizioneDataGridViewTextBoxColumn.Name = "prodDescrizioneDataGridViewTextBoxColumn";
-            this.prodDescrizioneDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // P_SchedaCompatibile
-            // 
-            this.P_SchedaCompatibile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.P_SchedaCompatibile.FillWeight = 83.45178F;
-            this.P_SchedaCompatibile.HeaderText = "Compatibile (S/N)";
-            this.P_SchedaCompatibile.Name = "P_SchedaCompatibile";
-            // 
             // gCSchedeBindingSource
             // 
             this.gCSchedeBindingSource.DataMember = "GC_Schede";
             this.gCSchedeBindingSource.DataSource = this.dB_FactoryDataSet;
+            // 
+            // dB_FactoryDataSet
+            // 
+            this.dB_FactoryDataSet.DataSetName = "DB_FactoryDataSet";
+            this.dB_FactoryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroLabel1
             // 
@@ -1042,18 +997,6 @@
             this.ID_lab_Palmare.Text = "Palmare";
             this.ID_lab_Palmare.UseCustomBackColor = true;
             this.ID_lab_Palmare.UseStyleColors = true;
-            // 
-            // gCSoftwareGCFamProdBindingSource
-            // 
-            this.gCSoftwareGCFamProdBindingSource.DataMember = "GC_Software_GC_Fam_Prod";
-            this.gCSoftwareGCFamProdBindingSource.DataSource = this.gCSoftwareBindingSource;
-            this.gCSoftwareGCFamProdBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareGCFamProdBindingSource_CurrentChanged);
-            // 
-            // gCSoftwareBindingSource
-            // 
-            this.gCSoftwareBindingSource.DataMember = "GC_Software";
-            this.gCSoftwareBindingSource.DataSource = this.dB_FactoryDataSet;
-            this.gCSoftwareBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareBindingSource_CurrentChanged);
             // 
             // pan_SW_Codifica
             // 
@@ -1165,7 +1108,7 @@
             this.ID_combo_Famiglia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ID_combo_Famiglia.BackColor = System.Drawing.SystemColors.Window;
             this.SW_Layout.SetColumnSpan(this.ID_combo_Famiglia, 4);
-            this.ID_combo_Famiglia.DataSource = this.gCSoftwareGCFamProdBindingSource;
+            this.ID_combo_Famiglia.DataSource = this.gCFamProdBindingSource;
             this.ID_combo_Famiglia.DisplayMember = "Fam_Name";
             this.ID_combo_Famiglia.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ID_combo_Famiglia.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1176,6 +1119,12 @@
             this.ID_combo_Famiglia.Size = new System.Drawing.Size(266, 23);
             this.ID_combo_Famiglia.TabIndex = 6;
             this.ID_combo_Famiglia.ValueMember = "Id";
+            // 
+            // gCFamProdBindingSource
+            // 
+            this.gCFamProdBindingSource.DataMember = "GC_Fam_Prod";
+            this.gCFamProdBindingSource.DataSource = this.dB_FactoryDataSet;
+            this.gCFamProdBindingSource.CurrentChanged += new System.EventHandler(this.gCFamProdBindingSource_CurrentChanged);
             // 
             // pan_SW_Titolo
             // 
@@ -1236,12 +1185,14 @@
             this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.SW_Layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.SW_Layout.Controls.Add(this.metroButton1, 11, 3);
             this.SW_Layout.Controls.Add(this.pan_SW_Titolo, 0, 0);
             this.SW_Layout.Controls.Add(this.pan_Menu_comandi, 0, 1);
             this.SW_Layout.Controls.Add(this.pan_Menu_salva, 12, 1);
             this.SW_Layout.Controls.Add(this.pan_Menu_exit, 18, 1);
             this.SW_Layout.Controls.Add(this.pan_SW_Codifica, 3, 2);
             this.SW_Layout.Controls.Add(this.pan_SW_Standard, 14, 2);
+            this.SW_Layout.Controls.Add(this.pan_SW_Obsolete, 17, 2);
             this.SW_Layout.Controls.Add(this.grid_SW_codificati, 0, 2);
             this.SW_Layout.Controls.Add(this.SW_lab_Famiglia, 3, 3);
             this.SW_Layout.Controls.Add(this.ID_combo_Famiglia, 7, 3);
@@ -1451,7 +1402,7 @@
             // pan_SW_Standard
             // 
             this.pan_SW_Standard.BackColor = System.Drawing.Color.Bisque;
-            this.SW_Layout.SetColumnSpan(this.pan_SW_Standard, 6);
+            this.SW_Layout.SetColumnSpan(this.pan_SW_Standard, 3);
             this.pan_SW_Standard.Controls.Add(this.ID_SW_Standard);
             this.pan_SW_Standard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pan_SW_Standard.HorizontalScrollbarBarColor = true;
@@ -1459,7 +1410,7 @@
             this.pan_SW_Standard.HorizontalScrollbarSize = 10;
             this.pan_SW_Standard.Location = new System.Drawing.Point(955, 48);
             this.pan_SW_Standard.Name = "pan_SW_Standard";
-            this.pan_SW_Standard.Size = new System.Drawing.Size(408, 19);
+            this.pan_SW_Standard.Size = new System.Drawing.Size(198, 19);
             this.pan_SW_Standard.TabIndex = 58;
             this.pan_SW_Standard.VerticalScrollbarBarColor = true;
             this.pan_SW_Standard.VerticalScrollbarHighlightOnWheel = false;
@@ -1473,15 +1424,52 @@
             this.ID_SW_Standard.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ID_SW_Standard.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.ID_SW_Standard.ForeColor = System.Drawing.Color.Red;
-            this.ID_SW_Standard.Location = new System.Drawing.Point(157, 3);
+            this.ID_SW_Standard.Location = new System.Drawing.Point(29, 1);
             this.ID_SW_Standard.Name = "ID_SW_Standard";
             this.ID_SW_Standard.Size = new System.Drawing.Size(140, 19);
             this.ID_SW_Standard.Style = MetroFramework.MetroColorStyle.Red;
             this.ID_SW_Standard.TabIndex = 8;
             this.ID_SW_Standard.Text = "Software Standard:";
+            this.ID_SW_Standard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ID_SW_Standard.UseCustomBackColor = true;
             this.ID_SW_Standard.UseCustomForeColor = true;
             this.ID_SW_Standard.UseSelectable = true;
+            // 
+            // pan_SW_Obsolete
+            // 
+            this.pan_SW_Obsolete.BackColor = System.Drawing.SystemColors.Control;
+            this.SW_Layout.SetColumnSpan(this.pan_SW_Obsolete, 3);
+            this.pan_SW_Obsolete.Controls.Add(this.ID_SW_Obsolete);
+            this.pan_SW_Obsolete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pan_SW_Obsolete.HorizontalScrollbarBarColor = true;
+            this.pan_SW_Obsolete.HorizontalScrollbarHighlightOnWheel = false;
+            this.pan_SW_Obsolete.HorizontalScrollbarSize = 10;
+            this.pan_SW_Obsolete.Location = new System.Drawing.Point(1159, 48);
+            this.pan_SW_Obsolete.Name = "pan_SW_Obsolete";
+            this.pan_SW_Obsolete.Size = new System.Drawing.Size(204, 19);
+            this.pan_SW_Obsolete.TabIndex = 60;
+            this.pan_SW_Obsolete.UseCustomBackColor = true;
+            this.pan_SW_Obsolete.VerticalScrollbarBarColor = true;
+            this.pan_SW_Obsolete.VerticalScrollbarHighlightOnWheel = false;
+            this.pan_SW_Obsolete.VerticalScrollbarSize = 10;
+            // 
+            // ID_SW_Obsolete
+            // 
+            this.ID_SW_Obsolete.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ID_SW_Obsolete.AutoSize = true;
+            this.ID_SW_Obsolete.BackColor = System.Drawing.Color.Transparent;
+            this.ID_SW_Obsolete.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ID_SW_Obsolete.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.ID_SW_Obsolete.ForeColor = System.Drawing.Color.Red;
+            this.ID_SW_Obsolete.Location = new System.Drawing.Point(32, 1);
+            this.ID_SW_Obsolete.Name = "ID_SW_Obsolete";
+            this.ID_SW_Obsolete.Size = new System.Drawing.Size(141, 19);
+            this.ID_SW_Obsolete.Style = MetroFramework.MetroColorStyle.Red;
+            this.ID_SW_Obsolete.TabIndex = 8;
+            this.ID_SW_Obsolete.Text = "Software Obsoleto:";
+            this.ID_SW_Obsolete.UseCustomBackColor = true;
+            this.ID_SW_Obsolete.UseCustomForeColor = true;
+            this.ID_SW_Obsolete.UseSelectable = true;
             // 
             // grid_SW_codificati
             // 
@@ -1490,7 +1478,6 @@
             this.grid_SW_codificati.BackColor = System.Drawing.SystemColors.Window;
             this.grid_SW_codificati.ChildGroupOptions.CaptionText = "{Category} - {RecordCount} Items";
             this.SW_Layout.SetColumnSpan(this.grid_SW_codificati, 4);
-            this.grid_SW_codificati.DataSource = this.gCSoftwareBindingSource;
             this.grid_SW_codificati.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_SW_codificati.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grid_SW_codificati.GridOfficeScrollBars = Syncfusion.Windows.Forms.OfficeScrollBars.Metro;
@@ -1506,19 +1493,22 @@
             this.grid_SW_codificati.TabIndex = 57;
             this.grid_SW_codificati.TableDescriptor.AllowNew = false;
             this.grid_SW_codificati.TableDescriptor.ChildGroupOptions.CaptionText = "{Category} - {RecordCount} Revisioni";
-            gridColumnDescriptor1.MappingName = "SW_Versione";
-            gridColumnDescriptor1.Width = 70;
-            gridColumnDescriptor2.MappingName = "SW_Revisione";
-            gridColumnDescriptor2.Width = 80;
+            gridColumnDescriptor16.MappingName = "SW_Versione";
+            gridColumnDescriptor16.Width = 70;
+            gridColumnDescriptor17.MappingName = "SW_Revisione";
+            gridColumnDescriptor17.Width = 80;
             this.grid_SW_codificati.TableDescriptor.Columns.AddRange(new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor[] {
-            gridColumnDescriptor1,
-            gridColumnDescriptor2});
+            gridColumnDescriptor16,
+            gridColumnDescriptor17});
             this.grid_SW_codificati.TableDescriptor.GroupedColumns.AddRange(new Syncfusion.Grouping.SortColumnDescriptor[] {
             new Syncfusion.Grouping.SortColumnDescriptor("SW_Versione", System.ComponentModel.ListSortDirection.Ascending)});
             this.grid_SW_codificati.TableDescriptor.TableOptions.ColumnHeaderRowHeight = 25;
             this.grid_SW_codificati.TableDescriptor.TableOptions.RecordRowHeight = 25;
             this.grid_SW_codificati.TableDescriptor.TopLevelGroupOptions.IsExpandedInitialValue = false;
             this.grid_SW_codificati.TableDescriptor.TopLevelGroupOptions.ShowCaption = false;
+            this.grid_SW_codificati.TableDescriptor.VisibleColumns.AddRange(new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor[] {
+            new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor("SW_Versione"),
+            new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor("SW_Revisione")});
             this.grid_SW_codificati.TableOptions.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             this.grid_SW_codificati.TableOptions.SelectionTextColor = System.Drawing.SystemColors.HighlightText;
             this.grid_SW_codificati.TableOptions.ShowRowHeader = false;
@@ -2153,30 +2143,27 @@
             this.grid_C_SchedeCompatibili.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid_C_SchedeCompatibili.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grid_C_SchedeCompatibili.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_C_SchedeCompatibili.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_C_SchedeCompatibili.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.grid_C_SchedeCompatibili.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_C_SchedeCompatibili.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.C_prodSch,
-            this.prodFamDataGridViewTextBoxColumn1,
-            this.prodDescrizioneDataGridViewTextBoxColumn1,
+            this.C_Prod_Sch,
             this.C_SchedaCompatibile});
             this.grid_C_SchedeCompatibili.DataSource = this.gCSchedeBindingSource;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grid_C_SchedeCompatibili.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grid_C_SchedeCompatibili.DefaultCellStyle = dataGridViewCellStyle35;
             this.grid_C_SchedeCompatibili.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_C_SchedeCompatibili.EnableHeadersVisualStyles = false;
             this.grid_C_SchedeCompatibili.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -2185,14 +2172,14 @@
             this.grid_C_SchedeCompatibili.Location = new System.Drawing.Point(0, 19);
             this.grid_C_SchedeCompatibili.Name = "grid_C_SchedeCompatibili";
             this.grid_C_SchedeCompatibili.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grid_C_SchedeCompatibili.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(17)))), ((int)(((byte)(65)))));
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(188)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grid_C_SchedeCompatibili.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.grid_C_SchedeCompatibili.RowHeadersVisible = false;
             this.grid_C_SchedeCompatibili.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.grid_C_SchedeCompatibili.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -2201,37 +2188,11 @@
             this.grid_C_SchedeCompatibili.TabIndex = 40;
             this.grid_C_SchedeCompatibili.UseStyleColors = true;
             // 
-            // idDataGridViewTextBoxColumn1
+            // C_Prod_Sch
             // 
-            this.idDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // C_prodSch
-            // 
-            this.C_prodSch.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.C_prodSch.DataPropertyName = "Prod_Sch";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.C_prodSch.DefaultCellStyle = dataGridViewCellStyle6;
-            this.C_prodSch.HeaderText = "Scheda";
-            this.C_prodSch.Name = "C_prodSch";
-            this.C_prodSch.Width = 67;
-            // 
-            // prodFamDataGridViewTextBoxColumn1
-            // 
-            this.prodFamDataGridViewTextBoxColumn1.DataPropertyName = "Prod_Fam";
-            this.prodFamDataGridViewTextBoxColumn1.HeaderText = "Prod_Fam";
-            this.prodFamDataGridViewTextBoxColumn1.Name = "prodFamDataGridViewTextBoxColumn1";
-            this.prodFamDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // prodDescrizioneDataGridViewTextBoxColumn1
-            // 
-            this.prodDescrizioneDataGridViewTextBoxColumn1.DataPropertyName = "Prod_Descrizione";
-            this.prodDescrizioneDataGridViewTextBoxColumn1.HeaderText = "Prod_Descrizione";
-            this.prodDescrizioneDataGridViewTextBoxColumn1.Name = "prodDescrizioneDataGridViewTextBoxColumn1";
-            this.prodDescrizioneDataGridViewTextBoxColumn1.Visible = false;
+            this.C_Prod_Sch.DataPropertyName = "Prod_Sch";
+            this.C_Prod_Sch.HeaderText = "Schede comp.";
+            this.C_Prod_Sch.Name = "C_Prod_Sch";
             // 
             // C_SchedaCompatibile
             // 
@@ -2483,15 +2444,43 @@
             this.tableLayoutPanel1.SetColumnSpan(this.gridGroupingControl1, 5);
             this.gridGroupingControl1.DataSource = this.gCSoftwareBindingSource;
             this.gridGroupingControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridGroupingControl1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridGroupingControl1.GridOfficeScrollBars = Syncfusion.Windows.Forms.OfficeScrollBars.Metro;
+            this.gridGroupingControl1.GridVisualStyles = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
             this.gridGroupingControl1.Location = new System.Drawing.Point(3, 63);
             this.gridGroupingControl1.Name = "gridGroupingControl1";
             this.tableLayoutPanel1.SetRowSpan(this.gridGroupingControl1, 4);
             this.gridGroupingControl1.ShowCurrentCellBorderBehavior = Syncfusion.Windows.Forms.Grid.GridShowCurrentCellBorder.GrayWhenLostFocus;
             this.gridGroupingControl1.Size = new System.Drawing.Size(260, 234);
             this.gridGroupingControl1.TabIndex = 3;
+            this.gridGroupingControl1.TableDescriptor.AllowEdit = false;
+            this.gridGroupingControl1.TableDescriptor.AllowNew = false;
+            this.gridGroupingControl1.TableDescriptor.AllowRemove = false;
+            gridColumnDescriptor18.MappingName = "SW_Code";
+            gridColumnDescriptor18.Width = 127;
+            this.gridGroupingControl1.TableDescriptor.Columns.AddRange(new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor[] {
+            gridColumnDescriptor18,
+            new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor("SW_Versione"),
+            new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor("SW_Revisione")});
+            this.gridGroupingControl1.TableDescriptor.SortedColumns.AddRange(new Syncfusion.Grouping.SortColumnDescriptor[] {
+            new Syncfusion.Grouping.SortColumnDescriptor("SW_Fam_Prod", System.ComponentModel.ListSortDirection.Ascending)});
+            this.gridGroupingControl1.TableDescriptor.TableOptions.ColumnHeaderRowHeight = 25;
+            this.gridGroupingControl1.TableDescriptor.TableOptions.RecordRowHeight = 25;
+            this.gridGroupingControl1.TableDescriptor.VisibleColumns.AddRange(new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor[] {
+            new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor("SW_Code"),
+            new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor("SW_Revisione")});
+            this.gridGroupingControl1.TableOptions.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.gridGroupingControl1.TableOptions.SelectionTextColor = System.Drawing.SystemColors.HighlightText;
             this.gridGroupingControl1.Text = "gridGroupingControl1";
+            this.gridGroupingControl1.TopLevelGroupOptions.ShowColumnHeaders = true;
             this.gridGroupingControl1.UseRightToLeftCompatibleTextBox = true;
             this.gridGroupingControl1.VersionInfo = "17.2460.0.34";
+            // 
+            // gCSoftwareBindingSource
+            // 
+            this.gCSoftwareBindingSource.DataMember = "GC_Software";
+            this.gCSoftwareBindingSource.DataSource = this.dB_FactoryDataSet;
+            this.gCSoftwareBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareBindingSource_CurrentChanged);
             // 
             // gC_SoftwareTableAdapter
             // 
@@ -2505,6 +2494,29 @@
             // 
             this.gC_SchedeTableAdapter.ClearBeforeFill = true;
             // 
+            // P_Prod_Sch
+            // 
+            this.P_Prod_Sch.DataPropertyName = "Prod_Sch";
+            this.P_Prod_Sch.HeaderText = "Schede comp.";
+            this.P_Prod_Sch.Name = "P_Prod_Sch";
+            // 
+            // P_SchedaCompatibile
+            // 
+            this.P_SchedaCompatibile.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.P_SchedaCompatibile.FillWeight = 83.45178F;
+            this.P_SchedaCompatibile.HeaderText = "Compatibile (S/N)";
+            this.P_SchedaCompatibile.Name = "P_SchedaCompatibile";
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(751, 73);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(62, 19);
+            this.metroButton1.TabIndex = 62;
+            this.metroButton1.Text = "metroButton1";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click_1);
+            // 
             // UC_form_Sw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2514,7 +2526,6 @@
             this.Name = "UC_form_Sw";
             this.Size = new System.Drawing.Size(1366, 768);
             this.Load += new System.EventHandler(this.UC_form_Sw_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).EndInit();
             this.pan_P_Dx_Funzionamento.ResumeLayout(false);
             this.funz_fill.ResumeLayout(false);
             this.funz_top.ResumeLayout(false);
@@ -2533,12 +2544,12 @@
             this.pan_P_top_left.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_P_SchedeCompatibili)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gCSchedeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_FactoryDataSet)).EndInit();
             this.pan_P_top_top.ResumeLayout(false);
             this.pan_P_top_top.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareGCFamProdBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).EndInit();
             this.pan_SW_Codifica.ResumeLayout(false);
             this.pan_SW_Codifica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gCFamProdBindingSource)).EndInit();
             this.pan_SW_Titolo.ResumeLayout(false);
             this.pan_SW_Titolo.PerformLayout();
             this.SW_Layout.ResumeLayout(false);
@@ -2551,6 +2562,8 @@
             this.pan_Menu_exit.PerformLayout();
             this.pan_SW_Standard.ResumeLayout(false);
             this.pan_SW_Standard.PerformLayout();
+            this.pan_SW_Obsolete.ResumeLayout(false);
+            this.pan_SW_Obsolete.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_SW_codificati)).EndInit();
             this.pan_SW_C.ResumeLayout(false);
             this.pan_C_top.ResumeLayout(false);
@@ -2573,6 +2586,7 @@
             this.metroPanel7.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridGroupingControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2609,7 +2623,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel21;
         private MetroFramework.Controls.MetroPanel pan_SW_Codifica;
         private MetroFramework.Controls.MetroPanel pan_SW_Titolo;
-        private DB_FactoryDataSet dB_FactoryDataSet;
         private MetroFramework.Controls.MetroGrid grid_P_SchedeCompatibili;
         private MetroFramework.Controls.MetroPanel pan_P_middle;
         private MetroFramework.Controls.MetroPanel pan_P_top;
@@ -2735,29 +2748,32 @@
         private System.Windows.Forms.RichTextBox richtb_Funzionamento_C;
         private MetroFramework.Controls.MetroPanel metroPanel7;
         private MetroFramework.Controls.MetroLabel metroLabel50;
-        private System.Windows.Forms.BindingSource gCSoftwareBindingSource;
-        private DB_FactoryDataSetTableAdapters.GC_SoftwareTableAdapter gC_SoftwareTableAdapter;
         private Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl grid_SW_codificati;
-        private System.Windows.Forms.BindingSource gCSoftwareGCFamProdBindingSource;
-        private DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter gC_Fam_ProdTableAdapter;
-        private System.Windows.Forms.BindingSource gCSchedeBindingSource;
-        private DB_FactoryDataSetTableAdapters.GC_SchedeTableAdapter gC_SchedeTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn P_prodSch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prodFamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prodDescrizioneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prodImageUrlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn P_SchedaCompatibile;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn C_prodSch;
         private System.Windows.Forms.DataGridViewTextBoxColumn prodFamDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn prodDescrizioneDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn prodImageUrlDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn C_SchedaCompatibile;
         private MetroFramework.Controls.MetroPanel pan_SW_Standard;
         private MetroFramework.Controls.MetroCheckBox ID_SW_Standard;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private MetroFramework.Controls.MetroTile btn_pdfview;
         private Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl gridGroupingControl1;
+        private MetroFramework.Controls.MetroPanel pan_SW_Obsolete;
+        private MetroFramework.Controls.MetroCheckBox ID_SW_Obsolete;
+        private DB_FactoryDataSet dB_FactoryDataSet;
+        private System.Windows.Forms.BindingSource gCSoftwareBindingSource;
+        private DB_FactoryDataSetTableAdapters.GC_SoftwareTableAdapter gC_SoftwareTableAdapter;
+        private System.Windows.Forms.BindingSource gCFamProdBindingSource;
+        private DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter gC_Fam_ProdTableAdapter;
+        private System.Windows.Forms.BindingSource gCSchedeBindingSource;
+        private DB_FactoryDataSetTableAdapters.GC_SchedeTableAdapter gC_SchedeTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C_Prod_Sch;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn C_SchedaCompatibile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn P_Prod_Sch;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn P_SchedaCompatibile;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

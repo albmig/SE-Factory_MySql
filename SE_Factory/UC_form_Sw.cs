@@ -317,6 +317,7 @@ namespace SE_Factory
             GVar.CloseSplash = true;
 
             Setting_Form();
+
         }
 
         private void CreaPDF()
@@ -626,7 +627,8 @@ namespace SE_Factory
             string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
             SW_new_record["SW_Code"] = nome_sw;
             if (ID_SW_Standard.Checked) { SW_new_record["SW_Standard"] = true; } else { SW_new_record["SW_Standard"] = false; }
-            DataRowView famiglie = (DataRowView)gCSoftwareGCFamProdBindingSource.Current;
+            //DataRowView famiglie = (DataRowView)gCSoftwareGCFamProdBindingSource.Current;
+            DataRowView famiglie = (DataRowView)gCSoftwareBindingSource.Current;
 
             //SW_new_record["SW_Fam_Prod"] = ID_combo_Famiglia.ValueMember;
             SW_new_record["SW_Fam_Prod"] = famiglie["Id"];
@@ -705,7 +707,7 @@ namespace SE_Factory
                     //verifica la presenza nel datagrid
                     foreach (DataGridViewRow riga in grid_P_SchedeCompatibili.Rows)
                     {
-                        if (riga.Cells["P_prodSch"].Value.ToString() == substringa)
+                        if (riga.Cells["P_Prod_Sch"].Value.ToString() == substringa)
                         {
                             riga.Cells["P_SchedaCompatibile"].Value = true;
                         }
@@ -716,14 +718,12 @@ namespace SE_Factory
                     //verifica la presenza nel datagrid
                     foreach (DataGridViewRow riga in grid_C_SchedeCompatibili.Rows)
                     {
-                        if (riga.Cells["C_prodSch"].Value.ToString() == substringa)
+                        if (riga.Cells["C_Prod_Sch"].Value.ToString() == substringa)
                         {
                             riga.Cells["C_SchedaCompatibile"].Value = true;
                         }
                     }
-
                 }
-
             }
 
             switch (SW_view["SW_P_Opt_RF"])
@@ -836,6 +836,7 @@ namespace SE_Factory
 
             richtb__Revisioni_P.Text = SW_view["SW_Revisioni"].ToString();
             richtb_Funzionamento_P.Text = SW_view["SW_Funzionamento"].ToString();
+            if ((bool)SW_view["SW_Obsolete_ver"]) { pan_SW_Obsolete.BackColor = Color.Red; ID_SW_Obsolete.ForeColor = Color.White; ID_SW_Obsolete.Checked = true; } else { pan_SW_Obsolete.BackColor = SystemColors.Control; ID_SW_Obsolete.ForeColor = Color.Black; ID_SW_Obsolete.Checked = false; }
         }
 
         private void AzzeraVarForm()
@@ -910,38 +911,27 @@ namespace SE_Factory
 
         private void gCSoftwareBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            Setting_Form();
+            //Setting_Form();
 
             if (gCSoftwareBindingSource.Count != 0)
             {
                 DataRow SW_view = ((DataRowView)gCSoftwareBindingSource.Current).Row;
+
+                string sel_fam_prod = "Id = " + SW_view["SW_Fam_Prod"].ToString();
+                gCFamProdBindingSource.Filter = sel_fam_prod;
+
+                string sel_schede = "Id = " + SW_view["SW_Fam_Prod"].ToString();
+                gCSchedeBindingSource.Filter = sel_schede;
+
                 FromRecordToForm(SW_view);
             }
             else
             {
+                gCFamProdBindingSource.RemoveFilter();
+                gCSchedeBindingSource.RemoveFilter();
+
                 AzzeraVarForm();
             }
-        }
-
-        private void gCSoftwareGCFamProdBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-            if (gCSoftwareGCFamProdBindingSource.Current != null)
-            {
-                DataRow currentRow = ((DataRowView)gCSoftwareGCFamProdBindingSource.Current).Row;
-
-                //Filtra Schede
-                gCSchedeBindingSource.Filter = "Prod_Fam = " + currentRow["Id"].ToString();
-
-                GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
-                GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
-                GVar.glob_result_id[0] = Convert.ToChar(currentRow["Fam_Hex_ID"]);
-                Setting_Form();
-            }
-        }
-
-        private void richtb__Revisioni_P_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_pdfview_Click(object sender, EventArgs e)
@@ -968,6 +958,41 @@ namespace SE_Factory
             {
                 MessageBox.Show("Documento PDF non trovato!");
             }
+        }
+
+        private void gCFamProdBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            if (gCFamProdBindingSource.Current != null)
+            {
+                DataRow currentRow = ((DataRowView)gCFamProdBindingSource.Current).Row;
+
+                //Filtra Schede
+                gCSchedeBindingSource.Filter = "Prod_Fam = " + currentRow["Id"].ToString();
+
+                GVar.glob_tipo_item = currentRow["Fam_Tipo"].ToString();
+                GVar.glob_hex_id = currentRow["Fam_Hex_ID"].ToString();
+                GVar.glob_result_id[0] = Convert.ToChar(currentRow["Fam_Hex_ID"]);
+                Setting_Form();
+            }
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            //Lancia Lista Software
+            UC_Lista_SW frm_lista = new UC_Lista_SW();
+            frm_lista.AutoSize = true;
+            frm_lista.Dock = DockStyle.Fill;
+            frm_lista.Show();
+
+        }
+
+        private void metroButton1_Click_1(object sender, EventArgs e)
+        {
+            //Lancia Lista Software
+            UC_Lista_SW frm_lista = new UC_Lista_SW();
+            frm_lista.Show();
+
         }
     }
 }

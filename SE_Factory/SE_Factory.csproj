@@ -212,6 +212,12 @@
     <Compile Include="UC_form_TagFW.Designer.cs">
       <DependentUpon>UC_form_TagFW.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Lista_SW.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Lista_SW.Designer.cs">
+      <DependentUpon>UC_Lista_SW.cs</DependentUpon>
+    </Compile>
     <Compile Include="Win_form_PDF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_form_TagFW.resx">
       <DependentUpon>UC_form_TagFW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Lista_SW.resx">
+      <DependentUpon>UC_Lista_SW.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Win_form_PDF.resx">
       <DependentUpon>Win_form_PDF.cs</DependentUpon>
