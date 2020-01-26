@@ -8372,19 +8372,9 @@ namespace SE_Factory {
             
             private global::System.Data.DataColumn columnSW_P_Opt_RF;
             
-            private global::System.Data.DataColumn columnSW_P_Opt_Oled;
+            private global::System.Data.DataColumn columnSW_P_Opt_Use_Oled;
             
-            private global::System.Data.DataColumn columnSW_P_Opt_Accel;
-            
-            private global::System.Data.DataColumn columnSW_P_Opt_SP;
-            
-            private global::System.Data.DataColumn columnSW_P_Opt_Buzzer;
-            
-            private global::System.Data.DataColumn columnSW_P_Opt_Vibracall;
-            
-            private global::System.Data.DataColumn columnSW_P_Opt_LedTorch;
-            
-            private global::System.Data.DataColumn columnSW_P_Opt_EmButt;
+            private global::System.Data.DataColumn columnSW_P_Opt_Use_EmButt;
             
             private global::System.Data.DataColumn columnSW_P_Opt_Use_Backlight;
             
@@ -8410,10 +8400,6 @@ namespace SE_Factory {
             
             private global::System.Data.DataColumn columnSW_R_Opt_Em_Keyb;
             
-            private global::System.Data.DataColumn columnSW_R_Opt_Status_Led;
-            
-            private global::System.Data.DataColumn columnSW_R_Opt_Ext_Ant;
-            
             private global::System.Data.DataColumn columnSW_R_Opt_Can;
             
             private global::System.Data.DataColumn columnSW_R_Opt_Prop_Out;
@@ -8421,6 +8407,10 @@ namespace SE_Factory {
             private global::System.Data.DataColumn columnSW_R_Opt_TimeOut;
             
             private global::System.Data.DataColumn columnSW_R_Opt_Cont_Keys;
+            
+            private global::System.Data.DataColumn columnSW_R_Opt_LockSameRow;
+            
+            private global::System.Data.DataColumn columnSW_R_Opt_Use_SP;
             
             private global::System.Data.DataColumn columnSW_R_Opt_MaxPairDevices;
             
@@ -8549,57 +8539,17 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SW_P_Opt_OledColumn {
+            public global::System.Data.DataColumn SW_P_Opt_Use_OledColumn {
                 get {
-                    return this.columnSW_P_Opt_Oled;
+                    return this.columnSW_P_Opt_Use_Oled;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SW_P_Opt_AccelColumn {
+            public global::System.Data.DataColumn SW_P_Opt_Use_EmButtColumn {
                 get {
-                    return this.columnSW_P_Opt_Accel;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SW_P_Opt_SPColumn {
-                get {
-                    return this.columnSW_P_Opt_SP;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SW_P_Opt_BuzzerColumn {
-                get {
-                    return this.columnSW_P_Opt_Buzzer;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SW_P_Opt_VibracallColumn {
-                get {
-                    return this.columnSW_P_Opt_Vibracall;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SW_P_Opt_LedTorchColumn {
-                get {
-                    return this.columnSW_P_Opt_LedTorch;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SW_P_Opt_EmButtColumn {
-                get {
-                    return this.columnSW_P_Opt_EmButt;
+                    return this.columnSW_P_Opt_Use_EmButt;
                 }
             }
             
@@ -8701,22 +8651,6 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SW_R_Opt_Status_LedColumn {
-                get {
-                    return this.columnSW_R_Opt_Status_Led;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SW_R_Opt_Ext_AntColumn {
-                get {
-                    return this.columnSW_R_Opt_Ext_Ant;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn SW_R_Opt_CanColumn {
                 get {
                     return this.columnSW_R_Opt_Can;
@@ -8744,6 +8678,22 @@ namespace SE_Factory {
             public global::System.Data.DataColumn SW_R_Opt_Cont_KeysColumn {
                 get {
                     return this.columnSW_R_Opt_Cont_Keys;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn SW_R_Opt_LockSameRowColumn {
+                get {
+                    return this.columnSW_R_Opt_LockSameRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn SW_R_Opt_Use_SPColumn {
+                get {
+                    return this.columnSW_R_Opt_Use_SP;
                 }
             }
             
@@ -8873,13 +8823,8 @@ namespace SE_Factory {
                         bool SW_Standard, 
                         string SW_SchedeCompatibili, 
                         string SW_P_Opt_RF, 
-                        bool SW_P_Opt_Oled, 
-                        bool SW_P_Opt_Accel, 
-                        bool SW_P_Opt_SP, 
-                        bool SW_P_Opt_Buzzer, 
-                        bool SW_P_Opt_Vibracall, 
-                        bool SW_P_Opt_LedTorch, 
-                        bool SW_P_Opt_EmButt, 
+                        bool SW_P_Opt_Use_Oled, 
+                        bool SW_P_Opt_Use_EmButt, 
                         bool SW_P_Opt_Use_Backlight, 
                         bool SW_P_Opt_ShiftPage, 
                         bool SW_P_Opt_Use_Accel, 
@@ -8892,12 +8837,12 @@ namespace SE_Factory {
                         bool SW_R_Opt_Plug_Exp, 
                         bool SW_R_Opt_Plug_Ple, 
                         bool SW_R_Opt_Em_Keyb, 
-                        bool SW_R_Opt_Status_Led, 
-                        bool SW_R_Opt_Ext_Ant, 
                         bool SW_R_Opt_Can, 
                         bool SW_R_Opt_Prop_Out, 
                         string SW_R_Opt_TimeOut, 
                         int SW_R_Opt_Cont_Keys, 
+                        bool SW_R_Opt_LockSameRow, 
+                        bool SW_R_Opt_Use_SP, 
                         int SW_R_Opt_MaxPairDevices, 
                         bool SW_R_Opt_ShiftPage, 
                         int SW_R_Opt_Output_No, 
@@ -8919,13 +8864,8 @@ namespace SE_Factory {
                         SW_Standard,
                         SW_SchedeCompatibili,
                         SW_P_Opt_RF,
-                        SW_P_Opt_Oled,
-                        SW_P_Opt_Accel,
-                        SW_P_Opt_SP,
-                        SW_P_Opt_Buzzer,
-                        SW_P_Opt_Vibracall,
-                        SW_P_Opt_LedTorch,
-                        SW_P_Opt_EmButt,
+                        SW_P_Opt_Use_Oled,
+                        SW_P_Opt_Use_EmButt,
                         SW_P_Opt_Use_Backlight,
                         SW_P_Opt_ShiftPage,
                         SW_P_Opt_Use_Accel,
@@ -8938,12 +8878,12 @@ namespace SE_Factory {
                         SW_R_Opt_Plug_Exp,
                         SW_R_Opt_Plug_Ple,
                         SW_R_Opt_Em_Keyb,
-                        SW_R_Opt_Status_Led,
-                        SW_R_Opt_Ext_Ant,
                         SW_R_Opt_Can,
                         SW_R_Opt_Prop_Out,
                         SW_R_Opt_TimeOut,
                         SW_R_Opt_Cont_Keys,
+                        SW_R_Opt_LockSameRow,
+                        SW_R_Opt_Use_SP,
                         SW_R_Opt_MaxPairDevices,
                         SW_R_Opt_ShiftPage,
                         SW_R_Opt_Output_No,
@@ -8992,13 +8932,8 @@ namespace SE_Factory {
                 this.columnSW_Standard = base.Columns["SW_Standard"];
                 this.columnSW_SchedeCompatibili = base.Columns["SW_SchedeCompatibili"];
                 this.columnSW_P_Opt_RF = base.Columns["SW_P_Opt_RF"];
-                this.columnSW_P_Opt_Oled = base.Columns["SW_P_Opt_Oled"];
-                this.columnSW_P_Opt_Accel = base.Columns["SW_P_Opt_Accel"];
-                this.columnSW_P_Opt_SP = base.Columns["SW_P_Opt_SP"];
-                this.columnSW_P_Opt_Buzzer = base.Columns["SW_P_Opt_Buzzer"];
-                this.columnSW_P_Opt_Vibracall = base.Columns["SW_P_Opt_Vibracall"];
-                this.columnSW_P_Opt_LedTorch = base.Columns["SW_P_Opt_LedTorch"];
-                this.columnSW_P_Opt_EmButt = base.Columns["SW_P_Opt_EmButt"];
+                this.columnSW_P_Opt_Use_Oled = base.Columns["SW_P_Opt_Use_Oled"];
+                this.columnSW_P_Opt_Use_EmButt = base.Columns["SW_P_Opt_Use_EmButt"];
                 this.columnSW_P_Opt_Use_Backlight = base.Columns["SW_P_Opt_Use_Backlight"];
                 this.columnSW_P_Opt_ShiftPage = base.Columns["SW_P_Opt_ShiftPage"];
                 this.columnSW_P_Opt_Use_Accel = base.Columns["SW_P_Opt_Use_Accel"];
@@ -9011,12 +8946,12 @@ namespace SE_Factory {
                 this.columnSW_R_Opt_Plug_Exp = base.Columns["SW_R_Opt_Plug_Exp"];
                 this.columnSW_R_Opt_Plug_Ple = base.Columns["SW_R_Opt_Plug_Ple"];
                 this.columnSW_R_Opt_Em_Keyb = base.Columns["SW_R_Opt_Em_Keyb"];
-                this.columnSW_R_Opt_Status_Led = base.Columns["SW_R_Opt_Status_Led"];
-                this.columnSW_R_Opt_Ext_Ant = base.Columns["SW_R_Opt_Ext_Ant"];
                 this.columnSW_R_Opt_Can = base.Columns["SW_R_Opt_Can"];
                 this.columnSW_R_Opt_Prop_Out = base.Columns["SW_R_Opt_Prop_Out"];
                 this.columnSW_R_Opt_TimeOut = base.Columns["SW_R_Opt_TimeOut"];
                 this.columnSW_R_Opt_Cont_Keys = base.Columns["SW_R_Opt_Cont_Keys"];
+                this.columnSW_R_Opt_LockSameRow = base.Columns["SW_R_Opt_LockSameRow"];
+                this.columnSW_R_Opt_Use_SP = base.Columns["SW_R_Opt_Use_SP"];
                 this.columnSW_R_Opt_MaxPairDevices = base.Columns["SW_R_Opt_MaxPairDevices"];
                 this.columnSW_R_Opt_ShiftPage = base.Columns["SW_R_Opt_ShiftPage"];
                 this.columnSW_R_Opt_Output_No = base.Columns["SW_R_Opt_Output_No"];
@@ -9050,20 +8985,10 @@ namespace SE_Factory {
                 base.Columns.Add(this.columnSW_SchedeCompatibili);
                 this.columnSW_P_Opt_RF = new global::System.Data.DataColumn("SW_P_Opt_RF", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSW_P_Opt_RF);
-                this.columnSW_P_Opt_Oled = new global::System.Data.DataColumn("SW_P_Opt_Oled", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSW_P_Opt_Oled);
-                this.columnSW_P_Opt_Accel = new global::System.Data.DataColumn("SW_P_Opt_Accel", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSW_P_Opt_Accel);
-                this.columnSW_P_Opt_SP = new global::System.Data.DataColumn("SW_P_Opt_SP", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSW_P_Opt_SP);
-                this.columnSW_P_Opt_Buzzer = new global::System.Data.DataColumn("SW_P_Opt_Buzzer", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSW_P_Opt_Buzzer);
-                this.columnSW_P_Opt_Vibracall = new global::System.Data.DataColumn("SW_P_Opt_Vibracall", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSW_P_Opt_Vibracall);
-                this.columnSW_P_Opt_LedTorch = new global::System.Data.DataColumn("SW_P_Opt_LedTorch", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSW_P_Opt_LedTorch);
-                this.columnSW_P_Opt_EmButt = new global::System.Data.DataColumn("SW_P_Opt_EmButt", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSW_P_Opt_EmButt);
+                this.columnSW_P_Opt_Use_Oled = new global::System.Data.DataColumn("SW_P_Opt_Use_Oled", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSW_P_Opt_Use_Oled);
+                this.columnSW_P_Opt_Use_EmButt = new global::System.Data.DataColumn("SW_P_Opt_Use_EmButt", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSW_P_Opt_Use_EmButt);
                 this.columnSW_P_Opt_Use_Backlight = new global::System.Data.DataColumn("SW_P_Opt_Use_Backlight", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSW_P_Opt_Use_Backlight);
                 this.columnSW_P_Opt_ShiftPage = new global::System.Data.DataColumn("SW_P_Opt_ShiftPage", typeof(bool), null, global::System.Data.MappingType.Element);
@@ -9088,10 +9013,6 @@ namespace SE_Factory {
                 base.Columns.Add(this.columnSW_R_Opt_Plug_Ple);
                 this.columnSW_R_Opt_Em_Keyb = new global::System.Data.DataColumn("SW_R_Opt_Em_Keyb", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSW_R_Opt_Em_Keyb);
-                this.columnSW_R_Opt_Status_Led = new global::System.Data.DataColumn("SW_R_Opt_Status_Led", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSW_R_Opt_Status_Led);
-                this.columnSW_R_Opt_Ext_Ant = new global::System.Data.DataColumn("SW_R_Opt_Ext_Ant", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSW_R_Opt_Ext_Ant);
                 this.columnSW_R_Opt_Can = new global::System.Data.DataColumn("SW_R_Opt_Can", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSW_R_Opt_Can);
                 this.columnSW_R_Opt_Prop_Out = new global::System.Data.DataColumn("SW_R_Opt_Prop_Out", typeof(bool), null, global::System.Data.MappingType.Element);
@@ -9100,6 +9021,10 @@ namespace SE_Factory {
                 base.Columns.Add(this.columnSW_R_Opt_TimeOut);
                 this.columnSW_R_Opt_Cont_Keys = new global::System.Data.DataColumn("SW_R_Opt_Cont_Keys", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSW_R_Opt_Cont_Keys);
+                this.columnSW_R_Opt_LockSameRow = new global::System.Data.DataColumn("SW_R_Opt_LockSameRow", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSW_R_Opt_LockSameRow);
+                this.columnSW_R_Opt_Use_SP = new global::System.Data.DataColumn("SW_R_Opt_Use_SP", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSW_R_Opt_Use_SP);
                 this.columnSW_R_Opt_MaxPairDevices = new global::System.Data.DataColumn("SW_R_Opt_MaxPairDevices", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSW_R_Opt_MaxPairDevices);
                 this.columnSW_R_Opt_ShiftPage = new global::System.Data.DataColumn("SW_R_Opt_ShiftPage", typeof(bool), null, global::System.Data.MappingType.Element);
@@ -9132,13 +9057,13 @@ namespace SE_Factory {
                 this.columnSW_Descrizione.MaxLength = 255;
                 this.columnSW_Versione.MaxLength = 5;
                 this.columnSW_Revisione.MaxLength = 3;
-                this.columnSW_SchedeCompatibili.MaxLength = 21845;
-                this.columnSW_P_Opt_RF.MaxLength = 85;
-                this.columnSW_R_Opt_RF.MaxLength = 85;
-                this.columnSW_R_Opt_TimeOut.MaxLength = 85;
-                this.columnSW_Revisioni.MaxLength = 21845;
-                this.columnSW_Funzionamento.MaxLength = 21845;
-                this.columnSW_Config.MaxLength = 21845;
+                this.columnSW_SchedeCompatibili.MaxLength = 65535;
+                this.columnSW_P_Opt_RF.MaxLength = 255;
+                this.columnSW_R_Opt_RF.MaxLength = 255;
+                this.columnSW_R_Opt_TimeOut.MaxLength = 255;
+                this.columnSW_Revisioni.MaxLength = 65535;
+                this.columnSW_Funzionamento.MaxLength = 65535;
+                this.columnSW_Config.MaxLength = 65535;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16642,115 +16567,35 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool SW_P_Opt_Oled {
+            public bool SW_P_Opt_Use_Oled {
                 get {
                     try {
-                        return ((bool)(this[this.tableGC_Software.SW_P_Opt_OledColumn]));
+                        return ((bool)(this[this.tableGC_Software.SW_P_Opt_Use_OledColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_P_Opt_Oled\' nella tabella \'GC_Software\' è DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGC_Software.SW_P_Opt_OledColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool SW_P_Opt_Accel {
-                get {
-                    try {
-                        return ((bool)(this[this.tableGC_Software.SW_P_Opt_AccelColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_P_Opt_Accel\' nella tabella \'GC_Software\' è DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGC_Software.SW_P_Opt_AccelColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool SW_P_Opt_SP {
-                get {
-                    try {
-                        return ((bool)(this[this.tableGC_Software.SW_P_Opt_SPColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_P_Opt_SP\' nella tabella \'GC_Software\' è DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGC_Software.SW_P_Opt_SPColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool SW_P_Opt_Buzzer {
-                get {
-                    try {
-                        return ((bool)(this[this.tableGC_Software.SW_P_Opt_BuzzerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_P_Opt_Buzzer\' nella tabella \'GC_Software\' è DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGC_Software.SW_P_Opt_BuzzerColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool SW_P_Opt_Vibracall {
-                get {
-                    try {
-                        return ((bool)(this[this.tableGC_Software.SW_P_Opt_VibracallColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_P_Opt_Vibracall\' nella tabella \'GC_Software\' è DBNull" +
-                                ".", e);
-                    }
-                }
-                set {
-                    this[this.tableGC_Software.SW_P_Opt_VibracallColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool SW_P_Opt_LedTorch {
-                get {
-                    try {
-                        return ((bool)(this[this.tableGC_Software.SW_P_Opt_LedTorchColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_P_Opt_LedTorch\' nella tabella \'GC_Software\' è DBNull." +
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_P_Opt_Use_Oled\' nella tabella \'GC_Software\' è DBNull." +
                                 "", e);
                     }
                 }
                 set {
-                    this[this.tableGC_Software.SW_P_Opt_LedTorchColumn] = value;
+                    this[this.tableGC_Software.SW_P_Opt_Use_OledColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool SW_P_Opt_EmButt {
+            public bool SW_P_Opt_Use_EmButt {
                 get {
                     try {
-                        return ((bool)(this[this.tableGC_Software.SW_P_Opt_EmButtColumn]));
+                        return ((bool)(this[this.tableGC_Software.SW_P_Opt_Use_EmButtColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_P_Opt_EmButt\' nella tabella \'GC_Software\' è DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_P_Opt_Use_EmButt\' nella tabella \'GC_Software\' è DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableGC_Software.SW_P_Opt_EmButtColumn] = value;
+                    this[this.tableGC_Software.SW_P_Opt_Use_EmButtColumn] = value;
                 }
             }
             
@@ -16957,39 +16802,6 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool SW_R_Opt_Status_Led {
-                get {
-                    try {
-                        return ((bool)(this[this.tableGC_Software.SW_R_Opt_Status_LedColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_R_Opt_Status_Led\' nella tabella \'GC_Software\' è DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableGC_Software.SW_R_Opt_Status_LedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool SW_R_Opt_Ext_Ant {
-                get {
-                    try {
-                        return ((bool)(this[this.tableGC_Software.SW_R_Opt_Ext_AntColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_R_Opt_Ext_Ant\' nella tabella \'GC_Software\' è DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableGC_Software.SW_R_Opt_Ext_AntColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool SW_R_Opt_Can {
                 get {
                     try {
@@ -17051,6 +16863,39 @@ namespace SE_Factory {
                 }
                 set {
                     this[this.tableGC_Software.SW_R_Opt_Cont_KeysColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool SW_R_Opt_LockSameRow {
+                get {
+                    try {
+                        return ((bool)(this[this.tableGC_Software.SW_R_Opt_LockSameRowColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_R_Opt_LockSameRow\' nella tabella \'GC_Software\' è DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableGC_Software.SW_R_Opt_LockSameRowColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool SW_R_Opt_Use_SP {
+                get {
+                    try {
+                        return ((bool)(this[this.tableGC_Software.SW_R_Opt_Use_SPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'SW_R_Opt_Use_SP\' nella tabella \'GC_Software\' è DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGC_Software.SW_R_Opt_Use_SPColumn] = value;
                 }
             }
             
@@ -17306,86 +17151,26 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSW_P_Opt_OledNull() {
-                return this.IsNull(this.tableGC_Software.SW_P_Opt_OledColumn);
+            public bool IsSW_P_Opt_Use_OledNull() {
+                return this.IsNull(this.tableGC_Software.SW_P_Opt_Use_OledColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSW_P_Opt_OledNull() {
-                this[this.tableGC_Software.SW_P_Opt_OledColumn] = global::System.Convert.DBNull;
+            public void SetSW_P_Opt_Use_OledNull() {
+                this[this.tableGC_Software.SW_P_Opt_Use_OledColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSW_P_Opt_AccelNull() {
-                return this.IsNull(this.tableGC_Software.SW_P_Opt_AccelColumn);
+            public bool IsSW_P_Opt_Use_EmButtNull() {
+                return this.IsNull(this.tableGC_Software.SW_P_Opt_Use_EmButtColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSW_P_Opt_AccelNull() {
-                this[this.tableGC_Software.SW_P_Opt_AccelColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSW_P_Opt_SPNull() {
-                return this.IsNull(this.tableGC_Software.SW_P_Opt_SPColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSW_P_Opt_SPNull() {
-                this[this.tableGC_Software.SW_P_Opt_SPColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSW_P_Opt_BuzzerNull() {
-                return this.IsNull(this.tableGC_Software.SW_P_Opt_BuzzerColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSW_P_Opt_BuzzerNull() {
-                this[this.tableGC_Software.SW_P_Opt_BuzzerColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSW_P_Opt_VibracallNull() {
-                return this.IsNull(this.tableGC_Software.SW_P_Opt_VibracallColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSW_P_Opt_VibracallNull() {
-                this[this.tableGC_Software.SW_P_Opt_VibracallColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSW_P_Opt_LedTorchNull() {
-                return this.IsNull(this.tableGC_Software.SW_P_Opt_LedTorchColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSW_P_Opt_LedTorchNull() {
-                this[this.tableGC_Software.SW_P_Opt_LedTorchColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSW_P_Opt_EmButtNull() {
-                return this.IsNull(this.tableGC_Software.SW_P_Opt_EmButtColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSW_P_Opt_EmButtNull() {
-                this[this.tableGC_Software.SW_P_Opt_EmButtColumn] = global::System.Convert.DBNull;
+            public void SetSW_P_Opt_Use_EmButtNull() {
+                this[this.tableGC_Software.SW_P_Opt_Use_EmButtColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17534,30 +17319,6 @@ namespace SE_Factory {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSW_R_Opt_Status_LedNull() {
-                return this.IsNull(this.tableGC_Software.SW_R_Opt_Status_LedColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSW_R_Opt_Status_LedNull() {
-                this[this.tableGC_Software.SW_R_Opt_Status_LedColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSW_R_Opt_Ext_AntNull() {
-                return this.IsNull(this.tableGC_Software.SW_R_Opt_Ext_AntColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSW_R_Opt_Ext_AntNull() {
-                this[this.tableGC_Software.SW_R_Opt_Ext_AntColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSW_R_Opt_CanNull() {
                 return this.IsNull(this.tableGC_Software.SW_R_Opt_CanColumn);
             }
@@ -17602,6 +17363,30 @@ namespace SE_Factory {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSW_R_Opt_Cont_KeysNull() {
                 this[this.tableGC_Software.SW_R_Opt_Cont_KeysColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSW_R_Opt_LockSameRowNull() {
+                return this.IsNull(this.tableGC_Software.SW_R_Opt_LockSameRowColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSW_R_Opt_LockSameRowNull() {
+                this[this.tableGC_Software.SW_R_Opt_LockSameRowColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSW_R_Opt_Use_SPNull() {
+                return this.IsNull(this.tableGC_Software.SW_R_Opt_Use_SPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSW_R_Opt_Use_SPNull() {
+                this[this.tableGC_Software.SW_R_Opt_Use_SPColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19436,6 +19221,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Fam_Name";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -19443,6 +19229,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
             param.SourceColumn = "Fam_Tipo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -19450,6 +19237,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
             param.SourceColumn = "Fam_Hex_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -19462,6 +19250,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Fam_Name";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -19469,6 +19258,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
             param.SourceColumn = "Fam_Tipo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -19476,6 +19266,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
             param.SourceColumn = "Fam_Hex_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -19516,7 +19307,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.GCP_Connection;
+            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.DB_FactoryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19896,6 +19687,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Prod_Sch";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -19903,6 +19695,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Prod_Fam";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -19910,6 +19703,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Prod_Descrizione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -19923,6 +19717,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Prod_Sch";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -19930,6 +19725,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Prod_Fam";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -19937,6 +19733,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Prod_Descrizione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -19985,7 +19782,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.GCP_Connection;
+            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.DB_FactoryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20400,18 +20197,21 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Id";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_RagSoc";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Indirizzo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -20419,12 +20219,14 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Cli_CAP";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Citta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -20432,30 +20234,35 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Prov";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Nazione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Web";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Email_1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Email_2";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
@@ -20463,6 +20270,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Tel_1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
@@ -20470,6 +20278,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Tel_2";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -20481,18 +20290,21 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Id";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_RagSoc";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Indirizzo";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -20500,12 +20312,14 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Cli_CAP";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Citta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -20513,30 +20327,35 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Prov";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Nazione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Web";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Email_1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Email_2";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
@@ -20544,6 +20363,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Tel_1";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
@@ -20551,6 +20371,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Cli_Tel_2";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p13";
@@ -20634,7 +20455,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.GCP_Connection;
+            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.DB_FactoryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21237,12 +21058,14 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Kit_Composto";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Kit_DescComposto";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -21250,12 +21073,14 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Kit_Componente";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Kit_DescComponente";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -21263,6 +21088,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Kit_Qta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -21270,6 +21096,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Kit_DataInizioVal";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
@@ -21277,6 +21104,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Kit_DataFineVal";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -21288,12 +21116,14 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Kit_Composto";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Kit_DescComposto";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -21301,12 +21131,14 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Kit_Componente";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Kit_DescComponente";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -21314,6 +21146,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Kit_Qta";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -21321,6 +21154,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Kit_DataInizioVal";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
@@ -21328,6 +21162,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Kit_DataFineVal";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
@@ -21419,7 +21254,7 @@ namespace SE_Factory.DB_FactoryDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.GCP_Connection;
+            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.DB_FactoryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -22177,6 +22012,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Dev_FamProd";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -22184,18 +22020,21 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Dev_CodiceItem";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Dev_DescItem";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Dev_Firmware";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -22203,6 +22042,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Dev_StartDateFW";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -22210,6 +22050,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Dev_EndDateFW";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
@@ -22217,6 +22058,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Dev_ID_Model";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -22228,6 +22070,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Dev_FamProd";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -22235,18 +22078,21 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Dev_CodiceItem";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Dev_DescItem";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "Dev_Firmware";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -22254,6 +22100,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Dev_StartDateFW";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -22261,6 +22108,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Dev_EndDateFW";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
@@ -22268,6 +22116,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Dev_ID_Model";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
@@ -22366,7 +22215,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.GCP_Connection;
+            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.DB_FactoryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23020,18 +22869,21 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "CFW_IdCustomer";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "CFW_SW_Code";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "CFW_DisplayTitle";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -23045,18 +22897,21 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "CFW_IdCustomer";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "CFW_SW_Code";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "CFW_DisplayTitle";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -23087,7 +22942,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.GCP_Connection;
+            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.DB_FactoryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23861,6 +23716,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
             param.SourceColumn = "Ord_TIPO_ORDINE_CLIENTE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -23868,6 +23724,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_Id_Cli";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -23875,6 +23732,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_RAGIONE_SOCIALE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -23882,6 +23740,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_NUMERO_ORDINE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -23889,6 +23748,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_NUMERO_RIGA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -23896,6 +23756,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_CODICE_KIT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
@@ -23903,6 +23764,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_CODICE_SISTEMA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
@@ -23910,6 +23772,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCRIZIONE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
@@ -23917,6 +23780,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DATA_RICHIESTA_CONSEGNA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
@@ -23924,6 +23788,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DATA_CONFERMA_CONSEGNA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
@@ -23931,6 +23796,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
             param.SourceColumn = "Ord_UM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
@@ -23938,6 +23804,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_QTA_ORDINATA_KIT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p13";
@@ -23945,6 +23812,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_QTA_ORDINATA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p14";
@@ -23952,6 +23820,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_QTA_EVASA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p15";
@@ -23959,6 +23828,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_SOFTWARE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p16";
@@ -23966,6 +23836,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCR_KIT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p17";
@@ -23973,6 +23844,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCREST_KIT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p18";
@@ -23980,6 +23852,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCR_SISTEMA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p19";
@@ -23987,6 +23860,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCREST_SISTEMA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p20";
@@ -23994,6 +23868,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_MODELLO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p21";
@@ -24001,6 +23876,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCR_SOFTWARE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p22";
@@ -24008,6 +23884,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCREST_SOFTWARE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p23";
@@ -24015,6 +23892,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_STATO_ORDINE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p24";
@@ -24022,6 +23900,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_PROG_PROGRAMMAZIONI";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -24066,6 +23945,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
             param.SourceColumn = "Ord_TIPO_ORDINE_CLIENTE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -24073,6 +23953,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_Id_Cli";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -24080,6 +23961,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_RAGIONE_SOCIALE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -24087,6 +23969,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_NUMERO_ORDINE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -24094,6 +23977,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_NUMERO_RIGA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -24101,6 +23985,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_CODICE_KIT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
@@ -24108,6 +23993,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_CODICE_SISTEMA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
@@ -24115,6 +24001,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCRIZIONE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
@@ -24122,6 +24009,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DATA_RICHIESTA_CONSEGNA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
@@ -24129,6 +24017,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DATA_CONFERMA_CONSEGNA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
@@ -24136,6 +24025,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.IsNullable = true;
             param.SourceColumn = "Ord_UM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
@@ -24143,6 +24033,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_QTA_ORDINATA_KIT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p13";
@@ -24150,6 +24041,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_QTA_ORDINATA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p14";
@@ -24157,6 +24049,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_QTA_EVASA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p15";
@@ -24164,6 +24057,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_SOFTWARE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p16";
@@ -24171,6 +24065,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCR_KIT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p17";
@@ -24178,6 +24073,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCREST_KIT";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p18";
@@ -24185,6 +24081,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCR_SISTEMA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p19";
@@ -24192,6 +24089,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCREST_SISTEMA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p20";
@@ -24199,6 +24097,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_MODELLO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p21";
@@ -24206,6 +24105,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCR_SOFTWARE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p22";
@@ -24213,6 +24113,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_DESCREST_SOFTWARE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p23";
@@ -24220,6 +24121,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ord_STATO_ORDINE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p24";
@@ -24227,6 +24129,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ord_PROG_PROGRAMMAZIONI";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p25";
@@ -24650,7 +24553,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.GCP_Connection;
+            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.DB_FactoryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25895,6 +25798,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_Kit";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -25902,6 +25806,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ser_ID_Cli";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -25909,6 +25814,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_Device";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -25916,6 +25822,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_Device_ID_Code";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -25923,6 +25830,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_OfficialSerial";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -25930,6 +25838,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_ReadSerial";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
@@ -25937,6 +25846,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_SW_Code";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
@@ -25944,6 +25854,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Ser_DateProduction";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
@@ -25951,6 +25862,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_Commessa";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
@@ -25958,6 +25870,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_FamProd_ID_HEX";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
@@ -25965,6 +25878,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_HW_Compatible";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -25976,6 +25890,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_Kit";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -25983,6 +25898,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "Ser_ID_Cli";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -25990,6 +25906,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_Device";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -25997,6 +25914,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_Device_ID_Code";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -26004,6 +25922,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_OfficialSerial";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -26011,6 +25930,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_ReadSerial";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
@@ -26018,6 +25938,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_SW_Code";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
@@ -26025,6 +25946,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
             param.IsNullable = true;
             param.SourceColumn = "Ser_DateProduction";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
@@ -26032,6 +25954,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_Commessa";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
@@ -26039,6 +25962,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_FamProd_ID_HEX";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
@@ -26046,6 +25970,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Ser_HW_Compatible";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
@@ -26248,7 +26173,7 @@ WHERE        (CODICE_ASSIEME = @p1)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.GCP_Connection;
+            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.DB_FactoryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -27547,13 +27472,8 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             tableMapping.ColumnMappings.Add("SW_Standard", "SW_Standard");
             tableMapping.ColumnMappings.Add("SW_SchedeCompatibili", "SW_SchedeCompatibili");
             tableMapping.ColumnMappings.Add("SW_P_Opt_RF", "SW_P_Opt_RF");
-            tableMapping.ColumnMappings.Add("SW_P_Opt_Oled", "SW_P_Opt_Oled");
-            tableMapping.ColumnMappings.Add("SW_P_Opt_Accel", "SW_P_Opt_Accel");
-            tableMapping.ColumnMappings.Add("SW_P_Opt_SP", "SW_P_Opt_SP");
-            tableMapping.ColumnMappings.Add("SW_P_Opt_Buzzer", "SW_P_Opt_Buzzer");
-            tableMapping.ColumnMappings.Add("SW_P_Opt_Vibracall", "SW_P_Opt_Vibracall");
-            tableMapping.ColumnMappings.Add("SW_P_Opt_LedTorch", "SW_P_Opt_LedTorch");
-            tableMapping.ColumnMappings.Add("SW_P_Opt_EmButt", "SW_P_Opt_EmButt");
+            tableMapping.ColumnMappings.Add("SW_P_Opt_Use_Oled", "SW_P_Opt_Use_Oled");
+            tableMapping.ColumnMappings.Add("SW_P_Opt_Use_EmButt", "SW_P_Opt_Use_EmButt");
             tableMapping.ColumnMappings.Add("SW_P_Opt_Use_Backlight", "SW_P_Opt_Use_Backlight");
             tableMapping.ColumnMappings.Add("SW_P_Opt_ShiftPage", "SW_P_Opt_ShiftPage");
             tableMapping.ColumnMappings.Add("SW_P_Opt_Use_Accel", "SW_P_Opt_Use_Accel");
@@ -27566,12 +27486,12 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             tableMapping.ColumnMappings.Add("SW_R_Opt_Plug_Exp", "SW_R_Opt_Plug_Exp");
             tableMapping.ColumnMappings.Add("SW_R_Opt_Plug_Ple", "SW_R_Opt_Plug_Ple");
             tableMapping.ColumnMappings.Add("SW_R_Opt_Em_Keyb", "SW_R_Opt_Em_Keyb");
-            tableMapping.ColumnMappings.Add("SW_R_Opt_Status_Led", "SW_R_Opt_Status_Led");
-            tableMapping.ColumnMappings.Add("SW_R_Opt_Ext_Ant", "SW_R_Opt_Ext_Ant");
             tableMapping.ColumnMappings.Add("SW_R_Opt_Can", "SW_R_Opt_Can");
             tableMapping.ColumnMappings.Add("SW_R_Opt_Prop_Out", "SW_R_Opt_Prop_Out");
             tableMapping.ColumnMappings.Add("SW_R_Opt_TimeOut", "SW_R_Opt_TimeOut");
             tableMapping.ColumnMappings.Add("SW_R_Opt_Cont_Keys", "SW_R_Opt_Cont_Keys");
+            tableMapping.ColumnMappings.Add("SW_R_Opt_LockSameRow", "SW_R_Opt_LockSameRow");
+            tableMapping.ColumnMappings.Add("SW_R_Opt_Use_SP", "SW_R_Opt_Use_SP");
             tableMapping.ColumnMappings.Add("SW_R_Opt_MaxPairDevices", "SW_R_Opt_MaxPairDevices");
             tableMapping.ColumnMappings.Add("SW_R_Opt_ShiftPage", "SW_R_Opt_ShiftPage");
             tableMapping.ColumnMappings.Add("SW_R_Opt_Output_No", "SW_R_Opt_Output_No");
@@ -27591,39 +27511,35 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                 "S NULL) OR (`SW_Versione` = @p8)) AND ((@p9 = 1 AND `SW_Revisione` IS NULL) OR (" +
                 "`SW_Revisione` = @p10)) AND ((@p11 = 1 AND `SW_Standard` IS NULL) OR (`SW_Standa" +
                 "rd` = @p12)) AND ((@p13 = 1 AND `SW_P_Opt_RF` IS NULL) OR (`SW_P_Opt_RF` = @p14)" +
-                ") AND ((@p15 = 1 AND `SW_P_Opt_Oled` IS NULL) OR (`SW_P_Opt_Oled` = @p16)) AND (" +
-                "(@p17 = 1 AND `SW_P_Opt_Accel` IS NULL) OR (`SW_P_Opt_Accel` = @p18)) AND ((@p19" +
-                " = 1 AND `SW_P_Opt_SP` IS NULL) OR (`SW_P_Opt_SP` = @p20)) AND ((@p21 = 1 AND `S" +
-                "W_P_Opt_Buzzer` IS NULL) OR (`SW_P_Opt_Buzzer` = @p22)) AND ((@p23 = 1 AND `SW_P" +
-                "_Opt_Vibracall` IS NULL) OR (`SW_P_Opt_Vibracall` = @p24)) AND ((@p25 = 1 AND `S" +
-                "W_P_Opt_LedTorch` IS NULL) OR (`SW_P_Opt_LedTorch` = @p26)) AND ((@p27 = 1 AND `" +
-                "SW_P_Opt_EmButt` IS NULL) OR (`SW_P_Opt_EmButt` = @p28)) AND ((@p29 = 1 AND `SW_" +
-                "P_Opt_Use_Backlight` IS NULL) OR (`SW_P_Opt_Use_Backlight` = @p30)) AND ((@p31 =" +
-                " 1 AND `SW_P_Opt_ShiftPage` IS NULL) OR (`SW_P_Opt_ShiftPage` = @p32)) AND ((@p3" +
-                "3 = 1 AND `SW_P_Opt_Use_Accel` IS NULL) OR (`SW_P_Opt_Use_Accel` = @p34)) AND ((" +
-                "@p35 = 1 AND `SW_P_Opt_Use_SP` IS NULL) OR (`SW_P_Opt_Use_SP` = @p36)) AND ((@p3" +
-                "7 = 1 AND `SW_P_Opt_Use_Buzzer` IS NULL) OR (`SW_P_Opt_Use_Buzzer` = @p38)) AND " +
-                "((@p39 = 1 AND `SW_P_Opt_Use_Vibracall` IS NULL) OR (`SW_P_Opt_Use_Vibracall` = " +
-                "@p40)) AND ((@p41 = 1 AND `SW_P_Opt_Use_LedTorch` IS NULL) OR (`SW_P_Opt_Use_Led" +
-                "Torch` = @p42)) AND ((@p43 = 1 AND `SW_P_Opt_MaxPairDevices` IS NULL) OR (`SW_P_" +
-                "Opt_MaxPairDevices` = @p44)) AND ((@p45 = 1 AND `SW_R_Opt_RF` IS NULL) OR (`SW_R" +
-                "_Opt_RF` = @p46)) AND ((@p47 = 1 AND `SW_R_Opt_Plug_Exp` IS NULL) OR (`SW_R_Opt_" +
-                "Plug_Exp` = @p48)) AND ((@p49 = 1 AND `SW_R_Opt_Plug_Ple` IS NULL) OR (`SW_R_Opt" +
-                "_Plug_Ple` = @p50)) AND ((@p51 = 1 AND `SW_R_Opt_Em_Keyb` IS NULL) OR (`SW_R_Opt" +
-                "_Em_Keyb` = @p52)) AND ((@p53 = 1 AND `SW_R_Opt_Status_Led` IS NULL) OR (`SW_R_O" +
-                "pt_Status_Led` = @p54)) AND ((@p55 = 1 AND `SW_R_Opt_Ext_Ant` IS NULL) OR (`SW_R" +
-                "_Opt_Ext_Ant` = @p56)) AND ((@p57 = 1 AND `SW_R_Opt_Can` IS NULL) OR (`SW_R_Opt_" +
-                "Can` = @p58)) AND ((@p59 = 1 AND `SW_R_Opt_Prop_Out` IS NULL) OR (`SW_R_Opt_Prop" +
-                "_Out` = @p60)) AND ((@p61 = 1 AND `SW_R_Opt_TimeOut` IS NULL) OR (`SW_R_Opt_Time" +
-                "Out` = @p62)) AND ((@p63 = 1 AND `SW_R_Opt_Cont_Keys` IS NULL) OR (`SW_R_Opt_Con" +
-                "t_Keys` = @p64)) AND ((@p65 = 1 AND `SW_R_Opt_MaxPairDevices` IS NULL) OR (`SW_R" +
-                "_Opt_MaxPairDevices` = @p66)) AND ((@p67 = 1 AND `SW_R_Opt_ShiftPage` IS NULL) O" +
-                "R (`SW_R_Opt_ShiftPage` = @p68)) AND ((@p69 = 1 AND `SW_R_Opt_Output_No` IS NULL" +
-                ") OR (`SW_R_Opt_Output_No` = @p70)) AND ((@p71 = 1 AND `SW_R_Opt_Dig_Input_No` I" +
-                "S NULL) OR (`SW_R_Opt_Dig_Input_No` = @p72)) AND ((@p73 = 1 AND `SW_R_Opt_Ana_In" +
-                "put_No` IS NULL) OR (`SW_R_Opt_Ana_Input_No` = @p74)) AND ((@p75 = 1 AND `SW_Obs" +
-                "olete_ver` IS NULL) OR (`SW_Obsolete_ver` = @p76)) AND ((@p77 = 1 AND `SW_Obsole" +
-                "te_ver_from_date` IS NULL) OR (`SW_Obsolete_ver_from_date` = @p78)))";
+                ") AND ((@p15 = 1 AND `SW_P_Opt_Use_Oled` IS NULL) OR (`SW_P_Opt_Use_Oled` = @p16" +
+                ")) AND ((@p17 = 1 AND `SW_P_Opt_Use_EmButt` IS NULL) OR (`SW_P_Opt_Use_EmButt` =" +
+                " @p18)) AND ((@p19 = 1 AND `SW_P_Opt_Use_Backlight` IS NULL) OR (`SW_P_Opt_Use_B" +
+                "acklight` = @p20)) AND ((@p21 = 1 AND `SW_P_Opt_ShiftPage` IS NULL) OR (`SW_P_Op" +
+                "t_ShiftPage` = @p22)) AND ((@p23 = 1 AND `SW_P_Opt_Use_Accel` IS NULL) OR (`SW_P" +
+                "_Opt_Use_Accel` = @p24)) AND ((@p25 = 1 AND `SW_P_Opt_Use_SP` IS NULL) OR (`SW_P" +
+                "_Opt_Use_SP` = @p26)) AND ((@p27 = 1 AND `SW_P_Opt_Use_Buzzer` IS NULL) OR (`SW_" +
+                "P_Opt_Use_Buzzer` = @p28)) AND ((@p29 = 1 AND `SW_P_Opt_Use_Vibracall` IS NULL) " +
+                "OR (`SW_P_Opt_Use_Vibracall` = @p30)) AND ((@p31 = 1 AND `SW_P_Opt_Use_LedTorch`" +
+                " IS NULL) OR (`SW_P_Opt_Use_LedTorch` = @p32)) AND ((@p33 = 1 AND `SW_P_Opt_MaxP" +
+                "airDevices` IS NULL) OR (`SW_P_Opt_MaxPairDevices` = @p34)) AND ((@p35 = 1 AND `" +
+                "SW_R_Opt_RF` IS NULL) OR (`SW_R_Opt_RF` = @p36)) AND ((@p37 = 1 AND `SW_R_Opt_Pl" +
+                "ug_Exp` IS NULL) OR (`SW_R_Opt_Plug_Exp` = @p38)) AND ((@p39 = 1 AND `SW_R_Opt_P" +
+                "lug_Ple` IS NULL) OR (`SW_R_Opt_Plug_Ple` = @p40)) AND ((@p41 = 1 AND `SW_R_Opt_" +
+                "Em_Keyb` IS NULL) OR (`SW_R_Opt_Em_Keyb` = @p42)) AND ((@p43 = 1 AND `SW_R_Opt_C" +
+                "an` IS NULL) OR (`SW_R_Opt_Can` = @p44)) AND ((@p45 = 1 AND `SW_R_Opt_Prop_Out` " +
+                "IS NULL) OR (`SW_R_Opt_Prop_Out` = @p46)) AND ((@p47 = 1 AND `SW_R_Opt_TimeOut` " +
+                "IS NULL) OR (`SW_R_Opt_TimeOut` = @p48)) AND ((@p49 = 1 AND `SW_R_Opt_Cont_Keys`" +
+                " IS NULL) OR (`SW_R_Opt_Cont_Keys` = @p50)) AND ((@p51 = 1 AND `SW_R_Opt_LockSam" +
+                "eRow` IS NULL) OR (`SW_R_Opt_LockSameRow` = @p52)) AND ((@p53 = 1 AND `SW_R_Opt_" +
+                "Use_SP` IS NULL) OR (`SW_R_Opt_Use_SP` = @p54)) AND ((@p55 = 1 AND `SW_R_Opt_Max" +
+                "PairDevices` IS NULL) OR (`SW_R_Opt_MaxPairDevices` = @p56)) AND ((@p57 = 1 AND " +
+                "`SW_R_Opt_ShiftPage` IS NULL) OR (`SW_R_Opt_ShiftPage` = @p58)) AND ((@p59 = 1 A" +
+                "ND `SW_R_Opt_Output_No` IS NULL) OR (`SW_R_Opt_Output_No` = @p60)) AND ((@p61 = " +
+                "1 AND `SW_R_Opt_Dig_Input_No` IS NULL) OR (`SW_R_Opt_Dig_Input_No` = @p62)) AND " +
+                "((@p63 = 1 AND `SW_R_Opt_Ana_Input_No` IS NULL) OR (`SW_R_Opt_Ana_Input_No` = @p" +
+                "64)) AND ((@p65 = 1 AND `SW_Obsolete_ver` IS NULL) OR (`SW_Obsolete_ver` = @p66)" +
+                ") AND ((@p67 = 1 AND `SW_Obsolete_ver_from_date` IS NULL) OR (`SW_Obsolete_ver_f" +
+                "rom_date` = @p68)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -27747,7 +27663,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Oled";
+            param.SourceColumn = "SW_P_Opt_Use_Oled";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27756,7 +27672,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Oled";
+            param.SourceColumn = "SW_P_Opt_Use_Oled";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27764,7 +27680,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Accel";
+            param.SourceColumn = "SW_P_Opt_Use_EmButt";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27773,7 +27689,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Accel";
+            param.SourceColumn = "SW_P_Opt_Use_EmButt";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27781,7 +27697,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_SP";
+            param.SourceColumn = "SW_P_Opt_Use_Backlight";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27790,7 +27706,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_SP";
+            param.SourceColumn = "SW_P_Opt_Use_Backlight";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27798,7 +27714,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Buzzer";
+            param.SourceColumn = "SW_P_Opt_ShiftPage";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27807,7 +27723,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Buzzer";
+            param.SourceColumn = "SW_P_Opt_ShiftPage";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27815,7 +27731,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Vibracall";
+            param.SourceColumn = "SW_P_Opt_Use_Accel";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27824,7 +27740,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Vibracall";
+            param.SourceColumn = "SW_P_Opt_Use_Accel";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27832,7 +27748,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_LedTorch";
+            param.SourceColumn = "SW_P_Opt_Use_SP";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27841,7 +27757,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_LedTorch";
+            param.SourceColumn = "SW_P_Opt_Use_SP";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27849,7 +27765,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_EmButt";
+            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27858,7 +27774,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_EmButt";
+            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27866,7 +27782,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Backlight";
+            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27875,7 +27791,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Backlight";
+            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27883,7 +27799,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_ShiftPage";
+            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27892,7 +27808,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_ShiftPage";
+            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27900,16 +27816,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Accel";
+            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p34";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Accel";
+            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27917,16 +27833,15 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_SP";
+            param.SourceColumn = "SW_R_Opt_RF";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p36";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_SP";
+            param.SourceColumn = "SW_R_Opt_RF";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27934,7 +27849,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
+            param.SourceColumn = "SW_R_Opt_Plug_Exp";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27943,7 +27858,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
+            param.SourceColumn = "SW_R_Opt_Plug_Exp";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27951,7 +27866,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
+            param.SourceColumn = "SW_R_Opt_Plug_Ple";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27960,7 +27875,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
+            param.SourceColumn = "SW_R_Opt_Plug_Ple";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27968,7 +27883,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
+            param.SourceColumn = "SW_R_Opt_Em_Keyb";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -27977,7 +27892,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
+            param.SourceColumn = "SW_R_Opt_Em_Keyb";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -27985,16 +27900,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
+            param.SourceColumn = "SW_R_Opt_Can";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p44";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
+            param.SourceColumn = "SW_R_Opt_Can";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28002,15 +27917,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_RF";
+            param.SourceColumn = "SW_R_Opt_Prop_Out";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p46";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_RF";
+            param.SourceColumn = "SW_R_Opt_Prop_Out";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28018,16 +27934,15 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Exp";
+            param.SourceColumn = "SW_R_Opt_TimeOut";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p48";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Exp";
+            param.SourceColumn = "SW_R_Opt_TimeOut";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28035,16 +27950,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Ple";
+            param.SourceColumn = "SW_R_Opt_Cont_Keys";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p50";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Ple";
+            param.SourceColumn = "SW_R_Opt_Cont_Keys";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28052,7 +27967,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Em_Keyb";
+            param.SourceColumn = "SW_R_Opt_LockSameRow";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -28061,7 +27976,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Em_Keyb";
+            param.SourceColumn = "SW_R_Opt_LockSameRow";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28069,7 +27984,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Status_Led";
+            param.SourceColumn = "SW_R_Opt_Use_SP";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -28078,7 +27993,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Status_Led";
+            param.SourceColumn = "SW_R_Opt_Use_SP";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28086,16 +28001,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ext_Ant";
+            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p56";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ext_Ant";
+            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28103,7 +28018,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Can";
+            param.SourceColumn = "SW_R_Opt_ShiftPage";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -28112,7 +28027,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Can";
+            param.SourceColumn = "SW_R_Opt_ShiftPage";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28120,16 +28035,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Prop_Out";
+            param.SourceColumn = "SW_R_Opt_Output_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p60";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Prop_Out";
+            param.SourceColumn = "SW_R_Opt_Output_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28137,15 +28052,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_TimeOut";
+            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p62";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_TimeOut";
+            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28153,7 +28069,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Cont_Keys";
+            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
@@ -28162,7 +28078,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Cont_Keys";
+            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -28170,105 +28086,20 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
+            param.SourceColumn = "SW_Obsolete_ver";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p66";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
+            param.SourceColumn = "SW_Obsolete_ver";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p67";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_ShiftPage";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p68";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_ShiftPage";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p69";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Output_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p70";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Output_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p71";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p72";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p73";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p74";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p75";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_Obsolete_ver";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p76";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_Obsolete_ver";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p77";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -28277,7 +28108,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p78";
+            param.ParameterName = "@p68";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
@@ -28286,7 +28117,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `GC_Software` (`SW_Code`, `SW_Fam_Prod`, `SW_Descrizione`, `SW_Versione`, `SW_Revisione`, `SW_Standard`, `SW_SchedeCompatibili`, `SW_P_Opt_RF`, `SW_P_Opt_Oled`, `SW_P_Opt_Accel`, `SW_P_Opt_SP`, `SW_P_Opt_Buzzer`, `SW_P_Opt_Vibracall`, `SW_P_Opt_LedTorch`, `SW_P_Opt_EmButt`, `SW_P_Opt_Use_Backlight`, `SW_P_Opt_ShiftPage`, `SW_P_Opt_Use_Accel`, `SW_P_Opt_Use_SP`, `SW_P_Opt_Use_Buzzer`, `SW_P_Opt_Use_Vibracall`, `SW_P_Opt_Use_LedTorch`, `SW_P_Opt_MaxPairDevices`, `SW_R_Opt_RF`, `SW_R_Opt_Plug_Exp`, `SW_R_Opt_Plug_Ple`, `SW_R_Opt_Em_Keyb`, `SW_R_Opt_Status_Led`, `SW_R_Opt_Ext_Ant`, `SW_R_Opt_Can`, `SW_R_Opt_Prop_Out`, `SW_R_Opt_TimeOut`, `SW_R_Opt_Cont_Keys`, `SW_R_Opt_MaxPairDevices`, `SW_R_Opt_ShiftPage`, `SW_R_Opt_Output_No`, `SW_R_Opt_Dig_Input_No`, `SW_R_Opt_Ana_Input_No`, `SW_Revisioni`, `SW_Funzionamento`, `SW_Config`, `SW_Obsolete_ver`, `SW_Obsolete_ver_from_date`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, @p42, @p43)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `GC_Software` (`SW_Code`, `SW_Fam_Prod`, `SW_Descrizione`, `SW_Versione`, `SW_Revisione`, `SW_Standard`, `SW_SchedeCompatibili`, `SW_P_Opt_RF`, `SW_P_Opt_Use_Oled`, `SW_P_Opt_Use_EmButt`, `SW_P_Opt_Use_Backlight`, `SW_P_Opt_ShiftPage`, `SW_P_Opt_Use_Accel`, `SW_P_Opt_Use_SP`, `SW_P_Opt_Use_Buzzer`, `SW_P_Opt_Use_Vibracall`, `SW_P_Opt_Use_LedTorch`, `SW_P_Opt_MaxPairDevices`, `SW_R_Opt_RF`, `SW_R_Opt_Plug_Exp`, `SW_R_Opt_Plug_Ple`, `SW_R_Opt_Em_Keyb`, `SW_R_Opt_Can`, `SW_R_Opt_Prop_Out`, `SW_R_Opt_TimeOut`, `SW_R_Opt_Cont_Keys`, `SW_R_Opt_LockSameRow`, `SW_R_Opt_Use_SP`, `SW_R_Opt_MaxPairDevices`, `SW_R_Opt_ShiftPage`, `SW_R_Opt_Output_No`, `SW_R_Opt_Dig_Input_No`, `SW_R_Opt_Ana_Input_No`, `SW_Revisioni`, `SW_Funzionamento`, `SW_Config`, `SW_Obsolete_ver`, `SW_Obsolete_ver_from_date`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -28294,6 +28125,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "SW_Code";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -28301,6 +28133,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "SW_Fam_Prod";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -28308,6 +28141,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "SW_Descrizione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -28315,6 +28149,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "SW_Versione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -28322,6 +28157,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "SW_Revisione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -28329,315 +28165,307 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
             param.SourceColumn = "SW_Standard";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_SchedeCompatibili";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_P_Opt_RF";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Oled";
+            param.SourceColumn = "SW_P_Opt_Use_Oled";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Accel";
+            param.SourceColumn = "SW_P_Opt_Use_EmButt";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_SP";
+            param.SourceColumn = "SW_P_Opt_Use_Backlight";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Buzzer";
+            param.SourceColumn = "SW_P_Opt_ShiftPage";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p13";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Vibracall";
+            param.SourceColumn = "SW_P_Opt_Use_Accel";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p14";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_LedTorch";
+            param.SourceColumn = "SW_P_Opt_Use_SP";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p15";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_EmButt";
+            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p16";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Backlight";
+            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p17";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_ShiftPage";
+            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p18";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Accel";
+            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p19";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_SP";
+            param.SourceColumn = "SW_R_Opt_RF";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p20";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
+            param.SourceColumn = "SW_R_Opt_Plug_Exp";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p21";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
+            param.SourceColumn = "SW_R_Opt_Plug_Ple";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p22";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
+            param.SourceColumn = "SW_R_Opt_Em_Keyb";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p23";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
+            param.SourceColumn = "SW_R_Opt_Can";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p24";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_RF";
+            param.SourceColumn = "SW_R_Opt_Prop_Out";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p25";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Exp";
+            param.SourceColumn = "SW_R_Opt_TimeOut";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p26";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Ple";
+            param.SourceColumn = "SW_R_Opt_Cont_Keys";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p27";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Em_Keyb";
+            param.SourceColumn = "SW_R_Opt_LockSameRow";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p28";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Status_Led";
+            param.SourceColumn = "SW_R_Opt_Use_SP";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p29";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ext_Ant";
+            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p30";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Can";
+            param.SourceColumn = "SW_R_Opt_ShiftPage";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p31";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Prop_Out";
+            param.SourceColumn = "SW_R_Opt_Output_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p32";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_TimeOut";
+            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p33";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Cont_Keys";
+            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p34";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p35";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_ShiftPage";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p36";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Output_No";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p37";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p38";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p39";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_Revisioni";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p40";
+            param.ParameterName = "@p35";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_Funzionamento";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p41";
+            param.ParameterName = "@p36";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_Config";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p42";
+            param.ParameterName = "@p37";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
             param.SourceColumn = "SW_Obsolete_ver";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p43";
+            param.ParameterName = "@p38";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "SW_Obsolete_ver_from_date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE `GC_Software` SET `SW_Code` = @p1, `SW_Fam_Prod` = @p2, `SW_Descrizione` =" +
                 " @p3, `SW_Versione` = @p4, `SW_Revisione` = @p5, `SW_Standard` = @p6, `SW_Schede" +
-                "Compatibili` = @p7, `SW_P_Opt_RF` = @p8, `SW_P_Opt_Oled` = @p9, `SW_P_Opt_Accel`" +
-                " = @p10, `SW_P_Opt_SP` = @p11, `SW_P_Opt_Buzzer` = @p12, `SW_P_Opt_Vibracall` = " +
-                "@p13, `SW_P_Opt_LedTorch` = @p14, `SW_P_Opt_EmButt` = @p15, `SW_P_Opt_Use_Backli" +
-                "ght` = @p16, `SW_P_Opt_ShiftPage` = @p17, `SW_P_Opt_Use_Accel` = @p18, `SW_P_Opt" +
-                "_Use_SP` = @p19, `SW_P_Opt_Use_Buzzer` = @p20, `SW_P_Opt_Use_Vibracall` = @p21, " +
-                "`SW_P_Opt_Use_LedTorch` = @p22, `SW_P_Opt_MaxPairDevices` = @p23, `SW_R_Opt_RF` " +
-                "= @p24, `SW_R_Opt_Plug_Exp` = @p25, `SW_R_Opt_Plug_Ple` = @p26, `SW_R_Opt_Em_Key" +
-                "b` = @p27, `SW_R_Opt_Status_Led` = @p28, `SW_R_Opt_Ext_Ant` = @p29, `SW_R_Opt_Ca" +
-                "n` = @p30, `SW_R_Opt_Prop_Out` = @p31, `SW_R_Opt_TimeOut` = @p32, `SW_R_Opt_Cont" +
-                "_Keys` = @p33, `SW_R_Opt_MaxPairDevices` = @p34, `SW_R_Opt_ShiftPage` = @p35, `S" +
-                "W_R_Opt_Output_No` = @p36, `SW_R_Opt_Dig_Input_No` = @p37, `SW_R_Opt_Ana_Input_N" +
-                "o` = @p38, `SW_Revisioni` = @p39, `SW_Funzionamento` = @p40, `SW_Config` = @p41," +
-                " `SW_Obsolete_ver` = @p42, `SW_Obsolete_ver_from_date` = @p43 WHERE ((`Id` = @p4" +
-                "4) AND (`SW_Code` = @p45) AND ((@p46 = 1 AND `SW_Fam_Prod` IS NULL) OR (`SW_Fam_" +
-                "Prod` = @p47)) AND ((@p48 = 1 AND `SW_Descrizione` IS NULL) OR (`SW_Descrizione`" +
-                " = @p49)) AND ((@p50 = 1 AND `SW_Versione` IS NULL) OR (`SW_Versione` = @p51)) A" +
-                "ND ((@p52 = 1 AND `SW_Revisione` IS NULL) OR (`SW_Revisione` = @p53)) AND ((@p54" +
-                " = 1 AND `SW_Standard` IS NULL) OR (`SW_Standard` = @p55)) AND ((@p56 = 1 AND `S" +
-                "W_P_Opt_RF` IS NULL) OR (`SW_P_Opt_RF` = @p57)) AND ((@p58 = 1 AND `SW_P_Opt_Ole" +
-                "d` IS NULL) OR (`SW_P_Opt_Oled` = @p59)) AND ((@p60 = 1 AND `SW_P_Opt_Accel` IS " +
-                "NULL) OR (`SW_P_Opt_Accel` = @p61)) AND ((@p62 = 1 AND `SW_P_Opt_SP` IS NULL) OR" +
-                " (`SW_P_Opt_SP` = @p63)) AND ((@p64 = 1 AND `SW_P_Opt_Buzzer` IS NULL) OR (`SW_P" +
-                "_Opt_Buzzer` = @p65)) AND ((@p66 = 1 AND `SW_P_Opt_Vibracall` IS NULL) OR (`SW_P" +
-                "_Opt_Vibracall` = @p67)) AND ((@p68 = 1 AND `SW_P_Opt_LedTorch` IS NULL) OR (`SW" +
-                "_P_Opt_LedTorch` = @p69)) AND ((@p70 = 1 AND `SW_P_Opt_EmButt` IS NULL) OR (`SW_" +
-                "P_Opt_EmButt` = @p71)) AND ((@p72 = 1 AND `SW_P_Opt_Use_Backlight` IS NULL) OR (" +
-                "`SW_P_Opt_Use_Backlight` = @p73)) AND ((@p74 = 1 AND `SW_P_Opt_ShiftPage` IS NUL" +
-                "L) OR (`SW_P_Opt_ShiftPage` = @p75)) AND ((@p76 = 1 AND `SW_P_Opt_Use_Accel` IS " +
-                "NULL) OR (`SW_P_Opt_Use_Accel` = @p77)) AND ((@p78 = 1 AND `SW_P_Opt_Use_SP` IS " +
-                "NULL) OR (`SW_P_Opt_Use_SP` = @p79)) AND ((@p80 = 1 AND `SW_P_Opt_Use_Buzzer` IS" +
-                " NULL) OR (`SW_P_Opt_Use_Buzzer` = @p81)) AND ((@p82 = 1 AND `SW_P_Opt_Use_Vibra" +
-                "call` IS NULL) OR (`SW_P_Opt_Use_Vibracall` = @p83)) AND ((@p84 = 1 AND `SW_P_Op" +
-                "t_Use_LedTorch` IS NULL) OR (`SW_P_Opt_Use_LedTorch` = @p85)) AND ((@p86 = 1 AND" +
-                " `SW_P_Opt_MaxPairDevices` IS NULL) OR (`SW_P_Opt_MaxPairDevices` = @p87)) AND (" +
-                "(@p88 = 1 AND `SW_R_Opt_RF` IS NULL) OR (`SW_R_Opt_RF` = @p89)) AND ((@p90 = 1 A" +
-                "ND `SW_R_Opt_Plug_Exp` IS NULL) OR (`SW_R_Opt_Plug_Exp` = @p91)) AND ((@p92 = 1 " +
-                "AND `SW_R_Opt_Plug_Ple` IS NULL) OR (`SW_R_Opt_Plug_Ple` = @p93)) AND ((@p94 = 1" +
-                " AND `SW_R_Opt_Em_Keyb` IS NULL) OR (`SW_R_Opt_Em_Keyb` = @p95)) AND ((@p96 = 1 " +
-                "AND `SW_R_Opt_Status_Led` IS NULL) OR (`SW_R_Opt_Status_Led` = @p97)) AND ((@p98" +
-                " = 1 AND `SW_R_Opt_Ext_Ant` IS NULL) OR (`SW_R_Opt_Ext_Ant` = @p99)) AND ((@p100" +
-                " = 1 AND `SW_R_Opt_Can` IS NULL) OR (`SW_R_Opt_Can` = @p101)) AND ((@p102 = 1 AN" +
-                "D `SW_R_Opt_Prop_Out` IS NULL) OR (`SW_R_Opt_Prop_Out` = @p103)) AND ((@p104 = 1" +
-                " AND `SW_R_Opt_TimeOut` IS NULL) OR (`SW_R_Opt_TimeOut` = @p105)) AND ((@p106 = " +
-                "1 AND `SW_R_Opt_Cont_Keys` IS NULL) OR (`SW_R_Opt_Cont_Keys` = @p107)) AND ((@p1" +
-                "08 = 1 AND `SW_R_Opt_MaxPairDevices` IS NULL) OR (`SW_R_Opt_MaxPairDevices` = @p" +
-                "109)) AND ((@p110 = 1 AND `SW_R_Opt_ShiftPage` IS NULL) OR (`SW_R_Opt_ShiftPage`" +
-                " = @p111)) AND ((@p112 = 1 AND `SW_R_Opt_Output_No` IS NULL) OR (`SW_R_Opt_Outpu" +
-                "t_No` = @p113)) AND ((@p114 = 1 AND `SW_R_Opt_Dig_Input_No` IS NULL) OR (`SW_R_O" +
-                "pt_Dig_Input_No` = @p115)) AND ((@p116 = 1 AND `SW_R_Opt_Ana_Input_No` IS NULL) " +
-                "OR (`SW_R_Opt_Ana_Input_No` = @p117)) AND ((@p118 = 1 AND `SW_Obsolete_ver` IS N" +
-                "ULL) OR (`SW_Obsolete_ver` = @p119)) AND ((@p120 = 1 AND `SW_Obsolete_ver_from_d" +
-                "ate` IS NULL) OR (`SW_Obsolete_ver_from_date` = @p121)))";
+                "Compatibili` = @p7, `SW_P_Opt_RF` = @p8, `SW_P_Opt_Use_Oled` = @p9, `SW_P_Opt_Us" +
+                "e_EmButt` = @p10, `SW_P_Opt_Use_Backlight` = @p11, `SW_P_Opt_ShiftPage` = @p12, " +
+                "`SW_P_Opt_Use_Accel` = @p13, `SW_P_Opt_Use_SP` = @p14, `SW_P_Opt_Use_Buzzer` = @" +
+                "p15, `SW_P_Opt_Use_Vibracall` = @p16, `SW_P_Opt_Use_LedTorch` = @p17, `SW_P_Opt_" +
+                "MaxPairDevices` = @p18, `SW_R_Opt_RF` = @p19, `SW_R_Opt_Plug_Exp` = @p20, `SW_R_" +
+                "Opt_Plug_Ple` = @p21, `SW_R_Opt_Em_Keyb` = @p22, `SW_R_Opt_Can` = @p23, `SW_R_Op" +
+                "t_Prop_Out` = @p24, `SW_R_Opt_TimeOut` = @p25, `SW_R_Opt_Cont_Keys` = @p26, `SW_" +
+                "R_Opt_LockSameRow` = @p27, `SW_R_Opt_Use_SP` = @p28, `SW_R_Opt_MaxPairDevices` =" +
+                " @p29, `SW_R_Opt_ShiftPage` = @p30, `SW_R_Opt_Output_No` = @p31, `SW_R_Opt_Dig_I" +
+                "nput_No` = @p32, `SW_R_Opt_Ana_Input_No` = @p33, `SW_Revisioni` = @p34, `SW_Funz" +
+                "ionamento` = @p35, `SW_Config` = @p36, `SW_Obsolete_ver` = @p37, `SW_Obsolete_ve" +
+                "r_from_date` = @p38 WHERE ((`Id` = @p39) AND (`SW_Code` = @p40) AND ((@p41 = 1 A" +
+                "ND `SW_Fam_Prod` IS NULL) OR (`SW_Fam_Prod` = @p42)) AND ((@p43 = 1 AND `SW_Desc" +
+                "rizione` IS NULL) OR (`SW_Descrizione` = @p44)) AND ((@p45 = 1 AND `SW_Versione`" +
+                " IS NULL) OR (`SW_Versione` = @p46)) AND ((@p47 = 1 AND `SW_Revisione` IS NULL) " +
+                "OR (`SW_Revisione` = @p48)) AND ((@p49 = 1 AND `SW_Standard` IS NULL) OR (`SW_St" +
+                "andard` = @p50)) AND ((@p51 = 1 AND `SW_P_Opt_RF` IS NULL) OR (`SW_P_Opt_RF` = @" +
+                "p52)) AND ((@p53 = 1 AND `SW_P_Opt_Use_Oled` IS NULL) OR (`SW_P_Opt_Use_Oled` = " +
+                "@p54)) AND ((@p55 = 1 AND `SW_P_Opt_Use_EmButt` IS NULL) OR (`SW_P_Opt_Use_EmBut" +
+                "t` = @p56)) AND ((@p57 = 1 AND `SW_P_Opt_Use_Backlight` IS NULL) OR (`SW_P_Opt_U" +
+                "se_Backlight` = @p58)) AND ((@p59 = 1 AND `SW_P_Opt_ShiftPage` IS NULL) OR (`SW_" +
+                "P_Opt_ShiftPage` = @p60)) AND ((@p61 = 1 AND `SW_P_Opt_Use_Accel` IS NULL) OR (`" +
+                "SW_P_Opt_Use_Accel` = @p62)) AND ((@p63 = 1 AND `SW_P_Opt_Use_SP` IS NULL) OR (`" +
+                "SW_P_Opt_Use_SP` = @p64)) AND ((@p65 = 1 AND `SW_P_Opt_Use_Buzzer` IS NULL) OR (" +
+                "`SW_P_Opt_Use_Buzzer` = @p66)) AND ((@p67 = 1 AND `SW_P_Opt_Use_Vibracall` IS NU" +
+                "LL) OR (`SW_P_Opt_Use_Vibracall` = @p68)) AND ((@p69 = 1 AND `SW_P_Opt_Use_LedTo" +
+                "rch` IS NULL) OR (`SW_P_Opt_Use_LedTorch` = @p70)) AND ((@p71 = 1 AND `SW_P_Opt_" +
+                "MaxPairDevices` IS NULL) OR (`SW_P_Opt_MaxPairDevices` = @p72)) AND ((@p73 = 1 A" +
+                "ND `SW_R_Opt_RF` IS NULL) OR (`SW_R_Opt_RF` = @p74)) AND ((@p75 = 1 AND `SW_R_Op" +
+                "t_Plug_Exp` IS NULL) OR (`SW_R_Opt_Plug_Exp` = @p76)) AND ((@p77 = 1 AND `SW_R_O" +
+                "pt_Plug_Ple` IS NULL) OR (`SW_R_Opt_Plug_Ple` = @p78)) AND ((@p79 = 1 AND `SW_R_" +
+                "Opt_Em_Keyb` IS NULL) OR (`SW_R_Opt_Em_Keyb` = @p80)) AND ((@p81 = 1 AND `SW_R_O" +
+                "pt_Can` IS NULL) OR (`SW_R_Opt_Can` = @p82)) AND ((@p83 = 1 AND `SW_R_Opt_Prop_O" +
+                "ut` IS NULL) OR (`SW_R_Opt_Prop_Out` = @p84)) AND ((@p85 = 1 AND `SW_R_Opt_TimeO" +
+                "ut` IS NULL) OR (`SW_R_Opt_TimeOut` = @p86)) AND ((@p87 = 1 AND `SW_R_Opt_Cont_K" +
+                "eys` IS NULL) OR (`SW_R_Opt_Cont_Keys` = @p88)) AND ((@p89 = 1 AND `SW_R_Opt_Loc" +
+                "kSameRow` IS NULL) OR (`SW_R_Opt_LockSameRow` = @p90)) AND ((@p91 = 1 AND `SW_R_" +
+                "Opt_Use_SP` IS NULL) OR (`SW_R_Opt_Use_SP` = @p92)) AND ((@p93 = 1 AND `SW_R_Opt" +
+                "_MaxPairDevices` IS NULL) OR (`SW_R_Opt_MaxPairDevices` = @p94)) AND ((@p95 = 1 " +
+                "AND `SW_R_Opt_ShiftPage` IS NULL) OR (`SW_R_Opt_ShiftPage` = @p96)) AND ((@p97 =" +
+                " 1 AND `SW_R_Opt_Output_No` IS NULL) OR (`SW_R_Opt_Output_No` = @p98)) AND ((@p9" +
+                "9 = 1 AND `SW_R_Opt_Dig_Input_No` IS NULL) OR (`SW_R_Opt_Dig_Input_No` = @p100))" +
+                " AND ((@p101 = 1 AND `SW_R_Opt_Ana_Input_No` IS NULL) OR (`SW_R_Opt_Ana_Input_No" +
+                "` = @p102)) AND ((@p103 = 1 AND `SW_Obsolete_ver` IS NULL) OR (`SW_Obsolete_ver`" +
+                " = @p104)) AND ((@p105 = 1 AND `SW_Obsolete_ver_from_date` IS NULL) OR (`SW_Obso" +
+                "lete_ver_from_date` = @p106)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -28645,6 +28473,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "SW_Code";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
@@ -28652,6 +28481,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "SW_Fam_Prod";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
@@ -28659,6 +28489,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "SW_Descrizione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
@@ -28666,6 +28497,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "SW_Versione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -28673,6 +28505,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "SW_Revisione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
@@ -28680,261 +28513,259 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
             param.SourceColumn = "SW_Standard";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_SchedeCompatibili";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_P_Opt_RF";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Oled";
+            param.SourceColumn = "SW_P_Opt_Use_Oled";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Accel";
+            param.SourceColumn = "SW_P_Opt_Use_EmButt";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_SP";
+            param.SourceColumn = "SW_P_Opt_Use_Backlight";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Buzzer";
+            param.SourceColumn = "SW_P_Opt_ShiftPage";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p13";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Vibracall";
+            param.SourceColumn = "SW_P_Opt_Use_Accel";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p14";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_LedTorch";
+            param.SourceColumn = "SW_P_Opt_Use_SP";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p15";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_EmButt";
+            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p16";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Backlight";
+            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p17";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_ShiftPage";
+            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p18";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Accel";
+            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p19";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_SP";
+            param.SourceColumn = "SW_R_Opt_RF";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p20";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
+            param.SourceColumn = "SW_R_Opt_Plug_Exp";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p21";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
+            param.SourceColumn = "SW_R_Opt_Plug_Ple";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p22";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
+            param.SourceColumn = "SW_R_Opt_Em_Keyb";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p23";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
+            param.SourceColumn = "SW_R_Opt_Can";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p24";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_RF";
+            param.SourceColumn = "SW_R_Opt_Prop_Out";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p25";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Exp";
+            param.SourceColumn = "SW_R_Opt_TimeOut";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p26";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Ple";
+            param.SourceColumn = "SW_R_Opt_Cont_Keys";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p27";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Em_Keyb";
+            param.SourceColumn = "SW_R_Opt_LockSameRow";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p28";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Status_Led";
+            param.SourceColumn = "SW_R_Opt_Use_SP";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p29";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ext_Ant";
+            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p30";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Can";
+            param.SourceColumn = "SW_R_Opt_ShiftPage";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p31";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Prop_Out";
+            param.SourceColumn = "SW_R_Opt_Output_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p32";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_TimeOut";
+            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p33";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Cont_Keys";
+            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p34";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p35";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_ShiftPage";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p36";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Output_No";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p37";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p38";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p39";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_Revisioni";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p40";
+            param.ParameterName = "@p35";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_Funzionamento";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p41";
+            param.ParameterName = "@p36";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_Config";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p42";
+            param.ParameterName = "@p37";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
             param.SourceColumn = "SW_Obsolete_ver";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p43";
+            param.ParameterName = "@p38";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "SW_Obsolete_ver_from_date";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p44";
+            param.ParameterName = "@p39";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -28942,7 +28773,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p45";
+            param.ParameterName = "@p40";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -28950,75 +28781,75 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p46";
+            param.ParameterName = "@p41";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "SW_Fam_Prod";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p42";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_Fam_Prod";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p43";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_Descrizione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p44";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_Descrizione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p45";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_Versione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p46";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_Versione";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p47";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_Fam_Prod";
+            param.SourceColumn = "SW_Revisione";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p48";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "SW_Descrizione";
+            param.SourceColumn = "SW_Revisione";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p49";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_Descrizione";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p50";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_Versione";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p51";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_Versione";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p52";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_Revisione";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p53";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_Revisione";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p54";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -29027,7 +28858,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p55";
+            param.ParameterName = "@p50";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
@@ -29035,7 +28866,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p56";
+            param.ParameterName = "@p51";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -29044,539 +28875,454 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p57";
+            param.ParameterName = "@p52";
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "SW_P_Opt_RF";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p58";
+            param.ParameterName = "@p53";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Oled";
+            param.SourceColumn = "SW_P_Opt_Use_Oled";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p54";
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_P_Opt_Use_Oled";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p55";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_P_Opt_Use_EmButt";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p56";
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_P_Opt_Use_EmButt";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p57";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_P_Opt_Use_Backlight";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p58";
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_P_Opt_Use_Backlight";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p59";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Oled";
+            param.SourceColumn = "SW_P_Opt_ShiftPage";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p60";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Accel";
+            param.SourceColumn = "SW_P_Opt_ShiftPage";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p61";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Accel";
+            param.SourceColumn = "SW_P_Opt_Use_Accel";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p62";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_SP";
+            param.SourceColumn = "SW_P_Opt_Use_Accel";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p63";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_SP";
+            param.SourceColumn = "SW_P_Opt_Use_SP";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p64";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Buzzer";
+            param.SourceColumn = "SW_P_Opt_Use_SP";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p65";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Buzzer";
+            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p66";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Vibracall";
+            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p67";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Vibracall";
+            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p68";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_LedTorch";
+            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p69";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_LedTorch";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p70";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_EmButt";
+            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p71";
+            param.ParameterName = "@p70";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_EmButt";
+            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p71";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p72";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Backlight";
+            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p73";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Backlight";
+            param.SourceColumn = "SW_R_Opt_RF";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p74";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_ShiftPage";
+            param.SourceColumn = "SW_R_Opt_RF";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p75";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_ShiftPage";
+            param.SourceColumn = "SW_R_Opt_Plug_Exp";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p76";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Accel";
+            param.SourceColumn = "SW_R_Opt_Plug_Exp";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p77";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Accel";
+            param.SourceColumn = "SW_R_Opt_Plug_Ple";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p78";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_SP";
+            param.SourceColumn = "SW_R_Opt_Plug_Ple";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p79";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_SP";
+            param.SourceColumn = "SW_R_Opt_Em_Keyb";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p80";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
+            param.SourceColumn = "SW_R_Opt_Em_Keyb";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p81";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Buzzer";
+            param.SourceColumn = "SW_R_Opt_Can";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p82";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
+            param.SourceColumn = "SW_R_Opt_Can";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p83";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_Vibracall";
+            param.SourceColumn = "SW_R_Opt_Prop_Out";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p84";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p85";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_Use_LedTorch";
+            param.SourceColumn = "SW_R_Opt_Prop_Out";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p86";
+            param.ParameterName = "@p85";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
+            param.SourceColumn = "SW_R_Opt_TimeOut";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p86";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_R_Opt_TimeOut";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p87";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_P_Opt_MaxPairDevices";
+            param.SourceColumn = "SW_R_Opt_Cont_Keys";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p88";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_RF";
+            param.SourceColumn = "SW_R_Opt_Cont_Keys";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p89";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_RF";
+            param.SourceColumn = "SW_R_Opt_LockSameRow";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p90";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Exp";
+            param.SourceColumn = "SW_R_Opt_LockSameRow";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p91";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Exp";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p92";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Ple";
+            param.SourceColumn = "SW_R_Opt_Use_SP";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p93";
+            param.ParameterName = "@p92";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Plug_Ple";
+            param.SourceColumn = "SW_R_Opt_Use_SP";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p93";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p94";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Em_Keyb";
+            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p95";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Em_Keyb";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p96";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Status_Led";
+            param.SourceColumn = "SW_R_Opt_ShiftPage";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p97";
+            param.ParameterName = "@p96";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Status_Led";
+            param.SourceColumn = "SW_R_Opt_ShiftPage";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p97";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "SW_R_Opt_Output_No";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p98";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ext_Ant";
+            param.SourceColumn = "SW_R_Opt_Output_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p99";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ext_Ant";
+            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p100";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Can";
+            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p101";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Can";
+            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p102";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Prop_Out";
+            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p103";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Prop_Out";
+            param.SourceColumn = "SW_Obsolete_ver";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p104";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.SByte;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_TimeOut";
+            param.SourceColumn = "SW_Obsolete_ver";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p105";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_TimeOut";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p106";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Cont_Keys";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p107";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Cont_Keys";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p108";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p109";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_MaxPairDevices";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p110";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_ShiftPage";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p111";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_ShiftPage";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p112";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Output_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p113";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Output_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p114";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p115";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Dig_Input_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p116";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p117";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_R_Opt_Ana_Input_No";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p118";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_Obsolete_ver";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p119";
-            param.DbType = global::System.Data.DbType.SByte;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
-            param.IsNullable = true;
-            param.SourceColumn = "SW_Obsolete_ver";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p120";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -29585,7 +29331,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p121";
+            param.ParameterName = "@p106";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
@@ -29598,7 +29344,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.GCP_Connection;
+            this._connection.ConnectionString = global::SE_Factory.Properties.Settings.Default.DB_FactoryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29607,7 +29353,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT `Id`, `SW_Code`, `SW_Fam_Prod`, `SW_Descrizione`, `SW_Versione`, `SW_Revisione`, `SW_Standard`, `SW_SchedeCompatibili`, `SW_P_Opt_RF`, `SW_P_Opt_Oled`, `SW_P_Opt_Accel`, `SW_P_Opt_SP`, `SW_P_Opt_Buzzer`, `SW_P_Opt_Vibracall`, `SW_P_Opt_LedTorch`, `SW_P_Opt_EmButt`, `SW_P_Opt_Use_Backlight`, `SW_P_Opt_ShiftPage`, `SW_P_Opt_Use_Accel`, `SW_P_Opt_Use_SP`, `SW_P_Opt_Use_Buzzer`, `SW_P_Opt_Use_Vibracall`, `SW_P_Opt_Use_LedTorch`, `SW_P_Opt_MaxPairDevices`, `SW_R_Opt_RF`, `SW_R_Opt_Plug_Exp`, `SW_R_Opt_Plug_Ple`, `SW_R_Opt_Em_Keyb`, `SW_R_Opt_Status_Led`, `SW_R_Opt_Ext_Ant`, `SW_R_Opt_Can`, `SW_R_Opt_Prop_Out`, `SW_R_Opt_TimeOut`, `SW_R_Opt_Cont_Keys`, `SW_R_Opt_MaxPairDevices`, `SW_R_Opt_ShiftPage`, `SW_R_Opt_Output_No`, `SW_R_Opt_Dig_Input_No`, `SW_R_Opt_Ana_Input_No`, `SW_Revisioni`, `SW_Funzionamento`, `SW_Config`, `SW_Obsolete_ver`, `SW_Obsolete_ver_from_date` FROM `GC_Software`";
+            this._commandCollection[0].CommandText = @"SELECT `Id`, `SW_Code`, `SW_Fam_Prod`, `SW_Descrizione`, `SW_Versione`, `SW_Revisione`, `SW_Standard`, `SW_SchedeCompatibili`, `SW_P_Opt_RF`, `SW_P_Opt_Use_Oled`, `SW_P_Opt_Use_EmButt`, `SW_P_Opt_Use_Backlight`, `SW_P_Opt_ShiftPage`, `SW_P_Opt_Use_Accel`, `SW_P_Opt_Use_SP`, `SW_P_Opt_Use_Buzzer`, `SW_P_Opt_Use_Vibracall`, `SW_P_Opt_Use_LedTorch`, `SW_P_Opt_MaxPairDevices`, `SW_R_Opt_RF`, `SW_R_Opt_Plug_Exp`, `SW_R_Opt_Plug_Ple`, `SW_R_Opt_Em_Keyb`, `SW_R_Opt_Can`, `SW_R_Opt_Prop_Out`, `SW_R_Opt_TimeOut`, `SW_R_Opt_Cont_Keys`, `SW_R_Opt_LockSameRow`, `SW_R_Opt_Use_SP`, `SW_R_Opt_MaxPairDevices`, `SW_R_Opt_ShiftPage`, `SW_R_Opt_Output_No`, `SW_R_Opt_Dig_Input_No`, `SW_R_Opt_Ana_Input_No`, `SW_Revisioni`, `SW_Funzionamento`, `SW_Config`, `SW_Obsolete_ver`, `SW_Obsolete_ver_from_date` FROM `GC_Software`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -29690,29 +29436,24 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                     global::System.Nullable<byte> p28, 
                     global::System.Nullable<byte> p30, 
                     global::System.Nullable<byte> p32, 
-                    global::System.Nullable<byte> p34, 
-                    global::System.Nullable<byte> p36, 
+                    global::System.Nullable<int> p34, 
+                    string p36, 
                     global::System.Nullable<byte> p38, 
                     global::System.Nullable<byte> p40, 
                     global::System.Nullable<byte> p42, 
-                    global::System.Nullable<int> p44, 
-                    string p46, 
-                    global::System.Nullable<byte> p48, 
-                    global::System.Nullable<byte> p50, 
+                    global::System.Nullable<byte> p44, 
+                    global::System.Nullable<byte> p46, 
+                    string p48, 
+                    global::System.Nullable<int> p50, 
                     global::System.Nullable<byte> p52, 
                     global::System.Nullable<byte> p54, 
-                    global::System.Nullable<byte> p56, 
+                    global::System.Nullable<int> p56, 
                     global::System.Nullable<byte> p58, 
-                    global::System.Nullable<byte> p60, 
-                    string p62, 
+                    global::System.Nullable<int> p60, 
+                    global::System.Nullable<int> p62, 
                     global::System.Nullable<int> p64, 
-                    global::System.Nullable<int> p66, 
-                    global::System.Nullable<byte> p68, 
-                    global::System.Nullable<int> p70, 
-                    global::System.Nullable<int> p72, 
-                    global::System.Nullable<int> p74, 
-                    global::System.Nullable<byte> p76, 
-                    global::System.Nullable<global::System.DateTime> p78) {
+                    global::System.Nullable<byte> p66, 
+                    global::System.Nullable<global::System.DateTime> p68) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
             if ((p2 == null)) {
                 throw new global::System.ArgumentNullException("p2");
@@ -29842,19 +29583,19 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             }
             if ((p34.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[33].Value = ((byte)(p34.Value));
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((int)(p34.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[32].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
-            if ((p36.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[35].Value = ((byte)(p36.Value));
-            }
-            else {
+            if ((p36 == null)) {
                 this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[35].Value = ((string)(p36));
             }
             if ((p38.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[36].Value = ((object)(0));
@@ -29882,31 +29623,31 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             }
             if ((p44.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((int)(p44.Value));
+                this.Adapter.DeleteCommand.Parameters[43].Value = ((byte)(p44.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[42].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
-            if ((p46 == null)) {
+            if ((p46.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[45].Value = ((byte)(p46.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[44].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((string)(p46));
-            }
-            if ((p48.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[47].Value = ((byte)(p48.Value));
-            }
-            else {
+            if ((p48 == null)) {
                 this.Adapter.DeleteCommand.Parameters[46].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
+            else {
+                this.Adapter.DeleteCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[47].Value = ((string)(p48));
+            }
             if ((p50.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[49].Value = ((byte)(p50.Value));
+                this.Adapter.DeleteCommand.Parameters[49].Value = ((int)(p50.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[48].Value = ((object)(1));
@@ -29930,7 +29671,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             }
             if ((p56.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[55].Value = ((byte)(p56.Value));
+                this.Adapter.DeleteCommand.Parameters[55].Value = ((int)(p56.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[54].Value = ((object)(1));
@@ -29946,19 +29687,19 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             }
             if ((p60.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[58].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[59].Value = ((byte)(p60.Value));
+                this.Adapter.DeleteCommand.Parameters[59].Value = ((int)(p60.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[58].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[59].Value = global::System.DBNull.Value;
             }
-            if ((p62 == null)) {
-                this.Adapter.DeleteCommand.Parameters[60].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[61].Value = global::System.DBNull.Value;
+            if ((p62.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[61].Value = ((int)(p62.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[60].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[61].Value = ((string)(p62));
+                this.Adapter.DeleteCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[61].Value = global::System.DBNull.Value;
             }
             if ((p64.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[62].Value = ((object)(0));
@@ -29970,7 +29711,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             }
             if ((p66.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[64].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[65].Value = ((int)(p66.Value));
+                this.Adapter.DeleteCommand.Parameters[65].Value = ((byte)(p66.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[64].Value = ((object)(1));
@@ -29978,51 +29719,11 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             }
             if ((p68.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[66].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[67].Value = ((byte)(p68.Value));
+                this.Adapter.DeleteCommand.Parameters[67].Value = ((System.DateTime)(p68.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[66].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[67].Value = global::System.DBNull.Value;
-            }
-            if ((p70.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[68].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[69].Value = ((int)(p70.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[68].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[69].Value = global::System.DBNull.Value;
-            }
-            if ((p72.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[70].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[71].Value = ((int)(p72.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[70].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[71].Value = global::System.DBNull.Value;
-            }
-            if ((p74.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[72].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[73].Value = ((int)(p74.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[72].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[73].Value = global::System.DBNull.Value;
-            }
-            if ((p76.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[74].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[75].Value = ((byte)(p76.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[74].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[75].Value = global::System.DBNull.Value;
-            }
-            if ((p78.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[76].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[77].Value = ((System.DateTime)(p78.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[76].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[77].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -30062,32 +29763,27 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                     global::System.Nullable<byte> p15, 
                     global::System.Nullable<byte> p16, 
                     global::System.Nullable<byte> p17, 
-                    global::System.Nullable<byte> p18, 
-                    global::System.Nullable<byte> p19, 
+                    global::System.Nullable<int> p18, 
+                    string p19, 
                     global::System.Nullable<byte> p20, 
                     global::System.Nullable<byte> p21, 
                     global::System.Nullable<byte> p22, 
-                    global::System.Nullable<int> p23, 
-                    string p24, 
-                    global::System.Nullable<byte> p25, 
-                    global::System.Nullable<byte> p26, 
+                    global::System.Nullable<byte> p23, 
+                    global::System.Nullable<byte> p24, 
+                    string p25, 
+                    global::System.Nullable<int> p26, 
                     global::System.Nullable<byte> p27, 
                     global::System.Nullable<byte> p28, 
-                    global::System.Nullable<byte> p29, 
+                    global::System.Nullable<int> p29, 
                     global::System.Nullable<byte> p30, 
-                    global::System.Nullable<byte> p31, 
-                    string p32, 
+                    global::System.Nullable<int> p31, 
+                    global::System.Nullable<int> p32, 
                     global::System.Nullable<int> p33, 
-                    global::System.Nullable<int> p34, 
-                    global::System.Nullable<byte> p35, 
-                    global::System.Nullable<int> p36, 
-                    global::System.Nullable<int> p37, 
-                    global::System.Nullable<int> p38, 
-                    string p39, 
-                    string p40, 
-                    string p41, 
-                    global::System.Nullable<byte> p42, 
-                    global::System.Nullable<global::System.DateTime> p43) {
+                    string p34, 
+                    string p35, 
+                    string p36, 
+                    global::System.Nullable<byte> p37, 
+                    global::System.Nullable<global::System.DateTime> p38) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -30191,16 +29887,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((p18.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((byte)(p18.Value));
+                this.Adapter.InsertCommand.Parameters[17].Value = ((int)(p18.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((p19.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((byte)(p19.Value));
+            if ((p19 == null)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(p19));
             }
             if ((p20.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[19].Value = ((byte)(p20.Value));
@@ -30221,25 +29917,25 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                 this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((p23.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((int)(p23.Value));
+                this.Adapter.InsertCommand.Parameters[22].Value = ((byte)(p23.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((p24 == null)) {
+            if ((p24.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((byte)(p24.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(p24));
-            }
-            if ((p25.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((byte)(p25.Value));
-            }
-            else {
+            if ((p25 == null)) {
                 this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(p25));
+            }
             if ((p26.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((byte)(p26.Value));
+                this.Adapter.InsertCommand.Parameters[25].Value = ((int)(p26.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
@@ -30257,7 +29953,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                 this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             if ((p29.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((byte)(p29.Value));
+                this.Adapter.InsertCommand.Parameters[28].Value = ((int)(p29.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
@@ -30269,16 +29965,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                 this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             if ((p31.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[30].Value = ((byte)(p31.Value));
+                this.Adapter.InsertCommand.Parameters[30].Value = ((int)(p31.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            if ((p32 == null)) {
-                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
+            if ((p32.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[31].Value = ((int)(p32.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(p32));
+                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             if ((p33.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[32].Value = ((int)(p33.Value));
@@ -30286,65 +29982,35 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             else {
                 this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((p34.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[33].Value = ((int)(p34.Value));
-            }
-            else {
+            if ((p34 == null)) {
                 this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
-            if ((p35.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[34].Value = ((byte)(p35.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(p34));
+            }
+            if ((p35 == null)) {
                 this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            if ((p36.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[35].Value = ((int)(p36.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(p35));
+            }
+            if ((p36 == null)) {
                 this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
+            else {
+                this.Adapter.InsertCommand.Parameters[35].Value = ((string)(p36));
+            }
             if ((p37.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[36].Value = ((int)(p37.Value));
+                this.Adapter.InsertCommand.Parameters[36].Value = ((byte)(p37.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             if ((p38.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[37].Value = ((int)(p38.Value));
+                this.Adapter.InsertCommand.Parameters[37].Value = ((System.DateTime)(p38.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[37].Value = global::System.DBNull.Value;
-            }
-            if ((p39 == null)) {
-                this.Adapter.InsertCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[38].Value = ((string)(p39));
-            }
-            if ((p40 == null)) {
-                this.Adapter.InsertCommand.Parameters[39].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[39].Value = ((string)(p40));
-            }
-            if ((p41 == null)) {
-                this.Adapter.InsertCommand.Parameters[40].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[40].Value = ((string)(p41));
-            }
-            if ((p42.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[41].Value = ((byte)(p42.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[41].Value = global::System.DBNull.Value;
-            }
-            if ((p43.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[42].Value = ((System.DateTime)(p43.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -30384,72 +30050,62 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                     global::System.Nullable<byte> p15, 
                     global::System.Nullable<byte> p16, 
                     global::System.Nullable<byte> p17, 
-                    global::System.Nullable<byte> p18, 
-                    global::System.Nullable<byte> p19, 
+                    global::System.Nullable<int> p18, 
+                    string p19, 
                     global::System.Nullable<byte> p20, 
                     global::System.Nullable<byte> p21, 
                     global::System.Nullable<byte> p22, 
-                    global::System.Nullable<int> p23, 
-                    string p24, 
-                    global::System.Nullable<byte> p25, 
-                    global::System.Nullable<byte> p26, 
+                    global::System.Nullable<byte> p23, 
+                    global::System.Nullable<byte> p24, 
+                    string p25, 
+                    global::System.Nullable<int> p26, 
                     global::System.Nullable<byte> p27, 
                     global::System.Nullable<byte> p28, 
-                    global::System.Nullable<byte> p29, 
+                    global::System.Nullable<int> p29, 
                     global::System.Nullable<byte> p30, 
-                    global::System.Nullable<byte> p31, 
-                    string p32, 
+                    global::System.Nullable<int> p31, 
+                    global::System.Nullable<int> p32, 
                     global::System.Nullable<int> p33, 
-                    global::System.Nullable<int> p34, 
-                    global::System.Nullable<byte> p35, 
-                    global::System.Nullable<int> p36, 
-                    global::System.Nullable<int> p37, 
-                    global::System.Nullable<int> p38, 
-                    string p39, 
+                    string p34, 
+                    string p35, 
+                    string p36, 
+                    global::System.Nullable<byte> p37, 
+                    global::System.Nullable<global::System.DateTime> p38, 
+                    int p39, 
                     string p40, 
-                    string p41, 
-                    global::System.Nullable<byte> p42, 
-                    global::System.Nullable<global::System.DateTime> p43, 
-                    int p44, 
-                    string p45, 
-                    global::System.Nullable<int> p47, 
-                    string p49, 
-                    string p51, 
-                    string p53, 
-                    global::System.Nullable<byte> p55, 
-                    string p57, 
-                    global::System.Nullable<byte> p59, 
-                    global::System.Nullable<byte> p61, 
-                    global::System.Nullable<byte> p63, 
-                    global::System.Nullable<byte> p65, 
-                    global::System.Nullable<byte> p67, 
-                    global::System.Nullable<byte> p69, 
-                    global::System.Nullable<byte> p71, 
-                    global::System.Nullable<byte> p73, 
-                    global::System.Nullable<byte> p75, 
-                    global::System.Nullable<byte> p77, 
-                    global::System.Nullable<byte> p79, 
-                    global::System.Nullable<byte> p81, 
-                    global::System.Nullable<byte> p83, 
-                    global::System.Nullable<byte> p85, 
-                    global::System.Nullable<int> p87, 
-                    string p89, 
-                    global::System.Nullable<byte> p91, 
-                    global::System.Nullable<byte> p93, 
-                    global::System.Nullable<byte> p95, 
-                    global::System.Nullable<byte> p97, 
-                    global::System.Nullable<byte> p99, 
-                    global::System.Nullable<byte> p101, 
-                    global::System.Nullable<byte> p103, 
-                    string p105, 
-                    global::System.Nullable<int> p107, 
-                    global::System.Nullable<int> p109, 
-                    global::System.Nullable<byte> p111, 
-                    global::System.Nullable<int> p113, 
-                    global::System.Nullable<int> p115, 
-                    global::System.Nullable<int> p117, 
-                    global::System.Nullable<byte> p119, 
-                    global::System.Nullable<global::System.DateTime> p121) {
+                    global::System.Nullable<int> p42, 
+                    string p44, 
+                    string p46, 
+                    string p48, 
+                    global::System.Nullable<byte> p50, 
+                    string p52, 
+                    global::System.Nullable<byte> p54, 
+                    global::System.Nullable<byte> p56, 
+                    global::System.Nullable<byte> p58, 
+                    global::System.Nullable<byte> p60, 
+                    global::System.Nullable<byte> p62, 
+                    global::System.Nullable<byte> p64, 
+                    global::System.Nullable<byte> p66, 
+                    global::System.Nullable<byte> p68, 
+                    global::System.Nullable<byte> p70, 
+                    global::System.Nullable<int> p72, 
+                    string p74, 
+                    global::System.Nullable<byte> p76, 
+                    global::System.Nullable<byte> p78, 
+                    global::System.Nullable<byte> p80, 
+                    global::System.Nullable<byte> p82, 
+                    global::System.Nullable<byte> p84, 
+                    string p86, 
+                    global::System.Nullable<int> p88, 
+                    global::System.Nullable<byte> p90, 
+                    global::System.Nullable<byte> p92, 
+                    global::System.Nullable<int> p94, 
+                    global::System.Nullable<byte> p96, 
+                    global::System.Nullable<int> p98, 
+                    global::System.Nullable<int> p100, 
+                    global::System.Nullable<int> p102, 
+                    global::System.Nullable<byte> p104, 
+                    global::System.Nullable<global::System.DateTime> p106) {
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -30553,16 +30209,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((p18.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((byte)(p18.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(p18.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((p19.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((byte)(p19.Value));
+            if ((p19 == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(p19));
             }
             if ((p20.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[19].Value = ((byte)(p20.Value));
@@ -30583,25 +30239,25 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((p23.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(p23.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((byte)(p23.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((p24 == null)) {
+            if ((p24.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((byte)(p24.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(p24));
-            }
-            if ((p25.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((byte)(p25.Value));
-            }
-            else {
+            if ((p25 == null)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(p25));
+            }
             if ((p26.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((byte)(p26.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(p26.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
@@ -30619,7 +30275,7 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             if ((p29.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((byte)(p29.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(p29.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
@@ -30631,16 +30287,16 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
                 this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             if ((p31.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((byte)(p31.Value));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(p31.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            if ((p32 == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            if ((p32.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(p32.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(p32));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             if ((p33.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(p33.Value));
@@ -30648,376 +30304,306 @@ SELECT Id, Prod_Sch, Prod_Fam, Prod_Descrizione, Prod_Image_Url FROM Schede WHER
             else {
                 this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((p34.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(p34.Value));
-            }
-            else {
+            if ((p34 == null)) {
                 this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
-            if ((p35.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((byte)(p35.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(p34));
+            }
+            if ((p35 == null)) {
                 this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            if ((p36.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(p36.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(p35));
+            }
+            if ((p36 == null)) {
                 this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
+            else {
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(p36));
+            }
             if ((p37.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(p37.Value));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((byte)(p37.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             if ((p38.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(p38.Value));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(p38.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
-            if ((p39 == null)) {
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(p39));
-            }
+            this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(p39));
             if ((p40 == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("p40");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(p40));
             }
-            if ((p41 == null)) {
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(p41));
-            }
             if ((p42.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((byte)(p42.Value));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(p42.Value));
             }
             else {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
-            if ((p43.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((System.DateTime)(p43.Value));
+            if ((p44 == null)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(p44));
             }
-            this.Adapter.UpdateCommand.Parameters[43].Value = ((int)(p44));
-            if ((p45 == null)) {
-                throw new global::System.ArgumentNullException("p45");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(p45));
-            }
-            if ((p47.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((int)(p47.Value));
+            if ((p46 == null)) {
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(p46));
             }
-            if ((p49 == null)) {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(p49));
-            }
-            if ((p51 == null)) {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+            if ((p48 == null)) {
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(p51));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(p48));
             }
-            if ((p53 == null)) {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(p53));
-            }
-            if ((p55.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((byte)(p55.Value));
+            if ((p50.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((byte)(p50.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
-            if ((p57 == null)) {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(p57));
-            }
-            if ((p59.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((byte)(p59.Value));
+            if ((p52 == null)) {
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(p52));
             }
-            if ((p61.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((byte)(p61.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
-            }
-            if ((p63.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((byte)(p63.Value));
+            if ((p54.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((byte)(p54.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
-            if ((p65.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((byte)(p65.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
-            }
-            if ((p67.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((byte)(p67.Value));
+            if ((p56.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((byte)(p56.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
-            if ((p69.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((byte)(p69.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
-            }
-            if ((p71.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((byte)(p71.Value));
+            if ((p58.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((byte)(p58.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
             }
-            if ((p73.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((byte)(p73.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
-            }
-            if ((p75.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((byte)(p75.Value));
+            if ((p60.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((byte)(p60.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
             }
-            if ((p77.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((byte)(p77.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
-            }
-            if ((p79.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((byte)(p79.Value));
+            if ((p62.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((byte)(p62.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
             }
-            if ((p81.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((byte)(p81.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
-            }
-            if ((p83.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((byte)(p83.Value));
+            if ((p64.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((byte)(p64.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
             }
-            if ((p85.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((byte)(p85.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
-            }
-            if ((p87.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((int)(p87.Value));
+            if ((p66.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((byte)(p66.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
             }
-            if ((p89 == null)) {
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(p89));
-            }
-            if ((p91.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((byte)(p91.Value));
+            if ((p68.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((byte)(p68.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[89].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
             }
-            if ((p93.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((byte)(p93.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[91].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[92].Value = global::System.DBNull.Value;
-            }
-            if ((p95.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((byte)(p95.Value));
+            if ((p70.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[69].Value = ((byte)(p70.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[93].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[94].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
             }
-            if ((p97.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((byte)(p97.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[95].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[96].Value = global::System.DBNull.Value;
-            }
-            if ((p99.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[98].Value = ((byte)(p99.Value));
+            if ((p72.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[71].Value = ((int)(p72.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[97].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[98].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
             }
-            if ((p101.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[100].Value = ((byte)(p101.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[99].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[100].Value = global::System.DBNull.Value;
-            }
-            if ((p103.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[102].Value = ((byte)(p103.Value));
+            if ((p74 == null)) {
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[102].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[72].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[73].Value = ((string)(p74));
             }
-            if ((p105 == null)) {
-                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[104].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[103].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[104].Value = ((string)(p105));
-            }
-            if ((p107.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[106].Value = ((int)(p107.Value));
+            if ((p76.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[75].Value = ((byte)(p76.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[105].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[106].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[74].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
             }
-            if ((p109.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[108].Value = ((int)(p109.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[107].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[108].Value = global::System.DBNull.Value;
-            }
-            if ((p111.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[109].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[110].Value = ((byte)(p111.Value));
+            if ((p78.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[77].Value = ((byte)(p78.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[109].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[110].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[76].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
             }
-            if ((p113.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[112].Value = ((int)(p113.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[111].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[112].Value = global::System.DBNull.Value;
-            }
-            if ((p115.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[113].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[114].Value = ((int)(p115.Value));
+            if ((p80.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[79].Value = ((byte)(p80.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[113].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[114].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[78].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
             }
-            if ((p117.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[115].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[116].Value = ((int)(p117.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[115].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[116].Value = global::System.DBNull.Value;
-            }
-            if ((p119.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[117].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[118].Value = ((byte)(p119.Value));
+            if ((p82.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[81].Value = ((byte)(p82.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[117].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[118].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[80].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
             }
-            if ((p121.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[119].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[120].Value = ((System.DateTime)(p121.Value));
+            if ((p84.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[83].Value = ((byte)(p84.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[119].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[120].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[82].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
+            }
+            if ((p86 == null)) {
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[84].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[85].Value = ((string)(p86));
+            }
+            if ((p88.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[87].Value = ((int)(p88.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[86].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[87].Value = global::System.DBNull.Value;
+            }
+            if ((p90.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[89].Value = ((byte)(p90.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[88].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[89].Value = global::System.DBNull.Value;
+            }
+            if ((p92.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[91].Value = ((byte)(p92.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[90].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[91].Value = global::System.DBNull.Value;
+            }
+            if ((p94.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[93].Value = ((int)(p94.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[92].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[93].Value = global::System.DBNull.Value;
+            }
+            if ((p96.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[95].Value = ((byte)(p96.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[94].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[95].Value = global::System.DBNull.Value;
+            }
+            if ((p98.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[97].Value = ((int)(p98.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[96].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[97].Value = global::System.DBNull.Value;
+            }
+            if ((p100.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[99].Value = ((int)(p100.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[99].Value = global::System.DBNull.Value;
+            }
+            if ((p102.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[100].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[101].Value = ((int)(p102.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[100].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[101].Value = global::System.DBNull.Value;
+            }
+            if ((p104.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[102].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[103].Value = ((byte)(p104.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[102].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[103].Value = global::System.DBNull.Value;
+            }
+            if ((p106.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[104].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[105].Value = ((System.DateTime)(p106.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[104].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[105].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 

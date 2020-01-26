@@ -651,7 +651,7 @@ namespace SE_Factory
             client.Connect();
             // upload a file and retry 3 times before giving up
             client.RetryAttempts = 3;
-            client.UploadFile(tmp_file, "/SL_label.txt", FtpExists.Overwrite, true, FtpVerify.Retry);
+            client.UploadFile(tmp_file, "/SL_label.txt", FtpRemoteExists.Overwrite, true, FtpVerify.Retry);
             client.Disconnect();
 
             //File.Delete(tmp_file);

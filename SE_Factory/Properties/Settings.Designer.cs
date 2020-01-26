@@ -109,22 +109,23 @@ namespace SE_Factory.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;user id=sa;password=aavesp19;persistsecurityinfo=True;database=D" +
-            "B_Factory;certificatefile=.\\client-cert.pfx")]
-        public string GCP_Connection {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.0.8\\SQLEXPRESS;Initial Catalog=DYOPENG;Persist Security Info=" +
+            "True;User ID=sa;Password=aavesp19")]
+        public string OPEN_Connection {
             get {
-                return ((string)(this["GCP_Connection"]));
+                return ((string)(this["OPEN_Connection"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.0.8\\SQLEXPRESS;Initial Catalog=DYOPENG;Persist Security Info=" +
-            "True;User ID=sa;Password=aavesp19")]
-        public string OPEN_Connection {
+        [global::System.Configuration.DefaultSettingValueAttribute("server=127.0.0.1;user id=root;persistsecurityinfo=True;sshhostname=10.99.1.1;sshp" +
+            "assword=2020_SM-user;sshport=22;sshusername=BeSt_Sistem;database=DB_Factory;pass" +
+            "word=BeSt_MYSQL1a")]
+        public string DB_FactoryConnectionString {
             get {
-                return ((string)(this["OPEN_Connection"]));
+                return ((string)(this["DB_FactoryConnectionString"]));
             }
         }
     }

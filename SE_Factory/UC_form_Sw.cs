@@ -765,13 +765,13 @@ namespace SE_Factory
                     break;
             }
 
-            if ((bool)SW_view["SW_P_Opt_Oled"]) { ID_toggle_Display_P.Checked = true; } else { ID_toggle_Display_P.Checked = false; }
-            if ((bool)SW_view["SW_P_Opt_Accel"]) { ID_toggle_Accel_P.Checked = true; } else { ID_toggle_Accel_P.Checked = false; }
-            if ((bool)SW_view["SW_P_Opt_SP"]) { ID_toggle_SP_P.Checked = true; } else { ID_toggle_SP_P.Checked = false; }
-            if ((bool)SW_view["SW_P_Opt_Buzzer"]) { ID_toggle_Buzzer_P.Checked = true; } else { ID_toggle_Buzzer_P.Checked = false; }
-            if ((bool)SW_view["SW_P_Opt_Vibracall"]) { ID_toggle_Vibracall_P.Checked = true; } else { ID_toggle_Vibracall_P.Checked = false; }
-            if ((bool)SW_view["SW_P_Opt_LedTorch"]) { ID_toggle_Torcia_P.Checked = true; } else { ID_toggle_Torcia_P.Checked = false; }
-            if ((bool)SW_view["SW_P_Opt_EmButt"]) { ID_toggle_Fungo_P.Checked = true; } else { ID_toggle_Fungo_P.Checked = false; }
+            if ((bool)SW_view["SW_P_Opt_Use_Oled"]) { ID_toggle_Display_P.Checked = true; } else { ID_toggle_Display_P.Checked = false; }
+            //if ((bool)SW_view["SW_P_Opt_Accel"]) { ID_toggle_Accel_P.Checked = true; } else { ID_toggle_Accel_P.Checked = false; }
+            if ((bool)SW_view["SW_P_Opt_Use_SP"]) { ID_toggle_SP_P.Checked = true; } else { ID_toggle_SP_P.Checked = false; }
+            if ((bool)SW_view["SW_P_Opt_Use_Buzzer"]) { ID_toggle_Buzzer_P.Checked = true; } else { ID_toggle_Buzzer_P.Checked = false; }
+            if ((bool)SW_view["SW_P_Opt_Use_Vibracall"]) { ID_toggle_Vibracall_P.Checked = true; } else { ID_toggle_Vibracall_P.Checked = false; }
+            if ((bool)SW_view["SW_P_Opt_Use_LedTorch"]) { ID_toggle_Torcia_P.Checked = true; } else { ID_toggle_Torcia_P.Checked = false; }
+            if ((bool)SW_view["SW_P_Opt_Use_EmButt"]) { ID_toggle_Fungo_P.Checked = true; } else { ID_toggle_Fungo_P.Checked = false; }
             if ((bool)SW_view["SW_P_Opt_Use_Backlight"]) { ID_toggle_use_Backlight_P.Checked = true; } else { ID_toggle_use_Backlight_P.Checked = false; }
             if ((bool)SW_view["SW_P_Opt_ShiftPage"]) { ID_toggle_ShiftPage_P.Checked = true; } else { ID_toggle_ShiftPage_P.Checked = false; }
             if ((bool)SW_view["SW_P_Opt_Use_Accel"]) { ID_toggle_use_Accel_P.Checked = true; } else { ID_toggle_use_Accel_P.Checked = false; }
@@ -822,8 +822,8 @@ namespace SE_Factory
             if ((bool)SW_view["SW_R_Opt_Plug_Exp"]) { ID_toggle_PlugExp_C.Checked = true; } else { ID_toggle_PlugExp_C.Checked = false; }
             if ((bool)SW_view["SW_R_Opt_Plug_Ple"]) { ID_toggle_PlugPLE_C.Checked = true; } else { ID_toggle_PlugPLE_C.Checked = false; }
             if ((bool)SW_view["SW_R_Opt_Em_Keyb"]) { ID_toggle_TastEmerg_C.Checked = true; } else { ID_toggle_TastEmerg_C.Checked = false; }
-            if ((bool)SW_view["SW_R_Opt_Status_Led"]) { ID_toggle_GuidaLuce_C.Checked = true; } else { ID_toggle_GuidaLuce_C.Checked = false; }
-            if ((bool)SW_view["SW_R_Opt_Ext_Ant"]) { ID_toggle_AntExt_C.Checked = true; } else { ID_toggle_AntExt_C.Checked = false; }
+            //if ((bool)SW_view["SW_R_Opt_Status_Led"]) { ID_toggle_GuidaLuce_C.Checked = true; } else { ID_toggle_GuidaLuce_C.Checked = false; }
+            //if ((bool)SW_view["SW_R_Opt_Ext_Ant"]) { ID_toggle_AntExt_C.Checked = true; } else { ID_toggle_AntExt_C.Checked = false; }
             if ((bool)SW_view["SW_R_Opt_Can"]) { ID_toggle_CanBus_C.Checked = true; } else { ID_toggle_CanBus_C.Checked = false; }
             if ((bool)SW_view["SW_R_Opt_Prop_Out"]) { ID_toggle_Prop_C.Checked = true; } else { ID_toggle_Prop_C.Checked = false; }
             tb_timeout_C.Text = SW_view["SW_R_Opt_TimeOut"].ToString();
