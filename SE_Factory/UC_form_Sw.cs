@@ -823,7 +823,7 @@ namespace SE_Factory
             if ((bool)SW_view["SW_R_Opt_Plug_Ple"]) { ID_toggle_PlugPLE_C.Checked = true; } else { ID_toggle_PlugPLE_C.Checked = false; }
             if ((bool)SW_view["SW_R_Opt_Em_Keyb"]) { ID_toggle_TastEmerg_C.Checked = true; } else { ID_toggle_TastEmerg_C.Checked = false; }
             //if ((bool)SW_view["SW_R_Opt_Status_Led"]) { ID_toggle_GuidaLuce_C.Checked = true; } else { ID_toggle_GuidaLuce_C.Checked = false; }
-            //if ((bool)SW_view["SW_R_Opt_Ext_Ant"]) { ID_toggle_AntExt_C.Checked = true; } else { ID_toggle_AntExt_C.Checked = false; }
+ 
             if ((bool)SW_view["SW_R_Opt_Can"]) { ID_toggle_CanBus_C.Checked = true; } else { ID_toggle_CanBus_C.Checked = false; }
             if ((bool)SW_view["SW_R_Opt_Prop_Out"]) { ID_toggle_Prop_C.Checked = true; } else { ID_toggle_Prop_C.Checked = false; }
             tb_timeout_C.Text = SW_view["SW_R_Opt_TimeOut"].ToString();
@@ -987,12 +987,50 @@ namespace SE_Factory
 
         }
 
-        private void metroButton1_Click_1(object sender, EventArgs e)
+        private void pan_Menu_comandi_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            //Lancia Lista Software
-            UC_Lista_SW frm_lista = new UC_Lista_SW();
-            frm_lista.Show();
 
+        }
+
+        private void creaPDFToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            CreaPDF();
+        }
+
+        private void visualizzaPDFCreatoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Costruzione dell'indirizzo IP
+            string nome_sw = "XSWR" + tbox_Sw_name.Text + tbox_Sw_version.Text + tbox_Sw_frequency.Text + "_L";
+            string myWebUrlFile = Properties.Settings.Default.Path_URL_Software + nome_sw + @"/" + nome_sw + ".pdf";
+            string tmpfolder = GFunc.TempFolder();
+            string windowsTempPath = tmpfolder + nome_sw + ".pdf";
+
+            bool documentotrovato = true;
+            using (var client = new WebClient())
+            {
+                try { client.DownloadFile(myWebUrlFile, windowsTempPath); }
+                catch (WebException ex) { documentotrovato = false; }
+            }
+
+            if (documentotrovato)
+            {
+                Win_form_PDF form_pdf = new Win_form_PDF(windowsTempPath);
+                form_pdf.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Documento PDF non trovato!");
+            }
+        }
+
+        private void but_HideListSW_Click(object sender, EventArgs e)
+        {
+            SW_Layout_Lista.Visible = false;
+        }
+
+        private void visualizzaTuttoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SW_Layout_Lista.Visible = true;
         }
     }
 }

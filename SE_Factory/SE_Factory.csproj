@@ -288,6 +288,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UC_form_Printers.resx">
       <DependentUpon>UC_form_Printers.cs</DependentUpon>
@@ -342,6 +343,7 @@
   <ItemGroup>
     <Content Include="logo_new_32.ico" />
     <Content Include="logo_new_64.ico" />
+    <None Include="Resources\ViewFull_16x.png" />
     <Content Include="tada.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

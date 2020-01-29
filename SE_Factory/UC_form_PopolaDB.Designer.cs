@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_form_PopolaDB));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Popola_Layout = new System.Windows.Forms.TableLayoutPanel();
             this.pan_SW_Titolo = new MetroFramework.Controls.MetroPanel();
             this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
@@ -39,6 +39,7 @@
             this.pan_Menu_salva = new System.Windows.Forms.MenuStrip();
             this.pan_Menu_exit = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_sw_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.cli_tile = new MetroFramework.Controls.MetroTile();
             this.lab_clienti = new MetroFramework.Controls.MetroLabel();
@@ -103,7 +104,6 @@
             this.gCOrdiniBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gC_OrdiniTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_OrdiniTableAdapter();
             this.jLabelJLabelClientiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Popola_Layout.SuspendLayout();
             this.pan_SW_Titolo.SuspendLayout();
             this.pan_Menu_comandi.SuspendLayout();
@@ -251,6 +251,13 @@
             this.toolStripMenuItem5.Size = new System.Drawing.Size(22, 20);
             this.toolStripMenuItem5.Text = "|";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
+            this.toolStripMenuItem1.Text = "Uscita";
+            // 
             // menu_sw_exit
             // 
             this.menu_sw_exit.Name = "menu_sw_exit";
@@ -377,14 +384,14 @@
             this.dESCRESTSOFTWAREDataGridViewTextBoxColumn});
             this.Popola_Layout.SetColumnSpan(this.dataGridView1, 10);
             this.dataGridView1.DataSource = this.jLabelfullBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 137);
             this.dataGridView1.Name = "dataGridView1";
@@ -722,13 +729,6 @@
             // 
             this.jLabelJLabelClientiBindingSource.DataMember = "JLabel_JLabel_Clienti";
             this.jLabelJLabelClientiBindingSource.DataSource = this.jLabelBindingSource;
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
-            this.toolStripMenuItem1.Text = "Uscita";
             // 
             // UC_form_PopolaDB
             // 
