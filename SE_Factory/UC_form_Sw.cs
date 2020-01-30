@@ -1032,5 +1032,15 @@ namespace SE_Factory
         {
             SW_Layout_Lista.Visible = true;
         }
+
+        private void but_GroupUngroupLista_Click(object sender, EventArgs e)
+        {
+            grid_SW_codificati.Table.CollapseAllGroups();
+        }
+
+        private void but_ExpandLista_Click(object sender, EventArgs e)
+        {
+            grid_SW_codificati.Table.ExpandAllGroups();
+        }
     }
 }

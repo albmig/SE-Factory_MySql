@@ -235,7 +235,7 @@
 </value>
   </data>
   <metadata name="gCFamProdBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>409, 56</value>
+    <value>403, 56</value>
   </metadata>
   <metadata name="dB_FactoryDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>617, 17</value>
@@ -255,14 +255,41 @@
   <metadata name="metroContextMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="but_ExpandLista.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAHNJREFUOE+l
+        kUEKwDAIBPM2v9Dv9Y9tL14tKbGxxsWQCgMi7OzBIiK/6IsbZpaMVEBEECiwDYhU4NssUFAPGalAWyKm
+        BedxDSwJyravC2pYiQQKFKhEdy9oD3tyUGDxzS0fCxA2qDMIMlrunY9glfA4j5QbdnrB7Eey768AAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <metadata name="ToolTip_Lista.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>770, 17</value>
+  </metadata>
+  <data name="but_CollapseLista.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAG1JREFUOE+9
+        0UEKgEAIQFHP5hW6XnesNm6NQidzFKeChAcx4HcRMPMn14cbIuJKGUDEVBqwFzJlwF+z0sDxUCkDeiUy
+        HFiXrfN/AKa5iQIqDXg+ID/s3HsUULIfBzJ2UacLVGSvzS3wVvg4jmEHxCTFrsf6rk8AAAAASUVORK5C
+        YII=
+</value>
+  </data>
   <metadata name="gCSoftwareBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
+  <data name="but_HideListSW.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAHlJREFUOE+1ktEKgCAMRf02Pzh/qnq1Xnxd3NhKl+FMunBEBzuKzBHREI+klKgH
+        bruDovfeRCHIrRaqAn3DG4UASw9VgZhb/C8IU6BlXq8z9qjJuSkAItHNwCQAW9xPdN0ksL5A+PwHPD79
+        AyRw+8DsS3KrBW7jOHcA1SOJixku6jUAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="gC_SoftwareTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>210, 56</value>
   </metadata>
   <metadata name="gC_Fam_ProdTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>603, 56</value>
+    <value>597, 56</value>
   </metadata>
   <metadata name="gC_SchedeTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 95</value>

@@ -32,12 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor1 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
-            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor2 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_form_Sw));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor1 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
+            Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor gridColumnDescriptor2 = new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor();
+            Syncfusion.Windows.Forms.Grid.Grouping.GridConditionalFormatDescriptor gridConditionalFormatDescriptor1 = new Syncfusion.Windows.Forms.Grid.Grouping.GridConditionalFormatDescriptor();
             this.pan_P_Dx_Funzionamento = new MetroFramework.Controls.MetroPanel();
             this.funz_fill = new MetroFramework.Controls.MetroPanel();
             this.richtb_Funzionamento_P = new System.Windows.Forms.RichTextBox();
@@ -115,9 +116,6 @@
             this.titolo_ID = new MetroFramework.Controls.MetroLabel();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.SW_Layout = new System.Windows.Forms.TableLayoutPanel();
-            this.SW_Layout_Lista = new System.Windows.Forms.TableLayoutPanel();
-            this.grid_SW_codificati = new Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl();
-            this.gCSoftwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pan_Menu_comandi = new System.Windows.Forms.MenuStrip();
             this.menu_sw_new = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_sw_div01 = new System.Windows.Forms.ToolStripMenuItem();
@@ -212,10 +210,16 @@
             this.richtb_Funzionamento_C = new System.Windows.Forms.RichTextBox();
             this.metroPanel7 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel50 = new MetroFramework.Controls.MetroLabel();
+            this.SW_Layout_Lista = new System.Windows.Forms.TableLayoutPanel();
+            this.but_ExpandLista = new MetroFramework.Controls.MetroButton();
+            this.but_CollapseLista = new MetroFramework.Controls.MetroButton();
+            this.grid_SW_codificati = new Syncfusion.Windows.Forms.Grid.Grouping.GridGroupingControl();
+            this.gCSoftwareBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.but_HideListSW = new MetroFramework.Controls.MetroButton();
             this.gC_SoftwareTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_SoftwareTableAdapter();
             this.gC_Fam_ProdTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_Fam_ProdTableAdapter();
             this.gC_SchedeTableAdapter = new SE_Factory.DB_FactoryDataSetTableAdapters.GC_SchedeTableAdapter();
-            this.but_HideListSW = new MetroFramework.Controls.MetroButton();
+            this.ToolTip_Lista = new MetroFramework.Components.MetroToolTip();
             this.pan_P_Dx_Funzionamento.SuspendLayout();
             this.funz_fill.SuspendLayout();
             this.funz_top.SuspendLayout();
@@ -235,9 +239,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gCFamProdBindingSource)).BeginInit();
             this.pan_SW_Titolo.SuspendLayout();
             this.SW_Layout.SuspendLayout();
-            this.SW_Layout_Lista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_SW_codificati)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).BeginInit();
             this.pan_Menu_comandi.SuspendLayout();
             this.pan_Menu_salva.SuspendLayout();
             this.pan_Menu_exit.SuspendLayout();
@@ -256,6 +257,9 @@
             this.pan_C_Dx_Funzionamento.SuspendLayout();
             this.metroPanel6.SuspendLayout();
             this.metroPanel7.SuspendLayout();
+            this.SW_Layout_Lista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_SW_codificati)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pan_P_Dx_Funzionamento
@@ -1260,80 +1264,6 @@
             this.SW_Layout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.SW_Layout.Size = new System.Drawing.Size(1100, 768);
             this.SW_Layout.TabIndex = 16;
-            // 
-            // SW_Layout_Lista
-            // 
-            this.SW_Layout_Lista.ColumnCount = 2;
-            this.SW_Layout_Lista.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.SW_Layout_Lista.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.SW_Layout_Lista.Controls.Add(this.grid_SW_codificati, 0, 2);
-            this.SW_Layout_Lista.Controls.Add(this.but_HideListSW, 0, 0);
-            this.SW_Layout_Lista.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SW_Layout_Lista.Location = new System.Drawing.Point(0, 0);
-            this.SW_Layout_Lista.Name = "SW_Layout_Lista";
-            this.SW_Layout_Lista.RowCount = 3;
-            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.SW_Layout_Lista.Size = new System.Drawing.Size(266, 768);
-            this.SW_Layout_Lista.TabIndex = 63;
-            this.SW_Layout_Lista.Visible = false;
-            // 
-            // grid_SW_codificati
-            // 
-            this.grid_SW_codificati.AlphaBlendSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))), ((int)(((byte)(222)))));
-            this.grid_SW_codificati.AutoPopulateRelations = false;
-            this.grid_SW_codificati.BackColor = System.Drawing.SystemColors.Window;
-            this.grid_SW_codificati.ChildGroupOptions.CaptionText = "{Category} - {RecordCount} Items";
-            this.SW_Layout_Lista.SetColumnSpan(this.grid_SW_codificati, 2);
-            this.grid_SW_codificati.DataSource = this.gCSoftwareBindingSource;
-            this.grid_SW_codificati.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid_SW_codificati.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grid_SW_codificati.GridOfficeScrollBars = Syncfusion.Windows.Forms.OfficeScrollBars.Metro;
-            this.grid_SW_codificati.GridVisualStyles = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
-            this.grid_SW_codificati.Location = new System.Drawing.Point(3, 23);
-            this.grid_SW_codificati.Name = "grid_SW_codificati";
-            this.grid_SW_codificati.NestedTableGroupOptions.ShowCaption = false;
-            this.grid_SW_codificati.NestedTableGroupOptions.ShowCaptionSummaryCells = true;
-            this.grid_SW_codificati.NestedTableGroupOptions.ShowSummaries = false;
-            this.SW_Layout_Lista.SetRowSpan(this.grid_SW_codificati, 3);
-            this.grid_SW_codificati.ShowCurrentCellBorderBehavior = Syncfusion.Windows.Forms.Grid.GridShowCurrentCellBorder.GrayWhenLostFocus;
-            this.grid_SW_codificati.Size = new System.Drawing.Size(260, 742);
-            this.grid_SW_codificati.TabIndex = 57;
-            this.grid_SW_codificati.TableDescriptor.AllowNew = false;
-            this.grid_SW_codificati.TableDescriptor.ChildGroupOptions.CaptionText = "{Category} - {RecordCount} Revisioni";
-            gridColumnDescriptor1.MappingName = "SW_Versione";
-            gridColumnDescriptor1.Width = 70;
-            gridColumnDescriptor2.MappingName = "SW_Revisione";
-            gridColumnDescriptor2.Width = 80;
-            this.grid_SW_codificati.TableDescriptor.Columns.AddRange(new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor[] {
-            gridColumnDescriptor1,
-            gridColumnDescriptor2});
-            this.grid_SW_codificati.TableDescriptor.GroupedColumns.AddRange(new Syncfusion.Grouping.SortColumnDescriptor[] {
-            new Syncfusion.Grouping.SortColumnDescriptor("SW_Versione", System.ComponentModel.ListSortDirection.Ascending)});
-            this.grid_SW_codificati.TableDescriptor.TableOptions.ColumnHeaderRowHeight = 25;
-            this.grid_SW_codificati.TableDescriptor.TableOptions.RecordRowHeight = 25;
-            this.grid_SW_codificati.TableDescriptor.TopLevelGroupOptions.IsExpandedInitialValue = false;
-            this.grid_SW_codificati.TableDescriptor.TopLevelGroupOptions.ShowCaption = false;
-            this.grid_SW_codificati.TableDescriptor.VisibleColumns.AddRange(new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor[] {
-            new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor("SW_Versione"),
-            new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor("SW_Revisione")});
-            this.grid_SW_codificati.TableOptions.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.grid_SW_codificati.TableOptions.SelectionTextColor = System.Drawing.SystemColors.HighlightText;
-            this.grid_SW_codificati.TableOptions.ShowRowHeader = false;
-            this.grid_SW_codificati.Text = "gridGroupingControl1";
-            this.grid_SW_codificati.TopLevelGroupOptions.ShowStackedHeaders = true;
-            this.grid_SW_codificati.TopLevelGroupOptions.ShowSummaries = false;
-            this.grid_SW_codificati.UseRightToLeftCompatibleTextBox = true;
-            this.grid_SW_codificati.VersionInfo = "17.2460.0.34";
-            // 
-            // gCSoftwareBindingSource
-            // 
-            this.gCSoftwareBindingSource.DataMember = "GC_Software";
-            this.gCSoftwareBindingSource.DataSource = this.dB_FactoryDataSet;
-            this.gCSoftwareBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareBindingSource_CurrentChanged);
             // 
             // pan_Menu_comandi
             // 
@@ -2487,6 +2417,141 @@
             this.metroLabel50.Text = "Funzionamento:";
             this.metroLabel50.UseCustomBackColor = true;
             // 
+            // SW_Layout_Lista
+            // 
+            this.SW_Layout_Lista.ColumnCount = 5;
+            this.SW_Layout_Lista.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.SW_Layout_Lista.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.SW_Layout_Lista.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.SW_Layout_Lista.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.SW_Layout_Lista.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.SW_Layout_Lista.Controls.Add(this.but_ExpandLista, 3, 0);
+            this.SW_Layout_Lista.Controls.Add(this.but_CollapseLista, 2, 0);
+            this.SW_Layout_Lista.Controls.Add(this.grid_SW_codificati, 0, 2);
+            this.SW_Layout_Lista.Controls.Add(this.but_HideListSW, 0, 0);
+            this.SW_Layout_Lista.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SW_Layout_Lista.Location = new System.Drawing.Point(0, 0);
+            this.SW_Layout_Lista.Name = "SW_Layout_Lista";
+            this.SW_Layout_Lista.RowCount = 5;
+            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout_Lista.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.SW_Layout_Lista.Size = new System.Drawing.Size(266, 768);
+            this.SW_Layout_Lista.TabIndex = 63;
+            this.SW_Layout_Lista.Visible = false;
+            // 
+            // but_ExpandLista
+            // 
+            this.but_ExpandLista.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.but_ExpandLista.AutoSize = true;
+            this.but_ExpandLista.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("but_ExpandLista.BackgroundImage")));
+            this.but_ExpandLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.but_ExpandLista.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.but_ExpandLista.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.but_ExpandLista.Location = new System.Drawing.Point(162, 3);
+            this.but_ExpandLista.Name = "but_ExpandLista";
+            this.but_ExpandLista.Size = new System.Drawing.Size(47, 14);
+            this.but_ExpandLista.TabIndex = 60;
+            this.ToolTip_Lista.SetToolTip(this.but_ExpandLista, "Expand all groups");
+            this.but_ExpandLista.UseSelectable = true;
+            this.but_ExpandLista.Click += new System.EventHandler(this.but_ExpandLista_Click);
+            // 
+            // but_CollapseLista
+            // 
+            this.but_CollapseLista.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.but_CollapseLista.AutoSize = true;
+            this.but_CollapseLista.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("but_CollapseLista.BackgroundImage")));
+            this.but_CollapseLista.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.but_CollapseLista.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.but_CollapseLista.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.but_CollapseLista.Location = new System.Drawing.Point(109, 3);
+            this.but_CollapseLista.Name = "but_CollapseLista";
+            this.but_CollapseLista.Size = new System.Drawing.Size(47, 14);
+            this.but_CollapseLista.TabIndex = 59;
+            this.ToolTip_Lista.SetToolTip(this.but_CollapseLista, "Collapse all groups");
+            this.but_CollapseLista.UseSelectable = true;
+            this.but_CollapseLista.Click += new System.EventHandler(this.but_GroupUngroupLista_Click);
+            // 
+            // grid_SW_codificati
+            // 
+            this.grid_SW_codificati.AlphaBlendSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(94)))), ((int)(((byte)(171)))), ((int)(((byte)(222)))));
+            this.grid_SW_codificati.AutoPopulateRelations = false;
+            this.grid_SW_codificati.BackColor = System.Drawing.SystemColors.Window;
+            this.grid_SW_codificati.ChildGroupOptions.CaptionText = "{Category} - {RecordCount} Items";
+            this.SW_Layout_Lista.SetColumnSpan(this.grid_SW_codificati, 5);
+            this.grid_SW_codificati.DataSource = this.gCSoftwareBindingSource;
+            this.grid_SW_codificati.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid_SW_codificati.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grid_SW_codificati.GridOfficeScrollBars = Syncfusion.Windows.Forms.OfficeScrollBars.Metro;
+            this.grid_SW_codificati.GridVisualStyles = Syncfusion.Windows.Forms.GridVisualStyles.Metro;
+            this.grid_SW_codificati.Location = new System.Drawing.Point(3, 23);
+            this.grid_SW_codificati.Name = "grid_SW_codificati";
+            this.grid_SW_codificati.NestedTableGroupOptions.ShowCaption = false;
+            this.grid_SW_codificati.NestedTableGroupOptions.ShowCaptionSummaryCells = true;
+            this.grid_SW_codificati.NestedTableGroupOptions.ShowSummaries = false;
+            this.SW_Layout_Lista.SetRowSpan(this.grid_SW_codificati, 3);
+            this.grid_SW_codificati.ShowCurrentCellBorderBehavior = Syncfusion.Windows.Forms.Grid.GridShowCurrentCellBorder.GrayWhenLostFocus;
+            this.grid_SW_codificati.Size = new System.Drawing.Size(260, 742);
+            this.grid_SW_codificati.TabIndex = 57;
+            this.grid_SW_codificati.TableDescriptor.AllowNew = false;
+            this.grid_SW_codificati.TableDescriptor.ChildGroupOptions.CaptionText = "{Category} - {RecordCount} Revisioni";
+            gridColumnDescriptor1.MappingName = "SW_Versione";
+            gridColumnDescriptor1.Width = 70;
+            gridColumnDescriptor2.MappingName = "SW_Revisione";
+            gridColumnDescriptor2.Width = 80;
+            this.grid_SW_codificati.TableDescriptor.Columns.AddRange(new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor[] {
+            gridColumnDescriptor1,
+            gridColumnDescriptor2,
+            new Syncfusion.Windows.Forms.Grid.Grouping.GridColumnDescriptor("SW_Obsolete_ver")});
+            gridConditionalFormatDescriptor1.Appearance.AnyRecordFieldCell.Font.Bold = false;
+            gridConditionalFormatDescriptor1.Appearance.AnyRecordFieldCell.Font.Italic = true;
+            gridConditionalFormatDescriptor1.Appearance.AnyRecordFieldCell.TextColor = System.Drawing.Color.Red;
+            gridConditionalFormatDescriptor1.Expression = "[SW_Obsolete_ver] Like \'true\'";
+            gridConditionalFormatDescriptor1.Name = "ConditionalFormat 1";
+            this.grid_SW_codificati.TableDescriptor.ConditionalFormats.Add(gridConditionalFormatDescriptor1);
+            this.grid_SW_codificati.TableDescriptor.GroupedColumns.AddRange(new Syncfusion.Grouping.SortColumnDescriptor[] {
+            new Syncfusion.Grouping.SortColumnDescriptor("SW_Versione", System.ComponentModel.ListSortDirection.Ascending)});
+            this.grid_SW_codificati.TableDescriptor.TableOptions.ColumnHeaderRowHeight = 25;
+            this.grid_SW_codificati.TableDescriptor.TableOptions.RecordRowHeight = 25;
+            this.grid_SW_codificati.TableDescriptor.TopLevelGroupOptions.IsExpandedInitialValue = false;
+            this.grid_SW_codificati.TableDescriptor.TopLevelGroupOptions.ShowCaption = false;
+            this.grid_SW_codificati.TableDescriptor.VisibleColumns.AddRange(new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor[] {
+            new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor("SW_Versione"),
+            new Syncfusion.Windows.Forms.Grid.Grouping.GridVisibleColumnDescriptor("SW_Revisione")});
+            this.grid_SW_codificati.TableOptions.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.grid_SW_codificati.TableOptions.SelectionTextColor = System.Drawing.SystemColors.HighlightText;
+            this.grid_SW_codificati.TableOptions.ShowRowHeader = false;
+            this.grid_SW_codificati.Text = "gridGroupingControl1";
+            this.grid_SW_codificati.TopLevelGroupOptions.ShowStackedHeaders = true;
+            this.grid_SW_codificati.TopLevelGroupOptions.ShowSummaries = false;
+            this.grid_SW_codificati.UseRightToLeftCompatibleTextBox = true;
+            this.grid_SW_codificati.VersionInfo = "17.2460.0.34";
+            // 
+            // gCSoftwareBindingSource
+            // 
+            this.gCSoftwareBindingSource.DataMember = "GC_Software";
+            this.gCSoftwareBindingSource.DataSource = this.dB_FactoryDataSet;
+            this.gCSoftwareBindingSource.CurrentChanged += new System.EventHandler(this.gCSoftwareBindingSource_CurrentChanged);
+            // 
+            // but_HideListSW
+            // 
+            this.but_HideListSW.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.but_HideListSW.AutoSize = true;
+            this.but_HideListSW.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("but_HideListSW.BackgroundImage")));
+            this.but_HideListSW.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.but_HideListSW.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.but_HideListSW.FontWeight = MetroFramework.MetroButtonWeight.Light;
+            this.but_HideListSW.Location = new System.Drawing.Point(3, 3);
+            this.but_HideListSW.Name = "but_HideListSW";
+            this.but_HideListSW.Size = new System.Drawing.Size(47, 14);
+            this.but_HideListSW.TabIndex = 58;
+            this.ToolTip_Lista.SetToolTip(this.but_HideListSW, "Nascondi lista");
+            this.but_HideListSW.UseSelectable = true;
+            this.but_HideListSW.Click += new System.EventHandler(this.but_HideListSW_Click);
+            // 
             // gC_SoftwareTableAdapter
             // 
             this.gC_SoftwareTableAdapter.ClearBeforeFill = true;
@@ -2499,19 +2564,11 @@
             // 
             this.gC_SchedeTableAdapter.ClearBeforeFill = true;
             // 
-            // but_HideListSW
+            // ToolTip_Lista
             // 
-            this.but_HideListSW.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.but_HideListSW.AutoSize = true;
-            this.but_HideListSW.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.but_HideListSW.FontWeight = MetroFramework.MetroButtonWeight.Light;
-            this.but_HideListSW.Location = new System.Drawing.Point(23, 3);
-            this.but_HideListSW.Name = "but_HideListSW";
-            this.but_HideListSW.Size = new System.Drawing.Size(87, 14);
-            this.but_HideListSW.TabIndex = 58;
-            this.but_HideListSW.Text = "Nascondi Lista";
-            this.but_HideListSW.UseSelectable = true;
-            this.but_HideListSW.Click += new System.EventHandler(this.but_HideListSW_Click);
+            this.ToolTip_Lista.Style = MetroFramework.MetroColorStyle.Red;
+            this.ToolTip_Lista.StyleManager = null;
+            this.ToolTip_Lista.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // UC_form_Sw
             // 
@@ -2551,10 +2608,6 @@
             this.pan_SW_Titolo.PerformLayout();
             this.SW_Layout.ResumeLayout(false);
             this.SW_Layout.PerformLayout();
-            this.SW_Layout_Lista.ResumeLayout(false);
-            this.SW_Layout_Lista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grid_SW_codificati)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).EndInit();
             this.pan_Menu_comandi.ResumeLayout(false);
             this.pan_Menu_comandi.PerformLayout();
             this.pan_Menu_salva.ResumeLayout(false);
@@ -2584,6 +2637,10 @@
             this.metroPanel6.ResumeLayout(false);
             this.metroPanel7.ResumeLayout(false);
             this.metroPanel7.PerformLayout();
+            this.SW_Layout_Lista.ResumeLayout(false);
+            this.SW_Layout_Lista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_SW_codificati)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gCSoftwareBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2777,5 +2834,8 @@
         private System.Windows.Forms.ToolStripMenuItem creaPDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizzaPDFCreatoToolStripMenuItem;
         private MetroFramework.Controls.MetroButton but_HideListSW;
+        private MetroFramework.Controls.MetroButton but_CollapseLista;
+        private MetroFramework.Controls.MetroButton but_ExpandLista;
+        private MetroFramework.Components.MetroToolTip ToolTip_Lista;
     }
 }
