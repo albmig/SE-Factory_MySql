@@ -16,6 +16,7 @@ using Syncfusion.Windows.Forms.Grid;
 using DataRelation = System.Data.DataRelation;
 using System.Web;
 using Renci.SshNet;
+using Microsoft.Office.Interop.Word;
 
 
 namespace SE_Factory
@@ -901,12 +902,7 @@ namespace SE_Factory
             grid_SW_codificati.TableOptions.ListBoxSelectionMode = SelectionMode.One;
             // Auto Column size
             grid_SW_codificati.AllowProportionalColumnSizing = true;
-
-
-            //grid_SW_codificati.Table.ExpandAllRecords();
-            grid_SW_codificati.Table.ExpandAllGroups();
-            //this.grid_SW_codificati.Table.ExpandAllRecords();
-            //this.grid_SW_codificati.Table.ExpandAllGroups();
+            grid_SW_codificati.Table.CollapseAllGroups();
         }
 
         private void gCSoftwareBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -1041,6 +1037,22 @@ namespace SE_Factory
         private void but_ExpandLista_Click(object sender, EventArgs e)
         {
             grid_SW_codificati.Table.ExpandAllGroups();
+        }
+
+        private void metroButton1_Click_1(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Word.Application winword = new Microsoft.Office.Interop.Word.Application();
+            winword.ShowAnimation = false;
+            winword.Visible = true;
+            object missing = System.Reflection.Missing.Value;
+            Microsoft.Office.Interop.Word.Document document = winword.Documents.Add(ref missing, ref missing, ref missing, ref missing);
+
+            while (winword.Visible =true)
+            {
+
+            }
+
+            MessageBox.Show("chiuso");
         }
     }
 }
