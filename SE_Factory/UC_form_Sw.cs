@@ -329,10 +329,12 @@ namespace SE_Factory
             ProcSplash.Show();
 
             //definizione della connessione
-            var host = "sistematicaweb.it";
-            var username = "files";
-            var password = "ZL9HKwcq5eZEFt";
-
+            //var host = "sistematicaweb.it";
+            //var username = "files";
+            //var password = "ZL9HKwcq5eZEFt";
+            var host = "159.69.190.190";
+            var username = "sistematica";
+            var password = "t5Wp*Re?!a";
 
             //Download del template
             string P_InputStream = Properties.Settings.Default.Path_URL_Software + "Template_PDF_Software.pdf";
@@ -345,7 +347,8 @@ namespace SE_Factory
                 {
                     //verifica e/o creazione della directory Temp
 
-                    string pathremoto = @"/home/files/public_html/SE_Factory/fw/Template_PDF_Software.pdf";
+                    //string pathremoto = @"/home/files/public_html/SE_Factory/fw/Template_PDF_Software.pdf";
+                    string pathremoto = @"/uploads/firmwares/Template_PDF_Software.pdf";
                     string pathlocale = tmpfolder + "Template_PDF_Software.pdf";
                     Stream outputTemplate = File.OpenWrite(pathlocale);
                     client.DownloadFile(pathremoto, outputTemplate);
